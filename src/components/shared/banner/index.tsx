@@ -1,0 +1,62 @@
+/* eslint-disable react/no-unescaped-entities */
+"use client";
+
+// import core package
+import Image from "next/image";
+
+// import images
+import bg from "@/assets/images/common/banner/banner.webp";
+
+// import ui component
+import { Typography } from "@/components/ui/Typography";
+import { FC } from "react";
+import Link from "next/link";
+import Button from "@/components/ui/button";
+
+interface BannerProps {
+  title?: string;
+  subTitle?: string;
+}
+
+export const Banner: FC<BannerProps> = ({
+  title = "Ready to Transform Your Fleet Management?",
+  subTitle = "Take control of your logistics with Vizfleet’s cutting-edge technology. Simplify operations, boost efficiency, and get real-time insights on deliveries and driver performance.",
+}) => {
+  return (
+    <section
+      id="contactUs"
+      className="relative overflow-hidden  global-padding-container py-16 md:py-24 lg:!py-32"
+    >
+      <div className="absolute inset-0">
+        <Image
+          src={bg}
+          alt="Background image"
+          className="h-full w-full object-cover object-center"
+          placeholder="blur"
+        />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl">
+        <div className="md:max-w-[60%]">
+          <Typography
+            variant="SemiBold_H2"
+            className={`block leading-tight text-white `}
+          >
+            {title}
+          </Typography>
+          <Typography variant="Regular_H5" className="mt-4 block text-white">
+            {subTitle}
+          </Typography>
+
+          <div className="mt-8 ">
+            <Link href={"/contact-us"}>
+              <Button variant="primary" className="bg-white text-primary">
+                Contact us
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
