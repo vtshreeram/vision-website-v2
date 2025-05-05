@@ -29,6 +29,9 @@
   @apply px-4 sm:px-6 lg:px-8;
 }
 
+.text-shadow {
+  text-shadow: -1px 4px 4px rgba(0, 0, 0, 0.25) !important;
+}
 
 /* phone input */
 

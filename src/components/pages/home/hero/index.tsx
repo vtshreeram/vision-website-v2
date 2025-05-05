@@ -33,7 +33,7 @@ export const Hero = () => {
           <div className="max-w-2xl my-20 md:my-32 lg:my-40">
             <Typography
               variant="Bold_H1"
-              className="text-white mb-4 leading-tight"
+              className="!text-white mb-4 text-shadow"
             >
               Lorem ipsum dolor sit ametconsectetur. Arcu nec
             </Typography>
