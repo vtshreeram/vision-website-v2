@@ -21,7 +21,7 @@ export const Count = () => {
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-white text-center py-10 px-4 rounded shadow-none"
+              className="bg-white text-center py-10 px-4  shadow-none"
             >
               <Typography
                 variant="Bold_H2"
@@ -49,7 +49,7 @@ export const Count = () => {
           <Link href="/contact-us">
             <Button
               variant="secondary"
-              className="!bg-white !text-primary !font-bold !rounded-none px-8 py-3"
+              className="!bg-white !text-primary !font-bold  px-8 py-3"
             >
               Contact us
             </Button>
