@@ -1,12 +1,12 @@
-// import core package
+// ** import core packages
 import Image, { StaticImageData } from "next/image";
 
-// import component
+// ** import components
 import { Typography } from "@/components/ui/Typography";
-
-// import font
-import { cn } from "@/lib/utils";
 import Header from "@/components/template/header";
+
+// ** import utils
+import { cn } from "@/lib/utils";
 
 interface HeadProps {
   heading: string;

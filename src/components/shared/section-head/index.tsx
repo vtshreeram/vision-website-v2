@@ -3,6 +3,8 @@ import { ReactElement } from "react";
 
 // ** import component
 import { Typography } from "@/components/ui/Typography";
+
+// ** import utils
 import { cn } from "@/lib/utils";
 
 const SectionHead = ({

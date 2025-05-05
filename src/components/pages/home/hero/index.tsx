@@ -1,15 +1,15 @@
-// import core package
+// ** import core package
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
-// import component
+// ** import component
+import Header from "@/components/template/header";
 import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
 
-// import image
+// ** import image
 import img from "@/assets/images/pages/home/hero/hero.webp";
-import Header from "@/components/template/header";
-import Link from "next/link";
 
 export const Hero = () => {
   return (
@@ -35,7 +35,7 @@ export const Hero = () => {
               variant="Bold_H1"
               className="text-white mb-4 leading-tight"
             >
-              Lorem ipsum dolor sit  ametconsectetur. Arcu nec
+              Lorem ipsum dolor sit ametconsectetur. Arcu nec
             </Typography>
             <Typography variant="Regular_H5" className="text-white mb-6">
               Lorem ipsum dolor sit amet consectetur. Mi elit nunc sed odio
@@ -44,7 +44,12 @@ export const Hero = () => {
             <div className="mt-8 md:mt-14 flex gap-4 md:gap-8">
               <Button variant="primary">Downloaded</Button>
               <Link href={"/contact-us"}>
-              <Button variant="secondary" className="border-white text-white hover:bg-white hover:text-primary">Contact us</Button>
+                <Button
+                  variant="secondary"
+                  className="border-white text-white hover:bg-white hover:text-primary"
+                >
+                  Contact us
+                </Button>
               </Link>
             </div>
           </div>

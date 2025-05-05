@@ -1,7 +1,10 @@
+// ** import components
 import Gallery from "@/components/pages/gallery";
 import { Banner } from "@/components/shared";
-import headBg from "@/assets/images/pages/gallery/head/head-bg.webp";
 import Head from "@/components/shared/head";
+
+// ** import images
+import headBg from "@/assets/images/pages/gallery/head/head-bg.webp";
 
 const GalleryPage = () => {
   return (

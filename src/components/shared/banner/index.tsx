@@ -1,17 +1,16 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 
-// import core package
-import Image from "next/image";
-
-// import images
-import bg from "@/assets/images/common/banner/banner.webp";
-
-// import ui component
-import { Typography } from "@/components/ui/Typography";
+// ** import core packages
 import { FC } from "react";
+import Image from "next/image";
 import Link from "next/link";
+
+// ** import components
+import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
+
+// ** import assets
+import bg from "@/assets/images/common/banner/banner.webp";
 
 interface BannerProps {
   title?: string;

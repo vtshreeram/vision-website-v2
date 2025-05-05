@@ -1,5 +1,5 @@
 "use client";
-// ** import core package
+// ** import core packages
 import Link from "next/link";
 
 // ** import third party packages
@@ -11,6 +11,8 @@ import toast from "react-hot-toast";
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
+
+// ** import assets
 import LogoFooter from "@/assets/logo-footer";
 import {
   IcoFacebook,
@@ -18,6 +20,8 @@ import {
   IcoLinkedin,
   IcoTwitter,
 } from "@/assets/icons";
+
+// ** import config
 import { config } from "@/config";
 
 // ** define validation schema using zod **

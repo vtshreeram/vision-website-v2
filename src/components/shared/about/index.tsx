@@ -1,13 +1,13 @@
-// import core package
+// ** import core packages
 import Image from "next/image";
+import Link from "next/link";
 
-// import images
-import image from "@/assets/images/common/about/Logo.webp";
-
-// import ui
+// ** import components
 import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
-import Link from "next/link";
+
+// ** import assets
+import image from "@/assets/images/common/about/Logo.webp";
 
 export const AboutUs = ({ isAboutUs = false }: { isAboutUs?: boolean }) => {
   return (

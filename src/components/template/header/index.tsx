@@ -1,23 +1,26 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-// ** import core package
+// ** import core packages
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-// ** import third party package
+// ** import third party packages
 import { Menu, X } from "react-feather";
 import { IoIosArrowDown } from "react-icons/io";
 import { motion as m } from "framer-motion";
 
-// import ui component
+// ** import components
 import { Typography } from "@/components/ui/Typography";
-
-// import libs
-import { cn } from "@/lib/utils";
-import LogoHeader from "@/assets/logo-header";
 import HeaderTop from "./header-top";
+
+// ** import assets
+import LogoHeader from "@/assets/logo-header";
+import LogoFooter from "@/assets/logo-footer";
+
+// ** import utils
+import { cn } from "@/lib/utils";
 
 // motion variants
 const variants = {
@@ -233,7 +236,7 @@ const Header = () => {
               className="flex gap-3 items-center"
               aria-label="Vision Home"
             >
-              <LogoHeader />
+              <LogoFooter className="h-auto w-[160px]" />
             </Link>
           </div>
 

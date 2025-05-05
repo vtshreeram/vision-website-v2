@@ -1,13 +1,15 @@
 "use client";
+// ** import core packages
 import Image from "next/image";
 import React, { useState } from "react";
-import Button from "@/components/ui/button";
 import { z } from "zod";
-import { useForm } from "react-hook-form";
+
+// ** import third party packages
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import img from "@/assets/images/pages/home/vision-form/bg.webp";
-import LogoLarge from "@/assets/logo-large";
-import { Controller } from "react-hook-form";
+
+// ** import components
+import Button from "@/components/ui/button";
 import {
   Select,
   SelectTrigger,
@@ -15,6 +17,10 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
+
+// ** import assets
+import img from "@/assets/images/pages/home/vision-form/bg.webp";
+import LogoLarge from "@/assets/logo-large";
 import { IcoTrack } from "@/assets/icons";
 
 // Zod schema

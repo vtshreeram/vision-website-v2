@@ -1,17 +1,19 @@
 "use client";
-// Core packages
+// ** import core packages
 import Link from "next/link";
+import { z } from "zod";
 
-// Third party packages
+// ** import third party packages
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { z } from "zod";
 
-// Components
+// ** import components
 import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
+
+// ** import icons
 import {
   IcoFacebook,
   IcoInstagram,
@@ -19,7 +21,7 @@ import {
   IcoTwitter,
 } from "@/assets/icons";
 
-// Config
+// ** import config
 import { config } from "@/config";
 
 // Define the Zod schema for the form

@@ -1,8 +1,10 @@
-import React from "react";
+
+// ** import components
 import { Typography } from "@/components/ui/Typography";
 import SectionHead from "@/components/shared/section-head";
+
+// ** import icons
 import { IcoGoals, IcoMission, IcoVision } from "@/assets/icons";
-// Replace with your actual icon components or SVGs
 
 const cards = [
   {
