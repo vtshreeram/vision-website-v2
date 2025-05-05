@@ -1,7 +1,8 @@
+// ** import components
 import { Banner, Services } from "@/components/shared";
+import Head from "@/components/shared/head";
 // ** import images
 import headBg from "@/assets/images/pages/services/head-bg.webp";
-import Head from "@/components/shared/head";
 const ServicesPage = () => {
   return (
     <main>

@@ -1,6 +1,10 @@
-import { Typography } from "@/components/ui/Typography";
+// ** import core packages
 import Image from "next/image";
 
+// ** import components
+import { Typography } from "@/components/ui/Typography";
+
+// ** import assets
 import img1 from "@/assets/images/common/services/img-1.webp";
 import img2 from "@/assets/images/common/services/img-2.webp";
 import img3 from "@/assets/images/common/services/img-3.webp";

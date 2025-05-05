@@ -1,12 +1,19 @@
+// ** import core packages
+import React from "react";
+import Image from "next/image";
+
+// ** import components
 import SectionHead from "@/components/shared/section-head";
 import { Typography } from "@/components/ui/Typography";
-import Image from "next/image";
-import React from "react";
 
+// ** import assets
 import centerImg from "@/assets/images/common/vizifleet-app/center-img.webp";
-import { IcoQuickRide, IcoSafety, IcoQrCode, IcoBooking } from "@/assets/icons";
-
-// Import your images/icons
+import { 
+  IcoQuickRide, 
+  IcoSafety, 
+  IcoQrCode, 
+  IcoBooking 
+} from "@/assets/icons";
 
 const featuresLeft = [
   {

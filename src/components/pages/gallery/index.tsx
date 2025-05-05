@@ -1,10 +1,10 @@
 "use client";
 
-// import core package
+// ** import core package
 import Image, { StaticImageData } from "next/image";
 import { useState, useCallback } from "react";
 
-// import ui components
+// ** import third party packages
 import { cn } from "@/lib/utils";
 import ImageViewer from "react-simple-image-viewer";
 
