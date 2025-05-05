@@ -37,9 +37,9 @@ export const Banner: FC<BannerProps> = ({
       </div>
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="md:max-w-[60%]">
+        <div className="max-w-lg">
           <Typography
-            variant="SemiBold_H2"
+            variant="SemiBold_H3"
             className={`block leading-tight text-white `}
           >
             {title}

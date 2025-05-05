@@ -52,7 +52,7 @@ const Footer = () => {
           <div className="order-2 lg:order-1 shrink-0 max-w-sm mt-10 lg:mt-0">
             <LogoFooter />
 
-            <Typography variant="Regular_H6" className={`mt-2 text-gray`}>
+            <Typography variant="Regular_H6" className={`mt-4 text-gray`}>
               Revolutionizing logistics technology, Vizfleet offers cutting-edge
               solutions
             </Typography>

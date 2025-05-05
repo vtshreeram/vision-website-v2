@@ -1,39 +1,33 @@
 "use client";
-// import core package
-// import Link from "next/link";
+// Core packages
+import Link from "next/link";
 
-// import component
-import { Typography } from "@/components/ui/Typography";
-import Button from "@/components/ui/button";
-
-// import config
-// import { config } from "@/config";
-
-// import third party
+// Third party packages
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { z } from "zod";
 
+// Components
+import { Typography } from "@/components/ui/Typography";
+import Button from "@/components/ui/button";
+import {
+  IcoFacebook,
+  IcoInstagram,
+  IcoLinkedin,
+  IcoTwitter,
+} from "@/assets/icons";
+
+// Config
+import { config } from "@/config";
+
 // Define the Zod schema for the form
 const contactFormSchema = z.object({
   fullName: z.string().min(2, "Full name is required").max(100),
   phone: z.string().min(10, "Enter a valid phone number"),
   email: z.string().email("Enter a valid email address"),
-  treatment: z.enum(
-    [
-      "Inch Loss Therapy",
-      "CoolSculpting",
-      "FDI Injections",
-      "Lymphatic PPC",
-      "Emsculpt",
-      "Collagen Bed",
-    ],
-    {
-      required_error: "Please select a treatment",
-    }
-  ),
+
   message: z.string().min(5, "Message must be at least 5 characters long"),
 });
 
@@ -46,20 +40,17 @@ const ContactUs = () => {
     handleSubmit,
     formState: { errors },
     setValue,
-    watch,
   } = useForm<ContactFormSchema>({
     resolver: zodResolver(contactFormSchema),
   });
-
-  const phoneValue = watch("phone");
 
   const onSubmit = (data: ContactFormSchema) => {
     console.log(data);
   };
 
   return (
-    <section className="overflow-hidden  py-16 md:py-24">
-      <div className="mx-auto max-w-7xl global-padding-container">
+    <section className="overflow-hidden  py-16 md:py-24 global-padding-container">
+      <div className="mx-auto max-w-7xl ">
         <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-5 lg:gap-x-14 xl:gap-x-16">
           <div className="order-2 lg:order-1 lg:col-span-3">
             <div className="mb-14 hidden lg:block">
@@ -139,7 +130,20 @@ const ContactUs = () => {
                 >
                   Social media
                 </Typography>
-                <div className="flex gap-4 mt-6">social icon</div>
+                <div className="flex gap-4 mt-6">
+                  <Link href={config.TWITTER_URL}>
+                    <IcoTwitter />
+                  </Link>
+                  <Link href={config.FACEBOOK_URL}>
+                    <IcoFacebook />
+                  </Link>
+                  <Link href={config.INSTAGRAM_URL}>
+                    <IcoInstagram />
+                  </Link>
+                  <Link href={config.LINKEDIN_URL}>
+                    <IcoLinkedin />
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -164,7 +168,8 @@ const ContactUs = () => {
                 variant="Regular_H6"
                 className={`mt-2 block text-gray`}
               >
-                We’re here to answer your questions and assist with your requirements.
+                We’re here to answer your questions and assist with your
+                requirements.
               </Typography>
             </div>
             <div className="border border-stroke">
@@ -179,10 +184,10 @@ const ContactUs = () => {
                         type="text"
                         {...register("fullName")}
                         placeholder="Enter your full name"
-                        className="block w-full  border border-stroke bg-white px-4 py-4 text-base text-gray focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                        className="block w-full border border-stroke bg-white px-4 py-4 text-base text-gray focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                       />
                       {errors.fullName && (
-                        <p className="text-warning">
+                        <p className="text-red-500">
                           {errors.fullName.message}
                         </p>
                       )}
@@ -196,7 +201,6 @@ const ContactUs = () => {
                     <div className="mt-2">
                       <PhoneInput
                         country={"in"}
-                        value={phoneValue}
                         onChange={(value) => setValue("phone", value)}
                         inputProps={{
                           name: "phone",
@@ -205,7 +209,7 @@ const ContactUs = () => {
                         }}
                       />
                       {errors.phone && (
-                        <p className="text-warning">{errors.phone.message}</p>
+                        <p className="text-red-500">{errors.phone.message}</p>
                       )}
                     </div>
                   </div>
@@ -222,7 +226,7 @@ const ContactUs = () => {
                         className="block w-full  border border-stroke bg-white px-4 py-4 text-base text-gray focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                       />
                       {errors.email && (
-                        <p className="text-warning">{errors.email.message}</p>
+                        <p className="text-red-500">{errors.email.message}</p>
                       )}
                     </div>
                   </div>
@@ -239,7 +243,7 @@ const ContactUs = () => {
                         className="block w-full resize-none  border border-stroke bg-white px-4 py-4 text-base text-gray focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                       />
                       {errors.message && (
-                        <p className="text-warning">{errors.message.message}</p>
+                        <p className="text-red-500">{errors.message.message}</p>
                       )}
                     </div>
                   </div>

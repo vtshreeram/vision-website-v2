@@ -21,7 +21,7 @@ const services = [
   { img: img7, label: "Linehaul & Shuttle Services" },
   { img: img8, label: "First & Last Mile Delivery Services" },
   { img: img9, label: "Leasing Vehicle" },
-]; 
+];
 
 export const Services = () => {
   return (
@@ -31,14 +31,16 @@ export const Services = () => {
           key={idx}
           className="flex flex-col items-center bg-white  shadow-none overflow-hidden"
         >
-          <Image
-            src={service.img}
-            alt={service.label}
-            className="w-full h-full object-cover"
-            width={386}
-            height={386}
-          />
-          <div className="w-full bg-primary py-2  mt-0.5 flex justify-center">
+          <div className="overflow-hidden w-full">
+            <Image
+              src={service.img}
+              alt={service.label}
+              className="w-full h-full object-cover scale-105"
+              width={386}
+              height={386}
+            />
+          </div>
+          <div className="w-full bg-primary py-2 flex justify-center">
             <Typography
               variant="Bold_H6"
               className="text-white text-center text-base"

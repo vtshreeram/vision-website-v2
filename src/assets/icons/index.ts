@@ -1,3 +1,10 @@
+// import header icons
+export * from "./ico-mail"
+export * from "./ico-location"
+export * from "./ico-instagram-outline"
+export * from "./ico-twitter-outline"
+export * from "./ico-facebook-outline"
+export * from "./ico-linkedin-outline"
 
 // export partner logo
 export * from "./logo-spx";
@@ -22,4 +29,7 @@ export * from "./ico-twitter"
 export * from "./ico-vision"
 export * from "./ico-goals"
 export * from "./ico-mission"
+
+// export  icons
+export * from "./ico-track"
 

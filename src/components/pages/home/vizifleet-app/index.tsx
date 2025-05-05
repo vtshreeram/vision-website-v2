@@ -46,8 +46,8 @@ export const VizifleetApp = () => {
           }
           description="Lorem ipsum dolor sit amet consectetur. Dictum adipiscing orci in tincidunt. Sagittis pulvinar mattis."
         />
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
-          <div className="h-full  space-y-20">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 items-center">
+          <div className="h-full space-y-12 md:space-y-20 ">
             {featuresLeft.map((feature, index) => (
               <div key={index} className="text-center max-w-[281px] mx-auto">
                 <div className="flex justify-center">{feature.icon}</div>
@@ -60,15 +60,15 @@ export const VizifleetApp = () => {
               </div>
             ))}
           </div>
-          <div className="h-full  md:col-span-2">
+          <div className=" h-full  md:col-span-2 ">
             <Image
               src={centerImg}
               alt="center"
               height={530}
               width={538}
-              className="object-contain"
+              className="object-contain hidden md:block"
             />
-            <div className="text-center max-w-[281px] mx-auto mt-20">
+            <div className="text-center max-w-[281px] mx-auto md:mt-20">
               <div className="flex justify-center">
                 <IcoSafety />
               </div>
@@ -81,7 +81,7 @@ export const VizifleetApp = () => {
               </div>
             </div>
           </div>
-          <div className="h-full  space-y-20">
+          <div className="h-full  space-y-12 md:space-y-20">
             {featuresRight.map((feature, index) => (
               <div key={index} className="text-center max-w-[281px] mx-auto">
                 <div className="flex justify-center">{feature.icon}</div>

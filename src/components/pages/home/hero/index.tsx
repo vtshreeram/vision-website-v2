@@ -8,10 +8,12 @@ import Button from "@/components/ui/button";
 
 // import image
 import img from "@/assets/images/pages/home/hero/hero.webp";
+import Header from "@/components/template/header";
+import Link from "next/link";
 
 export const Hero = () => {
   return (
-    <section className="relative overflow-hidden flex items-center h-screen">
+    <section className="relative overflow-hidden flex items-center">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -22,25 +24,28 @@ export const Hero = () => {
           className="object-cover object-center w-full h-full"
           priority
         />
-     
       </div>
 
       {/* Content */}
       <div className="relative z-10 w-full global-padding-container ">
+        <Header />
         <div className=" max-w-7xl mx-auto flex flex-col justify-center">
-          <div className="max-w-2xl mt-24 mb-16">
+          <div className="max-w-2xl my-20 md:my-32 lg:my-40">
             <Typography
               variant="Bold_H1"
               className="text-white mb-4 leading-tight"
             >
-              Lorem ipsum dolor sit <br /> ametconsectetur. Arcu nec
+              Lorem ipsum dolor sit  ametconsectetur. Arcu nec
             </Typography>
             <Typography variant="Regular_H5" className="text-white mb-6">
               Lorem ipsum dolor sit amet consectetur. Mi elit nunc sed odio
               porta odio mi sodales. Id in vitae pharetra nisl justo massa.
             </Typography>
-            <div className="mt-14">
+            <div className="mt-8 md:mt-14 flex gap-4 md:gap-8">
               <Button variant="primary">Downloaded</Button>
+              <Link href={"/contact-us"}>
+              <Button variant="secondary" className="border-white text-white hover:bg-white hover:text-primary">Contact us</Button>
+              </Link>
             </div>
           </div>
         </div>
