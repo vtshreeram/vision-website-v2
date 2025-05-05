@@ -41,7 +41,7 @@ export const Hero = () => {
               Lorem ipsum dolor sit amet consectetur. Mi elit nunc sed odio
               porta odio mi sodales. Id in vitae pharetra nisl justo massa.
             </Typography>
-            <div className="mt-8 md:mt-14 flex gap-4 md:gap-8">
+            <div className="mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-8">
               <Button variant="primary">Downloaded</Button>
               <Link href={"/contact-us"}>
                 <Button
