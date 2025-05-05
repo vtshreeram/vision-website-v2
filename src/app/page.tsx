@@ -1,3 +1,4 @@
+"use client";
 // ** import component
 import {
   Count,

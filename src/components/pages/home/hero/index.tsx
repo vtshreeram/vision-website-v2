@@ -1,7 +1,15 @@
+"use client";
+
 // ** import core package
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+
+// ** import third party packages
+import { motion as m } from "framer-motion";
+
+// ** import motion variants
+import { fadeInDown } from "@/utils/motion-variant";
 
 // ** import component
 import Header from "@/components/template/header";
@@ -31,17 +39,30 @@ export const Hero = () => {
         <Header />
         <div className=" max-w-7xl mx-auto flex flex-col justify-center">
           <div className="max-w-2xl my-20 md:my-32 lg:my-40">
-            <Typography
-              variant="Bold_H1"
-              className="!text-white mb-4 text-shadow"
+            <m.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInDown}
             >
-              Lorem ipsum dolor sit ametconsectetur. Arcu nec
-            </Typography>
-            <Typography variant="Regular_H5" className="text-white mb-6">
-              Lorem ipsum dolor sit amet consectetur. Mi elit nunc sed odio
-              porta odio mi sodales. Id in vitae pharetra nisl justo massa.
-            </Typography>
-            <div className="mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-8">
+              <Typography
+                variant="Bold_H1"
+                className="!text-white mb-4 text-shadow"
+              >
+                Lorem ipsum dolor sit ametconsectetur. Arcu nec
+              </Typography>
+              <Typography variant="Regular_H5" className="text-white mb-6">
+                Lorem ipsum dolor sit amet consectetur. Mi elit nunc sed odio
+                porta odio mi sodales. Id in vitae pharetra nisl justo massa.
+              </Typography>
+            </m.div>
+            <m.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInDown}
+              className="mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-8"
+            >
               <Button variant="primary">Downloaded</Button>
               <Link href={"/contact-us"}>
                 <Button
@@ -51,7 +72,7 @@ export const Hero = () => {
                   Contact us
                 </Button>
               </Link>
-            </div>
+            </m.div>
           </div>
         </div>
       </div>

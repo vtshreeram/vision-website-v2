@@ -1,6 +1,14 @@
+"use client";
+
 // ** import core packages
 import React from "react";
 import Image from "next/image";
+
+// ** import third party packages
+import { motion as m } from "framer-motion";
+
+// ** import motion variants
+import { fadeInDown } from "@/utils/motion-variant";
 
 // ** import components
 import SectionHead from "@/components/shared/section-head";
@@ -8,12 +16,7 @@ import { Typography } from "@/components/ui/Typography";
 
 // ** import assets
 import centerImg from "@/assets/images/common/vizifleet-app/center-img.webp";
-import { 
-  IcoQuickRide, 
-  IcoSafety, 
-  IcoQrCode, 
-  IcoBooking 
-} from "@/assets/icons";
+import { IcoQuickRide, IcoSafety, IcoQrCode, IcoBooking } from "@/assets/icons";
 
 const featuresLeft = [
   {
@@ -56,7 +59,14 @@ export const VizifleetApp = () => {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 items-center">
           <div className="h-full space-y-12 md:space-y-20 ">
             {featuresLeft.map((feature, index) => (
-              <div key={index} className="text-center max-w-[281px] mx-auto">
+              <m.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInDown}
+                key={index}
+                className="text-center max-w-[281px] mx-auto"
+              >
                 <div className="flex justify-center">{feature.icon}</div>
                 <div className="mt-6">
                   <Typography variant="Medium_H5">{feature.title}</Typography>
@@ -64,10 +74,16 @@ export const VizifleetApp = () => {
                     {feature.desc}
                   </Typography>
                 </div>
-              </div>
+              </m.div>
             ))}
           </div>
-          <div className=" h-full  md:col-span-2 ">
+          <m.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInDown}
+            className=" h-full  md:col-span-2 "
+          >
             <Image
               src={centerImg}
               alt="center"
@@ -75,7 +91,13 @@ export const VizifleetApp = () => {
               width={538}
               className="object-contain hidden md:block"
             />
-            <div className="text-center max-w-[281px] mx-auto md:mt-20">
+            <m.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInDown}
+              className="text-center max-w-[281px] mx-auto md:mt-20"
+            >
               <div className="flex justify-center">
                 <IcoSafety />
               </div>
@@ -86,11 +108,18 @@ export const VizifleetApp = () => {
                   id quis in sed. Venenatis proin
                 </Typography>
               </div>
-            </div>
-          </div>
+            </m.div>
+          </m.div>
           <div className="h-full  space-y-12 md:space-y-20">
             {featuresRight.map((feature, index) => (
-              <div key={index} className="text-center max-w-[281px] mx-auto">
+              <m.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInDown}
+                key={index}
+                className="text-center max-w-[281px] mx-auto"
+              >
                 <div className="flex justify-center">{feature.icon}</div>
                 <div className="mt-6">
                   <Typography variant="Medium_H5">{feature.title}</Typography>
@@ -98,7 +127,7 @@ export const VizifleetApp = () => {
                     {feature.desc}
                   </Typography>
                 </div>
-              </div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -106,4 +135,3 @@ export const VizifleetApp = () => {
     </section>
   );
 };
-

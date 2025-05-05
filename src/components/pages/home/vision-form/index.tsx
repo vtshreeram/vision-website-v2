@@ -1,12 +1,17 @@
 "use client";
+
 // ** import core packages
 import Image from "next/image";
 import React, { useState } from "react";
-import { z } from "zod";
 
 // ** import third party packages
+import { motion as m } from "framer-motion";
+import { z } from "zod";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+
+// ** import motion variants
+import { fadeInDown } from "@/utils/motion-variant";
 
 // ** import components
 import Button from "@/components/ui/button";
@@ -84,12 +89,24 @@ export const VisionForm = () => {
       <div className="relative z-10 w-full global-padding-container py-16 md:py-20 lg:py-32">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
           {/* Left: Logo and tagline */}
-          <div className="hidden lg:flex lg:col-span-2  items-center md:items-start">
+          <m.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInDown}
+            className="hidden lg:flex lg:col-span-2  items-center md:items-start"
+          >
             <LogoLarge />
-          </div>
+          </m.div>
 
           {/* Right: Tabs and Form */}
-          <div className=" lg:col-span-3 bg-primary/20  w-full   md:p-10">
+          <m.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInDown}
+            className=" lg:col-span-3 bg-primary/20  w-full   md:p-10"
+          >
             {/* Tabs */}
             <div className="flex bg-white">
               {TABS.map((tab) => (
@@ -194,7 +211,7 @@ export const VisionForm = () => {
                 Request
               </Button>
             </form>
-          </div>
+          </m.div>
         </div>
       </div>
     </section>

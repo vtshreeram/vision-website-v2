@@ -1,7 +1,13 @@
-
+"use client";
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 import SectionHead from "@/components/shared/section-head";
+
+// ** import third party packages
+import { motion as m } from "framer-motion";
+
+// ** import motion variants
+import { fadeInDown } from "@/utils/motion-variant";
 
 // ** import icons
 import { IcoGoals, IcoMission, IcoVision } from "@/assets/icons";
@@ -42,18 +48,25 @@ export const VisionMissionGoals = () => {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
           {cards.map((card, idx) => (
-            <div
+            <m.div
               key={idx}
-              className={`bg-white px-8 py-16 flex flex-col items-center text-center border border-stroke hover:border-primary transition-all duration-300`}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInDown}
             >
-              {card.icon}
-              <Typography variant="Bold_H4" className="mt-4 text-foreground">
-                {card.title}
-              </Typography>
-              <Typography variant="Regular_H6" className="text-gray mt-4">
-                {card.desc}
-              </Typography>
-            </div>
+              <div
+                className={`bg-white px-8 py-16 flex flex-col items-center text-center border border-stroke hover:border-primary transition-all duration-300`}
+              >
+                {card.icon}
+                <Typography variant="Bold_H4" className="mt-4 text-foreground">
+                  {card.title}
+                </Typography>
+                <Typography variant="Regular_H6" className="text-gray mt-4">
+                  {card.desc}
+                </Typography>
+              </div>
+            </m.div>
           ))}
         </div>
       </div>

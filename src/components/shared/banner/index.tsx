@@ -5,6 +5,12 @@ import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+// ** import third party packages
+import { motion as m } from "framer-motion";
+
+// ** import motion variants
+import { fadeInDown } from "@/utils/motion-variant";
+
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
@@ -35,7 +41,13 @@ export const Banner: FC<BannerProps> = ({
         />
       </div>
 
-      <div className="relative mx-auto max-w-7xl">
+      <m.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInDown}
+        className="relative mx-auto max-w-7xl"
+      >
         <div className="max-w-lg">
           <Typography
             variant="SemiBold_H3"
@@ -55,7 +67,7 @@ export const Banner: FC<BannerProps> = ({
             </Link>
           </div>
         </div>
-      </div>
+      </m.div>
     </section>
   );
 };

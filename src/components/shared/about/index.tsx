@@ -1,6 +1,14 @@
+"use client";
+
 // ** import core packages
 import Image from "next/image";
 import Link from "next/link";
+
+// ** import third party packages
+import { motion as m } from "framer-motion";
+
+// ** import motion variants
+import { fadeInDown } from "@/utils/motion-variant";
 
 // ** import components
 import { Typography } from "@/components/ui/Typography";
@@ -16,7 +24,13 @@ export const AboutUs = ({ isAboutUs = false }: { isAboutUs?: boolean }) => {
       className="py-16 md:py-20 bg-background global-padding-container"
     >
       <div className="mx-auto max-w-7xl  grid grid-cols-1 gap-10 md:gap-20 md:grid-cols-2 items-center">
-        <div className="flex justify-center py-10 md:py-0">
+        <m.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInDown}
+          className="flex justify-center py-10 md:py-0"
+        >
           <Image
             src={image}
             height={150}
@@ -25,8 +39,13 @@ export const AboutUs = ({ isAboutUs = false }: { isAboutUs?: boolean }) => {
             className="object-contain"
             placeholder="blur"
           />
-        </div>
-        <div>
+        </m.div>
+        <m.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInDown}
+        >
           <Typography
             variant="SemiBold_H3"
             className="text-secondary mt-2 block"
@@ -63,7 +82,7 @@ export const AboutUs = ({ isAboutUs = false }: { isAboutUs?: boolean }) => {
               </Button>
             </Link>
           </div>
-        </div>
+        </m.div>
       </div>
     </section>
   );
