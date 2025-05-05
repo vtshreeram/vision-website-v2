@@ -46,7 +46,7 @@ export const Count = () => {
           >
             Lorem ipsum dolor <br /> sit viverra ac.
           </Typography>
-          <Link href="/contact">
+          <Link href="/contact-us">
             <Button
               variant="secondary"
               className="!bg-white !text-primary !font-bold !rounded-none px-8 py-3"
