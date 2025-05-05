@@ -18,6 +18,7 @@ import { Typography } from "@/components/ui/Typography";
 import { cn } from "@/lib/utils";
 import LogoHeader from "@/assets/logo-header";
 import HeaderTop from "./header-top";
+import LogoFooter from "@/assets/logo-footer";
 
 // motion variants
 const variants = {
@@ -233,7 +234,7 @@ const Header = () => {
               className="flex gap-3 items-center"
               aria-label="Vision Home"
             >
-              <LogoHeader />
+              <LogoFooter className="h-auto w-[160px]" />
             </Link>
           </div>
 
