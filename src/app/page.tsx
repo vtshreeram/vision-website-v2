@@ -12,10 +12,10 @@ const Page = () => {
   return (
     <main>
       <Hero />
-      <VisionForm />
       <Partner />
       <AboutUs />
       <VizifleetApp />
+      <VisionForm />
       <Count />
       <OurServices />
       <Banner />
