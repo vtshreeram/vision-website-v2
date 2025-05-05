@@ -29,7 +29,7 @@ const SectionHead = ({
         {title}
       </Typography>
       <Typography
-        variant="Regular_H6"
+        variant="Regular_H5"
         className={cn(` block mt-2 text-gray`, descriptionClassName)}
       >
         {description}
