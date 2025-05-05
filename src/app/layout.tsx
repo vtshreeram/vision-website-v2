@@ -15,7 +15,7 @@ const lexend = Lexend({
   subsets: ["latin"],
 });
 
-const url = "https://visionstransport.com.my"; 
+const url = "https://vision-website-2.vercel.app"; 
 export const metadata: Metadata = {
   robots: {
     index: true,
