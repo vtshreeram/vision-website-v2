@@ -18,46 +18,53 @@ import { Typography } from "@/components/ui/Typography";
 import centerImg from "@/assets/images/common/vizifleet-app/center-img.webp";
 import { IcoQuickRide, IcoSafety, IcoQrCode, IcoBooking } from "@/assets/icons";
 
-const featuresLeft = [
-  {
-    icon: <IcoQuickRide />,
-    title: "Quick ride",
-    desc: "Lorem ipsum dolor sit amet consectetur. Tristique lacus nec in id quis in sed. Venenatis proin",
-  },
-  {
-    icon: <IcoSafety />,
-    title: "Safety",
-    desc: "Lorem ipsum dolor sit amet consectetur. Tristique lacus nec in id quis in sed. Venenatis proin",
-  },
-];
-
-const featuresRight = [
-  {
-    icon: <IcoQrCode />,
-    title: "QR Code scanning",
-    desc: "Lorem ipsum dolor sit amet consectetur. Tristique lacus nec in id quis in sed. Venenatis proin",
-  },
-  {
-    icon: <IcoBooking />,
-    title: "Quick and easy booking",
-    desc: "Lorem ipsum dolor sit amet consectetur. Tristique lacus nec in id quis in sed. Venenatis proin",
-  },
-];
-
 export const VizifleetApp = () => {
+  const featuresLeft = [
+    {
+      icon: <IcoQuickRide />,
+      title: "Real-Time GPS Tracking",
+      desc: "Monitor exact cargo location with live updates every 30 seconds",
+    },
+    {
+      icon: <IcoSafety />,
+      title: "Custom Order Management",
+      desc: "Tailored workflows that match your specific business requirements",
+    },
+  ];
+
+  const featuresRight = [
+    {
+      icon: <IcoQrCode />,
+      title: "QR Code scanning",
+      desc: "Instant proof of pickup and delivery with digital documentation",
+    },
+    {
+      icon: <IcoBooking />,
+      title: "Quick and easy booking",
+      desc: "Schedule shipments in under 2 minutes through our intuitive interface",
+    },
+  ];
+
   return (
     <section className="py-16 md:py-20 global-padding-container">
       <div className="mx-auto max-w-7xl">
         <SectionHead
           title={
             <>
-              Our <span className="text-primary uppercase">VIZFLEET APP</span>
+              Smarter Fleet Management at{" "}
+              <span className="text-primary uppercase">Your Fingertips</span>
             </>
           }
-          description="Lorem ipsum dolor sit amet consectetur. Dictum adipiscing orci in tincidunt. Sagittis pulvinar mattis."
+          description={
+            <>
+              {" "}
+              VizFleet is designed to simplify logistics with modern <br />{" "}
+              tools that keep your fleet running smoothly.
+            </>
+          }
         />
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 items-center">
-          <div className="h-full space-y-12 md:space-y-20 ">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 !items-center">
+          <div className=" space-y-12 md:space-y-20 ">
             {featuresLeft.map((feature, index) => (
               <m.div
                 initial="hidden"
@@ -82,8 +89,27 @@ export const VizifleetApp = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInDown}
-            className=" h-full  md:col-span-2 "
+            className=" h-full  md:col-span-2 space-y-8 md:space-y-0"
           >
+            <m.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInDown}
+              className="text-center max-w-[281px] mx-auto md:mb-20"
+            >
+              <div className="flex justify-center">
+                <IcoSafety />
+              </div>
+              <div className="">
+                <Typography variant="Medium_H5">
+                  Automated Notifications
+                </Typography>
+                <Typography variant="Regular_H6" className="mt-4 text-gray">
+                  Keep customers informed with automatic delivery updates
+                </Typography>
+              </div>
+            </m.div>
             <Image
               src={centerImg}
               alt="center"
@@ -102,15 +128,17 @@ export const VizifleetApp = () => {
                 <IcoSafety />
               </div>
               <div className="mt-6">
-                <Typography variant="Medium_H5">Safety</Typography>
+                <Typography variant="Medium_H5">
+                  Performance Analytics
+                </Typography>
                 <Typography variant="Regular_H6" className="mt-4 text-gray">
-                  Lorem ipsum dolor sit amet consectetur. Tristique lacus nec in
-                  id quis in sed. Venenatis proin
+                  Comprehensive reporting and insights for continuous
+                  optimization
                 </Typography>
               </div>
             </m.div>
           </m.div>
-          <div className="h-full  space-y-12 md:space-y-20">
+          <div className="  space-y-12 md:space-y-20">
             {featuresRight.map((feature, index) => (
               <m.div
                 initial="hidden"

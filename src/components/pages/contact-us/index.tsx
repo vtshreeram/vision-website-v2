@@ -66,8 +66,8 @@ const ContactUs = () => {
                 variant="Regular_H6"
                 className={`mt-4 block text-gray`}
               >
-                We&apos;re here to answer your questions and assist with your
-                requirements.
+                We’re here to assist with your logistics needs <br />
+                and provide the right solutions for your business.
               </Typography>
             </div>
 
@@ -100,9 +100,8 @@ const ContactUs = () => {
                   variant="Regular_H6"
                   className={`mt-4  block text-foreground`}
                 >
-                  No 2A-1 Jalan Kemuning Prima C35/C, Taman Kemuning Utama,
-                  <br />
-                  Seksyen 33, 40400 Shah Alam Selangor
+                  No 2A-1 Jalan Kemuning Prima <br /> C33/C, Taman Kemuning
+                  Utama, <br /> Seksyen 33, 40400 <br /> Shah Alam Selangor
                 </Typography>
               </div>
               <div>

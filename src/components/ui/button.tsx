@@ -26,7 +26,7 @@ const Button: FC<ButtonProps> = ({
         // Conditionally apply styles based on the variant
         variant === "primary"
           ? "border border-primary hover:bg-primary/80 bg-primary text-white "
-          : " border border-primary hover:bg-primary/20 bg-transparent text-primary ",
+          : " border border-primary hover:bg-primary/5 bg-transparent text-primary ",
         "h-10 px-4 py-2 active:scale-95 duration-300 cursor-pointer text-sm md:text-base font-medium",
 
         className

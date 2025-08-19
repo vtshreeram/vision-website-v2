@@ -57,8 +57,7 @@ const Footer = () => {
             <LogoFooter />
 
             <Typography variant="Regular_H6" className={`mt-4 text-gray`}>
-              Revolutionizing logistics technology, Vizfleet offers cutting-edge
-              solutions
+            Driving logistics excellence with VizFleet’s advanced technology, delivering smart, scalable, and reliable solutions for every business.
             </Typography>
             <div className="mt-4">
               <Typography
@@ -201,8 +200,7 @@ const Footer = () => {
 
               <div className="mt-6 md:max-w-xs">
                 <Typography variant="Regular_H6" className="mb-4 text-gray">
-                  Stay ahead with our newsletter. Get updates, insights, and
-                  special offers directly to your inbox.
+                Subscribe to our newsletter for the latest industry updates, insights, and exclusive offers.
                 </Typography>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div>

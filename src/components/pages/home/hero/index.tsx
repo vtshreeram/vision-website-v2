@@ -51,11 +51,12 @@ export const Hero = () => {
                 variant="Bold_H1"
                 className="!text-white mb-4 text-shadow"
               >
-                Lorem ipsum dolor sit ametconsectetur. Arcu nec
+                Cut Fleet Costs by 20% with Smart Logistics Automation
               </Typography>
               <Typography variant="Regular_H5" className="text-white mb-6">
-                Lorem ipsum dolor sit amet consectetur. Mi elit nunc sed odio
-                porta odio mi sodales. Id in vitae pharetra nisl justo massa.
+                VizFleet helps transport businesses in Malaysia & Singapore
+                streamline operations with real-time tracking, automated
+                payments, and seamless invoicing.
               </Typography>
             </m.div>
             <m.div
@@ -65,7 +66,7 @@ export const Hero = () => {
               variants={fadeInDown}
               className="mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-6"
             >
-              <Button variant="primary">Downloaded</Button>
+              <Button variant="primary">Book Free Demo</Button>
               <Link href={"/contact-us"}>
                 <Button
                   variant="secondary"

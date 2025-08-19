@@ -24,7 +24,7 @@
 
 
 .input-field {
-  @apply block w-full h-10 outline-none file:inline-flex file:h-7 file:border-0 px-3 py-1 text-gray bg-white border border-stroke focus:outline-none focus:ring-primary focus:border-primary text-sm md:text-base;
+  @apply block w-full h-9 outline-none file:inline-flex file:h-7 file:border-0 px-3 py-1 text-gray bg-white border border-stroke focus:outline-none focus:ring-primary focus:border-primary text-base md:text-sm;
 }
 
 .global-padding-container {

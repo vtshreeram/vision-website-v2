@@ -24,8 +24,8 @@ interface BannerProps {
 }
 
 export const Banner: FC<BannerProps> = ({
-  title = "Ready to Transform Your Fleet Management?",
-  subTitle = "Take control of your logistics with Vizfleet’s cutting-edge technology. Simplify operations, boost efficiency, and get real-time insights on deliveries and driver performance.",
+  title = "Ready to Transform Your Logistics Operations?",
+  subTitle = "Trusted by 3,500+ companies, Visions Transport delivers smart logistics with VIZFLEET tech and 17+ years of proven expertise.",
 }) => {
   return (
     <section
@@ -61,8 +61,11 @@ export const Banner: FC<BannerProps> = ({
 
           <div className="mt-8 ">
             <Link href={"/contact-us"}>
-              <Button variant="primary" className="bg-white text-primary hover:bg-white">
-                Contact us
+              <Button
+                variant="primary"
+                className="bg-white text-primary hover:bg-white"
+              >
+                Book Free Demo
               </Button>
             </Link>
           </div>

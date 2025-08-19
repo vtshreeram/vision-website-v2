@@ -112,7 +112,7 @@ export const VisionForm = () => {
               {TABS.map((tab) => (
                 <Button
                   key={tab.value}
-                  className={`flex-1  active:scale-100  ${
+                  className={`flex-1 h-auto md:h-10 active:scale-100  ${
                     activeTab === tab.value
                       ? ""
                       : "bg-white text-primary hover:bg-white hover:text-primary border-stroke"
@@ -178,7 +178,7 @@ export const VisionForm = () => {
                         value={field.value}
                         onValueChange={field.onChange}
                       >
-                        <SelectTrigger className="w-full border border-stroke px-3 py-1 h-10 text-base focus:outline-none focus:border-primary bg-white">
+                        <SelectTrigger className="w-full border border-stroke px-3 py-1 h-9 text-base focus:outline-none focus:border-primary bg-white">
                           <SelectValue placeholder="Select Service" />
                         </SelectTrigger>
                         <SelectContent>

@@ -1,8 +1,5 @@
 "use client";
 
-// ** import core package
-import Link from "next/link";
-
 // ** import third party packages
 import { motion as m } from "framer-motion";
 
@@ -14,10 +11,10 @@ import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
 
 const stats = [
-  { value: "10000+", label: "Project Done" },
-  { value: "3500+", label: "Satisfied Clients" },
+  { value: "10000+", label: "Projects Delivered" },
+  { value: "3500+", label: "Happy Clients" },
   { value: "100+", label: "Active Employee" },
-  { value: "100+", label: "Total Support" },
+  { value: "100+", label: "Support Partners" },
 ];
 
 export const Count = () => {
@@ -64,16 +61,12 @@ export const Count = () => {
             variant="Bold_H2"
             className="text-white mb-8 md:mb-0 md:text-4xl"
           >
-            Lorem ipsum dolor <br /> sit viverra ac.
+            Scale Your Logistics Today
           </Typography>
-          <Link href="/contact-us">
-            <Button
-              variant="secondary"
-              className="!bg-white !text-primary "
-            >
-              Contact us
-            </Button>
-          </Link>
+          <Button variant="secondary" className="!bg-white !text-primary ">
+            Book Free Demo
+          </Button>
+          
         </m.div>
       </div>
     </section>

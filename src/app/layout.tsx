@@ -7,9 +7,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// ** import components
-import Footer from "@/components/template/footer";
-
 const lexend = Lexend({
   variable: "--font-lexend",
   subsets: ["latin"],
@@ -87,10 +84,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexend.className} antialiased`}>
-        {children}
-        <Footer />
-      </body>
+      <body className={`${lexend.className} antialiased`}>{children}</body>
     </html>
   );
 }

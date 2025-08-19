@@ -127,7 +127,7 @@ export const Typography: FC<TypographyProps> = ({
       case "SemiBold_H5":
       case "Medium_H5":
       case "Regular_H5":
-        fontSizeClass = "text-[16px] md:text-[20px]";
+        fontSizeClass = "text-base md:text-[20px]";
         lineHeightClass = "leading-snug md:leading-snug";
         letterSpacingClass = "tracking-normal";
         break;
@@ -136,7 +136,7 @@ export const Typography: FC<TypographyProps> = ({
       case "Medium_H6":
       case "Regular_H6":
         fontSizeClass = "text-base";
-        lineHeightClass = "leading-snug md:leading-relaxed";
+        lineHeightClass = "leading-snug md:leading-6";
         letterSpacingClass = "tracking-normal";
         break;
       case "Bold_H7":

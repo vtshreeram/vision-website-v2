@@ -41,9 +41,9 @@ const Head: React.FC<HeadProps> = ({
         />
       </div>
 
-      <div className="relative mx-auto max-w-7xl ">
+      <div className="relative">
         <Header />
-        <div className="py-16 lg:py-32">
+        <div className="py-16 lg:py-32 mx-auto max-w-7xl ">
           <Typography
             variant="Bold_H1"
             className={`block  text-white text-3xl md:text-4xl`}

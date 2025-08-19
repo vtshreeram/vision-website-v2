@@ -4,6 +4,7 @@ import Head from "@/components/shared/head";
 
 // ** import images
 import headBg from "@/assets/images/pages/services/head-bg.webp";
+import { VizifleetApp } from "@/components/pages/home";
 
 const ServicesPage = () => {
   return (
@@ -14,6 +15,7 @@ const ServicesPage = () => {
           <Services />
         </div>
       </section>
+      <VizifleetApp />
       <Banner />
     </main>
   );
