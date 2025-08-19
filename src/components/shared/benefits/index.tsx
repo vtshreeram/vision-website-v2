@@ -38,7 +38,7 @@ export const Benefits = ({ title, description, features }: BenefitsProps) => {
               viewport={{ once: true }}
               variants={fadeInDown}
               key={index}
-              className="text-center max-w-[281px]"
+              className="text-center max-w-[300px]"
             >
               <div className="flex justify-center text-primary">
                 {feature.icon}

@@ -40,7 +40,7 @@ export const Hero = () => {
       <div className="relative z-10 w-full global-padding-container ">
         <Header />
         <div className=" max-w-7xl mx-auto flex flex-col justify-center">
-          <div className="max-w-2xl my-20 md:my-32 lg:my-40">
+          <div className="max-w-3xl my-20 md:my-32 lg:my-40">
             <m.div
               initial="hidden"
               whileInView="visible"
@@ -53,7 +53,7 @@ export const Hero = () => {
               >
                 Cut Fleet Costs by 20% with Smart Logistics Automation
               </Typography>
-              <Typography variant="Regular_H5" className="text-white mb-6">
+              <Typography variant="Regular_H5" className="text-white mb-6 lg:max-w-[85%]">
                 VizFleet helps transport businesses in Malaysia & Singapore
                 streamline operations with real-time tracking, automated
                 payments, and seamless invoicing.

@@ -12,36 +12,37 @@ import {
   IcoGoals,
   IcoMission,
   IcoVision,
-  IcoQuickRide,
-  IcoSafety,
-  IcoQrCode,
-  IcoBooking,
+  IcoManagement,
+  IcoLeadership,
+  IcoWorkforce,
+  IcoSupport,
+  IcoDevelopment,
 } from "@/assets/icons";
 
 const AboutUsPage = () => {
   const features = [
     {
-      icon: <IcoQuickRide />,
+      icon: <IcoManagement />,
       title: "Professional Management",
       desc: "Decades of experience guiding growth with strategic, data-driven leadership.",
     },
     {
-      icon: <IcoSafety />,
+      icon: <IcoLeadership />,
       title: "Regional Leadership",
       desc: "Local expertise combined with corporate systems for consistent delivery.",
     },
     {
-      icon: <IcoQrCode />,
+      icon: <IcoWorkforce />,
       title: "Dedicated Workforce",
       desc: "100+ skilled employees ensuring reliable, efficient daily operations.",
     },
     {
-      icon: <IcoBooking />,
+      icon: <IcoSupport />,
       title: "Customer Support Team",
       desc: "24/7 assistance across channels delivering quick, dependable client support.",
     },
     {
-      icon: <IcoQrCode />,
+      icon: <IcoDevelopment />,
       title: "Continuous Development",
       desc: "Ongoing training and innovation keep our teams industry-ready.",
     },

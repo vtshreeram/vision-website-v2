@@ -16,17 +16,24 @@ import { Typography } from "@/components/ui/Typography";
 
 // ** import assets
 import centerImg from "@/assets/images/common/vizifleet-app/center-img.webp";
-import { IcoQuickRide, IcoSafety, IcoQrCode, IcoBooking } from "@/assets/icons";
+import {
+  IcoQrCode,
+  IcoBooking,
+  IcoGpsTracking,
+  IcoCustomerOrder,
+  IcoNotification,
+  IcoPerformance,
+} from "@/assets/icons";
 
 export const VizifleetApp = () => {
   const featuresLeft = [
     {
-      icon: <IcoQuickRide />,
+      icon: <IcoGpsTracking />,
       title: "Real-Time GPS Tracking",
       desc: "Monitor exact cargo location with live updates every 30 seconds",
     },
     {
-      icon: <IcoSafety />,
+      icon: <IcoCustomerOrder />,
       title: "Custom Order Management",
       desc: "Tailored workflows that match your specific business requirements",
     },
@@ -99,9 +106,9 @@ export const VizifleetApp = () => {
               className="text-center max-w-[281px] mx-auto md:mb-20"
             >
               <div className="flex justify-center">
-                <IcoSafety />
+                <IcoNotification />
               </div>
-              <div className="">
+              <div className="mt-6">
                 <Typography variant="Medium_H5">
                   Automated Notifications
                 </Typography>
@@ -125,7 +132,7 @@ export const VizifleetApp = () => {
               className="text-center max-w-[281px] mx-auto md:mt-20"
             >
               <div className="flex justify-center">
-                <IcoSafety />
+                <IcoPerformance />
               </div>
               <div className="mt-6">
                 <Typography variant="Medium_H5">
@@ -138,7 +145,7 @@ export const VizifleetApp = () => {
               </div>
             </m.div>
           </m.div>
-          <div className="  space-y-12 md:space-y-20">
+          <div className="space-y-12 md:space-y-20">
             {featuresRight.map((feature, index) => (
               <m.div
                 initial="hidden"

@@ -1,6 +1,7 @@
 "use client";
+
+// ** import components
 import { VisionMissionGoals } from "@/components/pages/about-us";
-// ** import component
 import {
   Count,
   VisionForm,
@@ -13,57 +14,59 @@ import WhyChoose from "@/components/shared/why-choose";
 
 // ** import icons
 import {
-  IcoGoals,
-  IcoMission,
-  IcoVision,
-  IcoQuickRide,
-  IcoSafety,
-  IcoQrCode,
-  IcoBooking,
+ 
+  IcoAssessment,
+  IcoSetup,
+  IcoLaunch,
+  IcoOperations,
+  IcoLicense,
+  IcoApproval,
+  IcoMember,
+  IcoCertified,
 } from "@/assets/icons";
 
 const Page = () => {
   const features = [
     {
-      icon: <IcoQuickRide />,
+      icon: <IcoOperations />,
       title: "ISO Certified Operations",
       desc: "International quality benchmarks for safe, reliable logistics.",
     },
     {
-      icon: <IcoSafety />,
+      icon: <IcoLicense />,
       title: "Malaysia Transport License",
       desc: "Licensed operations ensuring full national transport compliance.",
     },
     {
-      icon: <IcoQrCode />,
+      icon: <IcoApproval />,
       title: "Singapore Cross-Border Approval",
       desc: "Seamless deliveries enabled with certified cross-border licensing.",
     },
     {
-      icon: <IcoBooking />,
+      icon: <IcoMember />,
       title: "Freight Association Member",
       desc: "Adhering to recognized global freight and logistics standards.",
     },
     {
-      icon: <IcoQrCode />,
+      icon: <IcoCertified />,
       title: "Data Security Certified",
       desc: "Protecting every shipment with strict audit-ready compliance.",
     },
   ];
-  
-  const cardsData = [
+
+  const visionMission = [
     {
-      icon: <IcoVision />,
+      icon: <IcoAssessment />,
       title: "Complimentary Assessment",
       desc: "Contact our logistics experts for a comprehensive analysis of your current operations. We’ll identify opportunities for improvement, cost savings, and efficiency gains specific to your business requirements.",
     },
     {
-      icon: <IcoMission />,
+      icon: <IcoSetup />,
       title: "VIZFLEET Platform Setup",
       desc: "Our technical team provides complete setup and integration support, including staff training, system configuration, and testing to ensure seamless operation from day one.",
     },
     {
-      icon: <IcoGoals />,
+      icon: <IcoLaunch />,
       title: "Launch and Scale",
       desc: "Begin with pilot routes to demonstrate value and gradually expand coverage based on proven performance. Our dedicated account management team ensures continuous optimization and support.",
     },
@@ -76,7 +79,7 @@ const Page = () => {
       <AboutUs />
       <VizifleetApp />
       <VisionMissionGoals
-        cardsData={cardsData}
+        cardsData={visionMission}
         sectionTitle={
           <>
             Get Started with{" "}
