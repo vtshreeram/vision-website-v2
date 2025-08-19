@@ -41,8 +41,7 @@ export const Services = () => {
       {services.map((service, idx) => (
         <m.div
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          animate="visible"
           variants={fadeInDown}
           key={idx}
           className="flex flex-col items-center bg-white  shadow-none overflow-hidden"
@@ -54,6 +53,9 @@ export const Services = () => {
               className="w-full h-full object-cover scale-105"
               width={386}
               height={386}
+              quality={85}
+              loading="lazy"
+              placeholder="blur"
             />
           </div>
           <div className="w-full bg-primary py-2 flex justify-center">

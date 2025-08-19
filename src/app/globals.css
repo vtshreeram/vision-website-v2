@@ -23,9 +23,11 @@
 }
 
 
+.input-field {
+  @apply block w-full h-10 outline-none file:inline-flex file:h-7 file:border-0 px-3 py-1 text-gray bg-white border border-stroke focus:outline-none focus:ring-primary focus:border-primary text-sm md:text-base;
+}
 
-
-.global-padding-container{
+.global-padding-container {
   @apply px-4 sm:px-6 lg:px-8;
 }
 
@@ -51,11 +53,11 @@
 .form-control {
   font-family: Lexend, Lexend Fallback !important;
   border: 1px solid #E3E3E3 !important;
-  color: var(--foreground) !important;
+  color: var(--color-gray) !important;
   border-radius: 0px !important;
-  padding-left: 70px !important;
+  padding-left: 60px !important;
   width: 100% !important;
-  height: 55px !important;
+  height: 40px !important;
   font-size: 16px !important;
 }
 
@@ -67,7 +69,12 @@
   background: none !important;
   border-radius: 0 !important;
   border: 0 !important;
-  left: 16px !important;
-  top: -5px !important;
+  left: 12px !important;
+  top: -9px !important;
 }
 
+@media screen and (max-width: 768px) {
+  .form-control {
+    font-size: 14px !important;
+  }
+}

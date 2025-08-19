@@ -15,7 +15,7 @@ const lexend = Lexend({
   subsets: ["latin"],
 });
 
-const url = "https://vision-website-2.vercel.app"; 
+const url = "https://vision-website-2.vercel.app";
 export const metadata: Metadata = {
   robots: {
     index: true,
@@ -73,6 +73,10 @@ export const metadata: Metadata = {
     description:
       "Visions Transport delivers reliable logistics, bonded and non-bonded trucking, warehousing, and distribution services across Malaysia and Singapore.",
     images: [`${url}/og-img.png`],
+  },
+  other: {
+    "Content-Security-Policy":
+      "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self';",
   },
 };
 

@@ -78,7 +78,7 @@ const Footer = () => {
               </Typography>
             </div>
             <div className="flex gap-4 mt-6">
-              <Link href={config.TWITTER_URL}   >
+              <Link href={config.TWITTER_URL}>
                 <IcoTwitter />
               </Link>
               <Link href={config.FACEBOOK_URL}>
@@ -209,7 +209,7 @@ const Footer = () => {
                     <input
                       {...register("email")}
                       type="text"
-                      className="w-full  border border-stroke focus:border-primary focus:outline-none focus:ring-primary py-3 px-4 "
+                      className="input-field"
                       placeholder="Enter your email address "
                     />
                     {errors.email && (

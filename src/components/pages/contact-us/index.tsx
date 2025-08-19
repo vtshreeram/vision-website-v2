@@ -186,7 +186,7 @@ const ContactUs = () => {
                         type="text"
                         {...register("fullName")}
                         placeholder="Enter your full name"
-                        className="block w-full border border-stroke bg-white px-4 py-4 text-base text-gray focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                        className="input-field"
                       />
                       {errors.fullName && (
                         <p className="text-red-500">
@@ -225,7 +225,7 @@ const ContactUs = () => {
                         type="email"
                         {...register("email")}
                         placeholder="Enter your email"
-                        className="block w-full  border border-stroke bg-white px-4 py-4 text-base text-gray focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                        className="input-field"
                       />
                       {errors.email && (
                         <p className="text-red-500">{errors.email.message}</p>
@@ -242,7 +242,7 @@ const ContactUs = () => {
                         {...register("message")}
                         placeholder="Write us your question here..."
                         rows={4}
-                        className="block w-full resize-none  border border-stroke bg-white px-4 py-4 text-base text-gray focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                        className="block w-full resize-none outline-none px-3 py-1 text-sm md:text-base text-gray bg-white border border-stroke focus:outline-none focus:ring-primary focus:border-primary"
                       />
                       {errors.message && (
                         <p className="text-red-500">{errors.message.message}</p>

@@ -26,11 +26,13 @@ export const Hero = () => {
       <div className="absolute inset-0 z-0">
         <Image
           src={img}
-          alt="Hero image"
+          alt="Visions Transport logistics fleet on the road"
           fill
           placeholder="blur"
           className="object-cover object-center w-full h-full"
-          priority
+          priority={true}
+          quality={95}
+          sizes="100vw"
         />
       </div>
 
@@ -61,7 +63,7 @@ export const Hero = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInDown}
-              className="mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-8"
+              className="mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-6"
             >
               <Button variant="primary">Downloaded</Button>
               <Link href={"/contact-us"}>

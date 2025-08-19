@@ -67,6 +67,8 @@ export const CompanyLogo = () => {
                 width={171}
                 height={90}
                 loading="lazy"
+                quality={80}
+                placeholder="blur"
               />
             </m.div>
           ))}
@@ -90,6 +92,8 @@ export const CompanyLogo = () => {
                 width={171}
                 height={90}
                 loading="lazy"
+                quality={80}
+                placeholder="blur"
               />
             </m.div>
           ))}
@@ -113,6 +117,8 @@ export const CompanyLogo = () => {
                 width={171}
                 height={90}
                 loading="lazy"
+                quality={80}
+                placeholder="blur"
               />
             </m.div>
           ))}

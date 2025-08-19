@@ -68,16 +68,16 @@ export const AboutUs = ({ isAboutUs = false }: { isAboutUs?: boolean }) => {
             ))}
           </div>
 
-          <div className="mt-6 md:mt-8 flex flex-wrap gap-x-6 md:gap-x-8 ">
+          <div className="mt-6 md:mt-8 flex flex-wrap gap-x-6 md:gap-x-6 ">
             {!isAboutUs && (
               <Link href={"/about-us"}>
-                <Button variant="primary" className="w-[180px]">
+                <Button variant="primary" className="w-[160px]">
                   Explore
                 </Button>
               </Link>
             )}
             <Link href={"/contact-us"}>
-              <Button variant="secondary" className="w-[180px]">
+              <Button variant="secondary" className="w-[160px]">
                 Talk to us
               </Button>
             </Link>

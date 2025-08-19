@@ -85,6 +85,10 @@ const Gallery = () => {
                   alt={image.alt}
                   fill
                   className="object-cover transform hover:scale-105 transition-transform duration-500"
+                  quality={85}
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  loading="lazy"
+                  placeholder="blur"
                 />
               </div>
             </m.div>

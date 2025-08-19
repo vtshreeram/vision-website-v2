@@ -69,7 +69,7 @@ export const Count = () => {
           <Link href="/contact-us">
             <Button
               variant="secondary"
-              className="!bg-white !text-primary !font-bold  px-8 py-3"
+              className="!bg-white !text-primary "
             >
               Contact us
             </Button>

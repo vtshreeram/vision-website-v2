@@ -61,7 +61,7 @@ export const Banner: FC<BannerProps> = ({
 
           <div className="mt-8 ">
             <Link href={"/contact-us"}>
-              <Button variant="primary" className="bg-white text-primary">
+              <Button variant="primary" className="bg-white text-primary hover:bg-white">
                 Contact us
               </Button>
             </Link>

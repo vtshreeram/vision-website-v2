@@ -3,8 +3,8 @@ export const config = {
   PHONE: "tel:+9195959 95959",
 
   // Social Links
-  FACEBOOK_URL: "http://www.facebook.com/",
+  FACEBOOK_URL: "https://www.facebook.com/",
   INSTAGRAM_URL: "https://www.instagram.com/",
-  TWITTER_URL: "http://www.twitter.com/",
-  LINKEDIN_URL: "http://www.linkedin.com/",
+  TWITTER_URL: "https://www.twitter.com/",
+  LINKEDIN_URL: "https://www.linkedin.com/",
 };
