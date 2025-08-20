@@ -53,7 +53,10 @@ export const Hero = () => {
               >
                 Cut Fleet Costs by 20% with Smart Logistics Automation
               </Typography>
-              <Typography variant="Regular_H5" className="text-white mb-6 lg:max-w-[85%]">
+              <Typography
+                variant="Regular_H5"
+                className="text-white mb-6 lg:max-w-[85%]"
+              >
                 VizFleet helps transport businesses in Malaysia & Singapore
                 streamline operations with real-time tracking, automated
                 payments, and seamless invoicing.
@@ -66,15 +69,15 @@ export const Hero = () => {
               variants={fadeInDown}
               className="mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-6"
             >
-              <Link href={"/contact-us"}>
-              <Button variant="primary">Book Free Demo</Button>
-              </Link>
               <Link href={"/about-us"}>
+                <Button variant="primary"> About us</Button>
+              </Link>
+              <Link href={"/contact-us"}>
                 <Button
                   variant="secondary"
                   className="border-white text-white hover:bg-white hover:text-primary"
                 >
-                  About us
+                  Book Free Demo
                 </Button>
               </Link>
             </m.div>

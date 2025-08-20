@@ -22,7 +22,7 @@ const features = [
     description: "17+ years serving Southeast Asia's logistics needs",
   },
   {
-    title: "Scalable Solutions",
+    title: "Advanced Scalable Solutions",
     description: "From startups to enterprise-level operations",
   },
 ];
@@ -49,13 +49,13 @@ const WhyChoose = () => {
             >
               <Typography
                 variant="Bold_H4"
-                className="text-primary mb-3"
+                className="text-foreground mb-3"
               >
                 {feature.title}
               </Typography>
               <Typography
                 variant="Regular_H6"
-                className="text-foreground "
+                className="text-gray "
               >
                 {feature.description}
               </Typography>

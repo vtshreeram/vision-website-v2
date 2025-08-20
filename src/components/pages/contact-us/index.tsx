@@ -58,7 +58,7 @@ const ContactUs = () => {
             <div className="mb-14 hidden lg:block">
               <Typography
                 variant="SemiBold_H2"
-                className={`block text-foreground`}
+                className={`block text-gray`}
               >
                 Get <span className="text-primary">in Touch</span>
               </Typography>
@@ -77,11 +77,11 @@ const ContactUs = () => {
                   variant="Bold_H6"
                   className={`block  text-primary `}
                 >
-                  Our office hours
+                  Office hours
                 </Typography>
                 <Typography
                   variant="Regular_H6"
-                  className={`mt-4  block text-foreground`}
+                  className={`mt-4  block text-gray`}
                 >
                   Monday to Saturday: 9:00 AM – 6:00 PM
                   <br />
@@ -98,7 +98,7 @@ const ContactUs = () => {
                 </Typography>
                 <Typography
                   variant="Regular_H6"
-                  className={`mt-4  block text-foreground`}
+                  className={`mt-4  block text-gray`}
                 >
                   No 2A-1 Jalan Kemuning Prima <br /> C33/C, Taman Kemuning
                   Utama, <br /> Seksyen 33, 40400 <br /> Shah Alam Selangor
@@ -113,13 +113,13 @@ const ContactUs = () => {
                 </Typography>
                 <Typography
                   variant="Regular_H6"
-                  className={`mt-4  block text-foreground`}
+                  className={`mt-4  block text-gray`}
                 >
                   Ph: +91 95755 95775
                 </Typography>
                 <Typography
                   variant="Regular_H6"
-                  className={` block  text-foreground`}
+                  className={` block  text-gray`}
                 >
                   Email: sales@visionstransport.com.my
                 </Typography>
@@ -161,7 +161,7 @@ const ContactUs = () => {
             <div className="mb-14 block lg:hidden">
               <Typography
                 variant="Medium_H2"
-                className={`block text-foreground `}
+                className={`block text-gray `}
               >
                 Get <span className="text-primary">in Touch</span>
               </Typography>

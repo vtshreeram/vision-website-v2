@@ -99,15 +99,15 @@ export const AboutUs = ({
           </div>
 
           <div className="mt-6 md:mt-8 flex flex-wrap gap-x-4 md:gap-x-6 ">
-            <Link href={"/contact-us"}>
-              <Button variant="primary">Book Free Demo</Button>
-            </Link>
-
             {isAboutUs && (
               <Link href={"/about-us"}>
-                <Button variant="secondary">About us</Button>
+                <Button variant="primary">About us</Button>
               </Link>
             )}
+
+            <Link href={"/contact-us"}>
+              <Button variant="secondary"> Book Free Demo</Button>
+            </Link>
           </div>
         </m.div>
       </div>
