@@ -7,15 +7,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-// ** import components
-import Footer from "@/components/template/footer";
-
 const lexend = Lexend({
   variable: "--font-lexend",
   subsets: ["latin"],
 });
 
-const url = "https://vision-website-2.vercel.app"; 
+const url = "https://vision-website-2.vercel.app";
 export const metadata: Metadata = {
   robots: {
     index: true,
@@ -74,6 +71,10 @@ export const metadata: Metadata = {
       "Visions Transport delivers reliable logistics, bonded and non-bonded trucking, warehousing, and distribution services across Malaysia and Singapore.",
     images: [`${url}/og-img.png`],
   },
+  other: {
+    "Content-Security-Policy":
+      "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-src 'self' https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self';",
+  },
 };
 
 export default function RootLayout({
@@ -83,10 +84,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexend.className} antialiased`}>
-        {children}
-        <Footer />
-      </body>
+      <body className={`${lexend.className} antialiased`}>{children}</body>
     </html>
   );
 }

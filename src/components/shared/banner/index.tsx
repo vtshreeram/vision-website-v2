@@ -5,6 +5,12 @@ import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+// ** import third party packages
+import { motion as m } from "framer-motion";
+
+// ** import motion variants
+import { fadeInDown } from "@/utils/motion-variant";
+
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
@@ -18,8 +24,8 @@ interface BannerProps {
 }
 
 export const Banner: FC<BannerProps> = ({
-  title = "Ready to Transform Your Fleet Management?",
-  subTitle = "Take control of your logistics with Vizfleet’s cutting-edge technology. Simplify operations, boost efficiency, and get real-time insights on deliveries and driver performance.",
+  title = "Ready to Transform Your Logistics Operations?",
+  subTitle = "Trusted by 3,500+ companies, Visions Transport delivers smart logistics with VIZFLEET tech and 17+ years of proven expertise.",
 }) => {
   return (
     <section
@@ -35,7 +41,13 @@ export const Banner: FC<BannerProps> = ({
         />
       </div>
 
-      <div className="relative mx-auto max-w-7xl">
+      <m.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInDown}
+        className="relative mx-auto max-w-7xl"
+      >
         <div className="max-w-lg">
           <Typography
             variant="SemiBold_H3"
@@ -49,13 +61,16 @@ export const Banner: FC<BannerProps> = ({
 
           <div className="mt-8 ">
             <Link href={"/contact-us"}>
-              <Button variant="primary" className="bg-white text-primary">
-                Contact us
+              <Button
+                variant="primary"
+                className="bg-white text-primary hover:bg-white/90"
+              >
+                Book Free Demo
               </Button>
             </Link>
           </div>
         </div>
-      </div>
+      </m.div>
     </section>
   );
 };

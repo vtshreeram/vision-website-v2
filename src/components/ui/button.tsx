@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 interface CustomButtonProps {
   className?: string;
   isActive?: boolean;
-  variant?: "primary" | "secondary"; 
+  variant?: "primary" | "secondary";
 }
 
 // combining custom props with the standard button attributes
@@ -25,9 +25,9 @@ const Button: FC<ButtonProps> = ({
       className={cn(
         // Conditionally apply styles based on the variant
         variant === "primary"
-          ? "border border-primary md:text-lg lg:text-xl duration-500 hover:bg-primary/80 bg-primary text-white font-semibold"
-          : " border border-primary  md:text-lg lg:text-xl duration-500 hover:bg-primary/20 bg-transparent text-primary font-semibold",
-        "px-5 py-2 md:px-7 md:py-3 text-base active:scale-95 duration-300 cursor-pointer",
+          ? "border border-primary hover:bg-primary/80 bg-primary text-white "
+          : " border border-primary hover:bg-primary/5 bg-transparent text-primary ",
+        "h-10 px-4 py-2 active:scale-95 duration-300 cursor-pointer text-sm md:text-base font-medium",
 
         className
       )}

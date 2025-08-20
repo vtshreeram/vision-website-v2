@@ -1,12 +1,17 @@
 "use client";
+
 // ** import core packages
 import Image from "next/image";
 import React, { useState } from "react";
-import { z } from "zod";
 
 // ** import third party packages
+import { motion as m } from "framer-motion";
+import { z } from "zod";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+
+// ** import motion variants
+import { fadeInDown } from "@/utils/motion-variant";
 
 // ** import components
 import Button from "@/components/ui/button";
@@ -84,18 +89,30 @@ export const VisionForm = () => {
       <div className="relative z-10 w-full global-padding-container py-16 md:py-20 lg:py-32">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
           {/* Left: Logo and tagline */}
-          <div className="hidden lg:flex lg:col-span-2  items-center md:items-start">
+          <m.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInDown}
+            className="hidden lg:flex lg:col-span-2  items-center md:items-start"
+          >
             <LogoLarge />
-          </div>
+          </m.div>
 
           {/* Right: Tabs and Form */}
-          <div className=" lg:col-span-3 bg-primary/20  w-full   md:p-10">
+          <m.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInDown}
+            className=" lg:col-span-3 bg-primary/20  w-full   md:p-10"
+          >
             {/* Tabs */}
             <div className="flex bg-white">
               {TABS.map((tab) => (
                 <Button
                   key={tab.value}
-                  className={`flex-1 md:py-5 md:px-6 active:scale-100  ${
+                  className={`flex-1 h-auto md:h-10 active:scale-100  ${
                     activeTab === tab.value
                       ? ""
                       : "bg-white text-primary hover:bg-white hover:text-primary border-stroke"
@@ -118,7 +135,7 @@ export const VisionForm = () => {
                   <input
                     {...register("name")}
                     placeholder="Enter Name"
-                    className="w-full border border-stroke bg-white p-4 text-base focus:outline-none focus:border-primary"
+                    className="input-field"
                   />
                   {errors.name && (
                     <p className="text-red-500 text-xs mt-1">
@@ -130,7 +147,7 @@ export const VisionForm = () => {
                   <input
                     {...register("email")}
                     placeholder="Enter Email Id"
-                    className="w-full border border-stroke bg-white p-4 text-base focus:outline-none focus:border-primary"
+                    className="input-field"
                   />
                   {errors.email && (
                     <p className="text-red-500 text-xs mt-1">
@@ -144,7 +161,7 @@ export const VisionForm = () => {
                   <input
                     {...register("phone")}
                     placeholder="Enter Phone number"
-                    className="w-full border border-stroke bg-white p-4 text-base focus:outline-none focus:border-primary"
+                    className="input-field"
                   />
                   {errors.phone && (
                     <p className="text-red-500 text-xs mt-1">
@@ -161,7 +178,7 @@ export const VisionForm = () => {
                         value={field.value}
                         onValueChange={field.onChange}
                       >
-                        <SelectTrigger className="w-full border border-stroke p-4 text-base focus:outline-none focus:border-primary bg-white">
+                        <SelectTrigger className="w-full border border-stroke px-3 py-1 h-9 text-base focus:outline-none focus:border-primary bg-white">
                           <SelectValue placeholder="Select Service" />
                         </SelectTrigger>
                         <SelectContent>
@@ -188,13 +205,13 @@ export const VisionForm = () => {
               <Button
                 type="submit"
                 variant="primary"
-                className="w-full mt-2 flex items-center justify-center gap-2 !bg-primary !text-white text-lg py-3"
+                className="w-full mt-2 flex items-center justify-center gap-2 !bg-primary !text-white"
               >
                 <IcoTrack />
                 Request
               </Button>
             </form>
-          </div>
+          </m.div>
         </div>
       </div>
     </section>

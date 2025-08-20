@@ -57,8 +57,7 @@ const Footer = () => {
             <LogoFooter />
 
             <Typography variant="Regular_H6" className={`mt-4 text-gray`}>
-              Revolutionizing logistics technology, Vizfleet offers cutting-edge
-              solutions
+            Driving logistics excellence with VizFleet’s advanced technology, delivering smart, scalable, and reliable solutions for every business.
             </Typography>
             <div className="mt-4">
               <Typography
@@ -78,7 +77,7 @@ const Footer = () => {
               </Typography>
             </div>
             <div className="flex gap-4 mt-6">
-              <Link href={config.TWITTER_URL}   >
+              <Link href={config.TWITTER_URL}>
                 <IcoTwitter />
               </Link>
               <Link href={config.FACEBOOK_URL}>
@@ -121,18 +120,26 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/features"
+                    href="/clientele"
                     className="block text-base transition-all duration-200 hover:translate-x-1 "
                   >
-                    Features
+                    Client
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/testimonials"
+                    href="/services"
                     className="block text-base transition-all duration-200 hover:translate-x-1 "
                   >
-                    Testimonials
+                    Service
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/gallery"
+                    className="block text-base transition-all duration-200 hover:translate-x-1 "
+                  >
+                    Gallery
                   </Link>
                 </li>
               </ul>
@@ -201,15 +208,14 @@ const Footer = () => {
 
               <div className="mt-6 md:max-w-xs">
                 <Typography variant="Regular_H6" className="mb-4 text-gray">
-                  Stay ahead with our newsletter. Get updates, insights, and
-                  special offers directly to your inbox.
+                Subscribe to our newsletter for the latest industry updates, insights, and exclusive offers.
                 </Typography>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div>
                     <input
                       {...register("email")}
                       type="text"
-                      className="w-full  border border-stroke focus:border-primary focus:outline-none focus:ring-primary py-3 px-4 "
+                      className="input-field"
                       placeholder="Enter your email address "
                     />
                     {errors.email && (

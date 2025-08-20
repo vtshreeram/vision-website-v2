@@ -32,15 +32,18 @@ const Head: React.FC<HeadProps> = ({
         <Image
           src={bgImg}
           placeholder="blur"
-          alt="Background image"
+          alt={`${heading} background image`}
           className=" h-full w-full !object-cover object-right  md:origin-top-left md:object-left"
           priority={true}
+          quality={90}
+          sizes="100vw"
+          fill
         />
       </div>
 
-      <div className="relative mx-auto max-w-7xl ">
-      <Header />
-        <div className="py-16 lg:py-32">
+      <div className="relative">
+        <Header />
+        <div className="py-16 lg:py-32 mx-auto max-w-7xl ">
           <Typography
             variant="Bold_H1"
             className={`block  text-white text-3xl md:text-4xl`}

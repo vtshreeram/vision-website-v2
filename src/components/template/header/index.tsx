@@ -63,16 +63,17 @@ type NavLink = {
 const navLinks: NavLink[] = [
   { title: "Home", href: "/" },
   { title: "About us", href: "/about-us" },
-  {
-    title: "Services",
-    subLinks: [
-      {
-        title: "Services",
-        href: "/services",
-      },
-    ],
-  },
+  // {
+  //   title: "Services",
+  //   subLinks: [
+  //     {
+  //       title: "Services",
+  //       href: "/services",
+  //     },
+  //   ],
+  // },
 
+  { title: "Services", href: "/services" },
   { title: "Clientele", href: "/clientele" },
   { title: "Gallery", href: "/gallery" },
   { title: "Contact us", href: "/contact-us" },

@@ -5,8 +5,14 @@ import Image, { StaticImageData } from "next/image";
 import { useState, useCallback } from "react";
 
 // ** import third party packages
-import { cn } from "@/lib/utils";
+import { motion as m } from "framer-motion";
 import ImageViewer from "react-simple-image-viewer";
+
+// ** import motion variants
+import { fadeInDown } from "@/utils/motion-variant";
+
+// ** import utils
+import { cn } from "@/lib/utils";
 
 // ** import assets
 import img1 from "@/assets/images/pages/gallery/img-1.webp";
@@ -61,23 +67,31 @@ const Gallery = () => {
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="grid grid-cols-2 md:grid-cols-3  gap-4 mb-4">
           {galleryImages.map((image, index) => (
-            <div
+            <m.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInDown}
               key={image.id}
               className={cn(
-                "overflow-hidden  shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer",
+                "overflow-hidden  shadow-lg   cursor-pointer",
                 image.colSpan && "lg:col-span-2"
               )}
               onClick={() => openImageViewer(index)}
             >
-              <div className="relative h-60 lg:h-80 w-full">
+              <div className="relative h-40 lg:h-80 w-full">
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
                   className="object-cover transform hover:scale-105 transition-transform duration-500"
+                  quality={85}
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  loading="lazy"
+                  placeholder="blur"
                 />
               </div>
-            </div>
+            </m.div>
           ))}
         </div>
       </div>

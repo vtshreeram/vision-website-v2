@@ -1,9 +1,9 @@
 "use client";
 // ** import core packages
 import Link from "next/link";
-import { z } from "zod";
 
 // ** import third party packages
+import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import PhoneInput from "react-phone-input-2";
@@ -58,7 +58,7 @@ const ContactUs = () => {
             <div className="mb-14 hidden lg:block">
               <Typography
                 variant="SemiBold_H2"
-                className={`block text-foreground`}
+                className={`block text-gray`}
               >
                 Get <span className="text-primary">in Touch</span>
               </Typography>
@@ -66,8 +66,8 @@ const ContactUs = () => {
                 variant="Regular_H6"
                 className={`mt-4 block text-gray`}
               >
-                We&apos;re here to answer your questions and assist with your
-                requirements.
+                We’re here to assist with your logistics needs <br />
+                and provide the right solutions for your business.
               </Typography>
             </div>
 
@@ -77,11 +77,11 @@ const ContactUs = () => {
                   variant="Bold_H6"
                   className={`block  text-primary `}
                 >
-                  Our office hours
+                  Office hours
                 </Typography>
                 <Typography
                   variant="Regular_H6"
-                  className={`mt-4  block text-foreground`}
+                  className={`mt-4  block text-gray`}
                 >
                   Monday to Saturday: 9:00 AM – 6:00 PM
                   <br />
@@ -98,11 +98,10 @@ const ContactUs = () => {
                 </Typography>
                 <Typography
                   variant="Regular_H6"
-                  className={`mt-4  block text-foreground`}
+                  className={`mt-4  block text-gray`}
                 >
-                  No 2A-1 Jalan Kemuning Prima C35/C, Taman Kemuning Utama,
-                  <br />
-                  Seksyen 33, 40400 Shah Alam Selangor
+                  No 2A-1 Jalan Kemuning Prima <br /> C33/C, Taman Kemuning
+                  Utama, <br /> Seksyen 33, 40400 <br /> Shah Alam Selangor
                 </Typography>
               </div>
               <div>
@@ -114,13 +113,13 @@ const ContactUs = () => {
                 </Typography>
                 <Typography
                   variant="Regular_H6"
-                  className={`mt-4  block text-foreground`}
+                  className={`mt-4  block text-gray`}
                 >
                   Ph: +91 95755 95775
                 </Typography>
                 <Typography
                   variant="Regular_H6"
-                  className={` block  text-foreground`}
+                  className={` block  text-gray`}
                 >
                   Email: sales@visionstransport.com.my
                 </Typography>
@@ -152,7 +151,7 @@ const ContactUs = () => {
             <div className="mt-10 w-full relative ">
               <iframe
                 className="w-full h-[430px]"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15547.563685544876!2d80.22835409057802!3d13.042614550740252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526655a5da2371%3A0x4954f49743f04af0!2sT.%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sbd!4v1737028886260!5m2!1sen!2sbd"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d16020.121513676884!2d101.5363235!3d3.0195518!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb2bcb4f5cef1%3A0x6ae010666b8b7961!2sVisions%20Transport%20Enterprise%20Sdn%20Bhd!5e1!3m2!1sen!2sbd!4v1755668086575!5m2!1sen!2sbd"
                 loading="lazy"
               ></iframe>
             </div>
@@ -162,7 +161,7 @@ const ContactUs = () => {
             <div className="mb-14 block lg:hidden">
               <Typography
                 variant="Medium_H2"
-                className={`block text-foreground `}
+                className={`block text-gray `}
               >
                 Get <span className="text-primary">in Touch</span>
               </Typography>
@@ -186,7 +185,7 @@ const ContactUs = () => {
                         type="text"
                         {...register("fullName")}
                         placeholder="Enter your full name"
-                        className="block w-full border border-stroke bg-white px-4 py-4 text-base text-gray focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                        className="input-field"
                       />
                       {errors.fullName && (
                         <p className="text-red-500">
@@ -225,7 +224,7 @@ const ContactUs = () => {
                         type="email"
                         {...register("email")}
                         placeholder="Enter your email"
-                        className="block w-full  border border-stroke bg-white px-4 py-4 text-base text-gray focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                        className="input-field"
                       />
                       {errors.email && (
                         <p className="text-red-500">{errors.email.message}</p>
@@ -242,7 +241,7 @@ const ContactUs = () => {
                         {...register("message")}
                         placeholder="Write us your question here..."
                         rows={4}
-                        className="block w-full resize-none  border border-stroke bg-white px-4 py-4 text-base text-gray focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                        className="block w-full resize-none outline-none px-3 py-1 text-sm md:text-base text-gray bg-white border border-stroke focus:outline-none focus:ring-primary focus:border-primary"
                       />
                       {errors.message && (
                         <p className="text-red-500">{errors.message.message}</p>

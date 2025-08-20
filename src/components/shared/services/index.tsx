@@ -1,5 +1,13 @@
+"use client";
+
 // ** import core packages
 import Image from "next/image";
+
+// ** import third party packages
+import { motion as m } from "framer-motion";
+
+// ** import motion variants
+import { fadeInDown } from "@/utils/motion-variant";
 
 // ** import components
 import { Typography } from "@/components/ui/Typography";
@@ -31,17 +39,23 @@ export const Services = () => {
   return (
     <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8  md:gap-y-14 md:gap-x-8">
       {services.map((service, idx) => (
-        <div
+        <m.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInDown}
           key={idx}
-          className="flex flex-col items-center bg-white  shadow-none overflow-hidden"
+          className="flex flex-col items-center bg-white  shadow-none overflow-hidden group"
         >
           <div className="overflow-hidden w-full">
             <Image
               src={service.img}
               alt={service.label}
-              className="w-full h-full object-cover scale-105"
+              className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-all duration-300"
               width={386}
               height={386}
+              quality={85}
+              loading="lazy"
+              placeholder="blur"
             />
           </div>
           <div className="w-full bg-primary py-2 flex justify-center">
@@ -52,7 +66,7 @@ export const Services = () => {
               {service.label}
             </Typography>
           </div>
-        </div>
+        </m.div>
       ))}
     </div>
   );

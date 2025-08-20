@@ -15,13 +15,13 @@ const SectionHead = ({
   descriptionClassName,
 }: {
   title: ReactElement | string;
-  description: string;
+  description:  ReactElement | string;
   className?: string;
   titleClassName?: string;
   descriptionClassName?: string;
 }) => {
   return (
-    <div className={cn("text-center max-w-xl mx-auto", className)}>
+    <div className={cn("text-center  mx-auto", className)}>
       <Typography
         variant="SemiBold_H3"
         className={cn(` text-foreground`, titleClassName)}
@@ -29,8 +29,11 @@ const SectionHead = ({
         {title}
       </Typography>
       <Typography
-        variant="Regular_H6"
-        className={cn(` block mt-2 text-gray`, descriptionClassName)}
+        variant="Regular_H5"
+        className={cn(
+          ` block mt-2 max-w-xl mx-auto text-gray`,
+          descriptionClassName
+        )}
       >
         {description}
       </Typography>

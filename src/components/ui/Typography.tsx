@@ -97,7 +97,7 @@ export const Typography: FC<TypographyProps> = ({
       case "Regular_H1":
         fontSizeClass = "text-4xl md:text-5xl";
         lineHeightClass = "leading-tight md:leading-tighter";
-        letterSpacingClass = "tracking-normal";
+        letterSpacingClass = "tracking-tight";
         break;
       case "Bold_H2":
       case "SemiBold_H2":
@@ -105,7 +105,7 @@ export const Typography: FC<TypographyProps> = ({
       case "Regular_H2":
         fontSizeClass = "text-3xl md:text-4xl";
         lineHeightClass = "leading-tight md:leading-snug";
-        letterSpacingClass = "tracking-normal";
+        letterSpacingClass = "tracking-tight";
         break;
       case "Bold_H3":
       case "SemiBold_H3":
@@ -121,22 +121,22 @@ export const Typography: FC<TypographyProps> = ({
       case "Regular_H4":
         fontSizeClass = "text-[20px] md:text-[25px]";
         lineHeightClass = "leading-relaxed md:leading-snug";
-        letterSpacingClass = "tracking-normal";
+        letterSpacingClass = "tracking-tight";
         break;
       case "Bold_H5":
       case "SemiBold_H5":
       case "Medium_H5":
       case "Regular_H5":
-        fontSizeClass = "text-[16px] md:text-[20px]";
+        fontSizeClass = "text-base md:text-[20px]";
         lineHeightClass = "leading-snug md:leading-snug";
-        letterSpacingClass = "tracking-normal";
+        letterSpacingClass = "tracking-tight";
         break;
       case "Bold_H6":
       case "SemiBold_H6":
       case "Medium_H6":
       case "Regular_H6":
         fontSizeClass = "text-base";
-        lineHeightClass = "leading-snug md:leading-relaxed";
+        lineHeightClass = "leading-snug md:leading-6";
         letterSpacingClass = "tracking-normal";
         break;
       case "Bold_H7":
