@@ -120,18 +120,26 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/features"
+                    href="/clientele"
                     className="block text-base transition-all duration-200 hover:translate-x-1 "
                   >
-                    Features
+                    Client
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/testimonials"
+                    href="/services"
                     className="block text-base transition-all duration-200 hover:translate-x-1 "
                   >
-                    Testimonials
+                    Service
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/gallery"
+                    className="block text-base transition-all duration-200 hover:translate-x-1 "
+                  >
+                    Gallery
                   </Link>
                 </li>
               </ul>

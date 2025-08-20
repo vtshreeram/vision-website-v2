@@ -65,7 +65,10 @@ export const VizifleetApp = () => {
           description={
             <>
               {" "}
-              VizFleet is designed to simplify logistics with modern <br />{" "}
+              VizFleet is designed to simplify logistics with modern{" "}
+              <span className="hidden lg:inline">
+                <br />
+              </span>{" "}
               tools that keep your fleet running smoothly.
             </>
           }

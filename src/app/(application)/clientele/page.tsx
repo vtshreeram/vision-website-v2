@@ -9,32 +9,38 @@ import WhyChoose from "@/components/shared/why-choose";
 import headBg from "@/assets/images/pages/clientele/head/head-bg.webp";
 
 // ** import icons
-import {  IcoQuickRide, IcoSafety, IcoQrCode, IcoBooking } from "@/assets/icons";
+import {
+  IcoOperations,
+  IcoLicense,
+  IcoApproval,
+  IcoMember,
+  IcoCertified,
+} from "@/assets/icons";
 
 const ClientelePage = () => {
   const features = [
     {
-      icon: <IcoQuickRide />,
+      icon: <IcoOperations />,
       title: "ISO Certified Operations",
       desc: "International quality benchmarks for safe, reliable logistics.",
     },
     {
-      icon: <IcoSafety />,
+      icon: <IcoLicense />,
       title: "Malaysia Transport License",
       desc: "Licensed operations ensuring full national transport compliance.",
     },
     {
-      icon: <IcoQrCode />,
+      icon: <IcoApproval />,
       title: "Singapore Cross-Border Approval",
       desc: "Seamless deliveries enabled with certified cross-border licensing.",
     },
     {
-      icon: <IcoBooking />,
+      icon: <IcoMember />,
       title: "Freight Association Member",
       desc: "Adhering to recognized global freight and logistics standards.",
     },
     {
-      icon: <IcoQrCode />,
+      icon: <IcoCertified />,
       title: "Data Security Certified",
       desc: "Protecting every shipment with strict audit-ready compliance.",
     },
@@ -54,7 +60,7 @@ const ClientelePage = () => {
         description={"Built on global standards, trusted across borders."}
         features={features}
       />
-       
+
       <Faq />
       <Banner />
     </main>

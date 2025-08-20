@@ -63,7 +63,7 @@ export const Banner: FC<BannerProps> = ({
             <Link href={"/contact-us"}>
               <Button
                 variant="primary"
-                className="bg-white text-primary hover:bg-white"
+                className="bg-white text-primary hover:bg-white/90"
               >
                 Book Free Demo
               </Button>

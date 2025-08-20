@@ -66,13 +66,15 @@ export const Hero = () => {
               variants={fadeInDown}
               className="mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-6"
             >
-              <Button variant="primary">Book Free Demo</Button>
               <Link href={"/contact-us"}>
+              <Button variant="primary">Book Free Demo</Button>
+              </Link>
+              <Link href={"/about-us"}>
                 <Button
                   variant="secondary"
                   className="border-white text-white hover:bg-white hover:text-primary"
                 >
-                  Contact us
+                  About us
                 </Button>
               </Link>
             </m.div>

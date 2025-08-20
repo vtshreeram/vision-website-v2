@@ -9,6 +9,7 @@ import { fadeInDown } from "@/utils/motion-variant";
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
+import Link from "next/link";
 
 const stats = [
   { value: "10000+", label: "Projects Delivered" },
@@ -63,10 +64,14 @@ export const Count = () => {
           >
             Scale Your Logistics Today
           </Typography>
-          <Button variant="secondary" className="!bg-white !text-primary ">
-            Book Free Demo
-          </Button>
-          
+          <Link href={"/contact-us"}>
+            <Button
+              variant="secondary"
+              className="bg-white text-primary hover:bg-white/90 "
+            >
+              Book Free Demo
+            </Button>
+          </Link>
         </m.div>
       </div>
     </section>

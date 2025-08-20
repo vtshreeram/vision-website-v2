@@ -69,6 +69,7 @@ const AboutUsPage = () => {
     <main>
       <Head heading="About Us" subHeading="About Us" bgImg={headBg} />
       <AboutUs
+      isAboutUs={false}
         title={
           <>
             Experience Excellence in <br /> Malaysian Transport Tech
@@ -96,7 +97,11 @@ const AboutUsPage = () => {
           <>
             Our Services{" "}
             <span className="text-primary">
-              Trusted Across <br /> Malaysia & Singapore
+              Trusted Across{" "}
+              <span className="hidden lg:inline">
+                <br />
+              </span>
+              Malaysia & Singapore
             </span>
           </>
         }

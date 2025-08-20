@@ -20,12 +20,14 @@ import Button from "@/components/ui/button";
 import image from "@/assets/images/common/about/Logo.webp";
 
 export const AboutUs = ({
+  isAboutUs = true,
   title = (
     <>
       Speed Meets Innovation <br /> Powered by VIZFLEET
     </>
   ),
 }: {
+  isAboutUs?: boolean;
   title?: ReactElement | string;
 }) => {
   return (
@@ -97,11 +99,15 @@ export const AboutUs = ({
           </div>
 
           <div className="mt-6 md:mt-8 flex flex-wrap gap-x-4 md:gap-x-6 ">
-            <Button variant="primary">Book Free Demo</Button>
-
             <Link href={"/contact-us"}>
-              <Button variant="secondary">Talk to us</Button>
+              <Button variant="primary">Book Free Demo</Button>
             </Link>
+
+            {isAboutUs && (
+              <Link href={"/about-us"}>
+                <Button variant="secondary">About us</Button>
+              </Link>
+            )}
           </div>
         </m.div>
       </div>

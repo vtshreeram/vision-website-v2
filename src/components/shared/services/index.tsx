@@ -44,13 +44,13 @@ export const Services = () => {
           animate="visible"
           variants={fadeInDown}
           key={idx}
-          className="flex flex-col items-center bg-white  shadow-none overflow-hidden"
+          className="flex flex-col items-center bg-white  shadow-none overflow-hidden group"
         >
           <div className="overflow-hidden w-full">
             <Image
               src={service.img}
               alt={service.label}
-              className="w-full h-full object-cover scale-105"
+              className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-all duration-300"
               width={386}
               height={386}
               quality={85}
