@@ -98,7 +98,7 @@ const AboutUsPage = () => {
             Our Services{" "}
             <span className="text-primary">
               Trusted Across{" "}
-              <span className="hidden lg:inline">
+              <span className="hidden md:inline">
                 <br />
               </span>
               Malaysia & Singapore
