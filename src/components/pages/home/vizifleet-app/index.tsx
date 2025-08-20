@@ -59,7 +59,7 @@ export const VizifleetApp = () => {
           title={
             <>
               Smarter Fleet Management at{" "}
-              <span className="text-primary uppercase">Your Fingertips</span>
+              <span className="text-primary">Your Fingertips</span>
             </>
           }
           description={
