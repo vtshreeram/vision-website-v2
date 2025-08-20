@@ -30,7 +30,7 @@ export const Benefits = ({ title, description, features }: BenefitsProps) => {
       <div className="mx-auto max-w-7xl">
         <SectionHead title={title} description={description} />
 
-        <div className="mt-8 flex flex-wrap !justify-center max-w-6xl mx-auto  gap:8 lg:gap-12  md:mt-12">
+        <div className="mt-12 lg:mt-16 flex flex-wrap !justify-center max-w-6xl mx-auto  gap-8 lg:gap-14  ">
           {features.map((feature, index) => (
             <m.div
               initial="hidden"
@@ -44,7 +44,7 @@ export const Benefits = ({ title, description, features }: BenefitsProps) => {
                 {feature.icon}
               </div>
               <div className="mt-6">
-                <Typography variant="Medium_H5" className="font-semibold">
+                <Typography variant="Medium_H5" className="font-semibold whitespace-nowrap">
                   {feature.title}
                 </Typography>
                 <Typography variant="Regular_H6" className="mt-4 text-gray">

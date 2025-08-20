@@ -55,7 +55,7 @@ export const Count = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInDown}
-          className="flex flex-col md:flex-row md:items-center md:justify-between mt-12"
+          className="flex flex-col md:flex-row items-end md:items-center md:justify-between mt-12"
         >
           <Typography
             variant="Bold_H2"
