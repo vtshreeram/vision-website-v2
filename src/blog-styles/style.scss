@@ -40,8 +40,8 @@
 /**************************************
     Default Styles
 ***************************************/
-@import "default/variables";
-@import "default/mixins";
+@use "default/variables" as *;
+@use "default/mixins" as *;
 .blog-layout-custom-style {
   @import "default/reset";
 

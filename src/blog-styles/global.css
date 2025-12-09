@@ -13,7 +13,8 @@ html {
 
 @layer components {
    .btn {
-      @apply active:brightness-95 hover:brightness-105 disabled:brightness-90 disabled:cursor-not-allowed inline-flex items-center justify-center px-6 py-3 transition-opacity duration-200 outline-none focus:outline-none cursor-pointer font-inter text-base font-semibold;
+      @apply active:brightness-95 hover:brightness-105 disabled:brightness-90 disabled:cursor-not-allowed inline-flex items-center justify-center px-6 py-3 transition-opacity duration-200 outline-none focus:outline-none cursor-pointer text-base font-semibold;
+      font-family: var(--font-poppins);
    }
 
    .btn-primary {
@@ -29,11 +30,13 @@ html {
    }
 
    .title {
-      @apply text-3xl md:text-4xl text-primaryBlack font-bold font-inter;
+      @apply text-3xl md:text-4xl text-primaryBlack font-bold;
+      font-family: var(--font-poppins);
    }
 
    .subtitle {
-      @apply text-lg md:text-xl font-medium text-secondaryBlack font-inter;
+      @apply text-lg md:text-xl font-medium text-secondaryBlack;
+      font-family: var(--font-poppins);
    }
 
    .nav-links {
