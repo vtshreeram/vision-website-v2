@@ -42,75 +42,75 @@
 ***************************************/
 @use "default/variables" as *;
 @use "default/mixins" as *;
-@use "default/reset" as *;
-@use "default/typography" as *;
-@use "default/extend" as *;
-@use "default/animations" as *;
-@use "default/shortcode" as *;
-@use "default/spacing" as *;
-@use "default/common" as *;
-// @use 'default/forms' as *;
+.blog-layout-custom-style {
+  @import "default/reset";
 
-/**************************************
+  .axil-post-details {
+    @import "default/typography";
+  }
+  @import "default/extend";
+  @import "default/animations";
+  @import "default/shortcode";
+  @import "default/spacing";
+  @import "default/common";
+  // @import 'default/forms';
+
+  /**************************************
 	Elements Styles
 ***************************************/
-@use "elements/button" as *;
-@use "elements/cursor" as *;
-@use "elements/section-title" as *;
-@use "elements/tab" as *;
-@use "elements/category" as *;
-@use "elements/social" as *;
-@use "elements/video" as *;
-@use "elements/scrolltotop" as *;
-@use "elements/slick" as *;
-@use "elements/breadcrumb" as *;
-@use "elements/contact" as *;
-@use "elements/pagination" as *;
-@use "elements/animated_image" as *;
-@use "elements/close" as *;
+  @import "elements/button";
+  @import "elements/cursor";
+  @import "elements/section-title";
+  @import "elements/tab";
+  @import "elements/category";
+  @import "elements/social";
+  @import "elements/video";
+  @import "elements/scrolltotop";
+  @import "elements/slick";
+  @import "elements/breadcrumb";
+  @import "elements/contact";
+  @import "elements/pagination";
+  @import "elements/animated_image";
+  @import "elements/close";
 
-/**************************************
+  /**************************************
 	Header Styles
 ***************************************/
-@use "header/header" as *;
-@use "header/nav" as *;
-@use "header/subscribe" as *;
-@use "header/mobilemenu" as *;
+  @import "header/header";
+  @import "header/nav";
+  @import "header/subscribe";
+  @import "header/mobilemenu";
 
-/**************************************
+  /**************************************
 	Post Styles
 ***************************************/
-@use "post/post-list" as *;
-@use "post/sidebar" as *;
-@use "post/post-details" as *;
-@use "post/post-format" as *;
-@use "post/post-stories" as *;
-@use "post/comment" as *;
-@use "post/utils" as *;
+  @import "post/post-list";
+  @import "post/sidebar";
+  @import "post/post-details";
+  @import "post/post-format";
+  @import "post/post-stories";
+  @import "post/comment";
+  @import "post/utils";
 
-/**************************************
+  /**************************************
 	Template Styles
 ***************************************/
-@use "template/banner" as *;
-@use "template/instagram" as *;
-// @use "template/darkversion" as *;
-@use "template/author" as *;
-@use "template/animation-image-hover" as *;
-@use "template/error" as *;
-@use "template/maintanence" as *;
+  @import "template/banner";
+  @import "template/instagram";
+  // @import "template/darkversion";
+  @import "template/author";
+  @import "template/animation-image-hover";
+  @import "template/error";
+  @import "template/maintanence";
 
-/**************************************
+  /**************************************
 	Footer Styles
 ***************************************/
-@use "footer/footer" as *;
-// @use "footer/dark" as *;
+  @import "footer/footer";
+  // @import "footer/dark";
 
-/**************************************
+  /**************************************
  Rtl Styles
  ***************************************/
-// @use 'rtl/rtl' as *;
-
-.blog-layout-custom-style {
-  // All styles from the @use statements above are included here
-  // The nested .axil-post-details selector is handled by the typography file
+  // @import 'rtl/rtl';
 }
