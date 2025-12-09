@@ -1,3 +1,5 @@
+@use "sass:list";
+
 @mixin clearfix() {
   &::after {
     content: "";
@@ -5,8 +7,6 @@
     display: table;
   }
 }
-
-@use "sass:list";
 
 @mixin config-bg-colors($prefix, $bg-color-...) {
   @each $i in $bg-color- {
