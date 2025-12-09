@@ -42,75 +42,83 @@
 ***************************************/
 @use "default/variables" as *;
 @use "default/mixins" as *;
-.blog-layout-custom-style {
-  @import "default/reset";
+@use "default/reset";
+@use "default/typography";
+@use "default/extend";
+@use "default/animations";
+@use "default/shortcode";
+@use "default/spacing";
+@use "default/common";
+// @use 'default/forms';
 
-  .axil-post-details {
-    @import "default/typography";
-  }
-  @import "default/extend";
-  @import "default/animations";
-  @import "default/shortcode";
-  @import "default/spacing";
-  @import "default/common";
-  // @import 'default/forms';
-
-  /**************************************
+/**************************************
 	Elements Styles
 ***************************************/
-  @import "elements/button";
-  @import "elements/cursor";
-  @import "elements/section-title";
-  @import "elements/tab";
-  @import "elements/category";
-  @import "elements/social";
-  @import "elements/video";
-  @import "elements/scrolltotop";
-  @import "elements/slick";
-  @import "elements/breadcrumb";
-  @import "elements/contact";
-  @import "elements/pagination";
-  @import "elements/animated_image";
-  @import "elements/close";
+@use "elements/button";
+@use "elements/cursor";
+@use "elements/section-title";
+@use "elements/tab";
+@use "elements/category";
+@use "elements/social";
+@use "elements/video";
+@use "elements/scrolltotop";
+@use "elements/slick";
+@use "elements/breadcrumb";
+@use "elements/contact";
+@use "elements/pagination";
+@use "elements/animated_image";
+@use "elements/close";
 
-  /**************************************
+/**************************************
 	Header Styles
 ***************************************/
-  @import "header/header";
-  @import "header/nav";
-  @import "header/subscribe";
-  @import "header/mobilemenu";
+@use "header/header";
+@use "header/nav";
+@use "header/subscribe";
+@use "header/mobilemenu";
 
-  /**************************************
+/**************************************
 	Post Styles
 ***************************************/
-  @import "post/post-list";
-  @import "post/sidebar";
-  @import "post/post-details";
-  @import "post/post-format";
-  @import "post/post-stories";
-  @import "post/comment";
-  @import "post/utils";
+@use "post/post-list";
+@use "post/sidebar";
+@use "post/post-details";
+@use "post/post-format";
+@use "post/post-stories";
+@use "post/comment";
+@use "post/utils";
 
-  /**************************************
+/**************************************
 	Template Styles
 ***************************************/
-  @import "template/banner";
-  @import "template/instagram";
-  // @import "template/darkversion";
-  @import "template/author";
-  @import "template/animation-image-hover";
-  @import "template/error";
-  @import "template/maintanence";
+@use "template/banner";
+@use "template/instagram";
+// @use "template/darkversion";
+@use "template/author";
+@use "template/animation-image-hover";
+@use "template/error";
+@use "template/maintanence";
 
-  /**************************************
+/**************************************
 	Footer Styles
 ***************************************/
-  @import "footer/footer";
-  // @import "footer/dark";
+@use "footer/footer";
+// @use "footer/dark";
 
-  /**************************************
+/**************************************
  Rtl Styles
  ***************************************/
-  // @import 'rtl/rtl';
+// @use 'rtl/rtl';
+
+.blog-layout-custom-style {
+  @include reset;
+
+  .axil-post-details {
+    @include typography;
+  }
+  @include extend;
+  @include animations;
+  @include shortcode;
+  @include spacing;
+  @include common;
 }
