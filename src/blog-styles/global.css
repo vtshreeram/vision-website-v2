@@ -12,7 +12,7 @@ html {
 }
 
 @layer components {
-   .btn {
+   /* .btn {
       @apply active:brightness-95 hover:brightness-105 disabled:brightness-90 disabled:cursor-not-allowed inline-flex items-center justify-center px-6 py-3 transition-opacity duration-200 outline-none focus:outline-none cursor-pointer text-base font-semibold;
       font-family: var(--font-poppins);
    }
@@ -23,7 +23,7 @@ html {
 
    .btn-secondary {
       @apply btn text-accent bg-transparent outline outline-1 outline-[var(--mainGradient)] hover:text-black hover:bg-gradient;
-   }
+   } */
 
    .card {
       @apply p-5 md:p-10 rounded-xl shadow hover:bg-lightGreen;
