@@ -36,7 +36,7 @@
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
     "sanity": "^4.20.3",
-    "sass": "^1.94.2",
+    "sass": "^^1.91.0",
     "swiper": "^11.2.6",
     "tailwind-merge": "^3.2.0",
     "zod": "^3.24.3"
