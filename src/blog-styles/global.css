@@ -1,10 +1,6 @@
 @import "tailwindcss";
-@import "@fortawesome/fontawesome-free/css/all.css";
+/* @import "@fortawesome/fontawesome-free/css/all.css"; */
 
-:root {
-   --swiper-theme-color: #bb2a8c !important;
-   --mainGradient: #bb2a8c;
-}
 
 html {
    scroll-behavior: smooth;
