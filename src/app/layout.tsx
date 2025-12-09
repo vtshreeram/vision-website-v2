@@ -1,25 +1,28 @@
 import type { Metadata } from "next";
-import { Lexend } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 // ** import css
 import "./globals.css";
+
+// ** import swiper css
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const lexend = Lexend({
-  variable: "--font-lexend",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const url = "https://vision-website-2.vercel.app";
 export const metadata: Metadata = {
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
     },
   },
   title: "Visions Transport - Quality, Service & Reliability in Logistics",
@@ -84,7 +87,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexend.className} antialiased`}>{children}</body>
+      <body className={`${poppins.className} antialiased`}>{children}</body>
     </html>
   );
 }

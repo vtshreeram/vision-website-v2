@@ -56,20 +56,24 @@ export const Count = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInDown}
-          className="flex flex-col md:flex-row items-end md:items-center md:justify-between mt-12"
+          className="flex flex-col md:flex-row items-end md:items-start md:justify-between mt-12"
         >
-          <Typography
-            variant="Bold_H2"
-            className="text-white mb-8 md:mb-0 md:text-4xl"
-          >
-            Scale Your Logistics Today
-          </Typography>
+          <div className="mb-8 md:mb-0 space-y-4 md:max-w-[620px]">
+            <Typography variant="Bold_H2" className="text-white  md:text-4xl">
+              Scale Your Logistics Today
+            </Typography>
+            <Typography variant="Regular_H6" className="text-white  ">
+              Scale Your Logistics TodayWe uncover opportunities to enhance
+              efficiency, reduce costs, and strengthen operational performance
+              across your business.
+            </Typography>
+          </div>
           <Link href={"/contact-us"}>
             <Button
               variant="secondary"
               className="bg-white text-primary hover:bg-white/90 "
             >
-              Book Free Demo
+              Contact us
             </Button>
           </Link>
         </m.div>

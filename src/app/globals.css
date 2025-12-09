@@ -2,24 +2,30 @@
 
 :root {
   --background: #F8F3ED;
+  --secondary-background: #FFEBEC;
   --foreground: #2E2E2E;
   --primary: #ED2224;
   --white: #FFFFFF;
   --stroke: #D0D5DD;
   --gray: #444465;
   --secondary: #133040;
-  --font-lexend: var(--font-lexend);
+  --font-poppins: var(--font-poppins);
+
+  --swiper-theme-color: #ED2224 !important;
+  --mainGradient: #ED2224;
 }
 
 @theme inline {
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-background: var(--background);
+  --color-secondary-background: var(--secondary-background);
   --color-foreground: var(--foreground);
   --color-white: var(--white);
   --color-stroke: var(--stroke);
   --color-gray: var(--gray);
-  --font-lexend: var(--font-lexend);
+  --font-poppins: var(--font-poppins);
+
 }
 
 
@@ -51,7 +57,7 @@
 }
 
 .form-control {
-  font-family: Lexend, Lexend Fallback !important;
+  font-family: Poppins !important;
   border: 1px solid #E3E3E3 !important;
   color: var(--color-gray) !important;
   border-radius: 0px !important;
@@ -76,5 +82,314 @@
 @media screen and (max-width: 768px) {
   .form-control {
     font-size: 14px !important;
+  }
+}
+
+
+/* blog styles */
+
+
+.bg-gradient {
+  background: var(--mainGradient);
+}
+
+.customCircle {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: transparent;
+  border: 8px solid #fff;
+  border-radius: 50%;
+}
+
+.customCircle.circle1 {
+  bottom: -200px;
+  right: -200px;
+}
+
+.customCircle.circle2 {
+  top: -260px;
+  left: -260px;
+}
+
+.privacy-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: red;
+  z-index: 2;
+}
+
+/* important section paddings */
+.sectionPadding {
+  padding-inline: 16px !important;
+  max-width: 106rem;
+}
+
+/* responsive */
+
+@media (min-width: 480px) {}
+
+@media (min-width: 768px) {
+  .sectionPadding {
+    padding-inline: 32px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sectionPadding {
+    padding-inline: 40px !important;
+  }
+
+  .react-simple-image-viewer__modal>* {
+    max-width: 70% !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sectionPadding {
+    padding-inline: 64px !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .sectionPadding {
+    padding-inline: 144px !important;
+  }
+}
+
+.blog-layout-custom-style .axil-post-details h1,
+.blog-layout-custom-style .axil-post-details h2,
+.blog-layout-custom-style .axil-post-details h3 {
+  font-family: Poppins, Poppins Fallback !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+}
+
+.axil-post-details h1 span {
+  font-family: Poppins, Poppins Fallback !important;
+  font-weight: 600 !important;
+}
+
+.axil-post-details {
+  font-family: Poppins, Poppins Fallback !important;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trimuk_blog_slider .swiper-button-prev1 {
+  left: -30px !important;
+  display: block;
+  top: 50% !important;
+  transform: translateY(-50%);
+}
+
+.trimuk_blog_slider .swiper-button-next1 {
+  right: -30px !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+  display: block;
+}
+
+.trimuk_blog_slider .swiper-button-prev,
+.trimuk_blog_slider .swiper-button-next {
+  display: hidden;
+}
+
+/* Hide default Swiper navigation icons */
+
+.swiper-button-prev1,
+.swiper-button-next1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* This centers the buttons vertically */
+  z-index: 10;
+  /* Ensures the buttons stay on top of other content */
+  /* Optional: add a background color to the button for better visibility */
+  padding: 10px;
+  /* Optional: adjust padding for better spacing around the icons */
+  cursor: pointer;
+}
+
+.swiper-button-prev1 {
+  left: -30px !important;
+  /* Adjust distance from the left side */
+}
+
+.swiper-button-next1 {
+  right: -30px !important;
+  /* Adjust distance from the right side */
+}
+
+/* When the prev or next button is disabled */
+.swiper-button-prev1.swiper-button-disabled,
+.swiper-button-next1.swiper-button-disabled {
+  opacity: 0.3;
+  /* Faded appearance */
+  cursor: not-allowed;
+  /* Show that the button is not clickable */
+  pointer-events: none;
+  /* Prevent interaction with the button */
+}
+
+.single-related-blog-trimuk .trimuk_blog_slider .swiper-button-prev1 {
+  left: -60px !important;
+}
+
+.single-related-blog-trimuk .trimuk_blog_slider .swiper-button-next1 {
+  right: -60px !important;
+}
+
+@media (max-width: 640px) {
+  .swiper-button-prev1 {
+    left: 10px !important;
+    /* Adjust left position for mobile */
+  }
+
+  .swiper-button-next1 {
+    right: 10px !important;
+    /* Adjust right position for mobile */
+  }
+
+  .trimuk_blog_slider .swiper-button-prev1 {
+    left: 10px !important;
+  }
+
+  .trimuk_blog_slider .swiper-button-next1 {
+    right: 10px !important;
+  }
+
+  .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-prev1 {
+    left: -16px !important;
+  }
+
+  .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-next1 {
+    right: -16px !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .swiper-button-prev1 {
+    left: 10px !important;
+    /* Adjust left position for medium devices */
+  }
+
+  .swiper-button-next1 {
+    right: 10px !important;
+    /* Adjust right position for medium devices */
+  }
+
+  .trimuk_blog_slider .swiper-button-prev1 {
+    left: 10px !important;
+  }
+
+  .trimuk_blog_slider .swiper-button-next1 {
+    right: 10px !important;
+  }
+
+  .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-prev1 {
+    left: 0px !important;
+  }
+
+  .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-next1 {
+    right: 0px !important;
+  }
+}
+
+.blog-template-modal .react-responsive-modal-container,
+.blog-template-modal .react-responsive-modal-modal {
+  border-radius: 20px !important;
+}
+
+.customModal {
+  z-index: 99999 !important;
+  padding: 0px !important;
+  max-width: 1232px !important;
+}
+
+.post-content h1,
+.post-content h1 span {
+  font-family: Poppins, Poppins Fallback !important;
+  font-weight: 600 !important;
+  line-height: 48px !important;
+}
+
+.blog-layout-custom-style {
+  font-family: Poppins, Poppins Fallback !important;
+}
+
+@media (max-width: 768px) {
+  .blog-layout-custom-style .post-content h1 span {
+    line-height: 1 !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .blog-layout-custom-style .post-content h1 span {
+    line-height: 1 !important;
+  }
+}
+
+/* LinkedIn Swiper Custom Styles - Scoped to avoid affecting other swipers */
+.linkedin-swiper-container .linkedin-swiper {
+  padding-bottom: 40px;
+}
+
+.linkedin-swiper-container .linkedin-swiper-pagination {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.linkedin-swiper-container .linkedin-swiper-pagination-bullet {
+  width: 14px;
+  height: 4px;
+  border-radius: 0px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 !important;
+}
+
+.linkedin-swiper-container .linkedin-swiper-pagination-bullet-active {
+  width: 32px;
+  background: #133040 !important;
+  opacity: 1 !important;
+}
+
+.linkedin-swiper-container .linkedin-swiper-button-prev,
+.linkedin-swiper-container .linkedin-swiper-button-next {
+  position: absolute;
+}
+
+/* Always show navigation buttons - never disable them */
+.linkedin-swiper-container .linkedin-swiper-button-prev.swiper-button-disabled,
+.linkedin-swiper-container .linkedin-swiper-button-next.swiper-button-disabled {
+  opacity: 1 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+@media (max-width: 640px) {
+  .linkedin-swiper-container .linkedin-swiper-button-prev {
+    left: 10px !important;
+  }
+
+  .linkedin-swiper-container .linkedin-swiper-button-next {
+    right: 10px !important;
   }
 }

@@ -95,15 +95,15 @@ export const Typography: FC<TypographyProps> = ({
       case "SemiBold_H1":
       case "Medium_H1":
       case "Regular_H1":
-        fontSizeClass = "text-4xl md:text-5xl";
-        lineHeightClass = "leading-tight md:leading-tighter";
+        fontSizeClass = "text-4xl md:text-6xl";
+        lineHeightClass = "leading-tight md:leading-tight";
         letterSpacingClass = "tracking-tight";
         break;
       case "Bold_H2":
       case "SemiBold_H2":
       case "Medium_H2":
       case "Regular_H2":
-        fontSizeClass = "text-3xl md:text-4xl";
+        fontSizeClass = "text-4xl md:text-5xl";
         lineHeightClass = "leading-tight md:leading-snug";
         letterSpacingClass = "tracking-tight";
         break;
@@ -182,7 +182,7 @@ export const Typography: FC<TypographyProps> = ({
 
   const elementProps: HTMLAttributes<HTMLElement> = {
     className: cn(
-      "text-light_dark_ dark:text-text_dark",
+      "text-secondary",
       styleClasses,
       className
     ),

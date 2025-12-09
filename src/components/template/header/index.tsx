@@ -74,12 +74,21 @@ const navLinks: NavLink[] = [
   // },
 
   { title: "Services", href: "/services" },
+  { title: "Sustainability", href: "/sustainability" },
+  { title: "CSR", href: "/csr" },
   { title: "Clientele", href: "/clientele" },
-  { title: "Gallery", href: "/gallery" },
+  // { title: "Gallery", href: "/gallery" },
+  { title: "tracking", href: "https://track.visionstransport.com.my/" },
+  { title: "Blog", href: "/blog" },
+  { title: "Careers", href: "/careers" },
   { title: "Contact us", href: "/contact-us" },
 ];
 
-const Header = () => {
+interface HeaderProps {
+  isBlog?: boolean;
+}
+
+const Header = ({ isBlog = false }: HeaderProps) => {
   const location = usePathname();
   const [activeDropdown, setActiveDropdown] = useState("");
   const [expanded, setExpanded] = useState(false);
@@ -91,8 +100,13 @@ const Header = () => {
 
   return (
     <>
-      <HeaderTop />
-      <header className="mt-4 bg-transparent  z-50 ">
+      {!isBlog && <HeaderTop />}
+      <header
+        className={cn(
+          "mt-4 bg-transparent  z-50 ",
+          isBlog ? "bg-white  border-b border-stroke" : "bg-transparent"
+        )}
+      >
         <div className="max-w-7xl mx-auto ">
           <div className="flex items-center justify-between">
             <div className="flex-shrink-0 z-20">
@@ -160,7 +174,7 @@ const Header = () => {
                       <Typography
                         variant="Regular_H6"
                         className={cn(
-                          "text-white  duration-300    inline-flex items-center gap-2",
+                          "text-white  duration-300  inline-flex items-center gap-2",
                           activeDropdownLink
                         )}
                       >
@@ -177,7 +191,7 @@ const Header = () => {
                           return subLink.href ? (
                             <Link key={subLink.title} href={subLink?.href}>
                               <li
-                                className={`px-5 py-2 whitespace-nowrap text-gray_ cursor-pointer hover:bg-primary/10 flex items-center gap-2`}
+                                className={`px-5 py-2 whitespace-nowrap !text-gray_ cursor-pointer hover:bg-primary/10 flex items-center gap-2`}
                               >
                                 <Typography
                                   variant="Regular_H6"
@@ -205,12 +219,15 @@ const Header = () => {
                   ) : (
                     <li
                       key={link.title}
-                      className="text-white  duration-300  inline-flex items-center"
+                      className=" duration-300  inline-flex items-center"
                     >
                       <Typography
                         variant="Regular_H6"
                         link={link.href}
-                        className={activeParent}
+                        className={cn(
+                          activeParent,
+                          isBlog ? "!text-black" : "!text-white"
+                        )}
                       >
                         {link.title}
                       </Typography>
@@ -223,6 +240,7 @@ const Header = () => {
           </div>
         </div>
       </header>
+
       {/*  Mobile nav */}
       <m.nav
         initial="initial"

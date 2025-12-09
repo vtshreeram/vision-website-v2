@@ -1,7 +1,7 @@
 // ** import components
 import { VisionMissionGoals } from "@/components/pages/about-us";
 import { OurServices } from "@/components/pages/home";
-import { AboutUs, Banner, Partner, Benefits } from "@/components/shared";
+import { AboutUs, Banner,  Benefits } from "@/components/shared";
 import Head from "@/components/shared/head";
 
 // ** import images
@@ -18,6 +18,7 @@ import {
   IcoSupport,
   IcoDevelopment,
 } from "@/assets/icons";
+import Certified from "@/components/pages/about-us/cerfified";
 
 const AboutUsPage = () => {
   const features = [
@@ -51,31 +52,34 @@ const AboutUsPage = () => {
   const cardsData = [
     {
       icon: <IcoVision />,
-      title: "Complimentary Assessment",
-      desc: "Contact our logistics experts for a comprehensive analysis of your current operations. We’ll identify opportunities for improvement, cost savings, and efficiency gains specific to your business requirements.",
+      title: "Our Vision",
+      desc: "Technology-powered logistics platform delivering seamless visibility, cost optimization, safety, reliability, and scalable growth across enterprises.",
     },
     {
       icon: <IcoMission />,
-      title: "VIZFLEET Platform Setup",
-      desc: "Our technical team provides complete setup and integration support, including staff training, system configuration, and testing to ensure seamless operation from day one.",
+      title: "Our Mission",
+      desc: "Intelligent fleet management: enabling real-time tracking, smarter routing, compliance, reduced costs, higher uptime, and data-driven decisions.",
     },
     {
       icon: <IcoGoals />,
-      title: "Launch and Scale",
-      desc: "Begin with pilot routes to demonstrate value and gradually expand coverage based on proven performance. Our dedicated account management team ensures continuous optimization and support.",
+      title: "Our Goal",
+      desc: "Integrated supply chain solutions providing transparency, efficiency, sustainability, consistent performance, customer trust, regional expansion.",
     },
   ];
+
   return (
     <main>
       <Head heading="About Us" subHeading="About Us" bgImg={headBg} />
       <AboutUs
-      isAboutUs={false}
+        isAboutUs={false}
         title={
           <>
             Experience Excellence in <br /> Malaysian Transport Tech
           </>
         }
       />
+
+      <Certified />
       <VisionMissionGoals
         cardsData={cardsData}
         sectionTitle={
@@ -91,31 +95,21 @@ const AboutUsPage = () => {
           </>
         }
       />
-      <Partner />
+      {/* <Partner /> */}
       <OurServices
         title={
           <>
-            Our Services{" "}
-            <span className="text-primary">
-              Trusted Across{" "}
-              <span className="hidden md:inline">
-                <br />
-              </span>
-              Malaysia & Singapore
-            </span>
+            Our <span className="text-primary">Services</span>
           </>
         }
         description={
-          <>
-            Reliable logistics for every need from bonded <br />
-            trucking to warehousing and cross-border deliveries.
-          </>
+          <>Complete logistics solutions across Malaysia and Singapore.</>
         }
       />
       <Benefits
         title={
           <>
-            Leadership &<span className="text-primary">Team Excellence</span>
+            Leadership & <span className="text-primary">Team Excellence</span>
           </>
         }
         description={

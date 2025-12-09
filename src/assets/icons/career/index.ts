@@ -1,0 +1,5 @@
+export * from "./ico-arrow-box"
+export * from "./ico-bag"
+export * from "./ico-certificate"
+export * from "./ico-location"
+export * from "./ico-chair"

@@ -65,7 +65,7 @@ export const Banner: FC<BannerProps> = ({
                 variant="primary"
                 className="bg-white text-primary hover:bg-white/90"
               >
-                Book Free Demo
+                Contact us
               </Button>
             </Link>
           </div>

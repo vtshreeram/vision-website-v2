@@ -1,0 +1,120 @@
+"use client";
+
+// ** import core package
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+
+// ** import assets
+import {
+  IcoArrowBox,
+  IcoBag,
+  IcoChair,
+  IcoLocation,
+} from "@/assets/icons/career";
+
+// ** import data
+import { jobsData } from "./data";
+
+// ** import utils
+import { cn } from "@/lib/utils";
+import { fadeUp, staggerContainer, viewportOptions } from "@/lib/animations";
+import { Typography } from "@/components/ui/Typography";
+
+// Define types for the job data
+interface JobData {
+  title: string;
+  department: string;
+  positions: number;
+  experience: string;
+  location: string;
+}
+
+interface InfoItemProps {
+  icon: React.ReactNode;
+  text: string;
+}
+
+interface JobCardProps extends JobData {
+  className?: string;
+}
+
+const JobCard = ({
+  title,
+  department,
+  positions,
+  experience,
+  location,
+  className,
+}: JobCardProps) => {
+  const router = useRouter();
+  const jobSlug = title.replace(/\s+/g, "-");
+
+  return (
+    <motion.div
+      onClick={() => router.push(`/careers/${jobSlug}`)}
+      className={cn("w-full bg-white cursor-pointer shadow-lg px-5 py-4 ", className)}
+      variants={fadeUp}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ duration: 0.2 }}
+    >
+      <div className="flex justify-between items-center">
+        <Typography
+          variant="SemiBold_H4"
+          className="font-garamond text-primary-foreground "
+        >
+          {title}
+        </Typography>
+        <Link
+          href={`/careers/${jobSlug}`}
+          className="text-primary-foreground flex items-center gap-2"
+        >
+          <span className="hidden md:block">More Details</span>
+          {/* FIX 1: Removed InfoItem here as it was missing the 'text' prop.
+              The IcoArrowBox can be rendered directly. */}
+          <IcoArrowBox />
+        </Link>
+      </div>
+      <Typography variant="Regular_H5" className="mt-2 text-primary-foreground">
+        {department}
+      </Typography>
+      <div className="flex flex-wrap gap-x-4 gap-y-3 mt-4">
+        {/* FIX 2: Convert 'positions' to string when passing to InfoItem,
+            as InfoItemProps expects 'text' to be a string. */}
+        <InfoItem icon={<IcoChair />} text={String(positions)} />
+        <InfoItem icon={<IcoBag />} text={experience} />
+        <InfoItem icon={<IcoLocation />} text={location} />
+      </div>
+    </motion.div>
+  );
+};
+
+const InfoItem = ({ icon, text }: InfoItemProps) => (
+  <div className="flex items-center gap-2">
+    <div>{icon}</div>
+    <Typography variant="Regular_H5" className="text-primary-foreground">
+      {text}
+    </Typography>
+  </div>
+);
+
+const Career = () => {
+  return (
+    <section className="bg-background py-16 lg:py-20 container mx-auto">
+      <motion.div
+        className="space-y-6 lg:max-w-5xl mx-auto"
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOptions}
+        variants={staggerContainer}
+      >
+        {jobsData.map((job: JobData) => (
+          <JobCard key={job.title} {...job} />
+        ))}
+      </motion.div>
+    </section>
+  );
+};
+
+export default Career;

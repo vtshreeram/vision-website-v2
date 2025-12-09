@@ -17,61 +17,58 @@ import { Typography } from "@/components/ui/Typography";
 // ** import assets
 import centerImg from "@/assets/images/common/vizifleet-app/center-img.webp";
 import {
-  IcoQrCode,
-  IcoBooking,
-  IcoGpsTracking,
-  IcoCustomerOrder,
-  IcoNotification,
-  IcoPerformance,
+ IcoApp1,
+ IcoApp2,
+ IcoApp3,
+ IcoApp4,
+ IcoApp5,
+ IcoApp6,
 } from "@/assets/icons";
 
 export const VizifleetApp = () => {
   const featuresLeft = [
     {
-      icon: <IcoGpsTracking />,
-      title: "Real-Time GPS Tracking",
-      desc: "Monitor exact cargo location with live updates every 30 seconds",
+      icon: <IcoApp1 />,
+      title: "AI & GPS-Driven Safety",
+      desc: "Boost driver safety through AI systems and precise GPS tracking.",
     },
     {
-      icon: <IcoCustomerOrder />,
-      title: "Custom Order Management",
-      desc: "Tailored workflows that match your specific business requirements",
+      icon: <IcoApp2 />,
+      title: "Security & Compliance",
+      desc: "Ensure cargo safety through strict compliance checks.",
     },
   ];
 
   const featuresRight = [
     {
-      icon: <IcoQrCode />,
-      title: "QR Code scanning",
-      desc: "Instant proof of pickup and delivery with digital documentation",
+      icon: <IcoApp5 />,
+      title: "Live Location & Map Tracking",
+      desc: "Track all vehicles live on maps for instant route updates.",
     },
     {
-      icon: <IcoBooking />,
-      title: "Quick and easy booking",
-      desc: "Schedule shipments in under 2 minutes through our intuitive interface",
+      icon: <IcoApp6 />,
+      title: "Performance & Safety Analytic",
+      desc: "Use advanced reports to refine trips, cut delays, and boost safety.",
     },
   ];
 
   return (
-    <section className="py-16 md:py-20 global-padding-container">
+    <section className="py-16 md:py-20 global-padding-container bg-background">
       <div className="mx-auto max-w-7xl">
         <SectionHead
           title={
             <>
-              Smarter Fleet Management at{" "}
-              <span className="text-primary">Your Fingertips</span>
+              Smart Transport{" "}
+              <span className="text-primary">Management System</span>
             </>
           }
           description={
             <>
-              {" "}
-              VizFleet is designed to simplify logistics with modern{" "}
-              <span className="hidden md:inline">
-                <br />
-              </span>{" "}
-              tools that keep your fleet running smoothly.
+              Our advanced TMS delivers smarter, safer, and more efficient fleet
+              operations powered by real-time data and automation.
             </>
           }
+          descriptionClassName="max-w-2xl"
         />
         <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 !items-center">
           <div className=" space-y-12 md:space-y-20 ">
@@ -109,14 +106,14 @@ export const VizifleetApp = () => {
               className="text-center max-w-[281px] mx-auto md:mb-20"
             >
               <div className="flex justify-center">
-                <IcoNotification />
+                <IcoApp3 />
               </div>
               <div className="mt-6">
                 <Typography variant="Medium_H5">
-                  Automated Notifications
+                Fleet Visibility & Automation
                 </Typography>
                 <Typography variant="Regular_H6" className="mt-4 text-gray">
-                  Keep customers informed with automatic delivery updates
+                Get complete fleet insights with tools that drive smarter decisions.
                 </Typography>
               </div>
             </m.div>
@@ -132,18 +129,17 @@ export const VizifleetApp = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInDown}
-              className="text-center max-w-[281px] mx-auto md:mt-20"
+              className="text-center max-w-[400px] mx-auto md:mt-20"
             >
               <div className="flex justify-center">
-                <IcoPerformance />
+                <IcoApp4 />
               </div>
               <div className="mt-6">
                 <Typography variant="Medium_H5">
-                  Performance Analytics
+                Sustainability Insights (CO₂ & EV Data)
                 </Typography>
-                <Typography variant="Regular_H6" className="mt-4 text-gray">
-                  Comprehensive reporting and insights for continuous
-                  optimization
+                <Typography variant="Regular_H6" className="mt-4 text-gray max-w-[300px] mx-auto">
+                View CO₂ metrics to measure impact and plan greener fleets.
                 </Typography>
               </div>
             </m.div>

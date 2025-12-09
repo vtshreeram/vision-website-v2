@@ -1,4 +1,4 @@
-"use client"
+"use client";
 // ** import third party packages
 import { motion as m } from "framer-motion";
 
@@ -11,19 +11,19 @@ import { Typography } from "@/components/ui/Typography";
 const features = [
   {
     title: "Advanced Technology",
-    description: "Real-time tracking and automated management",
+    description: "AI-driven visibility and automated optimization",
   },
   {
     title: "Comprehensive Coverage",
-    description: "Complete Malaysia and Singapore network",
+    description: "Seamless Malaysia and Singapore logistics network",
   },
   {
     title: "Proven Track Record",
-    description: "17+ years serving Southeast Asia's logistics needs",
+    description: "17+ years powering Southeast Asia's supply chains",
   },
   {
-    title: "Advanced Scalable Solutions",
-    description: "From startups to enterprise-level operations",
+    title: "Scalable Solutions",
+    description: "From startups through regional enterprise growth",
   },
 ];
 
@@ -43,20 +43,14 @@ const WhyChoose = () => {
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-16"
         >
           {features.map((feature, idx) => (
-            <div
-              key={idx}
-              className="bg-white p-6  shadow-none"
-            >
+            <div key={idx} className="bg-white p-6  shadow-none">
               <Typography
-                variant="Bold_H4"
-                className="text-foreground mb-3"
+                variant="SemiBold_H4"
+                className="text-primary max-w-[200px] mb-3"
               >
                 {feature.title}
               </Typography>
-              <Typography
-                variant="Regular_H6"
-                className="text-gray "
-              >
+              <Typography variant="Regular_H6" className="text-gray ">
                 {feature.description}
               </Typography>
             </div>

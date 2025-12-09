@@ -1,29 +1,25 @@
 "use client";
 
 // ** import components
-import { VisionMissionGoals } from "@/components/pages/about-us";
 import {
   Count,
-  VisionForm,
   OurServices,
   VizifleetApp,
   Hero,
 } from "@/components/pages/home";
-import { AboutUs, Banner, Benefits, Partner } from "@/components/shared";
+import { AboutUs, Banner, Benefits } from "@/components/shared";
 import WhyChoose from "@/components/shared/why-choose";
 
 // ** import icons
 import {
- 
-  IcoAssessment,
-  IcoSetup,
-  IcoLaunch,
   IcoOperations,
   IcoLicense,
   IcoApproval,
   IcoMember,
   IcoCertified,
 } from "@/assets/icons";
+import PopularBrand from "@/components/shared/popular-brand";
+import LinkedinPost from "@/components/pages/home/linkedin-post";
 
 const Page = () => {
   const features = [
@@ -54,47 +50,13 @@ const Page = () => {
     },
   ];
 
-  const visionMission = [
-    {
-      icon: <IcoAssessment />,
-      title: "Complimentary Assessment",
-      desc: "Contact our logistics experts for a comprehensive analysis of your current operations. We’ll identify opportunities for improvement, cost savings, and efficiency gains specific to your business requirements.",
-    },
-    {
-      icon: <IcoSetup />,
-      title: "VIZFLEET Platform Setup",
-      desc: "Our technical team provides complete setup and integration support, including staff training, system configuration, and testing to ensure seamless operation from day one.",
-    },
-    {
-      icon: <IcoLaunch />,
-      title: "Launch and Scale",
-      desc: "Begin with pilot routes to demonstrate value and gradually expand coverage based on proven performance. Our dedicated account management team ensures continuous optimization and support.",
-    },
-  ];
   return (
     <main>
       <Hero />
-      <Partner />
       <WhyChoose />
       <AboutUs />
       <VizifleetApp />
-      <VisionMissionGoals
-        cardsData={visionMission}
-        sectionTitle={
-          <>
-            Get Started with{" "}
-            <span className="text-primary">
-              {" "}
-              Malaysia’s #1 Logistics Platform{" "}
-            </span>
-          </>
-        }
-        sectionDescription={
-          "Trusted by 3,500+ Businesses Across Malaysia & Singapore"
-        }
-      />
-      <VisionForm />
-      <Count />
+      <LinkedinPost />
       <OurServices
         title={
           <>
@@ -107,7 +69,10 @@ const Page = () => {
             Malaysia & Singapore:
           </>
         }
+        isViewMore={true}
       />
+      <PopularBrand />
+      <Count />
       <Benefits
         title={
           <>

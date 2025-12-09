@@ -10,7 +10,9 @@ import { cn } from "@/lib/utils";
 
 interface HeadProps {
   heading: string;
-  subHeading: string;
+  subHeading?: string;
+  link?: string;
+  linkText?: string;
   bgImg: StaticImageData | string;
   className?: string;
 }
@@ -18,6 +20,8 @@ interface HeadProps {
 const Head: React.FC<HeadProps> = ({
   heading,
   subHeading,
+  link,
+  linkText,
   bgImg,
   className,
 }) => {
@@ -43,7 +47,7 @@ const Head: React.FC<HeadProps> = ({
 
       <div className="relative">
         <Header />
-        <div className="py-16 lg:py-32 mx-auto max-w-7xl ">
+        <div className="py-16 md:py-20 mx-auto max-w-7xl ">
           <Typography
             variant="Bold_H1"
             className={`block  text-white text-3xl md:text-4xl`}
@@ -54,13 +58,31 @@ const Head: React.FC<HeadProps> = ({
             <Typography variant="Regular_H5" link="/" className="text-white ">
               Home
             </Typography>
+            {link && linkText && (
+              <>
+                <Typography variant="Regular_H5" className=" text-white ">
+                  /
+                </Typography>
+                <Typography
+                  variant="Regular_H5"
+                  link={link}
+                  className=" text-white "
+                >
+                  {linkText}
+                </Typography>
+              </>
+            )}
+            {subHeading && (
+              <>
+                <Typography variant="Regular_H5" className=" text-white ">
+                  /
+                </Typography>
 
-            <Typography variant="Regular_H5" className=" text-white ">
-              /
-            </Typography>
-            <Typography variant="Regular_H5" className=" text-white ">
-              {subHeading}
-            </Typography>
+                <Typography variant="Regular_H5" className=" text-white ">
+                  {subHeading}
+                </Typography>
+              </>
+            )}
           </div>
         </div>
       </div>

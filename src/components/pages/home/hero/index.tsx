@@ -34,6 +34,8 @@ export const Hero = () => {
           quality={95}
           sizes="100vw"
         />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Content */}
@@ -49,17 +51,21 @@ export const Hero = () => {
             >
               <Typography
                 variant="Bold_H1"
-                className="!text-white mb-4 text-shadow"
+                className="!text-white mb-4 text-shadow text-4xl md:text-5xl leading-tight"
               >
-                Cut Fleet Costs by 20% with Smart Logistics Automation
+                Malaysia & Singapore&apos;s
+                <br />
+                Most Trusted Cross-Border
+                <br />
+                Logistics Partner
               </Typography>
               <Typography
                 variant="Regular_H5"
                 className="text-white mb-6 lg:max-w-[85%]"
               >
-                VizFleet helps transport businesses in Malaysia & Singapore
-                streamline operations with real-time tracking, automated
-                payments, and seamless invoicing.
+                Accelerating smart, sustainable logistics with real-time
+                visibility, intelligent routing, and carbon-aligned fleet
+                performance across Malaysia & Singapore.
               </Typography>
             </m.div>
             <m.div
@@ -69,15 +75,15 @@ export const Hero = () => {
               variants={fadeInDown}
               className="mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-6"
             >
-              <Link href={"/about-us"}>
-                <Button variant="primary"> About us</Button>
-              </Link>
               <Link href={"/contact-us"}>
+                <Button variant="primary">Contact us</Button>
+              </Link>
+              <Link href={"/about-us"}>
                 <Button
                   variant="secondary"
                   className="border-white text-white hover:bg-white hover:text-primary"
                 >
-                  Book Free Demo
+                  About us
                 </Button>
               </Link>
             </m.div>

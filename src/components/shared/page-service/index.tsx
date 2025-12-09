@@ -1,0 +1,90 @@
+"use client";
+
+// ** import core packages
+import React from "react";
+import Image, { StaticImageData } from "next/image";
+
+// ** import third party packages
+import { motion as m } from "framer-motion";
+
+// ** import motion variants
+import { fadeInDown } from "@/utils/motion-variant";
+
+// ** import components
+import { Typography } from "@/components/ui/Typography";
+import { ServiceCard, DocumentCard } from "./service-card";
+
+interface PageServiceProps {
+  title: React.ReactNode;
+  subtitle: string;
+  image: StaticImageData;
+  imageAlt: string;
+  documents: DocumentCard[];
+}
+
+const PageService: React.FC<PageServiceProps> = ({
+  title,
+  subtitle,
+  image,
+  imageAlt,
+  documents,
+}) => {
+  return (
+    <section className="py-16 md:py-24 global-padding-container bg-background">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-8 md:mb-12">
+          <Typography variant="Bold_H2" className="text-foreground mb-2">
+            {title}
+          </Typography>
+          <Typography
+            variant="Regular_H5"
+            className="text-foreground max-w-3xl mx-auto"
+          >
+            {subtitle}
+          </Typography>
+        </div>
+
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
+          {/* Left Cards */}
+          <div className="lg:col-span-1 flex flex-col space-y-6 md:space-y-8">
+            {documents.slice(0, 2).map((doc, index) => (
+              <ServiceCard key={index} doc={doc} index={index} />
+            ))}
+          </div>
+
+          {/* Center Image */}
+          <div className="lg:col-span-1 order-first lg:order-none flex items-center justify-center">
+            <m.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInDown}
+              transition={{ delay: 0.2 }}
+              className="w-full h-full flex items-center justify-center"
+            >
+              <Image
+                src={image}
+                alt={imageAlt}
+                width={410}
+                height={699}
+                className="object-contain w-full h-full max-w-md"
+                placeholder="blur"
+              />
+            </m.div>
+          </div>
+
+          {/* Right Cards */}
+          <div className="lg:col-span-1 flex flex-col space-y-6 md:space-y-8">
+            {documents.slice(2, 4).map((doc, index) => (
+              <ServiceCard key={index + 2} doc={doc} index={index + 2} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PageService;

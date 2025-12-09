@@ -22,7 +22,7 @@ const HeaderTop = () => {
         <Link
           href={`mailto:${config.EMAIL}`}
           aria-label="Email"
-          className="flex items-center gap-2 min-w-0"
+          className="flex items-center gap-2 min-w-0 !text-white"
         >
           <IcoMail />
           <span className="truncate">operation@visionstransport.com.my</span>

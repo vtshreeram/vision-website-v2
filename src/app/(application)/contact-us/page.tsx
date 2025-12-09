@@ -2,10 +2,10 @@
 import ContactUs from "@/components/pages/contact-us";
 import { Banner } from "@/components/shared";
 import Head from "@/components/shared/head";
+import Faq from "@/components/shared/Faq";
 
 // ** import images
 import headBg from "@/assets/images/pages/contact-us/head-bg.png";
-import Faq from "@/components/shared/Faq";
 
 const ContactUsPage = () => {
   return (

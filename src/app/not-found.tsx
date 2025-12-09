@@ -10,7 +10,7 @@ export default function NotFound() {
           <Typography variant="Bold_H1" className="text-primary text-6xl mb-4">
             404
           </Typography>
-          <Typography variant="Bold_H2" className="text-foreground mb-4">
+          <Typography variant="Bold_H2" className="text-foreground mb-2">
             Page Not Found
           </Typography>
           <Typography variant="Regular_H6" className="text-gray mb-8">
