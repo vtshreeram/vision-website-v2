@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-select": "^2.2.2",
     "@sanity/block-content-to-markdown": "^1.0.0",
