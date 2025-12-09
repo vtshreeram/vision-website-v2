@@ -11,42 +11,7 @@ html {
    padding-block: 3rem !important;
 }
 
-@layer components {
-   /* .btn {
-      @apply active:brightness-95 hover:brightness-105 disabled:brightness-90 disabled:cursor-not-allowed inline-flex items-center justify-center px-6 py-3 transition-opacity duration-200 outline-none focus:outline-none cursor-pointer text-base font-semibold;
-      font-family: var(--font-poppins);
-   }
 
-   .btn-primary {
-      @apply btn text-black bg-gradient;
-   }
-
-   .btn-secondary {
-      @apply btn text-accent bg-transparent outline outline-1 outline-[var(--mainGradient)] hover:text-black hover:bg-gradient;
-   } */
-
-   .card {
-      @apply p-5 md:p-10 rounded-xl shadow hover:bg-lightGreen;
-   }
-
-   .title {
-      @apply text-3xl md:text-4xl text-primaryBlack font-bold;
-      font-family: var(--font-poppins);
-   }
-
-   .subtitle {
-      @apply text-lg md:text-xl font-medium text-secondaryBlack;
-      font-family: var(--font-poppins);
-   }
-
-   .nav-links {
-      @apply text-base font-medium text-primaryBlack hover:text-accent transition-colors duration-200;
-   }
-
-   .input {
-      @apply block w-full px-4 py-4 text-primaryBlack bg-white border border-lightgray focus:outline-none focus:ring-accent focus:border-accent caret-accent;
-   }
-}
 
 /* .backToTop {
     bottom: 25px;
