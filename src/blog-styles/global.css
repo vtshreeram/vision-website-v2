@@ -1,17 +1,57 @@
-@import "tailwindcss";
-/* @import "@fortawesome/fontawesome-free/css/all.css"; */
+@import "@fortawesome/fontawesome-free/css/all.css";
 
+@tailwind utilities;
+
+:root {
+   --swiper-theme-color: #bb2a8c !important;
+   --mainGradient: #bb2a8c;
+}
 
 html {
    scroll-behavior: smooth;
 }
 
+body {
+   font-family: "Ubuntu", sans-serif;
+}
 
 .custom_swiper {
    padding-block: 3rem !important;
 }
 
+@layer components {
+   .btn {
+      @apply active:brightness-95 hover:brightness-105 disabled:brightness-90 disabled:cursor-not-allowed inline-flex items-center justify-center px-6 py-3 transition-opacity duration-200 outline-none focus:outline-none cursor-pointer font-inter text-base font-semibold;
+   }
 
+   .btn-primary {
+      @apply btn text-black bg-gradient;
+   }
+
+   .btn-secondary {
+      @apply btn text-accent bg-transparent outline outline-1 outline-[var(--mainGradient)] hover:text-black hover:bg-gradient;
+   }
+
+   .card {
+      @apply p-5 md:p-10 rounded-xl shadow hover:bg-lightGreen;
+   }
+
+   .title {
+      @apply text-3xl md:text-4xl text-primaryBlack font-bold font-inter;
+   }
+
+   .subtitle {
+      @apply text-lg md:text-xl font-medium text-secondaryBlack font-inter;
+   }
+
+   .nav-links {
+      @apply text-base font-medium text-primaryBlack hover:text-accent transition-colors duration-200;
+   }
+
+   .input {
+      @apply block w-full px-4 py-4 text-primaryBlack bg-white border border-lightgray focus:outline-none focus:ring-accent focus:border-accent caret-accent;
+   }
+}
 
 /* .backToTop {
     bottom: 25px;
@@ -79,7 +119,8 @@ html {
 
 /* responsive */
 
-@media (min-width: 480px) {}
+@media (min-width: 480px) {
+}
 
 @media (min-width: 768px) {
    .sectionPadding {
@@ -92,7 +133,7 @@ html {
       padding-inline: 40px !important;
    }
 
-   .react-simple-image-viewer__modal>* {
+   .react-simple-image-viewer__modal > * {
       max-width: 70% !important;
    }
 }
@@ -112,18 +153,18 @@ html {
 .blog-layout-custom-style .axil-post-details h1,
 .blog-layout-custom-style .axil-post-details h2,
 .blog-layout-custom-style .axil-post-details h3 {
-   font-family: Poppins, Poppins Fallback !important;
+   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
    font-weight: 600 !important;
    line-height: 1.25 !important;
 }
 
 .axil-post-details h1 span {
-   font-family: Poppins, Poppins Fallback !important;
+   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
    font-weight: 600 !important;
 }
 
 .axil-post-details {
-   font-family: Poppins, Poppins Fallback !important;
+   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
 }
 
 .line-clamp-2 {
@@ -137,14 +178,14 @@ html {
 .trimuk_blog_slider .swiper-button-prev1 {
    left: -30px !important;
    display: block;
-   top: 50% !important;
-   transform: translateY(-50%);
+   /* top: 50% !important; */
+   /* transform: translateY(-50%); */
 }
 
 .trimuk_blog_slider .swiper-button-next1 {
    right: -30px !important;
-   top: 50% !important;
-   transform: translateY(-50%);
+   /* top: 50% !important; */
+   /* transform: translateY(-50%); */
    display: block;
 }
 
@@ -193,11 +234,9 @@ html {
 .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-prev1 {
    left: -60px !important;
 }
-
 .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-next1 {
    right: -60px !important;
 }
-
 @media (max-width: 640px) {
    .swiper-button-prev1 {
       left: 10px !important;
@@ -220,7 +259,6 @@ html {
    .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-prev1 {
       left: -16px !important;
    }
-
    .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-next1 {
       right: -16px !important;
    }
@@ -228,19 +266,16 @@ html {
 
 @media (min-width: 641px) and (max-width: 768px) {
    .swiper-button-prev1 {
-      left: 10px !important;
-      /* Adjust left position for medium devices */
+      left: 10px !important; /* Adjust left position for medium devices */
    }
 
    .swiper-button-next1 {
-      right: 10px !important;
-      /* Adjust right position for medium devices */
+      right: 10px !important; /* Adjust right position for medium devices */
    }
 
    .trimuk_blog_slider .swiper-button-prev1 {
       left: 10px !important;
    }
-
    .trimuk_blog_slider .swiper-button-next1 {
       right: 10px !important;
    }
@@ -248,7 +283,6 @@ html {
    .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-prev1 {
       left: 0px !important;
    }
-
    .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-next1 {
       right: 0px !important;
    }
@@ -267,13 +301,13 @@ html {
 
 .post-content h1,
 .post-content h1 span {
-   font-family: Poppins, Poppins Fallback !important;
+   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
    font-weight: 600 !important;
    line-height: 1.25 !important;
 }
 
 .blog-layout-custom-style {
-   font-family: Poppins, Poppins Fallback !important;
+   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
 }
 
 @media (max-width: 768px) {
