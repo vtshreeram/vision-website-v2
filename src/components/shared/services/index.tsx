@@ -26,13 +26,13 @@ import img9 from "@/assets/images/common/services/img-9.webp";
 
 const services = [
   {
-    img: img1,
+    img: img2,
     label: "Bonded Truck",
     description:
       "For customs-controlled shipments requiring secure, compliant bonded handling.",
   },
   {
-    img: img2,
+    img: img1,
     label: "Non-Bonded Truck",
     description:
       "Reliable nationwide transport for flexible, fast, and cost-efficient cargo movement.",

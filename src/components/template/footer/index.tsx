@@ -67,10 +67,6 @@ const links: FooterLink[] = [
     href: "/careers",
     label: "Careers",
   },
-  {
-    href: "/contact-us",
-    label: "Contact us",
-  },
 ];
 
 const otherLinks: FooterLink[] = [
@@ -118,7 +114,7 @@ const Footer = () => {
     <footer className="global-padding-container py-10">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col  justify-center lg:flex-row lg:items-start lg:justify-between lg:space-y-0">
-          <div className="order-2 lg:order-1 shrink-0 max-w-sm mt-10 lg:mt-0">
+          <div className="order-2 lg:order-1 shrink-0 md:max-w-[306px] mt-10 lg:mt-0">
             <LogoFooter />
 
             <Typography variant="Regular_H6" className={`mt-4 text-gray`}>
@@ -259,7 +255,7 @@ const Footer = () => {
 
         <div className="mt-12 border-t border-stroke pt-8 sm:mt-16 lg:mt-20">
           <div className="text-center">
-            <Typography variant="Medium_H6" className="text-stock block">
+            <Typography variant="Medium_H6" className="text-gray block">
               © {currentYear} Vizfleet. All rights reserved.
             </Typography>
           </div>

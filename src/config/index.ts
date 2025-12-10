@@ -1,4 +1,5 @@
 export const config = {
+  WEBSITE_HOST_URL: "https://vision-website-2-git-dev-peacock-india.vercel.app",
   EMAIL: "mailto:sales@visionstransport.com.my",
   PHONE: "tel:+9195959 95959",
 
