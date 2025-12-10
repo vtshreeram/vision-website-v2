@@ -54,12 +54,10 @@ const ContactUs = () => {
     <section className="overflow-hidden bg-background  py-16 md:py-24 global-padding-container">
       <div className="mx-auto max-w-7xl ">
         <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-5 lg:gap-x-14 xl:gap-x-16">
+          {/* Contact information */}
           <div className="order-2 lg:order-1 lg:col-span-3">
             <div className="mb-14 hidden lg:block">
-              <Typography
-                variant="SemiBold_H2"
-                className={`block text-gray`}
-              >
+              <Typography variant="SemiBold_H2" className={`block text-gray`}>
                 Get <span className="text-primary">in Touch</span>
               </Typography>
               <Typography
@@ -77,15 +75,13 @@ const ContactUs = () => {
                   variant="Bold_H6"
                   className={`block  text-primary `}
                 >
-                  Office hours
+                  Our office hours
                 </Typography>
                 <Typography
                   variant="Regular_H6"
                   className={`mt-4  block text-gray`}
                 >
-                  Monday to Saturday: 9:00 AM – 6:00 PM
-                  <br />
-                  Sunday: Closed
+                  Sun - Fri (08AM - 10PM)
                 </Typography>
               </div>
 
@@ -101,7 +97,7 @@ const ContactUs = () => {
                   className={`mt-4  block text-gray`}
                 >
                   No 2A-1 Jalan Kemuning Prima <br /> C33/C, Taman Kemuning
-                  Utama, <br /> Seksyen 33, 40400 <br /> Shah Alam Selangor
+                  Utama, <br /> Seksyen 33, 40400 Shah Alam <br /> Selangor
                 </Typography>
               </div>
               <div>
@@ -114,12 +110,14 @@ const ContactUs = () => {
                 <Typography
                   variant="Regular_H6"
                   className={`mt-4  block text-gray`}
+                  link={config.PHONE_2}
                 >
-                  Ph: +91 95755 95775
+                  Ph: +03-5131 3898
                 </Typography>
                 <Typography
                   variant="Regular_H6"
                   className={` block  text-gray`}
+                  link={config.EMAIL}
                 >
                   Email: sales@visionstransport.com.my
                 </Typography>
@@ -201,7 +199,7 @@ const ContactUs = () => {
                     </label>
                     <div className="mt-2">
                       <PhoneInput
-                        country={"in"}
+                        country={"my"}
                         onChange={(value) => setValue("phone", value)}
                         inputProps={{
                           name: "phone",

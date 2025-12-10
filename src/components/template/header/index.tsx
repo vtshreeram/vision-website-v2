@@ -80,7 +80,7 @@ const navLinks: NavLink[] = [
   // { title: "Clientele", href: "/clientele" },
   // { title: "Gallery", href: "/gallery" },
   {
-    title: "tracking",
+    title: "Tracking",
     href: "https://track.visionstransport.com.my/",
     target: "_blank",
   },

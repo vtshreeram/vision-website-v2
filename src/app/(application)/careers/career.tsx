@@ -101,7 +101,7 @@ const InfoItem = ({ icon, text }: InfoItemProps) => (
 
 const Career = () => {
   return (
-    <section className="bg-background py-16 lg:py-20 container mx-auto">
+    <section className="bg-background py-16 lg:py-20 container global-padding-container mx-auto">
       <motion.div
         className="space-y-6 lg:max-w-5xl mx-auto"
         initial="hidden"

@@ -15,7 +15,7 @@ const ServicesPage = () => {
           <Services />
         </div>
       </section>
-      <VizifleetApp />
+      {/* <VizifleetApp /> */}
       <Banner />
     </main>
   );

@@ -125,22 +125,21 @@ const Footer = () => {
             <div className="mt-4">
               <Typography
                 variant="Regular_H6"
-                className={`block text-gray`}
+                className={`block text-gray whitespace-nowrap`}
                 link={config.PHONE}
               >
-                Ph. No:
+                Ph. No:{" "}
                 <span className="text-foreground font-medium">
                   +91 95959 95959
                 </span>
               </Typography>
               <Typography
                 variant="Regular_H6"
-                className={`block text-gray`}
+                className={`block text-gray whitespace-nowrap`}
                 link={config.EMAIL}
               >
-                Email:
+                Email:{" "}
                 <span className="text-foreground font-medium">
-                  {" "}
                   sales@visionstransport.com.my
                 </span>{" "}
               </Typography>
