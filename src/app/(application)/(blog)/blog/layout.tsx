@@ -3,7 +3,6 @@ import { ReactNode } from "react";
 
 //  ** import styles
 import "../../../../blog-styles/style.scss";
-import "../../../../blog-styles/global.css";
 
 //  ** import utils
 import { cn } from "./_libs/utils";

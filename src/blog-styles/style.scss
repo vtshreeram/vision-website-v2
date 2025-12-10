@@ -1,63 +1,116 @@
+/*********************************************************************************
+	Template Name: Blogar Personal Blog Template
+	Template URL: https://axilthemes.com/demo/template/splash/blogar/index.html
+	Description: Blogar Personal Blog HTML5 Template
+	Author: Axilthemes
+	Author URL: https://axilthemes.com/
+	Version: 1.1.1
+
+**********************************************************************************/
+
+/**************************************************************
+	
+	STYLESHEET INDEXING
+	|
+	|
+	|___ Default Styles
+	|	|
+	|	|___ Reset Styles
+	|	|___ Typography
+	|	|___ Animations
+	|	|___ Utilities
+	|
+	|
+	|___Elements Styles
+	|	|___ Button
+	|	|___ Section Title
+	|
+	|
+	|___Blocks Styles
+	|	|___ Header 
+	|	|___ Navigation 
+	|	|___ Banner
+	|	|___ Footer
+	|
+	|
+	|___ END STYLESHEET INDEXING
+
+***************************************************************/
+
 /**************************************
-    Load Modules First (NO CSS Output)
+    Default Styles
 ***************************************/
 @use "default/variables" as *;
 @use "default/mixins" as *;
-@use "default/extend" as *;
-@use "default/common" as *;
-@use "default/animations" as *;
-@use "default/reset" as *;
-@use "default/shortcode" as *;
-@use "default/spacing" as *;
-@use "default/typography" as *;
-
-@use "elements/button" as *;
-@use "elements/cursor" as *;
-@use "elements/section-title" as *;
-@use "elements/tab" as *;
-@use "elements/category" as *;
-@use "elements/social" as *;
-@use "elements/video" as *;
-@use "elements/scrolltotop" as *;
-@use "elements/slick" as *;
-@use "elements/breadcrumb" as *;
-@use "elements/contact" as *;
-@use "elements/pagination" as *;
-@use "elements/animated_image" as *;
-@use "elements/close" as *;
-
-@use "header/header" as *;
-@use "header/nav" as *;
-@use "header/subscribe" as *;
-@use "header/mobilemenu" as *;
-
-@use "post/post-list" as *;
-@use "post/sidebar" as *;
-@use "post/post-details" as *;
-@use "post/post-format" as *;
-@use "post/post-stories" as *;
-@use "post/comment" as *;
-@use "post/utils" as *;
-
-@use "template/banner" as *;
-@use "template/instagram" as *;
-@use "template/author" as *;
-@use "template/animation-image-hover" as *;
-@use "template/error" as *;
-@use "template/maintanence" as *;
-
-@use "footer/footer" as *;
-
-/**************************************
-    Wrap All Rendered Styles
-***************************************/
 .blog-layout-custom-style {
-  @include generate-reset();           // if your reset uses mixins
-  @include generate-typography();      // if typography uses mixins
+  @import "default/reset";
 
-  // If your partial files generate global CSS automatically,
-  // you may need to re-wrap them manually by copying only CSS rules.
-  
-  // If you want, I can rewrite your reset, typography, header, post, etc.
-  // so everything stays inside this class cleanly.
+  .axil-post-details {
+    @import "default/typography";
+  }
+  @import "default/extend";
+  @import "default/animations";
+  @import "default/shortcode";
+  @import "default/spacing";
+  @import "default/common";
+  // @import 'default/forms';
+
+  /**************************************
+	Elements Styles
+***************************************/
+  @import "elements/button";
+  @import "elements/cursor";
+  @import "elements/section-title";
+  @import "elements/tab";
+  @import "elements/category";
+  @import "elements/social";
+  @import "elements/video";
+  @import "elements/scrolltotop";
+  @import "elements/slick";
+  @import "elements/breadcrumb";
+  @import "elements/contact";
+  @import "elements/pagination";
+  @import "elements/animated_image";
+  @import "elements/close";
+
+  /**************************************
+	Header Styles
+***************************************/
+  @import "header/header";
+  @import "header/nav";
+  @import "header/subscribe";
+  @import "header/mobilemenu";
+
+  /**************************************
+	Post Styles
+***************************************/
+  @import "post/post-list";
+  @import "post/sidebar";
+  @import "post/post-details";
+  @import "post/post-format";
+  @import "post/post-stories";
+  @import "post/comment";
+  @import "post/utils";
+
+  /**************************************
+	Template Styles
+***************************************/
+  @import "template/banner";
+  @import "template/instagram";
+  // @import "template/darkversion";
+  @import "template/author";
+  @import "template/animation-image-hover";
+  @import "template/error";
+  @import "template/maintanence";
+
+  /**************************************
+	Footer Styles
+***************************************/
+  @import "footer/footer";
+  // @import "footer/dark";
+
+  /**************************************
+ Rtl Styles
+ ***************************************/
+  // @import 'rtl/rtl';
 }
