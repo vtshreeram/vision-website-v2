@@ -128,8 +128,8 @@ const SustainabilityPage = () => {
       <PageService
         title={
           <>
-            Sustainable Packaging & <span className="text-primary">Cargo</span>{" "}
-            Handling
+            Sustainable Packaging & <span className="text-primary">Cargo Handling</span>{" "}
+            
           </>
         }
         subtitle="Greener packaging and handling practices for sustainable logistics."
