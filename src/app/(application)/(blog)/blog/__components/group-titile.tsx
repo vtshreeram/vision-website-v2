@@ -24,7 +24,7 @@ const GroupTitle = ({ title, href, id }: IGroupTitle) => {
             link={href}
             variant="Medium_H5"
             className={cn(
-              "capitalize text-primary hover:text-primary/90 ",
+              "capitalize text-primary hover:text-primary/90 whitespace-nowrap ",
               blogFontConfig.subtitle
             )}
           >

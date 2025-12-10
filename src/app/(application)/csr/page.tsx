@@ -15,7 +15,8 @@ import headBg from "@/assets/images/pages/csr/head.webp";
 import aboutImage from "@/assets/images/pages/csr/about.png";
 import pageServiceImage from "@/assets/images/pages/csr/page-service.png";
 import sliderImage from "@/assets/images/pages/csr/slider-1.png";
-import aboutLogo from "@/assets/images/pages/csr/about-logo.png"
+import aboutLogo from "@/assets/images/pages/csr/about-logo.png";
+import { IcoCsr1, IcoCsr2, IcoCsr3, IcoCsr4 } from "@/assets/icons";
 
 const employeeWellbeingInitiatives = [
   "Safe and supportive working environments",
@@ -27,166 +28,33 @@ const employeeWellbeingInitiatives = [
 
 const csrDocuments = [
   {
-    icon: (
-      <svg
-        width="48"
-        height="48"
-        viewBox="0 0 48 48"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect
-          x="8"
-          y="6"
-          width="32"
-          height="36"
-          rx="2"
-          stroke="white"
-          strokeWidth="2"
-          fill="none"
-        />
-        <line
-          x1="14"
-          y1="14"
-          x2="34"
-          y2="14"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <line
-          x1="14"
-          y1="20"
-          x2="34"
-          y2="20"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <line
-          x1="14"
-          y1="26"
-          x2="30"
-          y2="26"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <line
-          x1="14"
-          y1="32"
-          x2="28"
-          y2="32"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
+    icon: <IcoCsr1 />,
+
     title: "CSR Report",
     description:
       "Our annual statement highlighting key CSR achievements, progress, and long-term organisational goals.",
+    downloadLink: "#",
   },
   {
-    icon: (
-      <svg
-        width="48"
-        height="48"
-        viewBox="0 0 48 48"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          cx="24"
-          cy="24"
-          r="18"
-          stroke="white"
-          strokeWidth="2"
-          fill="none"
-        />
-        <path
-          d="M24 12V24L30 30"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <circle cx="24" cy="20" r="3" fill="white" />
-        <rect x="20" y="32" width="8" height="4" rx="1" fill="white" />
-      </svg>
-    ),
+    icon: <IcoCsr2 />,
     title: "Safety & Wellbeing Policy",
     description:
       "Our framework for workplace safety, fair labour standards, and employee wellbeing compliance.",
+    downloadLink: "#",
   },
   {
-    icon: (
-      <svg
-        width="48"
-        height="48"
-        viewBox="0 0 48 48"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle cx="16" cy="20" r="4" fill="white" />
-        <circle cx="32" cy="20" r="4" fill="white" />
-        <path
-          d="M12 32C12 28 16 26 20 26H28C32 26 36 28 36 32"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <circle cx="24" cy="12" r="3" fill="white" />
-        <path
-          d="M24 12V8M24 8L20 4M24 8L28 4"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
+    icon: <IcoCsr3 />,
     title: "Community Impact Summary",
     description:
       "Key highlights showcasing our annual community impact achievements.",
+    downloadLink: "#",
   },
   {
-    icon: (
-      <svg
-        width="48"
-        height="48"
-        viewBox="0 0 48 48"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect
-          x="12"
-          y="16"
-          width="24"
-          height="20"
-          rx="2"
-          stroke="white"
-          strokeWidth="2"
-          fill="none"
-        />
-        <path
-          d="M16 16V12C16 10.8954 16.8954 10 18 10H30C31.1046 10 32 10.8954 32 12V16"
-          stroke="white"
-          strokeWidth="2"
-        />
-        <path
-          d="M20 24L24 28L28 24"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <circle cx="18" cy="30" r="1.5" fill="white" />
-        <circle cx="24" cy="30" r="1.5" fill="white" />
-        <circle cx="30" cy="30" r="1.5" fill="white" />
-      </svg>
-    ),
+    icon: <IcoCsr4 />,
     title: "Environmental Responsibility",
     description:
       "Key highlights reflecting our annual environmental sustainability progress",
+    downloadLink: "#",
   },
 ];
 
@@ -237,6 +105,28 @@ const sliderImages = [
   },
 ];
 
+const whyChooseFeatures = [
+  {
+    title: "Environmental Responsibility",
+    description:
+      "Greener operations through waste reduction and energy-efficient practices.",
+  },
+  {
+    title: "Community Impact",
+    description: "Supporting local communities with outreach, education",
+  },
+  {
+    title: "Employee Wellbeing",
+    description:
+      "Safe workplaces through training, development, and expanded opportunities.",
+  },
+  {
+    title: "Ethical Practices",
+    description:
+      "Transparent operations grounded in fairness, integrity, and compliance.",
+  },
+];
+
 const CsrPage = () => {
   return (
     <main>
@@ -272,7 +162,10 @@ const CsrPage = () => {
         isAboutUs={true}
         variant="secondary"
       />
-      <WhyChoose />
+      <WhyChoose
+        title="Why CSR Matters at Visions"
+        features={whyChooseFeatures}
+      />
       <StatsSection />
       <PageService
         title={
@@ -284,6 +177,7 @@ const CsrPage = () => {
         image={pageServiceImage}
         imageAlt="CSR Documentation"
         documents={csrDocuments}
+        subtitleClassName="max-w-4xl"
       />
       <SustainableOperations
         title={

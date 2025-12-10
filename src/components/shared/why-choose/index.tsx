@@ -1,6 +1,8 @@
 "use client";
+
 // ** import third party packages
 import { motion as m } from "framer-motion";
+import { ReactNode } from "react";
 
 // ** import motion variants
 import { fadeInDown } from "@/utils/motion-variant";
@@ -8,31 +10,22 @@ import { fadeInDown } from "@/utils/motion-variant";
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 
-const features = [
-  {
-    title: "Advanced Technology",
-    description: "AI-driven visibility and automated optimization",
-  },
-  {
-    title: "Comprehensive Coverage",
-    description: "Seamless Malaysia and Singapore logistics network",
-  },
-  {
-    title: "Proven Track Record",
-    description: "17+ years powering Southeast Asia's supply chains",
-  },
-  {
-    title: "Scalable Solutions",
-    description: "From startups through regional enterprise growth",
-  },
-];
+interface WhyChooseFeature {
+  title: string;
+  description: string;
+}
 
-const WhyChoose = () => {
+interface WhyChooseProps {
+  title: ReactNode;
+  features: WhyChooseFeature[];
+}
+
+const WhyChoose = ({ title, features }: WhyChooseProps) => {
   return (
     <section className="py-10 lg:pt-16 lg:pb-20  global-padding-container bg-primary">
       <div className="mx-auto max-w-7xl">
         <Typography variant="SemiBold_H3" className={` text-white text-center`}>
-          Why Leading Companies Choose Visions
+          {title}
         </Typography>
         {/* Stats Row */}
         <m.div
@@ -43,14 +36,14 @@ const WhyChoose = () => {
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-16"
         >
           {features.map((feature, idx) => (
-            <div key={idx} className="bg-white p-6  shadow-none">
+            <div key={idx} className="bg-white px-6 py-8  shadow-none">
               <Typography
                 variant="SemiBold_H4"
                 className="text-primary max-w-[200px] mb-3"
               >
                 {feature.title}
               </Typography>
-              <Typography variant="Regular_H6" className="text-gray ">
+              <Typography variant="Medium_H6" className="text-black/80 ">
                 {feature.description}
               </Typography>
             </div>

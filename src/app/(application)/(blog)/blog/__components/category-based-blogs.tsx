@@ -207,7 +207,7 @@ const GroupedBasedBlogSlider = ({
             {/* first component  */}
             <div className="relative mt-4 w-full md:w-[400px]">
               <Input
-                className="w-full rounded-[4px] px-[14px] py-3 pr-10 placeholder:text-light_gray focus:!outline-primary focus-visible:!outline-primary"
+                className="w-full rounded-[4px] px-[14px] py-3 pr-10 placeholder:text-gray "
                 placeholder="Search logistics insights..."
                 value={searchString}
                 onChange={(e) => setSearchString(e.target.value)}

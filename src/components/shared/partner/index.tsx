@@ -8,9 +8,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper/modules";
 
 // ** import assets
-import { LogoDHL, LogoDSV, LogoFlash, LogoSPX } from "@/assets/icons";
+import {
+  IcoSustainability1,
+  IcoSustainability2,
+  IcoSustainability3,
+  IcoSustainability4,
+} from "@/assets/icons";
 
 export const Partner = () => {
+  const logos = [
+    IcoSustainability1,
+    IcoSustainability2,
+    IcoSustainability3,
+    IcoSustainability4,
+  ];
   return (
     <section className="bg-primary py-10 md:py-16 lg:py-20 global-padding-container">
       <div className="mx-auto max-w-7xl ">
@@ -56,27 +67,13 @@ export const Partner = () => {
             modules={[FreeMode, Autoplay]}
             className="mySwiper"
           >
-            <SwiperSlide>
-              <div className="flex items-center justify-center !h-full">
-                <LogoSPX />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="flex items-center justify-center !h-full">
-                <LogoFlash />
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="flex items-center justify-center !h-full">
-                <LogoDSV />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="flex items-center justify-center !h-full">
-                <LogoDHL />
-              </div>
-            </SwiperSlide>
+            {logos.map((Logo, index) => (
+              <SwiperSlide key={index}>
+                <div className="flex items-center justify-center !h-full">
+                  <Logo />
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>

@@ -46,7 +46,7 @@ const RelatedBlogs = ({
 }
 `);
 
-  console.log(query);
+  // console.log(query);
   const options = { next: { revalidate: 30 } };
 
   const [posts, setPosts] = useState<SanityDocument[]>([]);
@@ -63,7 +63,7 @@ const RelatedBlogs = ({
         options
       )
       .then((value) => {
-        console.log(value);
+        // console.log(value);
         setPosts(value);
       })
       .catch((err) => {

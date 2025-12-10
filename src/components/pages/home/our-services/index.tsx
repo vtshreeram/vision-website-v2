@@ -21,7 +21,7 @@ export const OurServices = ({
   return (
     <section className="py-16 md:py-20 global-padding-container bg-[#fcf8f6]">
       <div className="mx-auto max-w-7xl">
-        <SectionHead title={title} description={description} />
+        <SectionHead title={title} description={description} descriptionClassName="lg:max-w-2xl" />
         <div className="mt-14">
           <Services isViewMore={isViewMore} />
         </div>

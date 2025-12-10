@@ -47,10 +47,10 @@ const Head: React.FC<HeadProps> = ({
 
       <div className="relative">
         <Header />
-        <div className="py-16 md:py-20 mx-auto max-w-7xl ">
+        <div className="py-12 md:py-20 mx-auto max-w-7xl ">
           <Typography
             variant="Bold_H1"
-            className={`block  text-white text-3xl md:text-4xl`}
+            className={`block  text-white text-3xl lg:text-4xl`}
           >
             {heading}
           </Typography>

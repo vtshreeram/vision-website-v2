@@ -11,6 +11,7 @@ import { fadeInDown } from "@/utils/motion-variant";
 
 // ** import components
 import { Typography } from "@/components/ui/Typography";
+import { IcoCommunity, IcoEducation, IcoSocialSafety } from "@/assets/icons";
 
 interface CardData {
   icon: React.ReactElement;
@@ -20,97 +21,19 @@ interface CardData {
 
 const cardsData: CardData[] = [
   {
-    icon: (
-      <svg
-        width="48"
-        height="48"
-        viewBox="0 0 48 48"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect x="4" y="4" width="18" height="18" rx="2" fill="#ED2224" />
-        <rect x="26" y="4" width="18" height="18" rx="2" fill="#ED2224" />
-        <rect x="4" y="26" width="18" height="18" rx="2" fill="#ED2224" />
-        <rect x="26" y="26" width="18" height="18" rx="2" fill="#ED2224" />
-      </svg>
-    ),
+    icon: <IcoCommunity />,
     title: "Community Outreach",
     description:
       "Supporting local groups through donations, volunteering, and community programs.",
   },
   {
-    icon: (
-      <svg
-        width="48"
-        height="48"
-        viewBox="0 0 48 48"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8 12C8 10.8954 8.89543 10 10 10H38C39.1046 10 40 10.8954 40 12V36C40 37.1046 39.1046 38 38 38H10C8.89543 38 8 37.1046 8 36V12Z"
-          fill="#ED2224"
-        />
-        <path
-          d="M8 12C8 10.8954 8.89543 10 10 10H24V38H10C8.89543 38 8 37.1046 8 36V12Z"
-          fill="#ED2224"
-          fillOpacity="0.8"
-        />
-        <line
-          x1="18"
-          y1="20"
-          x2="30"
-          y2="20"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <line
-          x1="18"
-          y1="24"
-          x2="30"
-          y2="24"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <line
-          x1="18"
-          y1="28"
-          x2="26"
-          y2="28"
-          stroke="white"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
+    icon: <IcoEducation />,
     title: "Education & Training",
     description:
       "Delivering learning opportunities and support for youth and local communities.",
   },
   {
-    icon: (
-      <svg
-        width="48"
-        height="48"
-        viewBox="0 0 48 48"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M24 6L8 14V22C8 30.8366 12.4772 38.9875 19.5 43.5C21.5 44.5 22.5 44.5 24 44.5C25.5 44.5 26.5 44.5 28.5 43.5C35.5228 38.9875 40 30.8366 40 22V14L24 6Z"
-          fill="#ED2224"
-        />
-        <path
-          d="M20 26L24 30L32 22"
-          stroke="white"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
+    icon: <IcoSocialSafety />,
     title: "Safety Awareness Programs",
     description:
       "Advancing road safety and operational safety across surrounding communities.",
@@ -129,7 +52,7 @@ const SocialCommunity = () => {
         </div>
 
         {/* Subtitle */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-14">
           <Typography
             variant="Regular_H5"
             className="text-gray max-w-lg mx-auto"
@@ -150,8 +73,8 @@ const SocialCommunity = () => {
               variants={fadeInDown}
               className="text-center"
             >
-              <div className="flex justify-center mb-4">{card.icon}</div>
-              <Typography variant="Medium_H5" className="text-black mb-3">
+              <div className="flex justify-center mb-6">{card.icon}</div>
+              <Typography variant="Medium_H5" className="text-black mb-4">
                 {card.title}
               </Typography>
               <Typography variant="Regular_H6" className="text-gray">

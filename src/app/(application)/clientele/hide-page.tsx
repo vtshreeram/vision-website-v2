@@ -49,7 +49,7 @@ const ClientelePage = () => {
     <main>
       <Head heading="Clientele" subHeading="Clients" bgImg={headBg} />
       <CompanyLogo />
-      <WhyChoose />
+      {/* <WhyChoose /> */}
       <Benefits
         title={
           <>

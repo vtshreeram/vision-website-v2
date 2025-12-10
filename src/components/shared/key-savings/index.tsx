@@ -30,21 +30,23 @@ const KeySavings = () => {
           variants={fadeInDown}
           className="py-8 md:py-12"
         >
-          <div className="flex items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
             {savings.map((saving, index) => (
-              <React.Fragment key={index}>
-                {index !== 0 && (
-                  <div className="w-px h-16 md:h-20 bg-white flex-shrink-0"></div>
-                )}
-                <div className="flex-1 text-center py-4 md:py-6 px-4 md:px-6">
-                  <Typography variant="Bold_H2" className="text-white  mb-2 ">
-                    {saving.percentage}
-                  </Typography>
-                  <Typography variant="Regular_H5" className="text-white">
-                    {saving.label}
-                  </Typography>
-                </div>
-              </React.Fragment>
+              <div
+                key={index}
+                className={`text-center py-4 md:py-6 px-4 md:px-6 ${
+                  index % 2 === 0 && index < savings.length - 1
+                    ? "border-r border-white"
+                    : ""
+                } ${index < 3 ? "md:border-r border-white" : ""}`}
+              >
+                <Typography variant="Bold_H2" className="text-white mb-2">
+                  {saving.percentage}
+                </Typography>
+                <Typography variant="Regular_H5" className="text-white">
+                  {saving.label}
+                </Typography>
+              </div>
             ))}
           </div>
         </m.div>

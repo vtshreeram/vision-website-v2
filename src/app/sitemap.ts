@@ -6,7 +6,6 @@ export default async function sitemap() {
     "/",
     "/about-us",
     "/services",
-    "/clientele",
     "/gallery",
     "/contact-us",
   ].map((route) => {

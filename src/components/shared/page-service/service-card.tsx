@@ -36,22 +36,27 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ doc, index }) => {
       className="flex-1 flex"
     >
       <div className="bg-primary p-6 md:p-8 flex flex-col items-start text-start w-full flex-1">
-        <div className="mb-4 flex justify-start">{doc.icon}</div>
+        <div className="mb-4 flex justify-start p-2 bg-white rounded-md">
+          {doc.icon}
+        </div>
         <Typography variant="Bold_H5" className="text-white mb-3">
           {doc.title}
         </Typography>
-        <Typography variant="Regular_H6" className="text-white mb-6 flex-grow">
+        <Typography variant="Regular_H6" className="text-white  flex-grow">
           {doc.description}
         </Typography>
-        <a
-          href={doc.downloadLink || "#"}
-          className="flex items-start justify-start gap-2 text-white hover:opacity-80 transition-opacity group mt-auto"
-        >
-          <Typography variant="Medium_H6" className="text-white">
-            Download
-          </Typography>
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </a>
+
+        {doc.downloadLink && (
+          <a
+            href={doc.downloadLink || "#"}
+            className="flex items-start justify-start gap-2 text-white hover:opacity-80 transition-opacity group mt-6"
+          >
+            <Typography variant="Medium_H6" className="text-white">
+              Download
+            </Typography>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+        )}
       </div>
     </m.div>
   );

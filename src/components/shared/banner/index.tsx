@@ -25,12 +25,12 @@ interface BannerProps {
 
 export const Banner: FC<BannerProps> = ({
   title = "Ready to Transform Your Logistics Operations?",
-  subTitle = "Trusted by 3,500+ companies, Visions Transport delivers smart logistics with VIZFLEET tech and 17+ years of proven expertise.",
+  subTitle = "Trusted by 3,500+ companies, Visions Transport delivers smart, sustainable logistics powered by VIZFLEET technology and 17+ years of proven expertise.",
 }) => {
   return (
     <section
       id="contactUs"
-      className="relative overflow-hidden  global-padding-container py-16 md:py-24 lg:!py-32"
+      className="relative overflow-hidden  global-padding-container py-16 md:py-24 lg:!py-28"
     >
       <div className="absolute inset-0">
         <Image
@@ -48,7 +48,7 @@ export const Banner: FC<BannerProps> = ({
         variants={fadeInDown}
         className="relative mx-auto max-w-7xl"
       >
-        <div className="max-w-lg">
+        <div className="max-w-xl">
           <Typography
             variant="SemiBold_H3"
             className={`block leading-tight text-white `}

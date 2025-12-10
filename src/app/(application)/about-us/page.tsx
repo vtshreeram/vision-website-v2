@@ -1,8 +1,10 @@
 // ** import components
 import { VisionMissionGoals } from "@/components/pages/about-us";
 import { OurServices } from "@/components/pages/home";
-import { AboutUs, Banner,  Benefits } from "@/components/shared";
+import { AboutUs, Banner, Benefits } from "@/components/shared";
 import Head from "@/components/shared/head";
+import Certified from "@/components/pages/about-us/certified";
+import PopularBrand from "@/components/shared/popular-brand";
 
 // ** import images
 import headBg from "@/assets/images/pages/about-us/head-bg.webp";
@@ -18,7 +20,6 @@ import {
   IcoSupport,
   IcoDevelopment,
 } from "@/assets/icons";
-import Certified from "@/components/pages/about-us/cerfified";
 
 const AboutUsPage = () => {
   const features = [
@@ -90,8 +91,7 @@ const AboutUsPage = () => {
         }
         sectionDescription={
           <>
-            Discover the Essence of Excellence <br />
-            with Visions Transport Enterprise
+            Discover the Essence of Excellence with Visions Transport Enterprise
           </>
         }
       />
@@ -119,7 +119,9 @@ const AboutUsPage = () => {
           </>
         }
         features={features}
+        isBackgroundWhite={true}
       />
+      <PopularBrand />
       <Banner />
     </main>
   );

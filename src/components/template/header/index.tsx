@@ -57,7 +57,8 @@ const heightVariant = {
 type NavLink = {
   title: string;
   href?: string;
-  subLinks?: { title: string; href?: string }[];
+  target?: string;
+  subLinks?: { title: string; href?: string; target?: string }[];
 };
 
 const navLinks: NavLink[] = [
@@ -76,9 +77,13 @@ const navLinks: NavLink[] = [
   { title: "Services", href: "/services" },
   { title: "Sustainability", href: "/sustainability" },
   { title: "CSR", href: "/csr" },
-  { title: "Clientele", href: "/clientele" },
+  // { title: "Clientele", href: "/clientele" },
   // { title: "Gallery", href: "/gallery" },
-  { title: "tracking", href: "https://track.visionstransport.com.my/" },
+  {
+    title: "tracking",
+    href: "https://track.visionstransport.com.my/",
+    target: "_blank",
+  },
   { title: "Blog", href: "/blog" },
   { title: "Careers", href: "/careers" },
   { title: "Contact us", href: "/contact-us" },
@@ -189,7 +194,11 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                       >
                         {link.subLinks.map((subLink, idx) => {
                           return subLink.href ? (
-                            <Link key={subLink.title} href={subLink?.href}>
+                            <Link
+                              key={subLink.title}
+                              href={subLink?.href}
+                              target={subLink.target}
+                            >
                               <li
                                 className={`px-5 py-2 whitespace-nowrap !text-gray_ cursor-pointer hover:bg-primary/10 flex items-center gap-2`}
                               >
@@ -228,6 +237,7 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                           activeParent,
                           isBlog ? "!text-black" : "!text-white"
                         )}
+                        target={link.target}
                       >
                         {link.title}
                       </Typography>
@@ -315,7 +325,11 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                         className="px-3 py-2 whitespace-nowrap text-primary"
                       >
                         {subLink.href ? (
-                          <Link href={subLink.href} onClick={closeMobileNav}>
+                          <Link
+                            href={subLink.href}
+                            target={subLink.target}
+                            onClick={closeMobileNav}
+                          >
                             <div className="h-7 overflow-hidden text-xl md:!text-xl font-medium">
                               <m.p
                                 initial="initial"
@@ -348,6 +362,7 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                 {link.href && (
                   <Link
                     href={link?.href}
+                    target={link.target}
                     onClick={closeMobileNav}
                     className="block text-xl md:!text-xl font-semibold"
                   >

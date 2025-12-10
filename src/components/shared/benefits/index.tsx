@@ -12,6 +12,9 @@ import { fadeInDown } from "@/utils/motion-variant";
 import SectionHead from "@/components/shared/section-head";
 import { Typography } from "@/components/ui/Typography";
 
+// ** import utils
+import { cn } from "@/lib/utils";
+
 interface Feature {
   icon: React.ReactElement;
   title: string;
@@ -22,11 +25,12 @@ interface BenefitsProps {
   title: React.ReactElement | string;
   description: React.ReactElement | string;
   features: Feature[];
+  isBackgroundWhite?: boolean;
 }
 
-export const Benefits = ({ title, description, features }: BenefitsProps) => {
+export const Benefits = ({ title, description, features, isBackgroundWhite = false }: BenefitsProps) => {
   return (
-    <section className="py-16 md:py-20 global-padding-container bg-white">
+    <section className={cn("py-16 md:py-20 global-padding-container", isBackgroundWhite ? "bg-background" : "bg-white")}>
       <div className="mx-auto max-w-7xl">
         <SectionHead title={title} description={description} />
 

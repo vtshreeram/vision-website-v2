@@ -8,7 +8,6 @@ import Image, { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 
-
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 
@@ -45,7 +44,7 @@ const SustainableOperations: React.FC<SustainableOperationsProps> = ({
           </Typography>
           <Typography
             variant="Regular_H5"
-            className="text-foreground max-w-3xl mx-auto"
+            className="text-gray "
           >
             {description}
           </Typography>
@@ -70,13 +69,13 @@ const SustainableOperations: React.FC<SustainableOperationsProps> = ({
                   <div className="flex-1">
                     <Typography
                       variant="Bold_H5"
-                      className="text-foreground mb-2"
+                      className="text-black mb-2"
                     >
                       {initiative.title}
                     </Typography>
                     <Typography
                       variant="Regular_H6"
-                      className="text-foreground"
+                      className="text-gray"
                     >
                       {initiative.description}
                     </Typography>
@@ -101,7 +100,7 @@ const SustainableOperations: React.FC<SustainableOperationsProps> = ({
                 disableOnInteraction: false,
               }}
               loop={true}
-              className="sustainable-swiper h-full w-full [&_.swiper-wrapper]:h-full [&_.swiper-slide]:h-full"
+              className="sustainable-swiper h-full w-full [&_.swiper-wrapper]:h-full [&_.swiper-slide]:h-full [&_.swiper-pagination-bullet]:!bg-white  [&_.swiper-pagination-bullet]:!opacity-100 [&_.swiper-pagination-bullet-active]:!bg-primary"
             >
               {sliderImages.map((sliderImage, index) => (
                 <SwiperSlide key={index} className="h-full">

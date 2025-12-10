@@ -13,6 +13,7 @@ import { fadeInDown } from "@/utils/motion-variant";
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 import { ServiceCard, DocumentCard } from "./service-card";
+import { cn } from "@/lib/utils";
 
 interface PageServiceProps {
   title: React.ReactNode;
@@ -20,6 +21,7 @@ interface PageServiceProps {
   image: StaticImageData;
   imageAlt: string;
   documents: DocumentCard[];
+  subtitleClassName?: string;
 }
 
 const PageService: React.FC<PageServiceProps> = ({
@@ -28,6 +30,7 @@ const PageService: React.FC<PageServiceProps> = ({
   image,
   imageAlt,
   documents,
+  subtitleClassName,
 }) => {
   return (
     <section className="py-16 md:py-24 global-padding-container bg-background">
@@ -39,14 +42,14 @@ const PageService: React.FC<PageServiceProps> = ({
           </Typography>
           <Typography
             variant="Regular_H5"
-            className="text-foreground max-w-3xl mx-auto"
+            className={cn("text-foreground max-w-3xl mx-auto", subtitleClassName)}
           >
             {subtitle}
           </Typography>
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-stretch ">
           {/* Left Cards */}
           <div className="lg:col-span-1 flex flex-col space-y-6 md:space-y-8">
             {documents.slice(0, 2).map((doc, index) => (
@@ -55,21 +58,21 @@ const PageService: React.FC<PageServiceProps> = ({
           </div>
 
           {/* Center Image */}
-          <div className="lg:col-span-1 order-first lg:order-none flex items-center justify-center">
+          <div className="lg:col-span-1 order-first lg:order-none hidden lg:flex items-center justify-center ">
             <m.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInDown}
               transition={{ delay: 0.2 }}
-              className="w-full h-full flex items-center justify-center"
+              className="w-full h-full flex items-center justify-center overflow-hidden max-h-[599px] "
             >
               <Image
                 src={image}
                 alt={imageAlt}
                 width={410}
-                height={699}
-                className="object-contain w-full h-full max-w-md"
+                height={599}
+                className="object-cover w-full h-full "
                 placeholder="blur"
               />
             </m.div>

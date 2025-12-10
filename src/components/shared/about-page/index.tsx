@@ -55,7 +55,7 @@ export const AboutPage = ({
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInDown}
-          className="flex justify-center py-10 md:py-0"
+          className="flex justify-center "
         >
           <Image
             src={image}

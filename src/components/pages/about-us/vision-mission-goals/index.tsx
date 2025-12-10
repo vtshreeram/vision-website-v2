@@ -29,7 +29,7 @@ export const VisionMissionGoals = ({
   return (
     <section className="bg-background global-padding-container py-16 md:py-24">
       <div className="max-w-7xl mx-auto">
-        <SectionHead title={sectionTitle} description={sectionDescription} />
+        <SectionHead title={sectionTitle} description={sectionDescription} descriptionClassName="lg:max-w-2xl" />
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
           {cardsData.map((card, idx) => (

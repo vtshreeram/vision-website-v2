@@ -36,4 +36,13 @@ export * from "./ico-qr-code";
 export * from "./ico-booking";
 
 // export benefits icon
-export * from "./benefit"
+export * from "./benefit";
+
+// export social icons
+export * from "./social";
+
+// export sustainability icons
+export * from "./sustainability";
+
+// export csr icons
+export * from "./csr";

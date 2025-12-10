@@ -42,7 +42,7 @@ export const Hero = () => {
       <div className="relative z-10 w-full global-padding-container ">
         <Header />
         <div className=" max-w-7xl mx-auto flex flex-col justify-center">
-          <div className="max-w-3xl my-20 md:my-32 lg:my-40">
+          <div className="max-w-3xl my-12 md:my-20 lg:my-28">
             <m.div
               initial="hidden"
               whileInView="visible"

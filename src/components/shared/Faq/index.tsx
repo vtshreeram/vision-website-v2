@@ -62,7 +62,7 @@ const Faq = () => {
     <section id="faq" className="bg-background overflow-hidden">
       <div className="mx-auto max-w-[1339px] px-4  sm:px-6 lg:px-8  py-16 lg:py-20 ">
         <div className="text-center">
-          <Typography variant="Medium_H3" className={`block text-primary `}>
+          <Typography variant="SemiBold_H3" className={`block text-primary `}>
             Frequently Asked Questions
           </Typography>
           <Typography variant="Regular_H6" className="mt-4 block text-gray">
@@ -72,7 +72,7 @@ const Faq = () => {
         </div>
         <div className="mx-auto mt-8 max-w-3xl space-y-4 md:mt-16">
           {faq.map((item, index) => (
-            <div key={index} className="!cursor-pointer">
+            <div key={index} className="!cursor-pointer shadow-lg">
               <div
                 className={`${
                   item.open

@@ -31,6 +31,71 @@ const contactSchema = z.object({
 
 type ContactFormValues = z.infer<typeof contactSchema>;
 
+interface FooterLink {
+  href: string;
+  label: string;
+  target?: string;
+}
+
+const links: FooterLink[] = [
+  {
+    href: "/",
+    label: "Home",
+  },
+  {
+    href: "/about-us",
+    label: "About us",
+  },
+  {
+    href: "/sustainability",
+    label: "Sustainability",
+  },
+  {
+    href: "/csr",
+    label: "CSR",
+  },
+  {
+    href: "https://track.visionstransport.com.my",
+    label: "Tracking",
+    target: "_blank",
+  },
+  {
+    href: "/blog",
+    label: "Blogs",
+  },
+  {
+    href: "/careers",
+    label: "Careers",
+  },
+  {
+    href: "/contact-us",
+    label: "Contact us",
+  },
+];
+
+const otherLinks: FooterLink[] = [
+  {
+    href: "/contact-us",
+    label: "Contact us",
+    target: "_blank",
+  },
+  {
+    href: "/help-support",
+    label: "Help & Support",
+    target: "_blank",
+  },
+  {
+    href: "/terms-conditions",
+    label: "Terms & Conditions",
+    target: "_blank",
+  },
+  {
+    href: "/privacy-policy",
+    label: "Privacy Policy",
+    target: "_blank",
+  },
+];
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -57,7 +122,9 @@ const Footer = () => {
             <LogoFooter />
 
             <Typography variant="Regular_H6" className={`mt-4 text-gray`}>
-            Driving logistics excellence with VizFleet’s advanced technology, delivering smart, scalable, and reliable solutions for every business.
+              Driving logistics excellence with VizFleet’s advanced technology,
+              delivering smart, scalable, and reliable solutions for every
+              business.
             </Typography>
             <div className="mt-4">
               <Typography
@@ -65,15 +132,21 @@ const Footer = () => {
                 className={`block text-gray`}
                 link={config.PHONE}
               >
-                <span className="text-foreground">Ph. No:</span> +91 95959 95959
+                Ph. No:
+                <span className="text-foreground font-medium">
+                  +91 95959 95959
+                </span>
               </Typography>
               <Typography
                 variant="Regular_H6"
                 className={`block text-gray`}
                 link={config.EMAIL}
               >
-                <span className="text-foreground ">Email:</span>{" "}
-                sales@visionstransport.com.my
+                Email:
+                <span className="text-foreground font-medium">
+                  {" "}
+                  sales@visionstransport.com.my
+                </span>{" "}
               </Typography>
             </div>
             <div className="flex gap-4 mt-6">
@@ -102,46 +175,17 @@ const Footer = () => {
                 Links
               </Typography>
               <ul className="space-y-4 text-foreground">
-                <li>
-                  <Link
-                    href="/"
-                    className="block text-base  transition-all duration-200 hover:translate-x-1 "
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about-us"
-                    className="block text-base transition-all duration-200 hover:translate-x-1 "
-                  >
-                    About us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/clientele"
-                    className="block text-base transition-all duration-200 hover:translate-x-1 "
-                  >
-                    Client
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services"
-                    className="block text-base transition-all duration-200 hover:translate-x-1 "
-                  >
-                    Service
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/gallery"
-                    className="block text-base transition-all duration-200 hover:translate-x-1 "
-                  >
-                    Gallery
-                  </Link>
-                </li>
+                {links.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link.href}
+                      target={link.target}
+                      className="block text-base  transition-all duration-200 hover:translate-x-1 "
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </nav>
 
@@ -154,42 +198,17 @@ const Footer = () => {
                 Others
               </Typography>
               <ul className="space-y-4 text-foreground">
-                <li>
-                  <Link
-                    href="/contact-us"
-                    target="_blank"
-                    className="block text-base  transition-all duration-200 hover:translate-x-1 "
-                  >
-                    Contact us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/help-support"
-                    target="_blank"
-                    className="block text-base  transition-all duration-200 hover:translate-x-1 "
-                  >
-                    Help & Support
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/terms-conditions"
-                    target="_blank"
-                    className="block text-base  transition-all duration-200 hover:translate-x-1 "
-                  >
-                    Terms & Conditions
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/privacy-policy"
-                    target="_blank"
-                    className="block text-base  transition-all duration-200 hover:translate-x-1 "
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
+                {otherLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link.href}
+                      target={link.target}
+                      className="block text-base  transition-all duration-200 hover:translate-x-1 "
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>
@@ -208,7 +227,8 @@ const Footer = () => {
 
               <div className="mt-6 md:max-w-xs">
                 <Typography variant="Regular_H6" className="mb-4 text-gray">
-                Subscribe to our newsletter for the latest industry updates, insights, and exclusive offers.
+                  Subscribe to our newsletter for the latest industry updates,
+                  insights, and exclusive offers.
                 </Typography>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div>

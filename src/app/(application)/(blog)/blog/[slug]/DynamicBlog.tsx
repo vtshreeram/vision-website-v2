@@ -102,7 +102,7 @@ export default async function DynamicBlog({ postData }: any) {
         <div className="blog-post mx-auto lg:max-w-7xl">
           <div className="flex flex-col gap-16 lg:flex-row lg:items-start">
             <PostFormatHandler />
-            <div className="sticky top-32 px-3 lg:px-0 h-fit">
+            <div className="sticky top-10 mt-14 px-3 lg:px-0 h-fit">
               <div className="space-y-20 pb-8">
                 <RelatedBlogs
                   categoryName={post?.category?.name}

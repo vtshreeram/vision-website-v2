@@ -51,7 +51,7 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="overflow-hidden  py-16 md:py-24 global-padding-container">
+    <section className="overflow-hidden bg-background  py-16 md:py-24 global-padding-container">
       <div className="mx-auto max-w-7xl ">
         <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-5 lg:gap-x-14 xl:gap-x-16">
           <div className="order-2 lg:order-1 lg:col-span-3">
@@ -71,7 +71,7 @@ const ContactUs = () => {
               </Typography>
             </div>
 
-            <div className="mt-12 grid grid-cols-1  gap-y-6 sm:grid-cols-2 lg:mt-auto ">
+            <div className="md:mt-12 grid grid-cols-1  gap-y-6 sm:grid-cols-2 lg:mt-auto ">
               <div>
                 <Typography
                   variant="Bold_H6"
@@ -158,10 +158,10 @@ const ContactUs = () => {
           </div>
 
           <div className="order-1 lg:order-2 lg:col-span-2">
-            <div className="mb-14 block lg:hidden">
+            <div className="mb-8 block lg:hidden">
               <Typography
-                variant="Medium_H2"
-                className={`block text-gray `}
+                variant="SemiBold_H2"
+                className={`block text-foreground `}
               >
                 Get <span className="text-primary">in Touch</span>
               </Typography>
@@ -174,7 +174,7 @@ const ContactUs = () => {
               </Typography>
             </div>
             <div className="border border-stroke">
-              <div className="p-6 sm:p-10">
+              <div className="p-6 sm:p-10 bg-white">
                 <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                   <div>
                     <label className="text-base font-medium text-gray">

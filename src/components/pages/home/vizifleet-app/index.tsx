@@ -17,12 +17,12 @@ import { Typography } from "@/components/ui/Typography";
 // ** import assets
 import centerImg from "@/assets/images/common/vizifleet-app/center-img.webp";
 import {
- IcoApp1,
- IcoApp2,
- IcoApp3,
- IcoApp4,
- IcoApp5,
- IcoApp6,
+  IcoApp1,
+  IcoApp2,
+  IcoApp3,
+  IcoApp4,
+  IcoApp5,
+  IcoApp6,
 } from "@/assets/icons";
 
 export const VizifleetApp = () => {
@@ -53,7 +53,7 @@ export const VizifleetApp = () => {
   ];
 
   return (
-    <section className="py-16 md:py-20 global-padding-container bg-background">
+    <section className="py-16 md:py-20 global-padding-container bg-background ">
       <div className="mx-auto max-w-7xl">
         <SectionHead
           title={
@@ -68,7 +68,7 @@ export const VizifleetApp = () => {
               operations powered by real-time data and automation.
             </>
           }
-          descriptionClassName="max-w-2xl"
+          descriptionClassName="lg:max-w-[636px]"
         />
         <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 !items-center">
           <div className=" space-y-12 md:space-y-20 ">
@@ -110,20 +110,24 @@ export const VizifleetApp = () => {
               </div>
               <div className="mt-6">
                 <Typography variant="Medium_H5">
-                Fleet Visibility & Automation
+                  Fleet Visibility & Automation
                 </Typography>
                 <Typography variant="Regular_H6" className="mt-4 text-gray">
-                Get complete fleet insights with tools that drive smarter decisions.
+                  Get complete fleet insights with tools that drive smarter
+                  decisions.
                 </Typography>
               </div>
             </m.div>
-            <Image
-              src={centerImg}
-              alt="center"
-              height={530}
-              width={538}
-              className="object-contain hidden md:block"
-            />
+
+            <div>
+              <Image
+                src={centerImg}
+                alt="center"
+                height={530}
+                width={538}
+                className="object-contain w-full !object-right  hidden md:block"
+              />
+            </div>
             <m.div
               initial="hidden"
               whileInView="visible"
@@ -136,10 +140,13 @@ export const VizifleetApp = () => {
               </div>
               <div className="mt-6">
                 <Typography variant="Medium_H5">
-                Sustainability Insights (CO₂ & EV Data)
+                  Sustainability Insights (CO₂ & EV Data)
                 </Typography>
-                <Typography variant="Regular_H6" className="mt-4 text-gray max-w-[300px] mx-auto">
-                View CO₂ metrics to measure impact and plan greener fleets.
+                <Typography
+                  variant="Regular_H6"
+                  className="mt-4 text-gray max-w-[300px] mx-auto"
+                >
+                  View CO₂ metrics to measure impact and plan greener fleets.
                 </Typography>
               </div>
             </m.div>
