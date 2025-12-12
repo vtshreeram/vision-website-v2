@@ -4,11 +4,7 @@
 import Image from "next/image";
 
 // ** import third party packages
-import { motion as m } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
 
 // ** import components
 import { Typography } from "@/components/ui/Typography";
@@ -29,55 +25,55 @@ const services = [
     img: img2,
     label: "Bonded Truck",
     description:
-      "For customs-controlled shipments requiring secure, compliant bonded handling.",
+      "Secure, compliant handling for customs-controlled shipments.",
   },
   {
     img: img1,
     label: "Non-Bonded Truck",
     description:
-      "Reliable nationwide transport for flexible, fast, and cost-efficient cargo movement.",
+      "Fast, flexible nationwide transport.",
   },
   {
     img: img3,
     label: "Warehousing & Storage Solutions",
     description:
-      "Integrated warehousing for safe storage, efficient handling, and real-time visibility.",
+      "Safe storage with real-time visibility.",
   },
   {
     img: img4,
     label: "Distribution & Cargo Handling",
     description:
-      "End-to-end distribution services designed for accuracy, speed, and controlled movement.",
+      "Accurate, high-speed end-to-end distribution.",
   },
   {
     img: img5,
     label: "Tail Lift Truck",
     description:
-      "Safe, efficient loading and unloading support for heavy or sensitive cargo.",
+      "Efficient handling for heavy or sensitive cargo.",
   },
   {
     img: img6,
     label: "Crane Truck",
     description:
-      "Specialized lifting solutions for oversized, heavy, or high-reach cargo requirements.",
+      "Lifting solutions for oversized and heavy cargo.",
   },
   {
     img: img7,
     label: "Linehaul & Shuttle",
     description:
-      "Consistent long-distance and shuttle movements ensuring timely, reliable transfers.",
+      "Reliable long-distance and shuttle transfers.",
   },
   {
     img: img8,
     label: "First & Last Mile Delivery",
     description:
-      "Seamless pickup and final-mile delivery tailored for retail, e-commerce, and B2B needs.",
+      "Seamless first and last-mile delivery.",
   },
   {
     img: img9,
     label: "Fleet Leasing Services",
     description:
-      "Flexible fleet leasing options for scalable operations backed by maintenance.",
+      "Scalable fleet leasing with maintenance support.",
   },
 ];
 
@@ -87,10 +83,7 @@ export const Services = ({ isViewMore = false }: { isViewMore?: boolean }) => {
   return (
     <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8  md:gap-y-14 md:gap-x-8">
       {displayedServices.map((service, idx) => (
-        <m.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeInDown}
+        <div
           key={idx}
           className="group relative h-[400px] overflow-hidden cursor-pointer"
         >
@@ -133,7 +126,7 @@ export const Services = ({ isViewMore = false }: { isViewMore?: boolean }) => {
               <ArrowRight className="h-5 w-5 text-white transition-transform duration-300 group-hover:translate-x-1" />
             </div>
           </div>
-        </m.div>
+        </div>
       ))}
     </div>
   );

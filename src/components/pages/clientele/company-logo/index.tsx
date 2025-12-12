@@ -3,12 +3,6 @@
 // ** import core packages
 import Image from "next/image";
 
-// ** import third party packages
-import { motion as m } from "framer-motion";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
-
 // ** import assets
 import logo1 from "@/assets/images/pages/clientele/company-logo/shoppe-xpress.png";
 import logo2 from "@/assets/images/pages/clientele/company-logo/quanterm-logistices.png";
@@ -52,11 +46,7 @@ export const CompanyLogo = () => {
         {/* Row 1 */}
         <div className="flex flex-wrap gap-x-8 gap-y-8">
           {row1.map((logo, idx) => (
-            <m.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInDown}
+            <div
               key={idx}
               className="flex items-center justify-center w-auto  overflow-hidden h-[90px]"
             >
@@ -70,18 +60,14 @@ export const CompanyLogo = () => {
                 quality={80}
                 placeholder="blur"
               />
-            </m.div>
+            </div>
           ))}
         </div>
 
         {/* Row 2 */}
         <div className="flex flex-wrap  gap-x-8 gap-y-8 justify-center">
           {row2.map((logo, idx) => (
-            <m.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInDown}
+            <div
               key={idx}
               className="flex items-center justify-center w-auto  overflow-hidden h-[90px]"
             >
@@ -95,18 +81,14 @@ export const CompanyLogo = () => {
                 quality={80}
                 placeholder="blur"
               />
-            </m.div>
+            </div>
           ))}
         </div>
 
         {/* Row 3 */}
         <div className="flex flex-wrap gap-x-8 gap-y-8 justify-center">
           {row3.map((logo, idx) => (
-            <m.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInDown}
+            <div
               key={idx}
               className="flex items-center justify-center w-auto  h-[90px]"
             >
@@ -120,7 +102,7 @@ export const CompanyLogo = () => {
                 quality={80}
                 placeholder="blur"
               />
-            </m.div>
+            </div>
           ))}
         </div>
       </div>

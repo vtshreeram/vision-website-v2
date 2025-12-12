@@ -22,7 +22,7 @@ import {
 } from "@/assets/icons";
 
 // ** import config
-import { config } from "@/config";
+import { siteConfig } from "@/config";
 
 // ** define validation schema using zod **
 const contactSchema = z.object({
@@ -126,7 +126,7 @@ const Footer = () => {
               <Typography
                 variant="Regular_H6"
                 className={`block text-gray whitespace-nowrap`}
-                link={config.PHONE}
+                link={siteConfig.PHONE}
               >
                 Ph. No:{" "}
                 <span className="text-foreground font-medium">
@@ -136,7 +136,7 @@ const Footer = () => {
               <Typography
                 variant="Regular_H6"
                 className={`block text-gray whitespace-nowrap`}
-                link={config.EMAIL}
+                link={`mailto:${siteConfig.EMAIL}`}
               >
                 Email:{" "}
                 <span className="text-foreground font-medium">
@@ -145,16 +145,17 @@ const Footer = () => {
               </Typography>
             </div>
             <div className="flex gap-4 mt-6">
-              <Link href={config.TWITTER_URL}>
+              <Link href={siteConfig.TWITTER_URL}>
                 <IcoTwitter />
               </Link>
-              <Link href={config.FACEBOOK_URL}>
+              <Link
+                href={siteConfig.WEBSITE_HOST_URL}>
                 <IcoFacebook />
               </Link>
-              <Link href={config.INSTAGRAM_URL}>
+              <Link href={siteConfig.INSTAGRAM_URL}>
                 <IcoInstagram />
               </Link>
-              <Link href={config.LINKEDIN_URL}>
+              <Link href={siteConfig.LINKEDIN_URL}>
                 <IcoLinkedin />
               </Link>
             </div>

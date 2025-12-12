@@ -4,12 +4,6 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 
-// ** import third party packages
-import { motion as m } from "framer-motion";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
-
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 import { ServiceCard, DocumentCard } from "./service-card";
@@ -59,12 +53,7 @@ const PageService: React.FC<PageServiceProps> = ({
 
           {/* Center Image */}
           <div className="lg:col-span-1 order-first lg:order-none hidden lg:flex items-center justify-center ">
-            <m.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInDown}
-              transition={{ delay: 0.2 }}
+            <div
               className="w-full h-full flex items-center justify-center overflow-hidden max-h-[599px] "
             >
               <Image
@@ -75,7 +64,7 @@ const PageService: React.FC<PageServiceProps> = ({
                 className="object-cover w-full h-full "
                 placeholder="blur"
               />
-            </m.div>
+            </div>
           </div>
 
           {/* Right Cards */}

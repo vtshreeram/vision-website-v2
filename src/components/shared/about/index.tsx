@@ -5,12 +5,6 @@ import { ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-// ** import third party packages
-import { motion as m } from "framer-motion";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
-
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
@@ -19,7 +13,7 @@ import Button from "@/components/ui/button";
 import image from "@/assets/images/common/about/Logo.webp";
 import { cn } from "@/lib/utils";
 
-export const  AboutUs = ({
+export const AboutUs = ({
   isAboutUs = true,
   title = (
     <>
@@ -36,13 +30,7 @@ export const  AboutUs = ({
       className="py-16 md:py-20 bg-background global-padding-container"
     >
       <div className={cn("mx-auto max-w-7xl  grid grid-cols-1 gap-10  lg:grid-cols-2 items-center", isAboutUs ? "lg:gap-48" : " lg:gap-10")}>
-        <m.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInDown}
-          className="flex justify-center"
-        >
+        <div className="flex justify-center">
           <Image
             src={image}
             height={150}
@@ -51,13 +39,8 @@ export const  AboutUs = ({
             className="object-contain"
             placeholder="blur"
           />
-        </m.div>
-        <m.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInDown}
-        >
+        </div>
+        <div>
           <Typography
             variant="Bold_H3"
             className="text-secondary mt-2 block "
@@ -70,25 +53,8 @@ export const  AboutUs = ({
                 variant="Regular_H6"
                 className="block  text-foreground"
               >
-                <span className="text-primary">
-                  Visions Transport Enterprise Sdn Bhd
-                </span>{" "}
-                was founded in 2008 as a transport company based in Shah Alam.
-                In the early years, we primarily served the Klang Valley region.
-                Over time, the company expanded its operations to the North,
-                South, and East Coast, building a strong reputation in inland
-                transportation. Today, our network supports seamless logistics
-                coverage across all of Malaysia and Singapore.
-              </Typography>
-            </div>
-            <div>
-              <Typography
-                variant="Regular_H6"
-                className="block  text-foreground"
-              >
-                With prudent management and a team of professional, experienced,
-                and dedicated personnel, we proudly deliver reliable cargo
-                movement anywhere, anytime across Peninsular Malaysia and
+                Founded in 2008, we have grown from Klang Valley to a nationwide
+                leader. Today, we power seamless logistics across Malaysia and
                 Singapore.
               </Typography>
             </div>
@@ -104,7 +70,7 @@ export const  AboutUs = ({
               </Link>
             )}
           </div>
-        </m.div>
+        </div>
       </div>
     </section>
   );

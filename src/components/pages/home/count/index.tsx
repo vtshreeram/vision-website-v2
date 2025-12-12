@@ -1,13 +1,8 @@
 "use client";
 
-// ** import third party packages
-import { motion as m } from "framer-motion";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
-
 // ** import components
 import { Typography } from "@/components/ui/Typography";
+import { AnimatedCounter, parseStatValue } from "@/components/ui/AnimatedCounter";
 import Button from "@/components/ui/button";
 import Link from "next/link";
 
@@ -23,41 +18,37 @@ export const Count = () => {
     <section className="py-16 md:py-20 global-padding-container bg-primary">
       <div className="mx-auto max-w-7xl">
         {/* Stats Row */}
-        <m.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInDown}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12"
-        >
-          {stats.map((stat, idx) => (
-            <div
-              key={idx}
-              className="bg-white text-center py-10 px-4  shadow-none"
-            >
-              <Typography
-                variant="Bold_H2"
-                className="text-primary text-4xl md:text-5xl mb-2"
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          {stats.map((stat, idx) => {
+            const { value, suffix, prefix } = parseStatValue(stat.value);
+            return (
+              <div
+                key={idx}
+                className="bg-white text-center py-10 px-4 shadow-none"
               >
-                {stat.value}
-              </Typography>
-              <Typography
-                variant="Regular_H6"
-                className="text-foreground text-lg md:text-xl"
-              >
-                {stat.label}
-              </Typography>
-            </div>
-          ))}
-        </m.div>
+                <Typography
+                  variant="Bold_H2"
+                  className="text-primary text-4xl md:text-5xl mb-2"
+                >
+                  <AnimatedCounter
+                    value={value}
+                    suffix={suffix}
+                    prefix={prefix}
+                    duration={2.5}
+                  />
+                </Typography>
+                <Typography
+                  variant="Regular_H6"
+                  className="text-foreground text-lg md:text-xl"
+                >
+                  {stat.label}
+                </Typography>
+              </div>
+            );
+          })}
+        </div>
         {/* Bottom Text and Button */}
-        <m.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInDown}
-          className="flex flex-col md:flex-row items-end md:items-start md:justify-between mt-12"
-        >
+        <div className="flex flex-col md:flex-row items-end md:items-start md:justify-between mt-12">
           <div className="mb-8 md:mb-0 space-y-4 md:max-w-[620px]">
             <Typography variant="Bold_H2" className="text-white  md:text-4xl">
               Scale Your Logistics Today
@@ -76,7 +67,7 @@ export const Count = () => {
               Contact us
             </Button>
           </Link>
-        </m.div>
+        </div>
       </div>
     </section>
   );

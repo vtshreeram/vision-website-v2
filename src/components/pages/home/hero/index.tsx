@@ -1,93 +1,116 @@
 "use client";
 
 // ** import core package
-import Image from "next/image";
-import React from "react";
+import Image, { StaticImageData } from "next/image";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-
-// ** import third party packages
-import { motion as m } from "framer-motion";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
 
 // ** import component
 import Header from "@/components/template/header";
 import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
 
-// ** import image
-import img from "@/assets/images/pages/home/hero/hero.webp";
+// ** import images
+import heroImg1 from "@/assets/images/pages/home/hero/hero.webp";
+import heroImg2 from "@/assets/images/pages/about-us/head-bg.webp";
+import heroImg3 from "@/assets/images/pages/services/head-bg.webp";
+
+import { motion, AnimatePresence } from "framer-motion";
+
+const heroImages: StaticImageData[] = [heroImg1, heroImg2, heroImg3];
 
 export const Hero = () => {
-  return (
-    <section className="relative overflow-hidden flex items-center">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={img}
-          alt="Visions Transport logistics fleet on the road"
-          fill
-          placeholder="blur"
-          className="object-cover object-center w-full h-full"
-          priority={true}
-          quality={95}
-          sizes="100vw"
-        />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-      {/* Content */}
-      <div className="relative z-10 w-full global-padding-container ">
+  // Auto-advance slider every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="relative overflow-hidden h-screen min-h-[600px]">
+      {/* Background images with Fade transitions */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentImageIndex}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="absolute inset-0 z-0"
+        >
+          <Image
+            src={heroImages[currentImageIndex]}
+            alt="Visions Transport logistics fleet on the road"
+            fill
+            placeholder="blur"
+            className="object-cover object-center w-full h-full"
+            priority={currentImageIndex === 0}
+            quality={95}
+            sizes="100vw"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40" />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Content wrapper - full height flex column */}
+      <div className="relative z-10 w-full h-full flex flex-col global-padding-container">
+        {/* Header at the top */}
         <Header />
-        <div className=" max-w-7xl mx-auto flex flex-col justify-center">
-          <div className="max-w-3xl my-12 md:my-20 lg:my-28">
-            <m.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInDown}
-            >
+
+        {/* Hero content - centered in remaining space */}
+        <div className="flex-1 flex items-center">
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="max-w-3xl">
               <Typography
                 variant="Bold_H1"
                 className="!text-white mb-4 text-shadow text-4xl md:text-5xl leading-tight"
               >
-                Malaysia & Singapore&apos;s
+                Trusted Cross-Border
                 <br />
-                Most Trusted Cross-Border
-                <br />
-                Logistics Partner
+                Logistics for Malaysia & Singapore
               </Typography>
               <Typography
                 variant="Regular_H5"
                 className="text-white mb-6 lg:max-w-[85%]"
               >
-                Accelerating smart, sustainable logistics with real-time
-                visibility, intelligent routing, and carbon-aligned fleet
-                performance across Malaysia & Singapore.
+                Smart, sustainable logistics with real-time visibility and
+                carbon-aligned performance.
               </Typography>
-            </m.div>
-            <m.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInDown}
-              className="mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-6"
-            >
-              <Link href={"/contact-us"}>
-                <Button variant="primary">Contact us</Button>
-              </Link>
-              <Link href={"/about-us"}>
-                <Button
-                  variant="secondary"
-                  className="border-white text-white hover:bg-white hover:text-primary"
-                >
-                  About us
-                </Button>
-              </Link>
-            </m.div>
+              <div className="mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-6">
+                <Link href={"/contact-us"}>
+                  <Button variant="primary">Contact us</Button>
+                </Link>
+                <Link href={"/about-us"}>
+                  <Button
+                    variant="secondary"
+                    className="border-white text-white hover:bg-white hover:text-primary"
+                  >
+                    About us
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
+        </div>
+
+        {/* Slider indicators */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentImageIndex
+                  ? "bg-primary w-8"
+                  : "bg-white/50 hover:bg-white/80"
+                }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

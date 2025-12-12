@@ -3,7 +3,6 @@
 // ** import core package
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
 
 // ** import assets
 import {
@@ -18,7 +17,6 @@ import { jobsData } from "./data";
 
 // ** import utils
 import { cn } from "@/lib/utils";
-import { fadeUp, staggerContainer, viewportOptions } from "@/lib/animations";
 import { Typography } from "@/components/ui/Typography";
 
 // Define types for the job data
@@ -51,13 +49,9 @@ const JobCard = ({
   const jobSlug = title.replace(/\s+/g, "-");
 
   return (
-    <motion.div
+    <div
       onClick={() => router.push(`/careers/${jobSlug}`)}
-      className={cn("w-full bg-white cursor-pointer shadow-lg px-5 py-4 ", className)}
-      variants={fadeUp}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ duration: 0.2 }}
+      className={cn("w-full bg-white cursor-pointer shadow-lg px-5 py-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300", className)}
     >
       <div className="flex justify-between items-center">
         <Typography
@@ -86,7 +80,7 @@ const JobCard = ({
         <InfoItem icon={<IcoBag />} text={experience} />
         <InfoItem icon={<IcoLocation />} text={location} />
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -102,17 +96,13 @@ const InfoItem = ({ icon, text }: InfoItemProps) => (
 const Career = () => {
   return (
     <section className="bg-background py-16 lg:py-20 container global-padding-container mx-auto">
-      <motion.div
+      <div
         className="space-y-6 lg:max-w-5xl mx-auto"
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOptions}
-        variants={staggerContainer}
       >
         {jobsData.map((job: JobData) => (
           <JobCard key={job.title} {...job} />
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };

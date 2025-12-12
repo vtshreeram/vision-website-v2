@@ -22,7 +22,7 @@ import {
 } from "@/assets/icons";
 
 // ** import config
-import { config } from "@/config";
+import { siteConfig } from "@/config";
 
 // Define the Zod schema for the form
 const contactFormSchema = z.object({
@@ -110,14 +110,14 @@ const ContactUs = () => {
                 <Typography
                   variant="Regular_H6"
                   className={`mt-4  block text-gray`}
-                  link={config.PHONE_2}
+                  link={siteConfig.PHONE_2}
                 >
                   Ph: +03-5131 3898
                 </Typography>
                 <Typography
                   variant="Regular_H6"
                   className={` block  text-gray`}
-                  link={config.EMAIL}
+                  link={siteConfig.EMAIL}
                 >
                   Email: sales@visionstransport.com.my
                 </Typography>
@@ -130,16 +130,16 @@ const ContactUs = () => {
                   Social media
                 </Typography>
                 <div className="flex gap-4 mt-6">
-                  <Link href={config.TWITTER_URL}>
+                  <Link href={siteConfig.TWITTER_URL}>
                     <IcoTwitter />
                   </Link>
-                  <Link href={config.FACEBOOK_URL}>
+                  <Link href={siteConfig.FACEBOOK_URL}>
                     <IcoFacebook />
                   </Link>
-                  <Link href={config.INSTAGRAM_URL}>
+                  <Link href={siteConfig.INSTAGRAM_URL}>
                     <IcoInstagram />
                   </Link>
-                  <Link href={config.LINKEDIN_URL}>
+                  <Link href={siteConfig.LINKEDIN_URL}>
                     <IcoLinkedin />
                   </Link>
                 </div>

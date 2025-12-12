@@ -2,12 +2,6 @@
 // ** import core packages
 import React from "react";
 
-// ** import third party packages
-import { motion as m } from "framer-motion";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
-
 // ** import components
 import SectionHead from "@/components/shared/section-head";
 import { Typography } from "@/components/ui/Typography";
@@ -36,11 +30,7 @@ export const Benefits = ({ title, description, features, isBackgroundWhite = fal
 
         <div className="mt-12 lg:mt-16 flex flex-wrap !justify-center max-w-6xl mx-auto  gap-8 lg:gap-14  ">
           {features.map((feature, index) => (
-            <m.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInDown}
+            <div
               key={index}
               className="text-center max-w-[300px]"
             >
@@ -55,7 +45,7 @@ export const Benefits = ({ title, description, features, isBackgroundWhite = fal
                   {feature.desc}
                 </Typography>
               </div>
-            </m.div>
+            </div>
           ))}
         </div>
       </div>

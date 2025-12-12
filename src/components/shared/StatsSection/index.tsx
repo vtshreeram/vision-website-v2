@@ -4,14 +4,9 @@
 import React from "react";
 import Image from "next/image";
 
-// ** import third party packages
-import { motion as m } from "framer-motion";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
-
 // ** import components
 import { Typography } from "@/components/ui/Typography";
+import { AnimatedCounter, parseStatValue } from "@/components/ui/AnimatedCounter";
 
 // ** import assets
 import sectionBg from "@/assets/images/pages/about-us/certified-bg.png";
@@ -55,13 +50,7 @@ const StatsSection = () => {
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto">
           {/* Title and Subtitle */}
-          <m.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInDown}
-            className="text-center mb-14 "
-          >
+          <div className="text-center mb-14 ">
             <Typography variant="Bold_H2" className="mb-2 text-foreground">
               Our Impact in Numbers
             </Typography>
@@ -72,38 +61,39 @@ const StatsSection = () => {
               We measure our progress through clear community, safety, and
               people-focused initiatives.
             </Typography>
-          </m.div>
+          </div>
 
           {/* Stats Grid */}
-          <m.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInDown}
-            transition={{ delay: 0.2 }}
-            className="max-w-6xl mx-auto"
-          >
+          <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center md:flex-row">
-              {stats.map((stat, index) => (
-                <React.Fragment key={index}>
-                  {index !== 0 && (
-                    <div className="w-px h-16 md:h-20 bg-foreground flex-shrink-0 hidden lg:block"></div>
-                  )}
-                  <div className="flex-1 text-center py-4 md:py-6 px-4 md:px-6">
-                    <Typography variant="Bold_H2" className="mb-2 text-primary">
-                      {stat.number}
-                    </Typography>
-                    <Typography
-                      variant="Regular_H5"
-                      className="text-foreground/70"
-                    >
-                      {stat.label}
-                    </Typography>
-                  </div>
-                </React.Fragment>
-              ))}
+              {stats.map((stat, index) => {
+                const { value, suffix, prefix } = parseStatValue(stat.number);
+                return (
+                  <React.Fragment key={index}>
+                    {index !== 0 && (
+                      <div className="w-px h-16 md:h-20 bg-foreground flex-shrink-0 hidden lg:block"></div>
+                    )}
+                    <div className="flex-1 text-center py-4 md:py-6 px-4 md:px-6">
+                      <Typography variant="Bold_H2" className="mb-2 text-primary">
+                        <AnimatedCounter
+                          value={value}
+                          suffix={suffix}
+                          prefix={prefix}
+                          duration={2}
+                        />
+                      </Typography>
+                      <Typography
+                        variant="Regular_H5"
+                        className="text-foreground/70"
+                      >
+                        {stat.label}
+                      </Typography>
+                    </div>
+                  </React.Fragment>
+                );
+              })}
             </div>
-          </m.div>
+          </div>
         </div>
       </div>
     </section>

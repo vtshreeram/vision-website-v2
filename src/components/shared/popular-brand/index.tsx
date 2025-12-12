@@ -3,12 +3,6 @@
 // ** import core packages
 import Image from "next/image";
 
-// ** import third party packages
-import { motion as m } from "framer-motion";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
-
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 
@@ -57,11 +51,7 @@ const PopularBrand = () => {
         {/* Row 1 - 6 logos */}
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8">
           {row1.map((brand, idx) => (
-            <m.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInDown}
+            <div
               key={idx}
               className="flex items-center justify-center w-auto overflow-hidden h-[90px]"
             >
@@ -75,18 +65,14 @@ const PopularBrand = () => {
                 quality={80}
                 placeholder="blur"
               />
-            </m.div>
+            </div>
           ))}
         </div>
 
         {/* Row 2 - 5 logos */}
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8">
           {row2.map((brand, idx) => (
-            <m.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInDown}
+            <div
               key={idx}
               className="flex items-center justify-center w-auto overflow-hidden h-[90px]"
             >
@@ -100,7 +86,7 @@ const PopularBrand = () => {
                 quality={80}
                 placeholder="blur"
               />
-            </m.div>
+            </div>
           ))}
         </div>
       </div>

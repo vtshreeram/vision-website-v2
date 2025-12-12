@@ -1,8 +1,5 @@
 "use client";
 
-// ** import core package
-import { motion } from "framer-motion";
-
 // ** import assets
 import {
   IcoBag,
@@ -12,7 +9,6 @@ import {
 } from "@/assets/icons/career";
 
 // ** import utils
-import { fadeUp, staggerContainer, viewportOptions } from "@/lib/animations";
 import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
 
@@ -53,17 +49,12 @@ interface JobDetailClientProps {
 const JobDetailClient = ({ job }: JobDetailClientProps) => {
   return (
     <div className="py-16 lg:py-20 bg-background">
-      <motion.div
+      <div
         className="container lg:max-w-5xl mx-auto  "
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOptions}
-        variants={staggerContainer}
       >
         {/* Job Title and Department */}
-        <motion.div
+        <div
           className="p-6  flex flex-col md:flex-row justify-between md:items-start  gap-4"
-          variants={fadeUp}
         >
           <div>
             <h2 className="font-garamond text-2xl md:text-3xl  font-semibold tracking-wide">
@@ -125,16 +116,15 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Job Description */}
-        <motion.div
+        <div
           className="p-6 mt-6 bg-accent space-y-8 bg-white"
-          variants={fadeUp}
         >
           {/* about company */}
           {job.about_company && (
-            <motion.div variants={fadeUp}>
+            <div>
               <h2 className="text-2xl font-semibold font-garamond">
                 About the Company
               </h2>
@@ -146,12 +136,12 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
                   {job.about_company}
                 </Typography>
               </div>
-            </motion.div>
+            </div>
           )}
 
           {/* about role overview */}
           {job.role_overview && (
-            <motion.div variants={fadeUp}>
+            <div>
               <h2 className="text-2xl font-semibold font-garamond">
                 Role Overview
               </h2>
@@ -163,12 +153,12 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
                   {job.role_overview}
                 </Typography>
               </div>
-            </motion.div>
+            </div>
           )}
 
           {/* about Location */}
           {job.location_type && (
-            <motion.div variants={fadeUp}>
+            <div>
               <h2 className="text-2xl font-semibold font-garamond">Location</h2>
               <h4 className="text-base font-semibold  mt-4">
                 {job.location_type.type}
@@ -181,12 +171,12 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
                   {job.location_type.content}
                 </Typography>
               </div>
-            </motion.div>
+            </div>
           )}
 
           {/* Job Type */}
           {job.job_type && (
-            <motion.div variants={fadeUp}>
+            <div>
               <h2 className="text-2xl font-semibold font-garamond">Job Type</h2>
               <h4 className="text-base font-semibold  mt-4">
                 {job.job_type.type}
@@ -199,12 +189,12 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
                   {job.job_type.content}
                 </Typography>
               </div>
-            </motion.div>
+            </div>
           )}
 
           {/* Job Requirements */}
           {job.requirements && (
-            <motion.div variants={fadeUp}>
+            <div>
               <h2 className="text-2xl font-semibold font-garamond">
                 Requirements
               </h2>
@@ -225,12 +215,12 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
                   </ul>
                 </div>
               ))}
-            </motion.div>
+            </div>
           )}
 
           {/* experience_expertise */}
           {job.experience_expertise && (
-            <motion.div variants={fadeUp}>
+            <div>
               <h2 className="text-2xl font-semibold font-garamond">
                 Experience & Expertise
               </h2>
@@ -243,12 +233,12 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
           )}
 
           {/* have_skill */}
           {job.have_skill && (
-            <motion.div variants={fadeUp}>
+            <div>
               <h2 className="text-2xl font-semibold font-garamond">
                 Nice-to-Have Skills
               </h2>
@@ -261,12 +251,12 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
           )}
 
           {/* skill_attributes */}
           {job.skill_attributes && (
-            <motion.div variants={fadeUp}>
+            <div>
               <h2 className="text-2xl font-semibold font-garamond">
                 Skills & Attributes
               </h2>
@@ -279,12 +269,12 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
           )}
 
           {/* why_peacock */}
           {job.why_peacock && (
-            <motion.div variants={fadeUp}>
+            <div>
               <h2 className="text-2xl font-semibold ">
                 Why Join Peacock India?
               </h2>
@@ -297,14 +287,14 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </div>
           )}
 
-          <motion.div className="flex justify-end items-end" variants={fadeUp}>
+          <div className="flex justify-end items-end">
             <Button variant="primary">Apply Now</Button>
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -2,12 +2,7 @@
 
 // ** import core packages
 import Image from "next/image";
-
-// ** import third party packages
-import { motion as m } from "framer-motion";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
+import { motion } from "framer-motion";
 
 // ** import components
 import { Typography } from "@/components/ui/Typography";
@@ -19,36 +14,64 @@ import logo from "@/assets/images/pages/about-us/tsr-logo.png";
 const Certified = () => {
   return (
     <section className="relative py-16 md:py-24 lg:py-32 global-padding-container overflow-hidden bg-background">
-      {/* Background Image with World Map Overlay */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center">
-        <Image
-          src={sectionBg}
-          alt="Certification background"
-          className="object-contain !object-center opacity-80"
-          height={463}
-          width={1272}
-          quality={90}
-        />
-      </div>
+      {/* Background Image with World Map Overlay - Animated */}
+      <motion.div
+        className="absolute inset-0 z-0 flex items-center justify-center"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <motion.div
+          animate={{
+            opacity: [0.6, 0.9, 0.6],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <Image
+            src={sectionBg}
+            alt="Certification background"
+            className="object-contain !object-center"
+            height={463}
+            width={1272}
+            quality={90}
+          />
+        </motion.div>
+      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <m.div
-          initial="hidden"
-          whileInView="visible"
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          variants={fadeInDown}
+          transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center justify-center">
+          {/* Logo with floating animation */}
+          <motion.div
+            className="flex items-center justify-center"
+            animate={{
+              y: [0, -8, 0],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
             <Image src={logo} alt="TSR Logo" height={180} width={366} />
-          </div>
+          </motion.div>
+
           {/* Certification Date */}
-          <m.div
-            initial="hidden"
-            whileInView="visible"
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            variants={fadeInDown}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
           >
             <Typography
               variant="SemiBold_H4"
@@ -56,30 +79,28 @@ const Certified = () => {
             >
               Certified on June 2025
             </Typography>
-          </m.div>
+          </motion.div>
 
           {/* Main Headline */}
-          <m.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInDown}
-            transition={{ delay: 0.3 }}
+          <motion.div
             className="mt-8 md:mt-12"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.5 }}
           >
             <Typography variant="Bold_H3" className="text-secondary uppercase">
               WE ARE NOW TAPA TSR CERTIFIED!
             </Typography>
-          </m.div>
+          </motion.div>
 
           {/* Descriptive Text */}
-          <m.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInDown}
-            transition={{ delay: 0.4 }}
+          <motion.div
             className="max-w-4xl mx-auto mt-2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.5 }}
           >
             <Typography
               variant="Regular_H5"
@@ -90,8 +111,8 @@ const Certified = () => {
               reinforces our commitment to secure, compliant, and high-quality
               supply chain operations across Malaysia and Singapore.
             </Typography>
-          </m.div>
-        </m.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

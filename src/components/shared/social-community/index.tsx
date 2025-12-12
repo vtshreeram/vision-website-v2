@@ -3,12 +3,6 @@
 // ** import core packages
 import React from "react";
 
-// ** import third party packages
-import { motion as m } from "framer-motion";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
-
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 import { IcoCommunity, IcoEducation, IcoSocialSafety } from "@/assets/icons";
@@ -65,12 +59,8 @@ const SocialCommunity = () => {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 mt-12 lg:max-w-5xl lg:mx-auto">
           {cardsData.map((card, index) => (
-            <m.div
+            <div
               key={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInDown}
               className="text-center"
             >
               <div className="flex justify-center mb-6">{card.icon}</div>
@@ -80,7 +70,7 @@ const SocialCommunity = () => {
               <Typography variant="Regular_H6" className="text-gray">
                 {card.description}
               </Typography>
-            </m.div>
+            </div>
           ))}
         </div>
       </div>

@@ -26,27 +26,27 @@ const AboutUsPage = () => {
     {
       icon: <IcoManagement />,
       title: "Professional Management",
-      desc: "Decades of experience guiding growth with strategic, data-driven leadership.",
+      desc: "Decades of strategic, data-driven leadership.",
     },
     {
       icon: <IcoLeadership />,
       title: "Regional Leadership",
-      desc: "Local expertise combined with corporate systems for consistent delivery.",
+      desc: "Local expertise with corporate-grade delivery.",
     },
     {
       icon: <IcoWorkforce />,
       title: "Dedicated Workforce",
-      desc: "100+ skilled employees ensuring reliable, efficient daily operations.",
+      desc: "100+ skilled employees ensuring reliability.",
     },
     {
       icon: <IcoSupport />,
       title: "Customer Support Team",
-      desc: "24/7 assistance across channels delivering quick, dependable client support.",
+      desc: "24/7 quick and dependable client support.",
     },
     {
       icon: <IcoDevelopment />,
       title: "Continuous Development",
-      desc: "Ongoing training and innovation keep our teams industry-ready.",
+      desc: "Continuous training for industry readiness.",
     },
   ];
 
@@ -54,17 +54,17 @@ const AboutUsPage = () => {
     {
       icon: <IcoVision />,
       title: "Our Vision",
-      desc: "Technology-powered logistics platform delivering seamless visibility, cost optimization, safety, reliability, and scalable growth across enterprises.",
+      desc: "A tech-powered platform delivering visibility, reliability, and scalable growth for enterprises.",
     },
     {
       icon: <IcoMission />,
       title: "Our Mission",
-      desc: "Intelligent fleet management: enabling real-time tracking, smarter routing, compliance, reduced costs, higher uptime, and data-driven decisions.",
+      desc: "Enabling real-time tracking, smarter routing, and data-driven decisions.",
     },
     {
       icon: <IcoGoals />,
       title: "Our Goal",
-      desc: "Integrated supply chain solutions providing transparency, efficiency, sustainability, consistent performance, customer trust, regional expansion.",
+      desc: "Integrated supply chain solutions providing transparency, efficiency, sustainability, and trust.",
     },
   ];
 

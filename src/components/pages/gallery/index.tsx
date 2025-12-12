@@ -5,11 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import { useState, useCallback } from "react";
 
 // ** import third party packages
-import { motion as m } from "framer-motion";
 import ImageViewer from "react-simple-image-viewer";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
 
 // ** import utils
 import { cn } from "@/lib/utils";
@@ -67,11 +63,7 @@ const Gallery = () => {
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="grid grid-cols-2 md:grid-cols-3  gap-4 mb-4">
           {galleryImages.map((image, index) => (
-            <m.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInDown}
+            <div
               key={image.id}
               className={cn(
                 "overflow-hidden  shadow-lg   cursor-pointer",
@@ -91,7 +83,7 @@ const Gallery = () => {
                   placeholder="blur"
                 />
               </div>
-            </m.div>
+            </div>
           ))}
         </div>
       </div>

@@ -4,12 +4,6 @@
 import React from "react";
 import Image from "next/image";
 
-// ** import third party packages
-import { motion as m } from "framer-motion";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
-
 // ** import components
 import SectionHead from "@/components/shared/section-head";
 import { Typography } from "@/components/ui/Typography";
@@ -73,11 +67,7 @@ export const VizifleetApp = () => {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 !items-center">
           <div className=" space-y-12 md:space-y-20 ">
             {featuresLeft.map((feature, index) => (
-              <m.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInDown}
+              <div
                 key={index}
                 className="text-center max-w-[281px] mx-auto"
               >
@@ -88,23 +78,11 @@ export const VizifleetApp = () => {
                     {feature.desc}
                   </Typography>
                 </div>
-              </m.div>
+              </div>
             ))}
           </div>
-          <m.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInDown}
-            className=" h-full  md:col-span-2 space-y-8 md:space-y-0"
-          >
-            <m.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInDown}
-              className="text-center max-w-[281px] mx-auto md:mb-20"
-            >
+          <div className=" h-full  md:col-span-2 space-y-8 md:space-y-0">
+            <div className="text-center max-w-[281px] mx-auto md:mb-20">
               <div className="flex justify-center">
                 <IcoApp3 />
               </div>
@@ -117,7 +95,7 @@ export const VizifleetApp = () => {
                   decisions.
                 </Typography>
               </div>
-            </m.div>
+            </div>
 
             <div>
               <Image
@@ -128,13 +106,7 @@ export const VizifleetApp = () => {
                 className="object-contain w-full !object-right  hidden md:block"
               />
             </div>
-            <m.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInDown}
-              className="text-center max-w-[400px] mx-auto md:mt-20"
-            >
+            <div className="text-center max-w-[400px] mx-auto md:mt-20">
               <div className="flex justify-center">
                 <IcoApp4 />
               </div>
@@ -149,15 +121,11 @@ export const VizifleetApp = () => {
                   View CO₂ metrics to measure impact and plan greener fleets.
                 </Typography>
               </div>
-            </m.div>
-          </m.div>
+            </div>
+          </div>
           <div className="space-y-12 md:space-y-20">
             {featuresRight.map((feature, index) => (
-              <m.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInDown}
+              <div
                 key={index}
                 className="text-center max-w-[281px] mx-auto"
               >
@@ -168,7 +136,7 @@ export const VizifleetApp = () => {
                     {feature.desc}
                   </Typography>
                 </div>
-              </m.div>
+              </div>
             ))}
           </div>
         </div>

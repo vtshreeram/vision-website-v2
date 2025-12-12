@@ -72,22 +72,20 @@ const Faq = () => {
         </div>
         <div className="mx-auto mt-8 max-w-3xl space-y-4 md:mt-16">
           {faq.map((item, index) => (
-            <div key={index} className="!cursor-pointer shadow-lg">
+            <div key={index} className="!cursor-pointer shadow-lg card-hover">
               <div
-                className={`${
-                  item.open
+                className={`${item.open
                     ? "border border-primary"
                     : "border border-stroke"
-                } cursor-pointer  bg-white  transition-all duration-200  `}
+                  } cursor-pointer  bg-white  transition-all duration-200  `}
               >
                 <button
                   type="button"
                   className="flex w-full items-center justify-between p-4 sm:pt-6 sm:px-6 sm:pb-4"
                   onClick={() => toggleFaq(index)}
                 >
-                  <span className={` flex !text-start text-base md:text-xl ${
-                    item.open ? "text-primary " : ""
-                  } `}>
+                  <span className={` flex !text-start text-base md:text-xl ${item.open ? "text-primary " : ""
+                    } `}>
                     {" "}
                     {item.question}{" "}
                   </span>
@@ -100,9 +98,8 @@ const Faq = () => {
                 </button>
 
                 <div
-                  className={`${
-                    item.open ? "block " : "hidden"
-                  } px-4 pb-5 !text-start sm:px-6 sm:pb-6 text-gray text-sm md:text-base`}
+                  className={`${item.open ? "block " : "hidden"
+                    } px-4 pb-5 !text-start sm:px-6 sm:pb-6 text-gray text-sm md:text-base`}
                 >
                   <p dangerouslySetInnerHTML={{ __html: item.answer }}></p>
                 </div>

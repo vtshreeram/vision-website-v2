@@ -1,7 +1,7 @@
-import { config } from "@/config";
 import { client } from "@/sanity/lib/client";
 import { MetadataRoute } from "next";
 import { SanityDocument } from "next-sanity";
+import { siteConfig } from "@/config";
 
 const POSTS_QUERY = `*[_type == "blog"] | order(createdBy desc){
   _id,
@@ -81,7 +81,7 @@ function sanitizeForXml(url: string): string {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const options = { next: { revalidate: 30 } };
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
-  const websiteHostUrl = config.WEBSITE_HOST_URL;
+  const websiteHostUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || "https://vision-website-2.vercel.app";
 
   // Create a Set to track unique URLs
   const uniqueUrls = new Set<string>();

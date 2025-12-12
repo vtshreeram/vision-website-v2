@@ -1,11 +1,7 @@
 "use client";
 
 // ** import third party packages
-import { motion as m } from "framer-motion";
 import { ReactNode } from "react";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
 
 // ** import components
 import { Typography } from "@/components/ui/Typography";
@@ -28,15 +24,9 @@ const WhyChoose = ({ title, features }: WhyChooseProps) => {
           {title}
         </Typography>
         {/* Stats Row */}
-        <m.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInDown}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-16"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-16">
           {features.map((feature, idx) => (
-            <div key={idx} className="bg-white px-6 py-8  shadow-none">
+            <div key={idx} className="bg-white px-6 py-8 shadow-none card-hover">
               <Typography
                 variant="SemiBold_H4"
                 className="text-primary max-w-[200px] mb-3"
@@ -48,7 +38,7 @@ const WhyChoose = ({ title, features }: WhyChooseProps) => {
               </Typography>
             </div>
           ))}
-        </m.div>
+        </div>
       </div>
     </section>
   );

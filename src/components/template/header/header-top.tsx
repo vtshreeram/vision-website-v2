@@ -12,7 +12,7 @@ import {
 } from "@/assets/icons";
 
 // ** import config
-import { config } from "@/config";
+import { siteConfig } from "@/config";
 
 const HeaderTop = () => {
   return (
@@ -20,7 +20,7 @@ const HeaderTop = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between border-b border-white pb-3.5">
         {/* Left: Email */}
         <Link
-          href={`mailto:${config.EMAIL}`}
+          href={`mailto:${siteConfig.EMAIL}`}
           aria-label="Email"
           className="flex items-center gap-2 min-w-0 !text-white"
         >
@@ -37,16 +37,16 @@ const HeaderTop = () => {
         </div>
         {/* Right: Social Icons */}
         <div className="flex items-center gap-4">
-          <Link href={config.INSTAGRAM_URL} aria-label="Instagram">
+          <Link href={siteConfig.INSTAGRAM_URL} aria-label="Instagram">
             <IcoInstagramOutline />
           </Link>
-          <Link href={config.TWITTER_URL} aria-label="Twitter">
+          <Link href={siteConfig.TWITTER_URL} aria-label="Twitter">
             <IcoTwitterOutline />
           </Link>
-          <Link href={config.FACEBOOK_URL} aria-label="Facebook">
+          <Link href={siteConfig.FACEBOOK_URL} aria-label="Facebook">
             <IcoFacebookOutline />
           </Link>
-          <Link href={config.LINKEDIN_URL} aria-label="LinkedIn">
+          <Link href={siteConfig.LINKEDIN_URL} aria-label="LinkedIn">
             <IcoLinkedinOutline />
           </Link>
         </div>

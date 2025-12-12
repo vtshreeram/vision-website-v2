@@ -9,7 +9,6 @@ import { usePathname } from "next/navigation";
 // ** import third party packages
 import { Menu, X } from "react-feather";
 import { IoIosArrowDown } from "react-icons/io";
-import { motion as m } from "framer-motion";
 
 // ** import components
 import { Typography } from "@/components/ui/Typography";
@@ -21,38 +20,6 @@ import LogoFooter from "@/assets/logo-footer";
 
 // ** import utils
 import { cn } from "@/lib/utils";
-
-// motion variants
-const variants = {
-  initial: {
-    y: 25,
-    opacity: 0,
-  },
-  visible: (i: any) => ({
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.4, ease: "easeIn", delay: i },
-  }),
-  hidden: {
-    y: 25,
-    opacity: 0,
-    transition: { duration: 0.4, ease: "easeIn" },
-  },
-};
-
-const heightVariant = {
-  initial: {
-    height: 0,
-  },
-  incr: {
-    height: "100dvh",
-    transition: { duration: 0.2, ease: "easeIn" },
-  },
-  decr: {
-    height: 0,
-    transition: { duration: 0.2, ease: "easeIn" },
-  },
-};
 
 type NavLink = {
   title: string;
@@ -228,7 +195,7 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                   ) : (
                     <li
                       key={link.title}
-                      className=" duration-300  inline-flex items-center"
+                      className="duration-300 inline-flex items-center nav-link-hover"
                     >
                       <Typography
                         variant="Regular_H6"
@@ -252,11 +219,9 @@ const Header = ({ isBlog = false }: HeaderProps) => {
       </header>
 
       {/*  Mobile nav */}
-      <m.nav
-        initial="initial"
-        animate={expanded ? "incr" : "decr"}
-        variants={heightVariant}
-        className={`fixed left-0 top-0 flex lg:hidden   w-full !z-[9999999] bg-white overflow-x-hidden px-5  flex-col  `}
+      <nav
+        className={`fixed left-0 top-0 lg:hidden w-full !z-[9999999] bg-white overflow-x-hidden px-5 flex-col ${expanded ? "flex h-[100dvh]" : "hidden h-0"
+          }`}
       >
         <div className="flex items-center justify-between pt-4">
           <div className="flex-shrink-0 z-20">
@@ -301,22 +266,17 @@ const Header = ({ isBlog = false }: HeaderProps) => {
             link.subLinks ? (
               <li key={idx}>
                 <div className="h-7 overflow-hidden text-xl md:!text-xl font-semibold">
-                  <m.p
+                  <p
                     onClick={() => handleDropdown(link.title)}
-                    initial="initial"
-                    animate={expanded ? "visible" : "hidden"}
-                    variants={variants}
-                    custom={idx * 0.02}
                     className="text-primary inline-flex gap-2 items-center"
                   >
                     {link.title}{" "}
                     <IoIosArrowDown className="-rotate-90" size={20} />
-                  </m.p>
+                  </p>
                 </div>
                 <ul
-                  className={`${
-                    activeDropdown === link.title ? "block" : "hidden"
-                  } my-3 `}
+                  className={`${activeDropdown === link.title ? "block" : "hidden"
+                    } my-3 `}
                 >
                   {link.subLinks.map((subLink, idx) => {
                     return (
@@ -331,15 +291,11 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                             onClick={closeMobileNav}
                           >
                             <div className="h-7 overflow-hidden text-xl md:!text-xl font-medium">
-                              <m.p
-                                initial="initial"
-                                animate={activeDropdown ? "visible" : "hidden"}
-                                variants={variants}
-                                custom={idx * 0.02}
+                              <p
                                 className="text-primary inline-flex gap-2 items-center"
                               >
                                 {subLink.title}{" "}
-                              </m.p>
+                              </p>
                             </div>
                           </Link>
                         ) : (
@@ -366,22 +322,18 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                     onClick={closeMobileNav}
                     className="block text-xl md:!text-xl font-semibold"
                   >
-                    <m.p
-                      initial="initial"
-                      animate={expanded ? "visible" : "hidden"}
-                      variants={variants}
-                      custom={idx * 0.02}
+                    <p
                       className="text-primary"
                     >
                       {link.title}{" "}
-                    </m.p>
+                    </p>
                   </Link>
                 )}
               </li>
             )
           )}
         </ul>
-      </m.nav>
+      </nav>
     </>
   );
 };

@@ -4,12 +4,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
-// ** import third party packages
-import { motion as m } from "framer-motion";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
-
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 
@@ -27,12 +21,7 @@ interface ServiceCardProps {
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({ doc, index }) => {
   return (
-    <m.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeInDown}
-      transition={{ delay: index * 0.1 }}
+    <div
       className="flex-1 flex"
     >
       <div className="bg-primary p-6 md:p-8 flex flex-col items-start text-start w-full flex-1">
@@ -58,6 +47,6 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ doc, index }) => {
           </a>
         )}
       </div>
-    </m.div>
+    </div>
   );
 };

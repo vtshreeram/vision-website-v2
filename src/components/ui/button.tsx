@@ -11,16 +11,18 @@ interface CustomButtonProps {
 }
 
 // combining custom props with the standard button attributes
-type ButtonProps = CustomButtonProps & ButtonHTMLAttributes<HTMLButtonElement>;
+// combining custom props with the standard button attributes
+export type ButtonProps = CustomButtonProps & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button: FC<ButtonProps> = ({
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
   children,
   className,
   variant = "primary", // Default to 'primary' if no variant is passed
   ...rest
-}) => {
+}, ref) => {
   return (
     <button
+      ref={ref}
       {...rest} // Spread the rest of the native button props here
       className={cn(
         // Conditionally apply styles based on the variant
@@ -35,6 +37,8 @@ const Button: FC<ButtonProps> = ({
       {children}
     </button>
   );
-};
+});
+
+Button.displayName = "Button";
 
 export default Button;

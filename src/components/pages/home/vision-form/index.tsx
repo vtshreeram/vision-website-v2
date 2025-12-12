@@ -5,13 +5,11 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 // ** import third party packages
-import { motion as m } from "framer-motion";
 import { z } from "zod";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
+import { cn } from "@/lib/utils";
 
 // ** import components
 import Button from "@/components/ui/button";
@@ -89,34 +87,21 @@ export const VisionForm = () => {
       <div className="relative z-10 w-full global-padding-container py-16 md:py-20 lg:py-32">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
           {/* Left: Logo and tagline */}
-          <m.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInDown}
-            className="hidden lg:flex lg:col-span-2  items-center md:items-start"
-          >
+          <div className="hidden lg:flex lg:col-span-2  items-center md:items-start">
             <LogoLarge />
-          </m.div>
+          </div>
 
           {/* Right: Tabs and Form */}
-          <m.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInDown}
-            className=" lg:col-span-3 bg-primary/20  w-full   md:p-10"
-          >
+          <div className=" lg:col-span-3 bg-primary/20  w-full   md:p-10">
             {/* Tabs */}
             <div className="flex bg-white">
               {TABS.map((tab) => (
                 <Button
                   key={tab.value}
-                  className={`flex-1 h-auto md:h-10 active:scale-100  ${
-                    activeTab === tab.value
-                      ? ""
-                      : "bg-white text-primary hover:bg-white hover:text-primary border-stroke"
-                  }`}
+                  className={`flex-1 h-auto md:h-10 active:scale-100  ${activeTab === tab.value
+                    ? ""
+                    : "bg-white text-primary hover:bg-white hover:text-primary border-stroke"
+                    }`}
                   onClick={() => setActiveTab(tab.value)}
                   type="button"
                 >
@@ -135,7 +120,10 @@ export const VisionForm = () => {
                   <input
                     {...register("name")}
                     placeholder="Enter Name"
-                    className="input-field"
+                    className={cn(
+                      "input-field transition-all duration-300",
+                      errors.name && "animate-shake border-red-500"
+                    )}
                   />
                   {errors.name && (
                     <p className="text-red-500 text-xs mt-1">
@@ -147,7 +135,10 @@ export const VisionForm = () => {
                   <input
                     {...register("email")}
                     placeholder="Enter Email Id"
-                    className="input-field"
+                    className={cn(
+                      "input-field transition-all duration-300",
+                      errors.email && "animate-shake border-red-500"
+                    )}
                   />
                   {errors.email && (
                     <p className="text-red-500 text-xs mt-1">
@@ -161,7 +152,10 @@ export const VisionForm = () => {
                   <input
                     {...register("phone")}
                     placeholder="Enter Phone number"
-                    className="input-field"
+                    className={cn(
+                      "input-field transition-all duration-300",
+                      errors.phone && "animate-shake border-red-500"
+                    )}
                   />
                   {errors.phone && (
                     <p className="text-red-500 text-xs mt-1">
@@ -211,7 +205,7 @@ export const VisionForm = () => {
                 Request
               </Button>
             </form>
-          </m.div>
+          </div>
         </div>
       </div>
     </section>

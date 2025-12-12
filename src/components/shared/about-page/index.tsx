@@ -5,12 +5,6 @@ import { ReactElement } from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
-// ** import third party packages
-import { motion as m } from "framer-motion";
-
-// ** import motion variants
-import { fadeInDown } from "@/utils/motion-variant";
-
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
@@ -50,28 +44,19 @@ export const AboutPage = ({
           "mx-auto max-w-7xl  grid grid-cols-1 gap-10 lg:gap-24 lg:grid-cols-2 items-center"
         )}
       >
-        <m.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInDown}
+        <div
           className="flex justify-center "
         >
           <Image
             src={image}
-            height={ variant === "secondary" ? 373 : 536}
-            width={ variant === "secondary" ? 373 : 626}
+            height={variant === "secondary" ? 373 : 536}
+            width={variant === "secondary" ? 373 : 626}
             alt={imageAlt}
             className={variant === "secondary" ? "object-contain" : "object-cover"}
             placeholder="blur"
           />
-        </m.div>
-        <m.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInDown}
-        >
+        </div>
+        <div>
           <Typography variant="Bold_H3" className="text-secondary mt-2 block ">
             {title}
           </Typography>
@@ -111,7 +96,7 @@ export const AboutPage = ({
               )}
             </div>
           )}
-        </m.div>
+        </div>
       </div>
     </section>
   );
