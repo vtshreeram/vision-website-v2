@@ -98,11 +98,11 @@ export default async function DynamicBlog({ postData }: any) {
 
   return (
     <>
-      <main className={cn(blogFontConfig.subtitle)}>
-        <div className="blog-post mx-auto lg:max-w-7xl">
+      <main className={cn(blogFontConfig.subtitle, "bg-white")}>
+        <div className="blog-post mx-auto lg:max-w-7xl global-padding-container ">
           <div className="flex flex-col gap-16 lg:flex-row lg:items-start">
             <PostFormatHandler />
-            <div className="sticky top-10 mt-14 px-3 lg:px-0 h-fit">
+            <div className="sticky top-24 mt-14 px-3 lg:px-0 h-fit">
               <div className="space-y-20 pb-8">
                 <RelatedBlogs
                   categoryName={post?.category?.name}

@@ -19,7 +19,7 @@ const WhatsAppWidget = () => {
     };
 
     return (
-        <div className="fixed bottom-24 right-6 z-50">
+        <div className="fixed bottom-10 right-6 z-50">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -76,15 +76,20 @@ const WhatsAppWidget = () => {
             </AnimatePresence>
 
             {/* Floating Button */}
+            <div className="flex items-center justify-end">
+
             <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20BD5A] transition-colors"
+                className="bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20BD5A] transition-colors cursor-pointer"
                 aria-label="Open WhatsApp chat"
             >
                 {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
             </motion.button>
+            
+            </div>
+
         </div>
     );
 };

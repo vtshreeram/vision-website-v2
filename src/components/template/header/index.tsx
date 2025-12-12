@@ -75,11 +75,11 @@ const Header = ({ isBlog = false }: HeaderProps) => {
       {!isBlog && <HeaderTop />}
       <header
         className={cn(
-          "mt-4 bg-transparent  z-50 ",
-          isBlog ? "bg-white  border-b border-stroke" : "bg-transparent"
+          " bg-transparent  z-50 ",
+          isBlog ? "bg-white  border-b border-stroke" : " mt-4 bg-transparent"
         )}
       >
-        <div className="max-w-7xl mx-auto ">
+        <div className={cn("max-w-7xl mx-auto global-padding-container ", isBlog ? "py-1 lg:py-2" : "py-1 lg:py-0")}>
           <div className="flex items-center justify-between">
             <div className="flex-shrink-0 z-20">
               <Link
@@ -87,7 +87,8 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                 className="flex gap-3 items-center"
                 aria-label="Vision Home"
               >
-                <LogoHeader />
+                {!isBlog ? <LogoHeader /> : <LogoFooter className="h-auto w-[140px]" />}
+               
               </Link>
             </div>
 
@@ -220,17 +221,18 @@ const Header = ({ isBlog = false }: HeaderProps) => {
 
       {/*  Mobile nav */}
       <nav
-        className={`fixed left-0 top-0 lg:hidden w-full !z-[9999999] bg-white overflow-x-hidden px-5 flex-col ${expanded ? "flex h-[100dvh]" : "hidden h-0"
-          }`}
+        className={`fixed left-0 top-0 lg:hidden w-full !z-[9999999] bg-white overflow-x-hidden px-5 flex-col ${
+          expanded ? "flex h-[100dvh]" : "hidden h-0"
+        }`}
       >
-        <div className="flex items-center justify-between pt-4">
+        <div className="flex items-center justify-between pt-1">
           <div className="flex-shrink-0 z-20">
             <Link
               href="/"
               className="flex gap-3 items-center"
               aria-label="Vision Home"
             >
-              <LogoFooter className="h-auto w-[160px]" />
+              <LogoFooter className="h-auto w-[140px]" />
             </Link>
           </div>
 
@@ -275,8 +277,9 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                   </p>
                 </div>
                 <ul
-                  className={`${activeDropdown === link.title ? "block" : "hidden"
-                    } my-3 `}
+                  className={`${
+                    activeDropdown === link.title ? "block" : "hidden"
+                  } my-3 `}
                 >
                   {link.subLinks.map((subLink, idx) => {
                     return (
@@ -291,9 +294,7 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                             onClick={closeMobileNav}
                           >
                             <div className="h-7 overflow-hidden text-xl md:!text-xl font-medium">
-                              <p
-                                className="text-primary inline-flex gap-2 items-center"
-                              >
+                              <p className="text-foreground inline-flex gap-2 items-center">
                                 {subLink.title}{" "}
                               </p>
                             </div>
@@ -302,7 +303,7 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                           <div className="flex gap-2 items-center">
                             <Typography
                               variant="Regular_H5"
-                              className="text-primary text-xl"
+                              className="text-foreground text-xl"
                             >
                               {subLink.title}
                             </Typography>
@@ -322,11 +323,7 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                     onClick={closeMobileNav}
                     className="block text-xl md:!text-xl font-semibold"
                   >
-                    <p
-                      className="text-primary"
-                    >
-                      {link.title}{" "}
-                    </p>
+                    <p className="text-foreground">{link.title} </p>
                   </Link>
                 )}
               </li>

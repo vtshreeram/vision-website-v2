@@ -25,6 +25,7 @@
     "next": "15.3.6",
     "next-sanity": "^11.6.10",
     "nextjs-toploader": "^3.9.17",
+    "parse5": "^8.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-feather": "^2.0.10",

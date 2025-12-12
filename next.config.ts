@@ -16,6 +16,9 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizePackageImports: ["sharp"],
+    serverActions: {
+      bodySizeLimit: "2mb",
+    },
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
@@ -25,6 +28,7 @@ const nextConfig: NextConfig = {
         path: false,
       };
     }
+
     return config;
   },
   async headers() {
