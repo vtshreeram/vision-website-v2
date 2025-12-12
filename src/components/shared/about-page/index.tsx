@@ -12,14 +12,18 @@ import Button from "@/components/ui/button";
 // ** import utils
 import { cn } from "@/lib/utils";
 
+// ** import default image
+import defaultLogo from "@/assets/images/common/about/Logo.webp";
+
 interface AboutPageProps {
-  image: StaticImageData;
+  image?: StaticImageData;
   imageAlt?: string;
   title: ReactElement | string;
-  description: string;
-  listItems: string[];
+  description?: string;
+  listItems?: string[];
   isAboutUs?: boolean;
-  variant?: "default" | "secondary";
+  variant?: "default" | "secondary" | "simple";
+  showButtons?: boolean;
 }
 
 export const AboutPage = ({
@@ -30,62 +34,73 @@ export const AboutPage = ({
   listItems,
   isAboutUs = true,
   variant = "default",
+  showButtons = true,
 }: AboutPageProps) => {
+  // Use default logo if no image provided
+  const displayImage = image || defaultLogo;
+  const isSimple = variant === "simple";
+
   return (
     <section
       id="aboutUs"
       className={cn(
-        "  global-padding-container",
+        "global-padding-container",
         variant === "secondary" ? "bg-secondary-background py-10" : "bg-background py-16 md:py-20"
       )}
     >
       <div
         className={cn(
-          "mx-auto max-w-7xl  grid grid-cols-1 gap-10 lg:gap-24 lg:grid-cols-2 items-center"
+          "mx-auto max-w-7xl grid grid-cols-1 gap-10 lg:grid-cols-2 items-center",
+          isSimple ? "lg:gap-48" : "lg:gap-24"
         )}
       >
-        <div
-          className="flex justify-center "
-        >
+        <div className="flex justify-center">
           <Image
-            src={image}
-            height={variant === "secondary" ? 373 : 536}
-            width={variant === "secondary" ? 373 : 626}
+            src={displayImage}
+            height={variant === "secondary" ? 373 : isSimple ? 150 : 536}
+            width={variant === "secondary" ? 373 : isSimple ? 410 : 626}
             alt={imageAlt}
-            className={variant === "secondary" ? "object-contain" : "object-cover"}
+            className={cn(
+              variant === "secondary" ? "object-contain" :
+                isSimple ? "object-contain" : "object-cover"
+            )}
             placeholder="blur"
           />
         </div>
         <div>
-          <Typography variant="Bold_H3" className="text-secondary mt-2 block ">
+          <Typography variant="Bold_H3" className="text-secondary mt-2 block">
             {title}
           </Typography>
           <div className="mt-6 space-y-6">
-            <div>
-              <Typography
-                variant="Regular_H6"
-                className="block text-foreground"
-              >
-                {description}
-              </Typography>
-            </div>
-            <div>
-              <ul className="space-y-1 mt-6 list-disc pl-5">
-                {listItems.map((item, index) => (
-                  <li key={index}>
-                    <Typography
-                      variant="Regular_H6"
-                      className="text-foreground"
-                    >
-                      {item}
-                    </Typography>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {description && (
+              <div>
+                <Typography
+                  variant="Regular_H6"
+                  className="block text-foreground"
+                >
+                  {description}
+                </Typography>
+              </div>
+            )}
+            {listItems && listItems.length > 0 && (
+              <div>
+                <ul className="space-y-1 mt-6 list-disc pl-5">
+                  {listItems.map((item, index) => (
+                    <li key={index}>
+                      <Typography
+                        variant="Regular_H6"
+                        className="text-foreground"
+                      >
+                        {item}
+                      </Typography>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
-          {variant === "default" && (
-            <div className="mt-6 md:mt-8 flex flex-wrap gap-x-4 md:gap-x-6 ">
+          {showButtons && variant !== "secondary" && (
+            <div className="mt-6 md:mt-8 flex flex-wrap gap-x-4 md:gap-x-6">
               <Link href={"/contact-us"}>
                 <Button variant="primary">Contact us</Button>
               </Link>
@@ -101,3 +116,6 @@ export const AboutPage = ({
     </section>
   );
 };
+
+// Re-export as AboutUs for backward compatibility
+export const AboutUs = AboutPage;

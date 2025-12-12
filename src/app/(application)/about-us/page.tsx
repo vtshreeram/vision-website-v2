@@ -1,10 +1,14 @@
+"use client";
+
 // ** import components
 import { VisionMissionGoals } from "@/components/pages/about-us";
 import { OurServices } from "@/components/pages/home";
-import { AboutUs, Banner, Benefits } from "@/components/shared";
+import { AboutPage, Banner, Benefits } from "@/components/shared";
 import Head from "@/components/shared/head";
 import Certified from "@/components/pages/about-us/certified";
 import PopularBrand from "@/components/shared/popular-brand";
+import Testimonials from "@/components/shared/Testimonials";
+import { FadeIn } from "@/components/shared/FadeIn";
 
 // ** import images
 import headBg from "@/assets/images/pages/about-us/head-bg.webp";
@@ -70,59 +74,93 @@ const AboutUsPage = () => {
 
   return (
     <main>
+      {/* 1. ATTENTION - Page header */}
       <Head heading="About Us" subHeading="About Us" bgImg={headBg} />
-      <AboutUs
-        isAboutUs={false}
-        title={
-          <>
-            Experience Excellence in <br /> Malaysian Transport Tech
-          </>
-        }
-      />
 
-      <Certified />
-      <VisionMissionGoals
-        cardsData={cardsData}
-        sectionTitle={
-          <>
-            Our Vision, Mission &
-            <span className="text-primary"> Core Values</span>
-          </>
-        }
-        sectionDescription={
-          <>
-            Discover the Essence of Excellence with Visions Transport Enterprise
-          </>
-        }
-      />
-      {/* <Partner /> */}
-      <OurServices
-        title={
-          <>
-            Our <span className="text-primary">Services</span>
-          </>
-        }
-        description={
-          <>Complete logistics solutions across Malaysia and Singapore.</>
-        }
-      />
-      <Benefits
-        title={
-          <>
-            Leadership & <span className="text-primary">Team Excellence</span>
-          </>
-        }
-        description={
-          <>
-            Expert management and a dedicated <br />
-            team driving logistics innovation.
-          </>
-        }
-        features={features}
-        isBackgroundWhite={true}
-      />
-      <PopularBrand />
-      <Banner />
+      {/* 2. WHO WE ARE - Company introduction */}
+      <FadeIn>
+        <AboutPage
+          variant="simple"
+          isAboutUs={false}
+          title={
+            <>
+              Experience Excellence in <br /> Malaysian Transport Tech
+            </>
+          }
+          description="Founded in 2008, we have grown from Klang Valley to a nationwide leader. Today, we power seamless logistics across Malaysia and Singapore."
+        />
+      </FadeIn>
+
+      {/* 3. INSTANT TRUST - Show recognized brands early */}
+      <FadeIn>
+        <PopularBrand />
+      </FadeIn>
+
+      {/* 4. INTEREST - Vision, Mission & Values */}
+      <FadeIn>
+        <VisionMissionGoals
+          cardsData={cardsData}
+          sectionTitle={
+            <>
+              Our Vision, Mission &
+              <span className="text-primary"> Core Values</span>
+            </>
+          }
+          sectionDescription={
+            <>
+              Discover the Essence of Excellence with Visions Transport Enterprise
+            </>
+          }
+        />
+      </FadeIn>
+
+      {/* 5. CREDIBILITY - Certifications */}
+      <FadeIn>
+        <Certified />
+      </FadeIn>
+
+      {/* 6. DESIRE - Team Excellence */}
+      <FadeIn>
+        <Benefits
+          title={
+            <>
+              Leadership & <span className="text-primary">Team Excellence</span>
+            </>
+          }
+          description={
+            <>
+              Expert management and a dedicated <br />
+              team driving logistics innovation.
+            </>
+          }
+          features={features}
+          isBackgroundWhite={true}
+        />
+      </FadeIn>
+
+      {/* 7. WHAT WE OFFER - Services overview */}
+      <FadeIn>
+        <OurServices
+          title={
+            <>
+              Our <span className="text-primary">Services</span>
+            </>
+          }
+          description={
+            <>Complete logistics solutions across Malaysia and Singapore.</>
+          }
+        />
+      </FadeIn>
+
+      {/* 8. SOCIAL PROOF - Testimonials */}
+      <FadeIn>
+        <Testimonials />
+      </FadeIn>
+
+      {/* 9. ACTION - Final CTA */}
+      <FadeIn>
+        <Banner />
+      </FadeIn>
     </main>
   );
 };

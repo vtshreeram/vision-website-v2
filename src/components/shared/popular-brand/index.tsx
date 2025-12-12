@@ -44,7 +44,7 @@ const PopularBrand = () => {
         {/* Title */}
         <div className="text-center">
           <Typography variant="SemiBold_H3" className="text-foreground">
-            Associated With
+            Trusted by Industry Leaders
           </Typography>
         </div>
 

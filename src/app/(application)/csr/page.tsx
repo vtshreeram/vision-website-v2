@@ -1,3 +1,5 @@
+"use client";
+
 // ** import core packages
 import React from "react";
 
@@ -9,6 +11,7 @@ import SustainableOperations from "@/components/shared/sustainable-operations";
 import StatsSection from "@/components/shared/StatsSection";
 import WhyChoose from "@/components/shared/why-choose";
 import SocialCommunity from "@/components/shared/social-community";
+import { FadeIn } from "@/components/shared/FadeIn";
 
 // ** import images
 import headBg from "@/assets/images/pages/csr/head.webp";
@@ -130,67 +133,100 @@ const whyChooseFeatures = [
 const CsrPage = () => {
   return (
     <main>
+      {/* 1. ATTENTION - Page header */}
       <Head heading="CSR" subHeading="CSR" bgImg={headBg} />
-      <AboutPage
-        image={aboutImage}
-        imageAlt="Visions Transport employee wellbeing and fair labour practices"
-        title={
-          <>
-            Employee Wellbeing &<br />
-            Fair Labour
-          </>
-        }
-        description="We invest in our people by building a safe, fair, and growth-focused workplace that empowers every team member."
-        listItems={employeeWellbeingInitiatives}
-        isAboutUs={true}
-      />
-      <AboutPage
-        image={aboutLogo}
-        imageAlt="CSR Partnerships & Recognition"
-        title={
-          <>
-            CSR Partnerships &<br />
-            Recognition
-          </>
-        }
-        description="Our CSR approach is strengthened through certified safety systems, ethical governance, and long-term commitments to responsible business practices that support people, planet, and performance across our entire organisation."
-        listItems={[
-          "Recognized for meeting global occupational health and safety benchmarks.",
-          "Strengthened by partnerships that advance ethical, transparent operations.",
-          "Committed to continuous improvement across workforce safety and community impact.",
-        ]}
-        isAboutUs={true}
-        variant="secondary"
-      />
-      <WhyChoose
-        title="Why CSR Matters at Visions"
-        features={whyChooseFeatures}
-      />
-      <StatsSection />
-      <PageService
-        title={
-          <>
-            CSR <span className="text-primary">Documentation</span>
-          </>
-        }
-        subtitle="Access key CSR reports, policies, and initiatives that demonstrate our commitment to responsible, transparent, and community-driven sustainability performance."
-        image={pageServiceImage}
-        imageAlt="CSR Documentation"
-        documents={csrDocuments}
-        subtitleClassName="max-w-4xl"
-      />
-      <SustainableOperations
-        title={
-          <>
-            Environmental <span className="text-primary">Stewardship</span>
-          </>
-        }
-        description="Driving positive environmental impact through responsible operational choices."
-        initiatives={sustainableInitiatives}
-        sliderImages={sliderImages}
-      />
-      <SocialCommunity />
-      <Banner />
+
+      {/* 2. INTEREST - Employee wellbeing introduction */}
+      <FadeIn>
+        <AboutPage
+          image={aboutImage}
+          imageAlt="Visions Transport employee wellbeing and fair labour practices"
+          title={
+            <>
+              Employee Wellbeing &<br />
+              Fair Labour
+            </>
+          }
+          description="We invest in our people by building a safe, fair, and growth-focused workplace that empowers every team member."
+          listItems={employeeWellbeingInitiatives}
+          isAboutUs={true}
+        />
+      </FadeIn>
+
+      {/* 3. KEY PILLARS - Why CSR matters */}
+      <FadeIn>
+        <WhyChoose
+          title="Why CSR Matters at Visions"
+          features={whyChooseFeatures}
+        />
+      </FadeIn>
+
+      {/* 4. PROOF - CSR statistics */}
+      <FadeIn>
+        <StatsSection />
+      </FadeIn>
+
+      {/* 5. TRUST - Partnerships & Recognition */}
+      <FadeIn>
+        <AboutPage
+          image={aboutLogo}
+          imageAlt="CSR Partnerships & Recognition"
+          title={
+            <>
+              CSR Partnerships &<br />
+              Recognition
+            </>
+          }
+          description="Our CSR approach is strengthened through certified safety systems, ethical governance, and long-term commitments to responsible business practices that support people, planet, and performance across our entire organisation."
+          listItems={[
+            "Recognized for meeting global occupational health and safety benchmarks.",
+            "Strengthened by partnerships that advance ethical, transparent operations.",
+            "Committed to continuous improvement across workforce safety and community impact.",
+          ]}
+          isAboutUs={true}
+          variant="secondary"
+        />
+      </FadeIn>
+
+      {/* 6. DESIRE - CSR Documentation */}
+      <FadeIn>
+        <PageService
+          title={
+            <>
+              CSR <span className="text-primary">Documentation</span>
+            </>
+          }
+          subtitle="Access key CSR reports, policies, and initiatives that demonstrate our commitment to responsible, transparent, and community-driven sustainability performance."
+          image={pageServiceImage}
+          imageAlt="CSR Documentation"
+          documents={csrDocuments}
+          subtitleClassName="max-w-4xl"
+        />
+      </FadeIn>
+
+      {/* 7. DEEPER ENGAGEMENT - Environmental stewardship */}
+      <FadeIn>
+        <SustainableOperations
+          title={
+            <>
+              Environmental <span className="text-primary">Stewardship</span>
+            </>
+          }
+          description="Driving positive environmental impact through responsible operational choices."
+          initiatives={sustainableInitiatives}
+          sliderImages={sliderImages}
+        />
+      </FadeIn>
+
+      {/* 8. COMMUNITY - Social initiatives */}
+      <FadeIn>
+        <SocialCommunity />
+      </FadeIn>
+
+      {/* 9. ACTION - Final CTA */}
+      <FadeIn>
+        <Banner />
+      </FadeIn>
     </main>
   );
 };

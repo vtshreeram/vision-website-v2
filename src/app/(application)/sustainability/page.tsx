@@ -1,4 +1,6 @@
 // ** import core packages
+"use client";
+
 import React from "react";
 
 // ** import components
@@ -8,12 +10,13 @@ import SocialCommunity from "@/components/shared/social-community";
 import KeySavings from "@/components/shared/key-savings";
 import BannerImage from "@/components/shared/banner-image";
 import PageService from "@/components/shared/page-service";
+import SustainableOperations from "@/components/shared/sustainable-operations";
+import { FadeIn } from "@/components/shared/FadeIn";
 
 // ** import images
 import headBg from "@/assets/images/pages/sustainability/head.webp";
 import aboutImage from "@/assets/images/pages/sustainability/about.png";
 import pageServiceImage from "@/assets/images/pages/sustainability/page-service.png";
-import SustainableOperations from "@/components/shared/sustainable-operations";
 import sliderImage from "@/assets/images/pages/sustainability/slider.webp";
 import {
   IcoSustainability5,
@@ -107,49 +110,80 @@ const SustainabilityPage = () => {
 
   return (
     <main>
+      {/* 1. ATTENTION - Page header */}
       <Head
         heading="Sustainability"
         subHeading="Sustainability"
         bgImg={headBg}
       />
-      <AboutPage
-        image={aboutImage}
-        imageAlt="Visions Transport electric vehicle and sustainability initiatives"
-        title="Our Environmental Promise"
-        description="We are taking clear, measurable actions to reduce emissions, conserve resources, and operate responsibly. Our sustainability commitment is anchored in smarter planning, cleaner fleet operations, and ongoing improvements aligned with global environmental standards to support a greener supply chain and stronger ESG performance for our partners."
-        listItems={environmentalActions}
-        isAboutUs={true}
-      />
-      <KeySavings />
 
-      <BannerImage />
-      <SocialCommunity />
-      <Partner />
-      <PageService
-        title={
-          <>
-            Sustainable Packaging & <span className="text-primary">Cargo Handling</span>{" "}
-            
-          </>
-        }
-        subtitle="Greener packaging and handling practices for sustainable logistics."
-        image={pageServiceImage}
-        imageAlt="Sustainable Packaging & Cargo Handling"
-        documents={packagingDocuments}
-      />
+      {/* 2. INTEREST - Environmental promise introduction */}
+      <FadeIn>
+        <AboutPage
+          image={aboutImage}
+          imageAlt="Visions Transport electric vehicle and sustainability initiatives"
+          title="Our Environmental Promise"
+          description="We are taking clear, measurable actions to reduce emissions, conserve resources, and operate responsibly. Our sustainability commitment is anchored in smarter planning, cleaner fleet operations, and ongoing improvements aligned with global environmental standards to support a greener supply chain and stronger ESG performance for our partners."
+          listItems={environmentalActions}
+          isAboutUs={true}
+        />
+      </FadeIn>
 
-      <SustainableOperations
-        title={
-          <>
-            Eco-Friendly{" "}
-            <span className="text-primary">Warehousing Operations</span>
-          </>
-        }
-        description="Building cleaner, energy-efficient warehouses that minimise impact and advance sustainability."
-        initiatives={warehousingInitiatives}
-        sliderImages={sliderImages}
-      />
-      <Banner />
+      {/* 3. PROOF - Key sustainability metrics */}
+      <FadeIn>
+        <KeySavings />
+      </FadeIn>
+
+      {/* 4. TRUST - Partner logos */}
+      <FadeIn>
+        <Partner />
+      </FadeIn>
+
+      {/* 5. VISUAL IMPACT - Sustainability banner */}
+      <FadeIn>
+        <BannerImage />
+      </FadeIn>
+
+      {/* 6. DESIRE - Sustainable packaging details */}
+      <FadeIn>
+        <PageService
+          title={
+            <>
+              Sustainable Packaging & <span className="text-primary">Cargo Handling</span>{" "}
+
+            </>
+          }
+          subtitle="Greener packaging and handling practices for sustainable logistics."
+          image={pageServiceImage}
+          imageAlt="Sustainable Packaging & Cargo Handling"
+          documents={packagingDocuments}
+        />
+      </FadeIn>
+
+      {/* 7. DEEPER ENGAGEMENT - Community initiatives */}
+      <FadeIn>
+        <SocialCommunity />
+      </FadeIn>
+
+      {/* 8. OPERATIONS - Warehousing sustainability */}
+      <FadeIn>
+        <SustainableOperations
+          title={
+            <>
+              Eco-Friendly{" "}
+              <span className="text-primary">Warehousing Operations</span>
+            </>
+          }
+          description="Building cleaner, energy-efficient warehouses that minimise impact and advance sustainability."
+          initiatives={warehousingInitiatives}
+          sliderImages={sliderImages}
+        />
+      </FadeIn>
+
+      {/* 9. ACTION - Final CTA */}
+      <FadeIn>
+        <Banner />
+      </FadeIn>
     </main>
   );
 };
