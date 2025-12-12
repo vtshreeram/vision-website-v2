@@ -20,6 +20,7 @@ import {
 } from "@/assets/icons";
 import PopularBrand from "@/components/shared/popular-brand";
 import LinkedinPost from "@/components/pages/home/linkedin-post";
+import Testimonials from "@/components/shared/Testimonials";
 
 import { FadeIn } from "@/components/shared/FadeIn";
 
@@ -107,6 +108,9 @@ const Page = () => {
       </FadeIn>
       <FadeIn>
         <Count />
+      </FadeIn>
+      <FadeIn>
+        <Testimonials />
       </FadeIn>
       <FadeIn>
         <Benefits

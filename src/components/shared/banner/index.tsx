@@ -1,16 +1,21 @@
 "use client";
 
 // ** import core packages
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
 
 // ** import assets
-import bg from "@/assets/images/common/banner/banner.webp";
+import bg1 from "@/assets/images/common/banner/banner.webp";
+import bg2 from "@/assets/images/pages/home/hero/hero.webp";
+import bg3 from "@/assets/images/pages/services/head-bg.webp";
+
+const bannerImages = [bg1, bg2, bg3];
 
 interface BannerProps {
   title?: string;
@@ -29,21 +34,44 @@ export const Banner: FC<BannerProps> = ({
   secondaryButtonText = "About us",
   secondaryButtonLink = "/about-us",
 }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-advance slider every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % bannerImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="contactUs"
       className="relative overflow-hidden global-padding-container py-16 md:py-24 lg:!py-28"
     >
-      <div className="absolute inset-0">
-        <Image
-          src={bg}
-          alt="Background image"
-          className="h-full w-full object-cover object-center"
-          placeholder="blur"
-        />
-      </div>
+      {/* Background images with fade transitions */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentImageIndex}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={bannerImages[currentImageIndex]}
+            alt="Background image"
+            className="h-full w-full object-cover object-center"
+            placeholder="blur"
+            priority={currentImageIndex === 0}
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-primary/70" />
+        </motion.div>
+      </AnimatePresence>
 
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-7xl z-10">
         <div className="max-w-xl">
           <Typography
             variant="SemiBold_H3"
