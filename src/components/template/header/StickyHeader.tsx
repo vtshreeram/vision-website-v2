@@ -106,7 +106,10 @@ const StickyHeader = () => {
                           activeParent
                         )}
                       >
-                        <Typography variant="Regular_H6">
+                        <Typography
+                          variant="Regular_H6"
+                          className={isActive ? "font-semibold" : ""}
+                        >
                           {link.title}
                         </Typography>
                         <IoIosArrowDown
@@ -142,7 +145,12 @@ const StickyHeader = () => {
                         activeParent
                       )}
                     >
-                      <Typography variant="Regular_H6">{link.title}</Typography>
+                      <Typography
+                        variant="Regular_H6"
+                        className={isActive ? "font-semibold" : ""}
+                      >
+                        {link.title}
+                      </Typography>
                     </Link>
                   );
                 })}
@@ -229,12 +237,14 @@ const StickyHeader = () => {
 
             return link.subLinks ? (
               <li key={idx}>
-                <div className="h-7 overflow-hidden text-xl md:!text-xl font-semibold">
+                <div className="h-7 overflow-hidden text-xl md:!text-xl">
                   <p
                     onClick={() => handleDropdown(link.title)}
                     className={cn(
                       "inline-flex gap-2 items-center cursor-pointer",
-                      isActive ? "text-primary" : "text-foreground"
+                      isActive
+                        ? "text-primary font-semibold"
+                        : "text-foreground font-semibold"
                     )}
                   >
                     {link.title}{" "}
@@ -297,7 +307,7 @@ const StickyHeader = () => {
                     <p
                       className={cn(
                         isActive
-                          ? "text-primary"
+                          ? "text-primary font-semibold"
                           : "text-foreground hover:text-primary"
                       )}
                     >
