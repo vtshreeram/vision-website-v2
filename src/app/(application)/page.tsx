@@ -1,13 +1,12 @@
 "use client";
 
-// ** import components
 import {
-  Count,
   OurServices,
   VizifleetApp,
   Hero,
 } from "@/components/pages/home";
-import { AboutUs, Banner, Benefits } from "@/components/shared";
+import { AboutPage, Banner, Benefits } from "@/components/shared";
+import StatsSection from "@/components/shared/StatsSection";
 import WhyChoose from "@/components/shared/why-choose";
 
 // ** import icons
@@ -74,22 +73,28 @@ const Page = () => {
 
   return (
     <main>
+      {/* 1. ATTENTION - Hero with strong first impression */}
       <Hero />
+
+      {/* 2. INSTANT TRUST - Show recognized brands early */}
       <FadeIn>
-        <WhyChoose
-          title="Why Leading Companies Choose Visions"
-          features={whyChooseFeatures}
+        <PopularBrand />
+      </FadeIn>
+
+      {/* 3. WHO WE ARE - Company introduction */}
+      <FadeIn>
+        <AboutPage
+          variant="simple"
+          title={
+            <>
+              We Are Experts in <br /> Logistics Solutions
+            </>
+          }
+          description="Founded in 2008, we have grown from Klang Valley to a nationwide leader. Today, we power seamless logistics across Malaysia and Singapore."
         />
       </FadeIn>
-      <FadeIn>
-        <AboutUs />
-      </FadeIn>
-      <FadeIn>
-        <VizifleetApp />
-      </FadeIn>
-      <FadeIn>
-        <LinkedinPost />
-      </FadeIn>
+
+      {/* 4. INTEREST - What we offer (core services) */}
       <FadeIn>
         <OurServices
           title={
@@ -103,15 +108,31 @@ const Page = () => {
           isViewMore={true}
         />
       </FadeIn>
+
+      {/* 5. WHY CHOOSE US - Differentiators after seeing services */}
       <FadeIn>
-        <PopularBrand />
+        <WhyChoose
+          title="Why Leading Companies Choose Visions"
+          features={whyChooseFeatures}
+        />
       </FadeIn>
+
+      {/* 6. PROOF IN NUMBERS - Statistics reinforce claims */}
       <FadeIn>
-        <Count />
+        <StatsSection variant="primary" showCTA={true} />
       </FadeIn>
+
+      {/* 7. DESIRE - How we deliver excellence (technology) */}
+      <FadeIn>
+        <VizifleetApp />
+      </FadeIn>
+
+      {/* 8. CUSTOMER PROOF - Real testimonials build trust */}
       <FadeIn>
         <Testimonials />
       </FadeIn>
+
+      {/* 9. CERTIFICATIONS - Quality assurance */}
       <FadeIn>
         <Benefits
           title={
@@ -126,6 +147,13 @@ const Page = () => {
           features={features}
         />
       </FadeIn>
+
+      {/* 10. SOCIAL ENGAGEMENT - For interested visitors */}
+      <FadeIn>
+        <LinkedinPost />
+      </FadeIn>
+
+      {/* 11. ACTION - Final CTA to convert */}
       <FadeIn>
         <Banner />
       </FadeIn>

@@ -54,9 +54,8 @@ export const Count = () => {
               Scale Your Logistics Today
             </Typography>
             <Typography variant="Regular_H6" className="text-white  ">
-              Scale Your Logistics TodayWe uncover opportunities to enhance
-              efficiency, reduce costs, and strengthen operational performance
-              across your business.
+              We uncover opportunities to enhance efficiency, reduce costs, and
+              strengthen operational performance across your business.
             </Typography>
           </div>
           <Link href={"/contact-us"}>
