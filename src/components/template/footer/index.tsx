@@ -136,7 +136,7 @@ const Footer = () => {
               <Typography
                 variant="Regular_H6"
                 className={`block text-gray whitespace-nowrap`}
-                link={`mailto:${siteConfig.EMAIL}`}
+                link={`${siteConfig.EMAIL}`}
               >
                 Email:{" "}
                 <span className="text-foreground font-medium">

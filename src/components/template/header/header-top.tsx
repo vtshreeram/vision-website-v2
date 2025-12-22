@@ -20,7 +20,7 @@ const HeaderTop = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between border-b border-white pb-3.5">
         {/* Left: Email */}
         <Link
-          href={`mailto:${siteConfig.EMAIL}`}
+          href={`${siteConfig.EMAIL}`}
           aria-label="Email"
           className="flex items-center gap-2 min-w-0 !text-white"
         >

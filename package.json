@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.14.1",
     "@fortawesome/fontawesome-free": "^7.1.0",
     "@hookform/resolvers": "^5.0.1",
+    "@marsidev/react-turnstile": "^1.4.0",
     "@radix-ui/react-select": "^2.2.2",
     "@sanity/block-content-to-markdown": "^1.0.0",
     "@sanity/image-url": "^2.0.2",

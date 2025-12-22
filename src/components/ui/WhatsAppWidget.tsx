@@ -10,7 +10,7 @@ import { Typography } from "@/components/ui/Typography";
  */
 const WhatsAppWidget = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const phoneNumber = "60123456789"; // Malaysia WhatsApp number
+    const phoneNumber = "+60165900103"; // Malaysia WhatsApp number
     const defaultMessage = "Hello! I would like to inquire about your logistics services.";
 
     const openWhatsApp = () => {

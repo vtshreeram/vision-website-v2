@@ -1,11 +1,15 @@
 "use client";
 // ** import core packages
+import { useState } from "react";
 import Link from "next/link";
 
 // ** import third party packages
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import toast from "react-hot-toast";
+import axios from "axios";
+import { Turnstile } from "@marsidev/react-turnstile";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
@@ -29,7 +33,6 @@ const contactFormSchema = z.object({
   fullName: z.string().min(2, "Full name is required").max(100),
   phone: z.string().min(10, "Enter a valid phone number"),
   email: z.string().email("Enter a valid email address"),
-
   message: z.string().min(5, "Message must be at least 5 characters long"),
 });
 
@@ -37,17 +40,67 @@ const contactFormSchema = z.object({
 type ContactFormSchema = z.infer<typeof contactFormSchema>;
 
 const ContactUs = () => {
+  const [turnstileStatus, setTurnstileStatus] = useState<
+    "success" | "error" | "expired" | "required"
+  >("required");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
+    reset,
   } = useForm<ContactFormSchema>({
     resolver: zodResolver(contactFormSchema),
   });
 
-  const onSubmit = (data: ContactFormSchema) => {
+  const onSubmit = async (data: ContactFormSchema) => {
     console.log(data);
+    try {
+      if (turnstileStatus !== "success") {
+        toast.error("Please verify the captcha");
+        return;
+      }
+
+      const response = await axios.post("/api/cloudflare", {
+        turnstileToken,
+      });
+
+      if (response.data.success) {
+        const emailIntro =
+          "Hello,\n\nYou have a new inquiry from Visions Transport website contact form:";
+        const emailDetails = `Name: ${data.fullName}\nEmail: ${
+          data.email
+        }\nPhone: ${data.phone ?? "N/A"}\n\nMessage:\n${data.message}`;
+        const emailSignature = `\n\nBest Regards,\n${data.fullName}`;
+
+        const body = encodeURIComponent(
+          `${emailIntro}\n\n${emailDetails}\n${emailSignature}`
+        );
+        const subject = encodeURIComponent(
+          "New Contact Form Inquiry - Visions Transport"
+        );
+
+        // Use hardcoded sales@visionstransport.com.my as recipient email
+        window.location.href = `mailto:sales@visionstransport.com.my?subject=${subject}&body=${body}`;
+
+        // Show success message
+        toast.success(
+          "Email client opened. Please send the email to complete your inquiry."
+        );
+
+        // Reset form after a short delay to ensure email client opens first
+        setTimeout(() => {
+          reset();
+        }, 500);
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      console.error("Failed to open mail client:", error);
+      toast.error("Failed to open email client.");
+    }
   };
 
   return (
@@ -57,12 +110,12 @@ const ContactUs = () => {
           {/* Contact information */}
           <div className="order-2 lg:order-1 lg:col-span-3">
             <div className="mb-14 hidden lg:block">
-              <Typography variant="SemiBold_H2" className={`block text-gray`}>
+              <Typography variant="SemiBold_H2" className={`block text-foreground`}>
                 Get <span className="text-primary">in Touch</span>
               </Typography>
               <Typography
                 variant="Regular_H6"
-                className={`mt-4 block text-gray`}
+                className={`mt-4 block text-foreground `}
               >
                 We’re here to assist with your logistics needs <br />
                 and provide the right solutions for your business.
@@ -79,7 +132,7 @@ const ContactUs = () => {
                 </Typography>
                 <Typography
                   variant="Regular_H6"
-                  className={`mt-4  block text-gray`}
+                  className={`mt-4  block text-foreground`}
                 >
                   Sun - Fri (08AM - 10PM)
                 </Typography>
@@ -94,7 +147,7 @@ const ContactUs = () => {
                 </Typography>
                 <Typography
                   variant="Regular_H6"
-                  className={`mt-4  block text-gray`}
+                  className={`mt-4  block text-foreground`}
                 >
                   No 2A-1 Jalan Kemuning Prima <br /> C33/C, Taman Kemuning
                   Utama, <br /> Seksyen 33, 40400 Shah Alam <br /> Selangor
@@ -109,14 +162,14 @@ const ContactUs = () => {
                 </Typography>
                 <Typography
                   variant="Regular_H6"
-                  className={`mt-4  block text-gray`}
+                  className={`mt-4  block text-foreground`}
                   link={siteConfig.PHONE_2}
                 >
                   Ph: +03-5131 3898
                 </Typography>
                 <Typography
                   variant="Regular_H6"
-                  className={` block  text-gray`}
+                  className={` block  text-foreground`}
                   link={siteConfig.EMAIL}
                 >
                   Email: sales@visionstransport.com.my
@@ -245,6 +298,24 @@ const ContactUs = () => {
                         <p className="text-red-500">{errors.message.message}</p>
                       )}
                     </div>
+                  </div>
+
+                  <div >
+                    <Turnstile
+                      siteKey={
+                        process.env.NEXT_PUBLIC_CLOUDFLARE_SITEKEY as string
+                      }
+                      onError={() => setTurnstileStatus("error")}
+                      onExpire={() => setTurnstileStatus("expired")}
+                      onSuccess={(token) => {
+                        setTurnstileToken(token);
+                        setTurnstileStatus("success");
+                      }}
+                      options={{
+                        size: "normal",
+                        theme: "light",
+                      }}
+                    />
                   </div>
 
                   <Button type="submit" variant="primary">
