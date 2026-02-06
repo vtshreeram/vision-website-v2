@@ -13,7 +13,7 @@ import NextTopLoader from "nextjs-toploader";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const url = "https://vision-website-2.vercel.app";

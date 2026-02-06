@@ -64,7 +64,7 @@ const StatsSection = ({
   if (isPrimary) {
     // Primary variant - blue background with CTA (like homepage Count)
     return (
-      <section className="py-16 md:py-20 global-padding-container bg-primary">
+      <section className="py-12 md:py-16 global-padding-container bg-primary">
         <div className="mx-auto max-w-7xl">
           {/* Stats Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
@@ -77,7 +77,7 @@ const StatsSection = ({
                 >
                   <Typography
                     variant="Bold_H2"
-                    className="text-primary text-4xl md:text-5xl mb-2"
+                    className="text-primary mb-2"
                   >
                     <AnimatedCounter
                       value={value}
@@ -87,8 +87,8 @@ const StatsSection = ({
                     />
                   </Typography>
                   <Typography
-                    variant="Regular_H6"
-                    className="text-foreground text-lg md:text-xl"
+                    variant="Regular_H5"
+                    className="text-foreground"
                   >
                     {stat.label}
                   </Typography>
@@ -100,7 +100,7 @@ const StatsSection = ({
           {showCTA && (
             <div className="flex flex-col md:flex-row items-end md:items-start md:justify-between mt-12">
               <div className="mb-8 md:mb-0 space-y-4 md:max-w-[620px]">
-                <Typography variant="Bold_H2" className="text-white md:text-4xl">
+                <Typography variant="Bold_H3" className="text-white">
                   {ctaTitle}
                 </Typography>
                 <Typography variant="Regular_H6" className="text-white">
@@ -124,7 +124,7 @@ const StatsSection = ({
 
   // Default variant - white background with world map (like CSR page)
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 global-padding-container overflow-hidden bg-background">
+    <section className="relative py-16 md:py-24 global-padding-container overflow-hidden bg-background">
       {/* second container */}
       <div className="relative lg:py-24 overflow-hidden">
         {/* Background Image with World Map Overlay */}

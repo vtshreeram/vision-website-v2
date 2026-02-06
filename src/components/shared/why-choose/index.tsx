@@ -18,7 +18,7 @@ interface WhyChooseProps {
 
 const WhyChoose = ({ title, features }: WhyChooseProps) => {
   return (
-    <section className="py-10 lg:pt-16 lg:pb-20  global-padding-container bg-primary">
+    <section className="py-12 md:py-16 global-padding-container bg-primary">
       <div className="mx-auto max-w-7xl">
         <Typography variant="SemiBold_H3" className={` text-white text-center`}>
           {title}

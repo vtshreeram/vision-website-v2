@@ -47,7 +47,7 @@ export const Banner: FC<BannerProps> = ({
   return (
     <section
       id="contactUs"
-      className="relative overflow-hidden global-padding-container py-16 md:py-24 lg:!py-28"
+      className="relative overflow-hidden global-padding-container py-16 md:py-24"
     >
       {/* Background images with fade transitions */}
       <AnimatePresence mode="wait">

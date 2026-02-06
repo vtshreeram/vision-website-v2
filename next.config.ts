@@ -29,6 +29,12 @@ const nextConfig: NextConfig = {
       };
     }
 
+    // Resolve hls.js to its CJS build (ESM .mjs file missing from dist)
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "hls.js": require.resolve("hls.js"),
+    };
+
     return config;
   },
   async headers() {

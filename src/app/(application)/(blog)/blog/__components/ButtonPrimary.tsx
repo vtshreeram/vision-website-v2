@@ -28,19 +28,36 @@ const ButtonPrimary: FC<ButtonProps> = ({
   className,
   isActive = false,
   isLoading,
+  disabled,
   ...rest
 }) => {
   return (
     <button
       {...rest}
+      disabled={disabled || isLoading}
+      aria-busy={isLoading}
+      aria-disabled={disabled || isLoading}
       className={cn(
-        "bg-primary font-semibold text-white duration-500 hover:opacity-90 text-[14px] px-6 md:px-8 py-3 md:text-base",
-        className,
-        isActive ? "bg-gray-800" : undefined,
-        isLoading ? "cursor-not-allowed" : "hover:shadow-lg",
-        blogFontConfig.subtitle
+        // Base styles
+        "text-[14px] px-6 md:px-8 py-3 md:text-base font-medium",
+        "transition-all duration-200 ease-out",
+        // Default state
+        "bg-primary text-white border border-primary",
+        // Hover state
+        "hover:opacity-90 hover:shadow-lg",
+        // Active state
+        "active:scale-[0.98]",
+        // Focus state
+        "focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-primary focus-visible:ring-offset-2",
+        // Disabled state
+        "disabled:bg-stroke disabled:text-gray/60 disabled:border-stroke disabled:opacity-60 disabled:cursor-not-allowed",
+        // Loading state
+        isLoading && "cursor-wait opacity-80",
+        // Active variant override
+        isActive && "bg-gray-800",
+        blogFontConfig.subtitle,
+        className
       )}
-      disabled={isLoading}
     >
       {isLoading ? <Spinner /> : content}
     </button>

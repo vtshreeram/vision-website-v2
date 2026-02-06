@@ -46,7 +46,8 @@ const WhatsAppWidget = () => {
                             </div>
                             <button
                                 onClick={() => setIsOpen(false)}
-                                className="text-white hover:bg-white/20 rounded-full p-1"
+                                className="text-white hover:bg-white/20 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 rounded-full p-1 transition-all duration-200"
+                                aria-label="Close chat"
                             >
                                 <X size={18} />
                             </button>
@@ -65,7 +66,7 @@ const WhatsAppWidget = () => {
                         <div className="p-4 border-t">
                             <button
                                 onClick={openWhatsApp}
-                                className="w-full bg-[#25D366] text-white py-3 rounded-lg font-medium hover:bg-[#20BD5A] transition-colors flex items-center justify-center gap-2"
+                                className="w-full bg-[#25D366] text-white py-3 rounded-lg font-medium hover:bg-[#20BD5A] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 transition-all duration-200 flex items-center justify-center gap-2"
                             >
                                 <MessageCircle size={20} />
                                 Start Chat
@@ -79,10 +80,10 @@ const WhatsAppWidget = () => {
             <div className="flex items-center justify-end">
 
             <motion.button
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20BD5A] transition-colors cursor-pointer"
+                className="bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20BD5A] hover:shadow-xl active:scale-95 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-white focus-visible:ring-offset-2 transition-all duration-200"
                 aria-label="Open WhatsApp chat"
             >
                 {isOpen ? <X size={24} /> : <MessageCircle size={24} />}

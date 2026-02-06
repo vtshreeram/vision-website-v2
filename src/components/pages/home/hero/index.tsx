@@ -33,13 +33,13 @@ export const Hero = () => {
   return (
     <section className="relative overflow-hidden h-screen min-h-[600px]">
       {/* Background images with Fade transitions */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <motion.div
           key={currentImageIndex}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
           className="absolute inset-0 z-0"
         >
           <Image
@@ -68,7 +68,7 @@ export const Hero = () => {
             <div className="max-w-3xl">
               <Typography
                 variant="Bold_H1"
-                className="!text-white mb-4 text-shadow text-4xl md:text-5xl leading-tight"
+                className="!text-white mb-4 text-shadow"
               >
                 Trusted Cross-Border
                 <br />
@@ -76,7 +76,7 @@ export const Hero = () => {
               </Typography>
               <Typography
                 variant="Regular_H5"
-                className="text-white mb-6 lg:max-w-[85%]"
+                className="!text-white mb-6 lg:max-w-[85%]"
               >
                 Smart, sustainable logistics with real-time visibility and
                 carbon-aligned performance.
@@ -105,8 +105,8 @@ export const Hero = () => {
               key={index}
               onClick={() => setCurrentImageIndex(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentImageIndex
-                  ? "bg-primary w-8"
-                  : "bg-white/50 hover:bg-white/80"
+                ? "bg-primary w-8"
+                : "bg-white/50 hover:bg-white/80"
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />

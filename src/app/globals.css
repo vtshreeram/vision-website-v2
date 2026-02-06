@@ -17,13 +17,19 @@
   --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-modal: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
-  /* Fluid Typography (Clamp) */
-  --text-h1: clamp(2.5rem, 5vw, 4.5rem);
-  /* 40px -> 72px */
-  --text-h2: clamp(2rem, 4vw, 3.5rem);
-  /* 32px -> 56px */
-  --text-h3: clamp(1.75rem, 3vw, 2.5rem);
-  /* 28px -> 40px */
+  /* Typography Scale — Major Third (1.25 ratio), base 16px */
+  --text-step-neg1: 0.8125rem;    /* 13px - Caption/meta */
+  --text-step-0: 1rem;             /* 16px - Body */
+  --text-step-1: 1.25rem;          /* 20px - Lead text */
+  --text-step-2: 1.5625rem;        /* 25px - Subheading */
+  --text-step-3: 1.9375rem;        /* 31px - Section heading sm */
+  --text-step-4: 2.4375rem;        /* 39px - Section heading lg */
+  --text-step-5: 3.0625rem;        /* 49px - Page heading */
+  --text-step-6: 3.8125rem;        /* 61px - Display/hero */
+
+  /* Spacing tokens for vertical rhythm (8px base unit) */
+  --space-heading-gap: 1rem;       /* 16px - gap between heading & description */
+  --space-content-gap: 3rem;       /* 48px - gap between section header & content */
 }
 
 @theme inline {
@@ -41,9 +47,14 @@
   --shadow-card-hover: var(--shadow-card-hover);
   --shadow-modal: var(--shadow-modal);
 
-  --text-h1: var(--text-h1);
-  --text-h2: var(--text-h2);
-  --text-h3: var(--text-h3);
+  --text-step-neg1: var(--text-step-neg1);
+  --text-step-0: var(--text-step-0);
+  --text-step-1: var(--text-step-1);
+  --text-step-2: var(--text-step-2);
+  --text-step-3: var(--text-step-3);
+  --text-step-4: var(--text-step-4);
+  --text-step-5: var(--text-step-5);
+  --text-step-6: var(--text-step-6);
 }
 
 /* Base Accessibility Reset */
@@ -64,7 +75,7 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: currentColor;
+  background-color: var(--primary);
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -101,6 +112,25 @@
 .interactive-hover:hover {
   transform: scale(1.02);
   opacity: 0.95;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable scale transforms when motion is reduced */
+  .btn-lift:hover,
+  .card-hover:hover,
+  .interactive-hover:hover {
+    transform: none;
+  }
 }
 
 
@@ -403,6 +433,16 @@
   .blog-layout-custom-style .post-content h1 span {
     line-height: 1 !important;
   }
+}
+
+/* Long-form content readability */
+.prose-body {
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+.prose-body > * + * {
+  margin-top: 1.5em;
 }
 
 /* LinkedIn Swiper Custom Styles - Scoped to avoid affecting other swipers */

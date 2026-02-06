@@ -11,7 +11,7 @@ const TermsAndConditionsPage = () => {
             <Head heading="Terms & Conditions" subHeading="Terms & Conditions" bgImg={headBg} />
 
             <section className="py-16 md:py-24 global-padding-container">
-                <div className="max-w-4xl mx-auto">
+                <div className="max-w-4xl mx-auto prose-body">
                     <Typography variant="Regular_H6" className="text-gray mb-8">
                         Last updated: December 2024
                     </Typography>
@@ -21,7 +21,7 @@ const TermsAndConditionsPage = () => {
                             <Typography variant="Bold_H3" className="text-foreground mb-4">
                                 1. Acceptance of Terms
                             </Typography>
-                            <Typography variant="Regular_H6" className="text-gray leading-relaxed">
+                            <Typography variant="Regular_H6" className="text-gray">
                                 By accessing and using Visions Transport Enterprise&apos;s services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our services.
                             </Typography>
                         </div>
@@ -30,7 +30,7 @@ const TermsAndConditionsPage = () => {
                             <Typography variant="Bold_H3" className="text-foreground mb-4">
                                 2. Services Description
                             </Typography>
-                            <Typography variant="Regular_H6" className="text-gray leading-relaxed">
+                            <Typography variant="Regular_H6" className="text-gray">
                                 Visions Transport Enterprise provides cross-border logistics services between Malaysia and Singapore, including but not limited to freight forwarding, warehousing, distribution, and real-time shipment tracking. Our services are subject to availability and may be modified at our discretion.
                             </Typography>
                         </div>
@@ -39,7 +39,7 @@ const TermsAndConditionsPage = () => {
                             <Typography variant="Bold_H3" className="text-foreground mb-4">
                                 3. User Responsibilities
                             </Typography>
-                            <Typography variant="Regular_H6" className="text-gray leading-relaxed mb-4">
+                            <Typography variant="Regular_H6" className="text-gray mb-4">
                                 As a user of our services, you agree to:
                             </Typography>
                             <ul className="list-disc list-inside space-y-2 text-gray">
@@ -55,7 +55,7 @@ const TermsAndConditionsPage = () => {
                             <Typography variant="Bold_H3" className="text-foreground mb-4">
                                 4. Prohibited Items
                             </Typography>
-                            <Typography variant="Regular_H6" className="text-gray leading-relaxed mb-4">
+                            <Typography variant="Regular_H6" className="text-gray mb-4">
                                 The following items are strictly prohibited from our logistics services:
                             </Typography>
                             <ul className="list-disc list-inside space-y-2 text-gray">
@@ -71,7 +71,7 @@ const TermsAndConditionsPage = () => {
                             <Typography variant="Bold_H3" className="text-foreground mb-4">
                                 5. Liability and Insurance
                             </Typography>
-                            <Typography variant="Regular_H6" className="text-gray leading-relaxed">
+                            <Typography variant="Regular_H6" className="text-gray">
                                 While we take every precaution to ensure the safe delivery of your goods, our liability is limited to the declared value of the shipment or the maximum amount specified in your service agreement. We recommend purchasing additional insurance for high-value shipments.
                             </Typography>
                         </div>
@@ -80,7 +80,7 @@ const TermsAndConditionsPage = () => {
                             <Typography variant="Bold_H3" className="text-foreground mb-4">
                                 6. Payment Terms
                             </Typography>
-                            <Typography variant="Regular_H6" className="text-gray leading-relaxed">
+                            <Typography variant="Regular_H6" className="text-gray">
                                 Payment is due upon booking or as agreed in your service contract. We accept various payment methods including bank transfer, credit card, and approved credit terms for qualified business accounts. Late payments may incur additional fees.
                             </Typography>
                         </div>
@@ -89,7 +89,7 @@ const TermsAndConditionsPage = () => {
                             <Typography variant="Bold_H3" className="text-foreground mb-4">
                                 7. Cancellation and Refunds
                             </Typography>
-                            <Typography variant="Regular_H6" className="text-gray leading-relaxed">
+                            <Typography variant="Regular_H6" className="text-gray">
                                 Cancellations made 24 hours before scheduled pickup may be eligible for a full refund. Cancellations made within 24 hours may incur a cancellation fee. Refunds will be processed within 7-14 business days.
                             </Typography>
                         </div>
@@ -98,7 +98,7 @@ const TermsAndConditionsPage = () => {
                             <Typography variant="Bold_H3" className="text-foreground mb-4">
                                 8. Governing Law
                             </Typography>
-                            <Typography variant="Regular_H6" className="text-gray leading-relaxed">
+                            <Typography variant="Regular_H6" className="text-gray">
                                 These Terms and Conditions shall be governed by and construed in accordance with the laws of Malaysia. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the Malaysian courts.
                             </Typography>
                         </div>
@@ -107,7 +107,7 @@ const TermsAndConditionsPage = () => {
                             <Typography variant="Bold_H3" className="text-foreground mb-4">
                                 9. Contact Information
                             </Typography>
-                            <Typography variant="Regular_H6" className="text-gray leading-relaxed">
+                            <Typography variant="Regular_H6" className="text-gray">
                                 For questions about these Terms and Conditions, please contact us at:<br />
                                 Email: operation@visionstransport.com.my<br />
                                 Phone: +60 3-5131 7338

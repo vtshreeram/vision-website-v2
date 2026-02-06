@@ -84,10 +84,9 @@ const Faq = () => {
                   className="flex w-full items-center justify-between p-4 sm:pt-6 sm:px-6 sm:pb-4"
                   onClick={() => toggleFaq(index)}
                 >
-                  <span className={` flex !text-start text-base md:text-xl ${item.open ? "text-primary " : ""
-                    } `}>
-                    {" "}
-                    {item.question}{" "}
+                  <span className={`flex text-start text-[1.25rem] md:text-[1.5625rem] font-medium ${item.open ? "text-primary" : ""
+                    }`}>
+                    {item.question}
                   </span>
 
                   {!item.open ? (
@@ -99,7 +98,7 @@ const Faq = () => {
 
                 <div
                   className={`${item.open ? "block " : "hidden"
-                    } px-4 pb-5 !text-start sm:px-6 sm:pb-6 text-gray text-sm md:text-base`}
+                    } px-4 pb-5 text-start sm:px-6 sm:pb-6 text-gray text-base leading-[1.625]`}
                 >
                   <p dangerouslySetInnerHTML={{ __html: item.answer }}></p>
                 </div>

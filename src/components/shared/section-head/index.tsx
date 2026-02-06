@@ -31,7 +31,7 @@ const SectionHead = ({
       <Typography
         variant="Regular_H5"
         className={cn(
-          ` block mt-2 max-w-xl mx-auto text-gray`,
+          `block mt-4 max-w-2xl mx-auto text-gray`,
           descriptionClassName
         )}
       >

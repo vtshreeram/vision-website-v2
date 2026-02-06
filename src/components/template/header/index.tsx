@@ -88,13 +88,13 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                 aria-label="Vision Home"
               >
                 {!isBlog ? <LogoHeader /> : <LogoFooter className="h-auto w-[140px]" />}
-               
+
               </Link>
             </div>
 
             <div className="flex lg:hidden">
               <button
-                className="text-primary"
+                className="text-primary p-2 rounded hover:bg-primary/10 active:scale-95 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-200"
                 type="button"
                 onClick={() => {
                   handleDropdown("");
@@ -203,7 +203,7 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                         link={link.href}
                         className={cn(
                           activeParent,
-                          isBlog ? "!text-black" : "!text-white"
+                          isBlog ? "!text-black" : "!text-white hover:!text-white"
                         )}
                         target={link.target}
                       >
@@ -221,9 +221,8 @@ const Header = ({ isBlog = false }: HeaderProps) => {
 
       {/*  Mobile nav */}
       <nav
-        className={`fixed left-0 top-0 lg:hidden w-full !z-[9999999] bg-white overflow-x-hidden px-5 flex-col ${
-          expanded ? "flex h-[100dvh]" : "hidden h-0"
-        }`}
+        className={`fixed left-0 top-0 lg:hidden w-full !z-[9999999] bg-white overflow-x-hidden px-5 flex-col ${expanded ? "flex h-[100dvh]" : "hidden h-0"
+          }`}
       >
         <div className="flex items-center justify-between pt-1">
           <div className="flex-shrink-0 z-20">
@@ -277,9 +276,8 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                   </p>
                 </div>
                 <ul
-                  className={`${
-                    activeDropdown === link.title ? "block" : "hidden"
-                  } my-3 `}
+                  className={`${activeDropdown === link.title ? "block" : "hidden"
+                    } my-3 `}
                 >
                   {link.subLinks.map((subLink, idx) => {
                     return (

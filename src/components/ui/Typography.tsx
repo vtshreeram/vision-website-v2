@@ -42,7 +42,7 @@ type TypographyAnimation = "move" | "underline";
 
 type LinkDirection = "forward" | "back";
 
-type HTMLHeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "p";
+type HTMLHeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "small";
 
 interface TypographyProps {
   variant: TypographyVariant;
@@ -91,65 +91,72 @@ export const Typography: FC<TypographyProps> = ({
     const fontWeightClass = getFontWeight(variant);
 
     switch (variant) {
+      // H1: Display / Hero — 39px mobile → 61px desktop
       case "Bold_H1":
       case "SemiBold_H1":
       case "Medium_H1":
       case "Regular_H1":
-        fontSizeClass = "text-4xl md:text-6xl";
-        lineHeightClass = "leading-tight md:leading-tight";
-        letterSpacingClass = "tracking-tight";
+        fontSizeClass = "text-[2.4375rem] md:text-[3.8125rem]";
+        lineHeightClass = "leading-[1.15] md:leading-[1.1]";
+        letterSpacingClass = "tracking-[-0.03em]";
         break;
+      // H2: Page heading — 31px mobile → 49px desktop
       case "Bold_H2":
       case "SemiBold_H2":
       case "Medium_H2":
       case "Regular_H2":
-        fontSizeClass = "text-4xl md:text-5xl";
-        lineHeightClass = "leading-tight md:leading-snug";
-        letterSpacingClass = "tracking-tight";
+        fontSizeClass = "text-[1.9375rem] md:text-[3.0625rem]";
+        lineHeightClass = "leading-[1.2] md:leading-[1.15]";
+        letterSpacingClass = "tracking-[-0.02em]";
         break;
+      // H3: Section heading — 25px mobile → 39px desktop
       case "Bold_H3":
       case "SemiBold_H3":
       case "Medium_H3":
       case "Regular_H3":
-        fontSizeClass = "text-[28px] md:text-[39px]";
-        lineHeightClass = "leading-9 md:leading-[47px]";
-        letterSpacingClass = "tracking-normal";
+        fontSizeClass = "text-[1.5625rem] md:text-[2.4375rem]";
+        lineHeightClass = "leading-[1.3] md:leading-[1.25]";
+        letterSpacingClass = "tracking-[-0.01em]";
         break;
+      // H4: Subheading — 20px mobile → 25px desktop
       case "Bold_H4":
       case "SemiBold_H4":
       case "Medium_H4":
       case "Regular_H4":
-        fontSizeClass = "text-[20px] md:text-[25px]";
-        lineHeightClass = "leading-relaxed md:leading-snug";
+        fontSizeClass = "text-[1.25rem] md:text-[1.5625rem]";
+        lineHeightClass = "leading-[1.4] md:leading-[1.35]";
         letterSpacingClass = "tracking-normal";
         break;
+      // H5: Lead text / large body — 16px mobile → 20px desktop
       case "Bold_H5":
       case "SemiBold_H5":
       case "Medium_H5":
       case "Regular_H5":
-        fontSizeClass = "text-base md:text-[20px]";
-        lineHeightClass = "leading-snug md:leading-snug";
+        fontSizeClass = "text-base md:text-[1.25rem]";
+        lineHeightClass = "leading-[1.5]";
         letterSpacingClass = "tracking-normal";
         break;
+      // H6: Body text — 16px (both)
       case "Bold_H6":
       case "SemiBold_H6":
       case "Medium_H6":
       case "Regular_H6":
         fontSizeClass = "text-base";
-        lineHeightClass = "leading-snug md:leading-6";
-        letterSpacingClass = "tracking-normal";
+        lineHeightClass = "leading-[1.625]";
+        letterSpacingClass = "tracking-[0.005em]";
         break;
+      // H7: Caption / meta — 13px (both)
       case "Bold_H7":
       case "SemiBold_H7":
       case "Medium_H7":
       case "Regular_H7":
-        fontSizeClass = "text-sm";
-        lineHeightClass = "leading-tight md:leading-snug";
-        letterSpacingClass = "tracking-normal";
+        fontSizeClass = "text-[0.8125rem]";
+        lineHeightClass = "leading-[1.5]";
+        letterSpacingClass = "tracking-[0.01em]";
         break;
       default:
         fontSizeClass = "text-base";
-        lineHeightClass = "leading-snug";
+        lineHeightClass = "leading-[1.625]";
         letterSpacingClass = "tracking-normal";
     }
 
@@ -164,8 +171,8 @@ export const Typography: FC<TypographyProps> = ({
     if (variant.endsWith("H4")) return "h4";
     if (variant.endsWith("H5")) return "h5";
     if (variant.endsWith("H6")) return "p";
-    if (variant.endsWith("H7")) return "p"; // Use <p> for H7
-    return "p"; // Default to <p>
+    if (variant.endsWith("H7")) return "small";
+    return "p";
   };
 
   const tag = getTag(variant);

@@ -17,8 +17,10 @@ export const ButtonState = React.forwardRef<HTMLButtonElement, ButtonStateProps>
             <Button
                 ref={ref}
                 disabled={disabled || isLoading || isSuccess}
+                aria-busy={isLoading}
+                aria-live="polite"
                 className={cn(
-                    "transition-all duration-300 relative overflow-hidden active:scale-95",
+                    "relative overflow-hidden",
                     isSuccess && "bg-green-600 hover:bg-green-600 text-white border-green-600",
                     isLoading && "cursor-wait opacity-80",
                     className
