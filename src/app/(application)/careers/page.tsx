@@ -1,64 +1,50 @@
-"use client";
-
 import React from "react";
-
-// ** import components
-import Career from "./career";
 import Head from "@/components/shared/head";
-import { Banner } from "@/components/shared";
-import WhyChoose from "@/components/shared/why-choose";
-import PopularBrand from "@/components/shared/popular-brand";
-import { FadeIn } from "@/components/shared/FadeIn";
-
-// ** import images
 import headBg from "@/assets/images/pages/careers/head-img.png";
+import { FadeIn } from "@/components/shared/FadeIn";
+import WhyChoose from "@/components/shared/why-choose";
+import Career from "./career";
 
+// Data for "Why Join Visions Transport"
 const cultureFeatures = [
   {
-    title: "Growth Opportunities",
-    description: "Continuous learning and career advancement",
+    title: "Innovation First",
+    description:
+      "Work with VizFleet, our proprietary technology that is redefining logistics efficiency and transparency.",
   },
   {
-    title: "Work-Life Balance",
-    description: "Flexible schedules and supportive environment",
+    title: "Career Growth",
+    description:
+      "We invest in our people with mentorship programs, certifications, and clear paths for advancement.",
   },
   {
-    title: "Team Excellence",
-    description: "Collaborate with industry professionals",
+    title: "Safety & Wellbeing",
+    description:
+      "A culture that prioritizes the safety of our drivers and the wellbeing of every team member.",
   },
   {
-    title: "Meaningful Impact",
-    description: "Drive innovation in logistics technology",
+    title: "Global Impact",
+    description:
+      "Be part of a supply chain network that moves the economy and connects businesses worldwide.",
   },
 ];
 
 const CareersPage = () => {
   return (
     <main>
-      {/* 1. ATTENTION - Page header */}
-      <Head heading="Careers" subHeading="Careers" bgImg={headBg} />
-
-      {/* 2. INTEREST - Why work with us */}
+      <Head
+        heading="Join Our Team"
+        subHeading="Build the Future of Logistics"
+        bgImg={headBg}
+      />
       <FadeIn>
         <WhyChoose
-          title="Why Join Visions Transport"
+          title="Why Build Your Career at Visions?"
           features={cultureFeatures}
         />
       </FadeIn>
-
-      {/* 3. DESIRE - Available positions */}
       <FadeIn>
         <Career />
-      </FadeIn>
-
-      {/* 4. TRUST - Companies we work with */}
-      <FadeIn>
-        <PopularBrand />
-      </FadeIn>
-
-      {/* 5. ACTION - Final CTA */}
-      <FadeIn>
-        <Banner />
       </FadeIn>
     </main>
   );

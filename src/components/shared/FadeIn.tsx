@@ -14,10 +14,10 @@ export function FadeIn(props: React.ComponentPropsWithoutRef<typeof motion.div>)
     return (
         <motion.div
             variants={{
-                hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
+                hidden: { opacity: 1, y: 0 }, // Changed from opacity: 0, y: 24 to disable animation
                 visible: { opacity: 1, y: 0 },
             }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0 }} // Remove duration
             {...(isInStaggerGroup
                 ? {}
                 : {

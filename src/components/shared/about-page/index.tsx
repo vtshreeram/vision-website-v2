@@ -15,12 +15,17 @@ import { cn } from "@/lib/utils";
 // ** import default image
 import defaultLogo from "@/assets/images/common/about/Logo.webp";
 
+interface ListItemObject {
+  title: string;
+  description: string;
+}
+
 interface AboutPageProps {
   image?: StaticImageData;
   imageAlt?: string;
   title: ReactElement | string;
   description?: string;
-  listItems?: string[];
+  listItems?: string[] | ListItemObject[];
   isAboutUs?: boolean;
   variant?: "default" | "secondary" | "simple";
   showButtons?: boolean;
@@ -84,15 +89,26 @@ export const AboutPage = ({
             )}
             {listItems && listItems.length > 0 && (
               <div>
-                <ul className="space-y-1 mt-6 list-disc pl-5">
+                <ul className="space-y-4 mt-6">
                   {listItems.map((item, index) => (
-                    <li key={index}>
-                      <Typography
-                        variant="Regular_H6"
-                        className="text-foreground"
-                      >
-                        {item}
-                      </Typography>
+                    <li key={index} className={typeof item === 'string' ? "list-disc ml-5" : ""}>
+                      {typeof item === 'string' ? (
+                        <Typography
+                          variant="Regular_H6"
+                          className="text-foreground"
+                        >
+                          {item}
+                        </Typography>
+                      ) : (
+                        <div>
+                          <Typography variant="Bold_H6" className="text-foreground block mb-1">
+                            {item.title}
+                          </Typography>
+                          <Typography variant="Regular_H6" className="text-gray">
+                            {item.description}
+                          </Typography>
+                        </div>
+                      )}
                     </li>
                   ))}
                 </ul>

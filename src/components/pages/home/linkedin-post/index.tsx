@@ -39,10 +39,10 @@ const LinkedinPost = () => {
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
           <Typography variant="SemiBold_H2" className="text-white mb-2">
-            Latest Updates from LinkedIn
+            Industry Insights & News
           </Typography>
           <Typography variant="Regular_H5" className="text-white">
-            Insights, announcements, and company highlights
+            Stay updated with the latest logistics trends and company announcements.
           </Typography>
         </div>
 

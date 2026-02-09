@@ -16,11 +16,16 @@ export const metadata = blogMetadata;
 const Blogs = async () => {
   const options = { next: { revalidate: 30 } };
 
-  const allCategory = await client.fetch<SanityDocument[]>(
-    CATEGORY_QUERY,
-    {},
-    options
-  );
+  let allCategory: SanityDocument[] = [];
+  try {
+    allCategory = await client.fetch<SanityDocument[]>(
+      CATEGORY_QUERY,
+      {},
+      options
+    );
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+  }
 
   return (
     <div>
@@ -30,7 +35,11 @@ const Blogs = async () => {
           __html: JSON.stringify(blogJsonLd),
         }}
       />
-      <Head heading="Blogs" subHeading="Blogs" bgImg={headBg} />
+      <Head
+        heading="Industry Insights"
+        subHeading="Trends, Technology, and the Future of Logistics"
+        bgImg={headBg}
+      />
       {allCategory?.length > 0 && (
         <GroupedBasedBlogSlider categories={allCategory} />
       )}

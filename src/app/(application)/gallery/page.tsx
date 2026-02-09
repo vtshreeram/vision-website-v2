@@ -9,7 +9,7 @@ import headBg from "@/assets/images/pages/gallery/head/head-bg.webp";
 const GalleryPage = () => {
   return (
     <main>
-      <Head heading="Gallery" subHeading="Our Gallery" bgImg={headBg} />
+      <Head heading="Fleet Gallery" subHeading="Our Modern Fleet" bgImg={headBg} />
       <Gallery />
       <Banner />
     </main>

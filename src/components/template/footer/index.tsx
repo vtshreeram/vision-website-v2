@@ -90,6 +90,16 @@ const otherLinks: FooterLink[] = [
     label: "Privacy Policy",
     target: "_blank",
   },
+  {
+    href: "/disclaimer-policy",
+    label: "Disclaimer Policy",
+    target: "_blank",
+  },
+  {
+    href: "/cookie-policy",
+    label: "Cookie Policy",
+    target: "_blank",
+  },
 ];
 
 const Footer = () => {
@@ -118,9 +128,8 @@ const Footer = () => {
             <LogoFooter />
 
             <Typography variant="Regular_H6" className={`mt-4 text-gray`}>
-              Driving logistics excellence with VizFleet’s advanced technology,
-              delivering smart, scalable, and reliable solutions for every
-              business.
+              Empowering businesses with smart, scalable logistics and cross-border
+              solutions powered by VizFleet technology.
             </Typography>
             <div className="mt-4">
               <Typography
@@ -130,7 +139,7 @@ const Footer = () => {
               >
                 Ph. No:{" "}
                 <span className="text-foreground font-medium">
-                  +91 95959 95959
+                  +60 3-5131 3898
                 </span>
               </Typography>
               <Typography
@@ -223,8 +232,8 @@ const Footer = () => {
 
               <div className="mt-6 md:max-w-xs">
                 <Typography variant="Regular_H6" className="mb-4 text-gray">
-                  Subscribe to our newsletter for the latest industry updates,
-                  insights, and exclusive offers.
+                  Get the latest logistics insights and market updates delivered to
+                  your inbox.
                 </Typography>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div>
@@ -245,7 +254,7 @@ const Footer = () => {
                     className="w-full mt-4"
                     type="submit"
                   >
-                    Subscribe Now
+                    Subscribe
                   </Button>
                 </form>
               </div>
@@ -256,7 +265,7 @@ const Footer = () => {
         <div className="mt-12 border-t border-stroke pt-8 sm:mt-16 lg:mt-20">
           <div className="text-center">
             <Typography variant="Medium_H6" className="text-gray block">
-              © {currentYear} VizFleet. All rights reserved. A product of Peacock India.
+              © {currentYear} Visions Transport. All rights reserved. Powered by VizFleet Technology
             </Typography>
           </div>
         </div>

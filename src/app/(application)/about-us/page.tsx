@@ -29,28 +29,28 @@ const AboutUsPage = () => {
   const features = [
     {
       icon: <IcoManagement />,
-      title: "Professional Management",
-      desc: "Decades of strategic, data-driven leadership.",
+      title: "Experienced Leaders",
+      desc: "Strategic vision backed by decades of industry proof.",
     },
     {
       icon: <IcoLeadership />,
-      title: "Regional Leadership",
-      desc: "Local expertise with corporate-grade delivery.",
+      title: "Regional Experts",
+      desc: "Deep local knowledge with world-class standards.",
     },
     {
       icon: <IcoWorkforce />,
-      title: "Dedicated Workforce",
-      desc: "100+ skilled employees ensuring reliability.",
+      title: "Dedicated Drivers",
+      desc: "100+ trained professionals who care about your cargo.",
     },
     {
       icon: <IcoSupport />,
-      title: "Customer Support Team",
-      desc: "24/7 quick and dependable client support.",
+      title: "24/7 Support",
+      desc: "Real humans ready to help, anytime.",
     },
     {
       icon: <IcoDevelopment />,
-      title: "Continuous Development",
-      desc: "Continuous training for industry readiness.",
+      title: "Always Improving",
+      desc: "Continuous training to stay ahead of the curve.",
     },
   ];
 
@@ -58,17 +58,17 @@ const AboutUsPage = () => {
     {
       icon: <IcoVision />,
       title: "Our Vision",
-      desc: "A tech-powered platform delivering visibility, reliability, and scalable growth for enterprises.",
+      desc: "To be the digital backbone of Southeast Asian logistics.",
     },
     {
       icon: <IcoMission />,
       title: "Our Mission",
-      desc: "Enabling real-time tracking, smarter routing, and data-driven decisions.",
+      desc: "To deliver certainty in an uncertain world through smart technology and relentless reliability.",
     },
     {
       icon: <IcoGoals />,
       title: "Our Goal",
-      desc: "Integrated supply chain solutions providing transparency, efficiency, sustainability, and trust.",
+      desc: "To make cross-border trade seamless, sustainable, and simple.",
     },
   ];
 
@@ -84,10 +84,10 @@ const AboutUsPage = () => {
           isAboutUs={false}
           title={
             <>
-              Experience Excellence in <br /> Malaysian Transport Tech
+              Building the Future <br /> of Logistics
             </>
           }
-          description="Founded in 2008, we have grown from Klang Valley to a nationwide leader. Today, we power seamless logistics across Malaysia and Singapore."
+          description="Since 2008, we've been rewriting the rules of logistics. From a local fleet to a regional powerhouse, we're driven by one goal: moving your business forward."
         />
       </FadeIn>
 
@@ -102,13 +102,12 @@ const AboutUsPage = () => {
           cardsData={cardsData}
           sectionTitle={
             <>
-              Our Vision, Mission &
-              <span className="text-primary"> Core Values</span>
+              Our <span className="text-primary">Purpose</span>
             </>
           }
           sectionDescription={
             <>
-              Discover the Essence of Excellence with Visions Transport Enterprise
+              What drives us to deliver every day.
             </>
           }
         />
@@ -124,13 +123,12 @@ const AboutUsPage = () => {
         <Benefits
           title={
             <>
-              Leadership & <span className="text-primary">Team Excellence</span>
+              Powered by <span className="text-primary">People</span>
             </>
           }
           description={
             <>
-              Expert management and a dedicated <br />
-              team driving logistics innovation.
+              Technology guides us, but it's our people who deliver.
             </>
           }
           features={features}
@@ -143,11 +141,11 @@ const AboutUsPage = () => {
         <OurServices
           title={
             <>
-              Our <span className="text-primary">Services</span>
+              End-to-End <span className="text-primary">Supply Chain Solutions</span>
             </>
           }
           description={
-            <>Complete logistics solutions across Malaysia and Singapore.</>
+            <>Everything you need to streamline your operations.</>
           }
         />
       </FadeIn>

@@ -74,7 +74,7 @@ export const Hero = () => {
                 variant="Bold_H1"
                 className="!text-white mb-4 text-shadow"
               >
-                Trusted Cross-Border
+                Seamless Cross-Border
                 <br />
                 Logistics for Malaysia & Singapore
               </Typography>
@@ -82,19 +82,18 @@ export const Hero = () => {
                 variant="Regular_H5"
                 className="!text-white mb-6 lg:max-w-[85%]"
               >
-                Smart, sustainable logistics with real-time visibility and
-                carbon-aligned performance.
+                Stop guessing where your cargo is. We deliver reliable, AI-tracked freight solutions that keep your supply chain moving—on time, every time.
               </Typography>
               <div className="mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-6">
                 <Link href={"/contact-us"}>
-                  <Button variant="primary">Contact us</Button>
+                  <Button variant="primary">Get a Quote</Button>
                 </Link>
-                <Link href={"/about-us"}>
+                <Link href={"/services"}>
                   <Button
                     variant="secondary"
                     className="border-white text-white hover:bg-white hover:text-primary"
                   >
-                    About us
+                    View Services
                   </Button>
                 </Link>
               </div>

@@ -13,7 +13,7 @@ const HelpSupportPage = () => {
         {
             icon: <Phone className="h-6 w-6" />,
             title: "Phone Support",
-            description: "Speak directly with our support team",
+            description: "Speak directly with our logistics experts",
             detail: "+60 3-5131 7338",
             action: "Call Now",
             href: "tel:+60351317338",
@@ -28,7 +28,7 @@ const HelpSupportPage = () => {
         },
         {
             icon: <MapPin className="h-6 w-6" />,
-            title: "Visit Us",
+            title: "Visit Our HQ",
             description: "Come to our office",
             detail: "Shah Alam, Selangor, Malaysia",
             action: "Get Directions",
@@ -38,8 +38,8 @@ const HelpSupportPage = () => {
 
     const faqs = [
         {
-            question: "How do I track my shipment?",
-            answer: "You can track your shipment in real-time using our online tracking portal. Simply enter your tracking number on our Tracking page or use the link provided in your confirmation email.",
+            question: "How do I track my shipment via VizFleet?",
+            answer: "You can track your shipment in real-time using our VizFleet portal. Simply enter your tracking number on our Tracking page or use the link provided in your confirmation email.",
         },
         {
             question: "What are your delivery times between Malaysia and Singapore?",
@@ -72,7 +72,7 @@ const HelpSupportPage = () => {
 
     return (
         <main>
-            <Head heading="Help & Support" subHeading="Help & Support" bgImg={headBg} />
+            <Head heading="Support Center" subHeading="We're Here to Help" bgImg={headBg} />
 
             {/* Quick Links Section */}
             <section className="py-12 bg-secondary-background global-padding-container">
@@ -102,7 +102,7 @@ const HelpSupportPage = () => {
                             Get in <span className="text-primary">Touch</span>
                         </Typography>
                         <Typography variant="Regular_H5" className="text-gray max-w-2xl mx-auto">
-                            Our support team is here to help you with any questions or concerns about our logistics services.
+                            Our support team is ready to assist you with any questions about your shipments or our VizFleet technology.
                         </Typography>
                     </div>
 

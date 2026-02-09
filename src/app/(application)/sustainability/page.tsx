@@ -1,188 +1,46 @@
-// ** import core packages
-"use client";
-
 import React from "react";
-
-// ** import components
 import Head from "@/components/shared/head";
-import { AboutPage, Banner, Partner } from "@/components/shared";
-import SocialCommunity from "@/components/shared/social-community";
-import KeySavings from "@/components/shared/key-savings";
-import BannerImage from "@/components/shared/banner-image";
-import PageService from "@/components/shared/page-service";
-import SustainableOperations from "@/components/shared/sustainable-operations";
-import { FadeIn } from "@/components/shared/FadeIn";
-
-// ** import images
 import headBg from "@/assets/images/pages/sustainability/head.webp";
-import aboutImage from "@/assets/images/pages/sustainability/about.png";
-import pageServiceImage from "@/assets/images/pages/sustainability/page-service.png";
-import sliderImage from "@/assets/images/pages/sustainability/slider.webp";
-import {
-  IcoSustainability5,
-  IcoSustainability6,
-  IcoSustainability7,
-  IcoSustainability8,
-} from "@/assets/icons";
+import { FadeIn } from "@/components/shared/FadeIn";
+import { AboutPage } from "@/components/shared/about-page";
 
 const environmentalActions = [
-  "Reduce carbon footprint through optimized routing",
-  "Improve energy efficiency across all facilities",
-  "Promote responsible and compliant waste management",
-  "Accelerate adoption of advanced greener technologies",
-  "Support customers' long-term environmental and ESG goals",
+  {
+    title: "Green Fleet Modernization",
+    description:
+      "We continuously upgrade our fleet with fuel-efficient vehicles and explore electric truck integration to significantly lower carbon emissions per mile.",
+  },
+  {
+    title: "Smart Route Optimization",
+    description:
+      "Leveraging our VizFleet AI technology, we optimize delivery routes to reduce idle time, mileage, and fuel consumption, ensuring the most eco-friendly path.",
+  },
+  {
+    title: "Paperless Operations",
+    description:
+      "Our digital-first approach digitizes documentation, billing, and tracking, drastically reducing paper waste and streamlining administrative processes.",
+  },
+  {
+    title: "Sustainable Partnerships",
+    description:
+      "We collaborate with like-minded carriers and suppliers who share our commitment to environmental stewardship and sustainable supply chain practices.",
+  },
 ];
 
 const SustainabilityPage = () => {
-  const packagingDocuments = [
-    {
-      icon: <IcoSustainability5 />,
-      title: "Recyclable Packaging",
-      description:
-        "Promoting the use of eco-friendly, reusable packaging materials.",
-    },
-    {
-      icon: <IcoSustainability6 />,
-      title: "Optimized Cargo Loading",
-      description:
-        "Reducing unnecessary trips and lowering overall transport emissions.",
-    },
-    {
-      icon: <IcoSustainability7 />,
-      title: "Partner Collaboration",
-      description:
-        "Working with clients to implement greener packaging initiatives.",
-    },
-    {
-      icon: <IcoSustainability8 />,
-      title: "Waste Reduction Efforts",
-      description:
-        "Minimizing material waste across every stage of the handling process.",
-    },
-  ];
-
-  const warehousingInitiatives = [
-    {
-      title: "Solar-Powered Energy",
-      description:
-        "We use solar power systems to significantly reduce carbon emissions.",
-    },
-    {
-      title: "LED-Efficient Lighting",
-      description:
-        "LED lighting lowers energy use and enhances operational efficiency.",
-    },
-    {
-      title: "Smart Cooling Systems",
-      description:
-        "Cooling systems reduce energy use through advanced efficiency controls.",
-    },
-    {
-      title: "Responsible Water Usage",
-      description:
-        "Water systems reduce waste and support more efficient operations.",
-    },
-    {
-      title: "Waste & Recycling",
-      description:
-        "Recycling efforts reduce waste and support cleaner, greener facilities.",
-    },
-  ];
-
-  const sliderImages = [
-    {
-      image: sliderImage,
-      alt: "Eco-Friendly Warehousing Operations 1",
-    },
-    {
-      image: sliderImage,
-      alt: "Eco-Friendly Warehousing Operations 2",
-    },
-    {
-      image: sliderImage,
-      alt: "Eco-Friendly Warehousing Operations 3",
-    },
-    {
-      image: sliderImage,
-      alt: "Eco-Friendly Warehousing Operations 4",
-    },
-  ];
-
   return (
     <main>
-      {/* 1. ATTENTION - Page header */}
       <Head
-        heading="Sustainability"
-        subHeading="Sustainability"
+        heading="Our Green Commitment"
+        subHeading="Sustainable Logistics for a Better Future"
         bgImg={headBg}
       />
-
-      {/* 2. INTEREST - Environmental promise introduction */}
       <FadeIn>
         <AboutPage
-          image={aboutImage}
-          imageAlt="Visions Transport electric vehicle and sustainability initiatives"
-          title="Our Environmental Promise"
-          description="We are taking clear, measurable actions to reduce emissions, conserve resources, and operate responsibly. Our sustainability commitment is anchored in smarter planning, cleaner fleet operations, and ongoing improvements aligned with global environmental standards to support a greener supply chain and stronger ESG performance for our partners."
+          title="Driving Towards Zero Emissions"
+          description="At Visions Transport, we believe that efficient logistics shouldn't come at the cost of our planet. We are dedicated to reducing our environmental impact through technology, innovation, and responsible operational practices. Our goal is to lead the industry in sustainable transportation solutions."
           listItems={environmentalActions}
-          isAboutUs={true}
         />
-      </FadeIn>
-
-      {/* 3. PROOF - Key sustainability metrics */}
-      <FadeIn>
-        <KeySavings />
-      </FadeIn>
-
-      {/* 4. TRUST - Partner logos */}
-      <FadeIn>
-        <Partner />
-      </FadeIn>
-
-      {/* 5. VISUAL IMPACT - Sustainability banner */}
-      <FadeIn>
-        <BannerImage />
-      </FadeIn>
-
-      {/* 6. DESIRE - Sustainable packaging details */}
-      <FadeIn>
-        <PageService
-          title={
-            <>
-              Sustainable Packaging & <span className="text-primary">Cargo Handling</span>{" "}
-
-            </>
-          }
-          subtitle="Greener packaging and handling practices for sustainable logistics."
-          image={pageServiceImage}
-          imageAlt="Sustainable Packaging & Cargo Handling"
-          documents={packagingDocuments}
-        />
-      </FadeIn>
-
-      {/* 7. DEEPER ENGAGEMENT - Community initiatives */}
-      <FadeIn>
-        <SocialCommunity />
-      </FadeIn>
-
-      {/* 8. OPERATIONS - Warehousing sustainability */}
-      <FadeIn>
-        <SustainableOperations
-          title={
-            <>
-              Eco-Friendly{" "}
-              <span className="text-primary">Warehousing Operations</span>
-            </>
-          }
-          description="Building cleaner, energy-efficient warehouses that minimise impact and advance sustainability."
-          initiatives={warehousingInitiatives}
-          sliderImages={sliderImages}
-        />
-      </FadeIn>
-
-      {/* 9. ACTION - Final CTA */}
-      <FadeIn>
-        <Banner />
       </FadeIn>
     </main>
   );

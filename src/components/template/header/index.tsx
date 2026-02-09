@@ -44,8 +44,8 @@ const navLinks: NavLink[] = [
   { title: "Services", href: "/services" },
   { title: "Sustainability", href: "/sustainability" },
   { title: "CSR", href: "/csr" },
-  // { title: "Clientele", href: "/clientele" },
-  // { title: "Gallery", href: "/gallery" },
+  { title: "Clientele", href: "/clientele" },
+  { title: "Gallery", href: "/gallery" },
   {
     title: "Tracking",
     href: "https://track.visionstransport.com.my/",

@@ -69,11 +69,10 @@ const Testimonials = () => {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <Typography variant="SemiBold_H2" className="text-foreground mb-4">
-                        What Our <span className="text-primary">Clients Say</span>
+                        Trusted by <span className="text-primary">Leaders</span>
                     </Typography>
                     <Typography variant="Regular_H5" className="text-gray max-w-2xl mx-auto">
-                        Trusted by leading companies across Malaysia and Singapore for
-                        reliable, technology-driven logistics solutions.
+                        See why top brands rely on Visions for their critical supply chain needs.
                     </Typography>
                 </div>
 

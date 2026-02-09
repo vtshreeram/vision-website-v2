@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 // ** import third party packages
-import { Menu, X } from "react-feather";
+import { Menu, X, ExternalLink } from "react-feather";
 import { IoIosArrowDown } from "react-icons/io";
 
 // ** import components
@@ -33,6 +33,8 @@ const navLinks: NavLink[] = [
   { title: "Services", href: "/services" },
   { title: "Sustainability", href: "/sustainability" },
   { title: "CSR", href: "/csr" },
+  { title: "Clientele", href: "/clientele" },
+  { title: "Gallery", href: "/gallery" },
   {
     title: "Tracking",
     href: "https://track.visionstransport.com.my/",
@@ -141,7 +143,7 @@ const StickyHeader = () => {
                       href={link.href || "#"}
                       target={link.target}
                       className={cn(
-                        "text-foreground hover:text-primary transition-colors nav-link-hover",
+                        "text-foreground hover:text-primary transition-colors nav-link-hover flex items-center gap-1",
                         activeParent
                       )}
                     >
@@ -151,6 +153,7 @@ const StickyHeader = () => {
                       >
                         {link.title}
                       </Typography>
+                      {link.target === "_blank" && <ExternalLink size={14} />}
                     </Link>
                   );
                 })}

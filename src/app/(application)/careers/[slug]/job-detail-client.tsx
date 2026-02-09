@@ -16,35 +16,8 @@ import Button from "@/components/ui/button";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 
-interface JobData {
-  title: string;
-  department: string;
-  positions: number;
-  qualification: string;
-  experience: string;
-  location: string;
-  about_company?: string;
-  role_overview?: string;
-  location_type?: {
-    type: string;
-    content: string;
-  };
-  job_type?: {
-    type: string;
-    content: string;
-  };
-  requirements?: {
-    title: string;
-    contents: Array<{
-      title: string;
-      content: string[];
-    }>;
-  };
-  experience_expertise?: string[];
-  have_skill?: string[];
-  skill_attributes?: string[];
-  why_peacock?: string[];
-}
+// ** import types
+import { JobData } from "@/types/job";
 
 interface JobDetailClientProps {
   job: JobData;
@@ -100,8 +73,8 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
                   variant="Regular_H6"
                   className="text-primary-foreground"
                 >
-                  Qualification:{" "}
-                  <span className="font-semibold ">{job.qualification}</span>
+                  Salary:{" "}
+                  <span className="font-semibold ">{job.salary}</span>
                 </Typography>
               </div>
               <div className="flex items-center gap-x-2">
@@ -112,8 +85,8 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
                   variant="Regular_H6"
                   className="text-primary-foreground "
                 >
-                  Work Experience:{" "}
-                  <span className="font-semibold ">{job.experience}</span>
+                  Job Type:{" "}
+                  <span className="font-semibold ">{job.job_type.join(" / ")}</span>
                 </Typography>
               </div>
               <div className="flex items-center gap-x-2">
@@ -153,94 +126,15 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
             </div>
           )}
 
-          {/* about role overview */}
-          {job.role_overview && (
+          {/* Job Description */}
+          {job.job_description && (
             <div>
               <h2 className="text-2xl font-semibold font-garamond">
-                Role Overview
-              </h2>
-              <div className="mt-1">
-                <Typography
-                  variant="Regular_H6"
-                  className="text-primary-foreground"
-                >
-                  {job.role_overview}
-                </Typography>
-              </div>
-            </div>
-          )}
-
-          {/* about Location */}
-          {job.location_type && (
-            <div>
-              <h2 className="text-2xl font-semibold font-garamond">Location</h2>
-              <h4 className="text-base font-semibold  mt-4">
-                {job.location_type.type}
-              </h4>
-              <div className="mt-1">
-                <Typography
-                  variant="Regular_H6"
-                  className="text-primary-foreground"
-                >
-                  {job.location_type.content}
-                </Typography>
-              </div>
-            </div>
-          )}
-
-          {/* Job Type */}
-          {job.job_type && (
-            <div>
-              <h2 className="text-2xl font-semibold font-garamond">Job Type</h2>
-              <h4 className="text-base font-semibold  mt-4">
-                {job.job_type.type}
-              </h4>
-              <div className="mt-1">
-                <Typography
-                  variant="Regular_H6"
-                  className="text-primary-foreground"
-                >
-                  {job.job_type.content}
-                </Typography>
-              </div>
-            </div>
-          )}
-
-          {/* Job Requirements */}
-          {job.requirements && (
-            <div>
-              <h2 className="text-2xl font-semibold font-garamond">
-                Requirements
-              </h2>
-              <h3 className="text-xl font-semibold  mt-4">
-                {job.requirements.title}
-              </h3>
-              {job.requirements.contents.map((item, index) => (
-                <div key={index} className="mt-2">
-                  <h4 className="text-base font-semibold  mt-1">
-                    {item.title}
-                  </h4>
-                  <ul className="list-disc mt-1 ">
-                    {item.content.map((item, index) => (
-                      <li key={index} className="ml-6 text-primary-foreground">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* experience_expertise */}
-          {job.experience_expertise && (
-            <div>
-              <h2 className="text-2xl font-semibold font-garamond">
-                Experience & Expertise
+                Job Description
               </h2>
               <div className="mt-1">
                 <ul className="list-disc mt-5 ">
-                  {job.experience_expertise.map((item, index) => (
+                  {job.job_description.map((item, index) => (
                     <li key={index} className="ml-6 text-primary-foreground">
                       {item}
                     </li>
@@ -250,15 +144,15 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
             </div>
           )}
 
-          {/* have_skill */}
-          {job.have_skill && (
+          {/* Roles and Responsibilities */}
+          {job.roles_and_responsibility && (
             <div>
               <h2 className="text-2xl font-semibold font-garamond">
-                Nice-to-Have Skills
+                Roles and Responsibilities
               </h2>
               <div className="mt-1">
                 <ul className="list-disc mt-5 ">
-                  {job.have_skill.map((item, index) => (
+                  {job.roles_and_responsibility.map((item, index) => (
                     <li key={index} className="ml-6 text-primary-foreground">
                       {item}
                     </li>
@@ -268,33 +162,15 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
             </div>
           )}
 
-          {/* skill_attributes */}
-          {job.skill_attributes && (
-            <div>
-              <h2 className="text-2xl font-semibold font-garamond">
-                Skills & Attributes
-              </h2>
-              <div className="mt-1">
-                <ul className="list-disc mt-5 ">
-                  {job.skill_attributes.map((item, index) => (
-                    <li key={index} className="ml-6 text-primary-foreground">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          )}
-
-          {/* why_peacock */}
-          {job.why_peacock && (
+          {/* Why Join Us */}
+          {job.why_join_us && (
             <div>
               <h2 className="text-2xl font-semibold ">
-                Why Join Peacock India?
+                Why Join Visions Transport?
               </h2>
               <div className="mt-1">
                 <ul className="list-disc mt-5 ">
-                  {job.why_peacock.map((item, index) => (
+                  {job.why_join_us.map((item, index) => (
                     <li key={index} className="ml-6 text-primary-foreground">
                       {item}
                     </li>

@@ -8,7 +8,7 @@ import headBg from "@/assets/images/pages/about-us/head-bg.webp";
 const PrivacyPolicyPage = () => {
     return (
         <main>
-            <Head heading="Privacy Policy" subHeading="Privacy Policy" bgImg={headBg} />
+            <Head heading="Privacy Policy" subHeading="Your Data Security" bgImg={headBg} />
 
             <section className="py-16 md:py-24 global-padding-container">
                 <div className="max-w-4xl mx-auto prose-body">

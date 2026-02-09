@@ -13,33 +13,33 @@ import { FaPlus } from "react-icons/fa6";
 const Faq = () => {
   const [faq, setFaq] = useState([
     {
-      question: "What industries does VizFleet serve?",
+      question: "Who do we serve?",
       answer:
-        "VizFleet supports e-commerce, express delivery, manufacturing, global freight, and technology companies — offering tailored logistics solutions across Malaysia and Singapore.",
+        "We support Retail, E-commerce, Manufacturing, and Tech sectors across Singapore & Malaysia, providing tailored logistics for high-value and time-sensitive cargo.",
       open: true,
     },
     {
-      question: "How does VizFleet improve my logistics operations?",
+      question: "How do we reduce your costs?",
       answer:
-        "Our platform provides real-time tracking, automated booking, digital proof of delivery, and analytics that reduce costs and boost on-time delivery performance.",
+        "Our platform uses real-time tracking and route optimization to minimize fuel usage, reduce delays, and improve fleet utilization—cutting overhead by up to 30%.",
       open: false,
     },
     {
-      question: "Can VizFleet handle cross-border operations?",
+      question: "Do you handle Customs clearance?",
       answer:
-        "Yes, our certified Malaysia-Singapore cross-border logistics services include customs clearance, documentation management, and compliance with all regulatory standards.",
+        "Yes. We are cross-border experts managing all permits, tax declarations, and clearance documentation for seamless Malaysia-Singapore freight movement.",
       open: false,
     },
     {
-      question: "How secure is my data on VizFleet?",
+      question: "Is my cargo safe?",
       answer:
-        "We follow strict ISO standards, data encryption, and audit-ready compliance protocols to ensure complete protection of client data and shipments.",
+        "Absolutely. We maintain ISO-certified security protocols, GPS tracking for every vehicle, and strict data encryption to protect both your physical assets and digital information.",
       open: false,
     },
     {
-      question: "Is VizFleet easy to implement for my business?",
+      question: "How fast can we start?",
       answer:
-        "Yes, VizFleet is designed with a simple onboarding process, API integrations, and mobile-first tools — making it quick to deploy without disrupting daily operations.",
+        "Deploy in days, not months. Our cloud-based TMS integrates seamlessly via API with your existing ERP or order management systems.",
       open: false,
     },
   ]);
@@ -63,11 +63,10 @@ const Faq = () => {
       <div className="mx-auto max-w-[1339px] px-4  sm:px-6 lg:px-8  py-16 lg:py-20 ">
         <div className="text-center">
           <Typography variant="SemiBold_H3" className={`block text-primary `}>
-            Frequently Asked Questions
+            Common Questions
           </Typography>
           <Typography variant="Regular_H6" className="mt-4 block text-gray">
-            Everything you need to know before partnering <br /> with Visions
-            Transport Enterprise.
+            Clear answers about our services, coverage, and capabilities.
           </Typography>
         </div>
         <div className="mx-auto mt-8 max-w-3xl space-y-4 md:mt-16">

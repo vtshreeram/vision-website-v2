@@ -14,20 +14,20 @@ import headBg from "@/assets/images/pages/services/head-bg.webp";
 
 const whyChooseFeatures = [
   {
-    title: "End-to-End Coverage",
-    description: "Comprehensive MY-SG logistics network",
+    title: "Cross-Border Network",
+    description: "Seamless door-to-door coverage across Malaysia & Singapore.",
   },
   {
-    title: "Technology-Driven",
-    description: "Real-time tracking with VizFleet",
+    title: "Real-Time Tracking",
+    description: "Total visibility 24/7 with our proprietary VizFleet platform.",
   },
   {
-    title: "Certified & Compliant",
-    description: "ISO & TAPA certified operations",
+    title: "Fully Certified",
+    description: "ISO & TAPA compliant for maximum security and peace of mind.",
   },
   {
-    title: "Flexible Solutions",
-    description: "Scalable for any business size",
+    title: "Scalable Growth",
+    description: "Flexible logistics solutions that expand as your business grows.",
   },
 ];
 
@@ -35,7 +35,11 @@ const ServicesPage = () => {
   return (
     <main>
       {/* 1. ATTENTION - Page header */}
-      <Head heading="Services" subHeading="Services" bgImg={headBg} />
+      <Head
+        heading="Our Logistics Services"
+        subHeading="End-to-end supply chain solutions designed for efficiency."
+        bgImg={headBg}
+      />
 
       {/* 2. INTEREST - Core service offerings */}
       <FadeIn>
@@ -59,7 +63,7 @@ const ServicesPage = () => {
       {/* 5. WHY CHOOSE US - Differentiators */}
       <FadeIn>
         <WhyChoose
-          title="Why Choose Our Services"
+          title="The Visions Advantage"
           features={whyChooseFeatures}
         />
       </FadeIn>

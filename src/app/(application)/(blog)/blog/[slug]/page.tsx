@@ -15,19 +15,33 @@ const WEBSITE_URL =
 export async function generateStaticParams() {
   const options = { next: { revalidate: 30 } };
 
-  const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
-  // console.log({ myPost: posts });
-  return posts.map((post) => ({
-    slug: post.slug.current,
-  }));
+  try {
+    const posts = await client.fetch<SanityDocument[]>(
+      POSTS_QUERY,
+      {},
+      options
+    );
+    // console.log({ myPost: posts });
+    return posts.map((post) => ({
+      slug: post.slug.current,
+    }));
+  } catch (error) {
+    console.error("Error fetching posts for static params:", error);
+    return [];
+  }
 }
 
 async function getPostBySlug(slug: string) {
   console.log(slug);
 
   const params = { slug };
-  const post = await client.fetch(query, params);
-  return post;
+  try {
+    const post = await client.fetch(query, params);
+    return post;
+  } catch (error) {
+    console.error("Error fetching post by slug:", error);
+    return null;
+  }
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

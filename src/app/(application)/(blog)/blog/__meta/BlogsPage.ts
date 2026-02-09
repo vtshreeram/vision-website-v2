@@ -1,24 +1,27 @@
 // constants.ts
 
-export const BASE_URL = process.env.NEXT_PUBLIC_WEBSITE_HOST_URL;
+export const BASE_URL = process.env.NEXT_PUBLIC_WEBSITE_HOST_URL || "https://visionstransport.com";
 export const BLOG_URL = `${BASE_URL}/blog`;
 export const META_IMAGE = `${BASE_URL}/seo.webp`;
 
-export const SITE_NAME = "Sri Sri Radhe Siam";
-export const TWITTER_HANDLE = "@exampleTwitterHandle"; // Replace with actual Twitter handle
+export const SITE_NAME = "Visions Transport";
+export const TWITTER_HANDLE = "@VisionsTransport"; // Replace with actual Twitter handle if available
 export const LOCALE = "en_US";
 export const TYPE = "website";
 
-const title = `Blog || ${SITE_NAME}`;
+const title = `Logistics Insights & News || ${SITE_NAME}`;
 const description =
-   "Discover spiritual insights, devotion, and wisdom at the Sri Sri Radhe Siam Temple. Explore articles on Bhakti Yoga, Hindu traditions, and community service.";
+   "Stay ahead of the curve with expert insights on logistics, supply chain management, and fleet technology. Discover how Visions Transport is redefining the industry with VizFleet.";
 
 const keywords = [
-   "Sri Sri Radhe Siam",
-   "Spiritual Enlightenment",
-   "Bhakti Yoga",
-   "Devotion",
-   "Hindu Temple",
+   "Visions Transport",
+   "Logistics Blog",
+   "Supply Chain Insights",
+   "Fleet Management",
+   "Transportation Technology",
+   "VizFleet",
+   "Trucking News",
+   "Shipping Trends",
 ].join(", ");
 
 export const blogMetadata = {
@@ -50,7 +53,16 @@ export const blogMetadata = {
 
 export const blogJsonLd = {
    "@context": "https://schema.org/",
-   "@type": TYPE,
-   name: SITE_NAME,
+   "@type": "Blog",
+   name: title,
    url: BLOG_URL,
+   description: description,
+   publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      logo: {
+         "@type": "ImageObject",
+         url: META_IMAGE,
+      },
+   },
 };

@@ -40,21 +40,21 @@ const defaultStats: Stat[] = [
 
 // Homepage stats
 const homepageStats: Stat[] = [
-  { value: "10000+", label: "Projects Delivered" },
-  { value: "3500+", label: "Happy Clients" },
-  { value: "100+", label: "Active Employee" },
-  { value: "100+", label: "Support Partners" },
+  { value: "10000+", label: "Shipments Delivered" },
+  { value: "3500+", label: "Active Clients" },
+  { value: "100+", label: "Logistics Experts" },
+  { value: "100+", label: "Network Partners" },
 ];
 
 const StatsSection = ({
   stats,
-  title = "Our Impact in Numbers",
-  subtitle = "We measure our progress through clear community, safety, and people-focused initiatives.",
+  title = "Proven Results",
+  subtitle = "Scaling logistics operations across Southeast Asia.",
   variant = "default",
   showCTA = false,
-  ctaTitle = "Scale Your Logistics Today",
-  ctaSubtitle = "We uncover opportunities to enhance efficiency, reduce costs, and strengthen operational performance across your business.",
-  ctaButtonText = "Contact us",
+  ctaTitle = "Ready to Move?",
+  ctaSubtitle = "Let’s optimize your supply chain. Get a free consultation today.",
+  ctaButtonText = "Get a Quote",
   ctaButtonLink = "/contact-us",
 }: StatsSectionProps) => {
   // Use provided stats, or default based on variant

@@ -80,7 +80,12 @@ function sanitizeForXml(url: string): string {
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const options = { next: { revalidate: 30 } };
-  const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
+  let posts: SanityDocument[] = [];
+  try {
+    posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
+  } catch (error) {
+    console.error("Error fetching posts for sitemap:", error);
+  }
   const websiteHostUrl = process.env.NEXT_PUBLIC_WEBSITE_URL || "https://vision-website-2.vercel.app";
 
   // Create a Set to track unique URLs

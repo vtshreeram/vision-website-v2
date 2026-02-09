@@ -1,6 +1,7 @@
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
+import { ArrowRight } from "lucide-react";
 import { Typography } from "@/components/ui/Typography";
 import { cn } from "../_libs/utils";
 import Image from "next/image";
@@ -161,6 +162,7 @@ const BlogCard = ({ data }: { data: BlogCardData }) => {
               </Typography>
             </div>
           </div>
+          <ArrowRight className="ml-auto h-5 w-5 text-primary" />
         </div>
       </div>
     </Link>

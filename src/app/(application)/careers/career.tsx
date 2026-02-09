@@ -14,19 +14,11 @@ import {
 
 // ** import data
 import { jobsData } from "./data";
+import { JobData } from "@/types/job";
 
 // ** import utils
 import { cn } from "@/lib/utils";
 import { Typography } from "@/components/ui/Typography";
-
-// Define types for the job data
-interface JobData {
-  title: string;
-  department: string;
-  positions: number;
-  experience: string;
-  location: string;
-}
 
 interface InfoItemProps {
   icon: React.ReactNode;
@@ -37,14 +29,15 @@ interface JobCardProps extends JobData {
   className?: string;
 }
 
-const JobCard = ({
-  title,
-  department,
-  positions,
-  experience,
-  location,
-  className,
-}: JobCardProps) => {
+const JobCard = (props: JobCardProps) => {
+  const {
+    title,
+    department,
+    positions,
+    job_type,
+    location,
+    className,
+  } = props;
   const router = useRouter();
   const jobSlug = title.replace(/\s+/g, "-");
 
@@ -65,8 +58,6 @@ const JobCard = ({
           className="text-primary-foreground flex items-center gap-2"
         >
           <span className="hidden md:block">More Details</span>
-          {/* FIX 1: Removed InfoItem here as it was missing the 'text' prop.
-              The IcoArrowBox can be rendered directly. */}
           <IcoArrowBox />
         </Link>
       </div>
@@ -74,10 +65,8 @@ const JobCard = ({
         {department}
       </Typography>
       <div className="flex flex-wrap gap-x-4 gap-y-3 mt-4">
-        {/* FIX 2: Convert 'positions' to string when passing to InfoItem,
-            as InfoItemProps expects 'text' to be a string. */}
         <InfoItem icon={<IcoChair />} text={String(positions)} />
-        <InfoItem icon={<IcoBag />} text={experience} />
+        <InfoItem icon={<IcoBag />} text={job_type.join(" / ")} />
         <InfoItem icon={<IcoLocation />} text={location} />
       </div>
     </div>

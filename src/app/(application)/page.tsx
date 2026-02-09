@@ -28,46 +28,46 @@ const Page = () => {
     {
       icon: <IcoOperations />,
       title: "ISO Certified Operations",
-      desc: "International certification for safe, quality logistics.",
+      desc: "World-class safety & quality protocols.",
     },
     {
       icon: <IcoLicense />,
       title: "Malaysia Transport License",
-      desc: "Fully licensed ensuring national compliance.",
+      desc: "100% compliant with local regulations.",
     },
     {
       icon: <IcoApproval />,
       title: "Singapore Cross-Border Approval",
-      desc: "Certified for seamless cross-border movement.",
+      desc: "Approved for fast cross-border transit.",
     },
     {
       icon: <IcoMember />,
       title: "Freight Association Member",
-      desc: "Aligned with global logistics standards.",
+      desc: "Recognized by global trade bodies.",
     },
     {
       icon: <IcoCertified />,
       title: "Data Security Certified",
-      desc: "Strict security controls for every shipment.",
+      desc: "Top-tier cargo security measures.",
     },
   ];
 
   const whyChooseFeatures = [
     {
-      title: "Advanced Technology",
-      description: "AI-driven visibility and optimization",
+      title: "Real-Time Visibility",
+      description: "Track every shipment 24/7 with our AI-powered platform.",
     },
     {
-      title: "Comprehensive Coverage",
-      description: "Seamless MY-SG logistics network",
+      title: "Cross-Border Experts",
+      description: "Seamless customs clearance and transport between Malaysia & Singapore.",
     },
     {
-      title: "Proven Track Record",
-      description: "17+ years powering SEA supply chains",
+      title: "17+ Years Experience",
+      description: "Deep industry knowledge you can rely on.",
     },
     {
-      title: "Scalable Solutions",
-      description: "Scaling from startups to enterprises",
+      title: "Enterprise Ready",
+      description: "Flexible fleets that grow with your business demands.",
     },
   ];
 
@@ -87,10 +87,10 @@ const Page = () => {
           variant="simple"
           title={
             <>
-              We Are Experts in <br /> Logistics Solutions
+              Logistics That Moves <br /> Your Business Forward
             </>
           }
-          description="Founded in 2008, we have grown from Klang Valley to a nationwide leader. Today, we power seamless logistics across Malaysia and Singapore."
+          description="From local deliveries to complex cross-border shipments, we ensure your goods arrive safely and on schedule. No excuses, just results."
         />
       </FadeIn>
 
@@ -99,11 +99,11 @@ const Page = () => {
         <OurServices
           title={
             <>
-              Our <span className="text-primary">Services</span>
+              End-to-End <span className="text-primary">Supply Chain Solutions</span>
             </>
           }
           description={
-            <>Complete logistics solutions across Malaysia and Singapore.</>
+            <>Everything you need to streamline your operations.</>
           }
           isViewMore={true}
         />
@@ -112,7 +112,7 @@ const Page = () => {
       {/* 5. WHY CHOOSE US - Differentiators after seeing services */}
       <FadeIn>
         <WhyChoose
-          title="Why Leading Companies Choose Visions"
+          title="Why Industry Leaders Trust Visions"
           features={whyChooseFeatures}
         />
       </FadeIn>
@@ -138,11 +138,11 @@ const Page = () => {
           title={
             <>
               Certified for{" "}
-              <span className="text-primary">Quality & Compliance</span>
+              <span className="text-primary">Excellence</span>
             </>
           }
           description={
-            "Built on global standards, trusted for safe, sustainable cross-border logistics."
+            "We adhere to the strictest global standards for safety, security, and compliance."
           }
           features={features}
         />

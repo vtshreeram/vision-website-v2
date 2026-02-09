@@ -23,26 +23,26 @@ export const VizifleetApp = () => {
   const featuresLeft = [
     {
       icon: <IcoApp1 />,
-      title: "AI & GPS-Driven Safety",
-      desc: "Boost driver safety through AI systems and precise GPS tracking.",
+      title: "Proactive Safety",
+      desc: "AI monitoring that prevents accidents before they happen.",
     },
     {
       icon: <IcoApp2 />,
-      title: "Security & Compliance",
-      desc: "Ensure cargo safety through strict compliance checks.",
+      title: "Cargo Security",
+      desc: "Real-time alerts and strict compliance checks to protect your goods.",
     },
   ];
 
   const featuresRight = [
     {
       icon: <IcoApp5 />,
-      title: "Live Location & Map Tracking",
-      desc: "Track all vehicles live on maps for instant route updates.",
+      title: "Live Tracking",
+      desc: "Know exactly where your shipment is on the map, instantly.",
     },
     {
       icon: <IcoApp6 />,
-      title: "Performance & Safety Analytic",
-      desc: "Use advanced reports to refine trips, cut delays, and boost safety.",
+      title: "Smart Analytics",
+      desc: "Data-driven insights to cut costs and improve delivery times.",
     },
   ];
 
@@ -52,14 +52,13 @@ export const VizifleetApp = () => {
         <SectionHead
           title={
             <>
-              Smart Transport{" "}
-              <span className="text-primary">Management System</span>
+              Total Control{" "}
+              <span className="text-primary">Over Your Cargo</span>
             </>
           }
           description={
             <>
-              Our advanced TMS delivers smarter, safer, and more efficient fleet
-              operations powered by real-time data and automation.
+              VizFleet gives you 24/7 visibility. Track shipments, monitor driver safety, and optimize routes automatically.
             </>
           }
           descriptionClassName="lg:max-w-[636px]"
@@ -88,11 +87,10 @@ export const VizifleetApp = () => {
               </div>
               <div className="mt-6">
                 <Typography variant="Medium_H5">
-                  Fleet Visibility & Automation
+                  Full Fleet Visibility
                 </Typography>
                 <Typography variant="Regular_H6" className="mt-4 text-gray">
-                  Get complete fleet insights with tools that drive smarter
-                  decisions.
+                  See your entire operation at a glance.
                 </Typography>
               </div>
             </div>
@@ -112,13 +110,13 @@ export const VizifleetApp = () => {
               </div>
               <div className="mt-6">
                 <Typography variant="Medium_H5">
-                  Sustainability Insights (CO₂ & EV Data)
+                  Sustainability Tracking
                 </Typography>
                 <Typography
                   variant="Regular_H6"
                   className="mt-4 text-gray max-w-[300px] mx-auto"
                 >
-                  View CO₂ metrics to measure impact and plan greener fleets.
+                  Measure your carbon footprint and optimize for green logistics.
                 </Typography>
               </div>
             </div>

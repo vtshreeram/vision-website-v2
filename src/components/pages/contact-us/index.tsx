@@ -111,14 +111,14 @@ const ContactUs = () => {
           <div className="order-2 lg:order-1 lg:col-span-3">
             <div className="mb-14 hidden lg:block">
               <Typography variant="SemiBold_H2" className={`block text-foreground`}>
-                Get <span className="text-primary">in Touch</span>
+                Start Your <span className="text-primary">Logistics Transformation</span>
               </Typography>
               <Typography
                 variant="Regular_H6"
                 className={`mt-4 block text-foreground `}
               >
-                We’re here to assist with your logistics needs <br />
-                and provide the right solutions for your business.
+                Ready to optimize your supply chain? Get a custom quote <br />
+                or speak with our cross-border experts today.
               </Typography>
             </div>
 
@@ -128,7 +128,7 @@ const ContactUs = () => {
                   variant="Bold_H6"
                   className={`block  text-primary `}
                 >
-                  Our office hours
+                  Operating Hours
                 </Typography>
                 <Typography
                   variant="Regular_H6"
@@ -143,7 +143,7 @@ const ContactUs = () => {
                   variant="Bold_H6"
                   className={`block  text-primary `}
                 >
-                  Address
+                  Headquarters
                 </Typography>
                 <Typography
                   variant="Regular_H6"
@@ -158,14 +158,14 @@ const ContactUs = () => {
                   variant="Bold_H6"
                   className={`block  text-primary `}
                 >
-                  Contact Details
+                  Direct Lines
                 </Typography>
                 <Typography
                   variant="Regular_H6"
                   className={`mt-4  block text-foreground`}
                   link={siteConfig.PHONE_2}
                 >
-                  Ph: +03-5131 3898
+                  Ph: +60 3-5131 3898
                 </Typography>
                 <Typography
                   variant="Regular_H6"
@@ -214,14 +214,14 @@ const ContactUs = () => {
                 variant="SemiBold_H2"
                 className={`block text-foreground `}
               >
-                Get <span className="text-primary">in Touch</span>
+                Let's <span className="text-primary">Talk Logistics</span>
               </Typography>
               <Typography
                 variant="Regular_H6"
                 className={`mt-2 block text-gray`}
               >
-                We’re here to answer your questions and assist with your
-                requirements.
+                Ready to optimize your supply chain? Get a custom quote <br />
+                or speak with our cross-border experts today.
               </Typography>
             </div>
             <div className="border border-stroke">
@@ -229,7 +229,7 @@ const ContactUs = () => {
                 <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                   <div>
                     <label className="text-base font-medium text-gray">
-                      Your name
+                      Full Name
                     </label>
                     <div className="mt-2">
                       <input
@@ -248,7 +248,7 @@ const ContactUs = () => {
 
                   <div>
                     <label className="text-base font-medium text-gray">
-                      Mobile number
+                      Phone Number
                     </label>
                     <div className="mt-2">
                       <PhoneInput
@@ -268,7 +268,7 @@ const ContactUs = () => {
 
                   <div>
                     <label className="text-base font-medium text-gray">
-                      Email address
+                      Work Email
                     </label>
                     <div className="mt-2">
                       <input
@@ -285,12 +285,12 @@ const ContactUs = () => {
 
                   <div>
                     <label className="text-base font-medium text-gray">
-                      Write your message
+                      How can we help?
                     </label>
                     <div className="mt-2">
                       <textarea
                         {...register("message")}
-                        placeholder="Write us your question here..."
+                        placeholder="Tell us about your shipment needs..."
                         rows={4}
                         className="block w-full resize-none outline-none px-3 py-1 text-sm md:text-base text-gray bg-white border border-stroke focus:outline-none focus:ring-primary focus:border-primary"
                       />
@@ -319,7 +319,7 @@ const ContactUs = () => {
                   </div>
 
                   <Button type="submit" variant="primary">
-                    Send Message
+                    Request Quote
                   </Button>
                 </form>
               </div>

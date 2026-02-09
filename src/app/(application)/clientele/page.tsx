@@ -47,17 +47,16 @@ const ClientelePage = () => {
   ];
   return (
     <main>
-      <Head heading="Clientele" subHeading="Clients" bgImg={headBg} />
+      <Head heading="Our Clientele" subHeading="Trusted Partners" bgImg={headBg} />
       <CompanyLogo />
       {/* <WhyChoose /> */}
       <Benefits
         title={
           <>
-            Certified for{" "}
-            <span className="text-primary">Quality & Compliance</span>
+            Why Industry Leaders Choose <span className="text-primary">Visions Transport</span>
           </>
         }
-        description={"Built on global standards, trusted across borders."}
+        description={"Built on global standards, trusted across borders for reliability and compliance."}
         features={features}
       />
 

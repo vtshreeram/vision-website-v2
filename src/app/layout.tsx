@@ -19,16 +19,16 @@ const poppins = Poppins({
 const url = "https://vision-website-2.vercel.app";
 export const metadata: Metadata = {
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   },
-  title: "Visions Transport - Quality, Service & Reliability in Logistics",
+  title: "Visions Transport - Seamless Cross-Border Logistics (MY-SG)",
   description:
-    "Visions Transport is a leading logistics and transportation company in Malaysia, offering bonded and non-bonded trucking, warehousing, distribution, and custom logistics solutions across Malaysia and Singapore.",
+    "Visions Transport is your trusted partner for seamless cross-border logistics between Malaysia and Singapore. We offer bonded trucking, warehousing, and distribution solutions.",
   keywords: [
     "logistics",
     "transportation",

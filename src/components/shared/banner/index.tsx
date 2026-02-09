@@ -27,12 +27,12 @@ interface BannerProps {
 }
 
 export const Banner: FC<BannerProps> = ({
-  title = "Ready to Transform Your Logistics Operations?",
-  subTitle = "Trusted by 3,500+ companies, Visions Transport delivers smart, sustainable logistics powered by VIZFLEET technology and 17+ years of proven expertise.",
-  primaryButtonText = "Contact us",
+  title = "Ready to Streamline Your Logistics?",
+  subTitle = "Join 3,500+ companies moving faster with Visions. Smart tech, proven experts, and zero headaches.",
+  primaryButtonText = "Get a Quote",
   primaryButtonLink = "/contact-us",
-  secondaryButtonText = "About us",
-  secondaryButtonLink = "/about-us",
+  secondaryButtonText = "Talk to an Expert",
+  secondaryButtonLink = "/contact-us",
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
