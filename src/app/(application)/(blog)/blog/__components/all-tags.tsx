@@ -42,7 +42,7 @@ const AllTags = ({
 
       <div className="min-h-[40px]">
         {loader ? (
-          <div className="flex flex-wrap gap-2 sm:gap-3">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {Array(14)
               .fill(0)
               .map((_, index) => (
@@ -55,7 +55,7 @@ const AllTags = ({
         ) : (
           <>
             {tags?.length > 0 && (
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
                 {tags?.map((item, index) => (
                   <Typography
                     key={index}

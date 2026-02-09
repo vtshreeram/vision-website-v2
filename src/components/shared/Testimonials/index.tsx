@@ -68,7 +68,7 @@ const Testimonials = () => {
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <Typography variant="Bold_H2" className="text-foreground mb-4">
+                    <Typography variant="SemiBold_H2" className="text-foreground mb-4">
                         What Our <span className="text-primary">Clients Say</span>
                     </Typography>
                     <Typography variant="Regular_H5" className="text-gray max-w-2xl mx-auto">
@@ -96,8 +96,8 @@ const Testimonials = () => {
                             {/* Content */}
                             <div className="relative z-10">
                                 <Typography
-                                    variant="Regular_H4"
-                                    className="text-foreground leading-relaxed mb-8 italic"
+                                    variant="Regular_H5"
+                                    className="text-gray leading-relaxed mb-8 italic"
                                 >
                                     "{testimonials[currentIndex].content}"
                                 </Typography>

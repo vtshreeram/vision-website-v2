@@ -2,6 +2,7 @@
 
 // ** import core packages
 import Image from "next/image";
+import Link from "next/link";
 
 // ** import third party packages
 import { ArrowRight } from "lucide-react";
@@ -9,83 +10,19 @@ import { ArrowRight } from "lucide-react";
 // ** import components
 import { Typography } from "@/components/ui/Typography";
 
-// ** import assets
-import img1 from "@/assets/images/common/services/img-1.webp";
-import img2 from "@/assets/images/common/services/img-2.webp";
-import img3 from "@/assets/images/common/services/img-3.webp";
-import img4 from "@/assets/images/common/services/img-4.webp";
-import img5 from "@/assets/images/common/services/img-5.webp";
-import img6 from "@/assets/images/common/services/img-6.webp";
-import img7 from "@/assets/images/common/services/img-7.webp";
-import img8 from "@/assets/images/common/services/img-8.webp";
-import img9 from "@/assets/images/common/services/img-9.webp";
-
-const services = [
-  {
-    img: img2,
-    label: "Bonded Truck",
-    description:
-      "Secure, compliant handling for customs-controlled shipments.",
-  },
-  {
-    img: img1,
-    label: "Non-Bonded Truck",
-    description:
-      "Fast, flexible nationwide transport.",
-  },
-  {
-    img: img3,
-    label: "Warehousing & Storage Solutions",
-    description:
-      "Safe storage with real-time visibility.",
-  },
-  {
-    img: img4,
-    label: "Distribution & Cargo Handling",
-    description:
-      "Accurate, high-speed end-to-end distribution.",
-  },
-  {
-    img: img5,
-    label: "Tail Lift Truck",
-    description:
-      "Efficient handling for heavy or sensitive cargo.",
-  },
-  {
-    img: img6,
-    label: "Crane Truck",
-    description:
-      "Lifting solutions for oversized and heavy cargo.",
-  },
-  {
-    img: img7,
-    label: "Linehaul & Shuttle",
-    description:
-      "Reliable long-distance and shuttle transfers.",
-  },
-  {
-    img: img8,
-    label: "First & Last Mile Delivery",
-    description:
-      "Seamless first and last-mile delivery.",
-  },
-  {
-    img: img9,
-    label: "Fleet Leasing Services",
-    description:
-      "Scalable fleet leasing with maintenance support.",
-  },
-];
+// ** import data
+import { servicesData } from "@/data/services";
 
 export const Services = ({ isViewMore = false }: { isViewMore?: boolean }) => {
-  const displayedServices = isViewMore ? services.slice(0, 3) : services;
+  const displayedServices = isViewMore ? servicesData.slice(0, 3) : servicesData;
 
   return (
     <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8  md:gap-y-14 md:gap-x-8">
       {displayedServices.map((service, idx) => (
-        <div
+        <Link
           key={idx}
-          className="group relative h-[400px] overflow-hidden cursor-pointer"
+          href={`/services/${service.slug}`}
+          className="group relative h-[400px] overflow-hidden cursor-pointer block"
         >
           {/* Background Image */}
           <Image
@@ -126,7 +63,7 @@ export const Services = ({ isViewMore = false }: { isViewMore?: boolean }) => {
               <ArrowRight className="h-5 w-5 text-white transition-transform duration-300 group-hover:translate-x-1" />
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

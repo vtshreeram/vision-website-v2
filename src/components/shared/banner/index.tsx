@@ -56,7 +56,10 @@ export const Banner: FC<BannerProps> = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{
+            duration: 1.5,
+            ease: [0.43, 0.13, 0.23, 0.96]
+          }}
           className="absolute inset-0"
         >
           <Image

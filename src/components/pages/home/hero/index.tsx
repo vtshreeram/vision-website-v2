@@ -33,13 +33,17 @@ export const Hero = () => {
   return (
     <section className="relative overflow-hidden h-screen min-h-[600px]">
       {/* Background images with Fade transitions */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         <motion.div
           key={currentImageIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
+          transition={{
+            duration: 1.2,
+            ease: [0.43, 0.13, 0.23, 0.96],
+            scale: { duration: 8 }
+          }}
           className="absolute inset-0 z-0"
         >
           <Image

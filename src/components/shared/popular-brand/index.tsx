@@ -48,46 +48,74 @@ const PopularBrand = () => {
           </Typography>
         </div>
 
-        {/* Row 1 - 6 logos */}
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8">
-          {row1.map((brand, idx) => (
-            <div
-              key={idx}
-              className="flex items-center justify-center w-auto overflow-hidden h-[90px]"
-            >
-              <Image
-                src={brand.src}
-                alt={brand.alt}
-                className="object-contain  transition-all duration-300"
-                width={171}
-                height={90}
-                loading="lazy"
-                quality={80}
-                placeholder="blur"
-              />
-            </div>
-          ))}
+        {/* Desktop: Two rows, Mobile: Horizontal scroll */}
+        <div className="hidden md:block space-y-12">
+          {/* Row 1 - 6 logos */}
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8">
+            {row1.map((brand, idx) => (
+              <div
+                key={idx}
+                className="flex items-center justify-center w-auto overflow-hidden h-[90px]"
+              >
+                <Image
+                  src={brand.src}
+                  alt={brand.alt}
+                  className="object-contain  transition-all duration-300"
+                  width={171}
+                  height={90}
+                  loading="lazy"
+                  quality={80}
+                  placeholder="blur"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Row 2 - 5 logos */}
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8">
+            {row2.map((brand, idx) => (
+              <div
+                key={idx}
+                className="flex items-center justify-center w-auto overflow-hidden h-[90px]"
+              >
+                <Image
+                  src={brand.src}
+                  alt={brand.alt}
+                  className="object-contain  transition-all duration-300"
+                  width={171}
+                  height={90}
+                  loading="lazy"
+                  quality={80}
+                  placeholder="blur"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Row 2 - 5 logos */}
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8">
-          {row2.map((brand, idx) => (
-            <div
-              key={idx}
-              className="flex items-center justify-center w-auto overflow-hidden h-[90px]"
-            >
-              <Image
-                src={brand.src}
-                alt={brand.alt}
-                className="object-contain  transition-all duration-300"
-                width={171}
-                height={90}
-                loading="lazy"
-                quality={80}
-                placeholder="blur"
-              />
+        {/* Mobile: Horizontal scrollable */}
+        <div className="md:hidden">
+          <div className="overflow-x-auto scrollbar-hide">
+            <div className="flex gap-8 pb-4" style={{ width: 'max-content' }}>
+              {brands.map((brand, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center justify-center flex-shrink-0 w-auto overflow-hidden h-[90px]"
+                >
+                  <Image
+                    src={brand.src}
+                    alt={brand.alt}
+                    className="object-contain transition-all duration-300"
+                    width={171}
+                    height={90}
+                    loading="lazy"
+                    quality={80}
+                    placeholder="blur"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 // ** import assets
 import {
   IcoBag,
@@ -11,6 +13,8 @@ import {
 // ** import utils
 import { Typography } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
+import { Modal } from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
 
 interface JobData {
   title: string;
@@ -47,6 +51,16 @@ interface JobDetailClientProps {
 }
 
 const JobDetailClient = ({ job }: JobDetailClientProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleApplyClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="py-16 lg:py-20 bg-background">
       <div
@@ -291,10 +305,68 @@ const JobDetailClient = ({ job }: JobDetailClientProps) => {
           )}
 
           <div className="flex justify-end items-end">
-            <Button variant="primary">Apply Now</Button>
+            <Button variant="primary" onClick={handleApplyClick}>
+              Apply Now
+            </Button>
           </div>
         </div>
       </div>
+
+      {/* Application Modal */}
+      <Modal
+        open={isModalOpen}
+        onClose={closeModal}
+        center
+        classNames={{
+          modal: "rounded-lg max-w-2xl w-full",
+        }}
+      >
+        <div className="p-6">
+          <Typography variant="Bold_H3" className="mb-6 text-foreground">
+            Application Submitted Successfully!
+          </Typography>
+          <div className="space-y-4">
+            <Typography variant="Regular_H5" className="text-gray">
+              Thank you for your interest in the{" "}
+              <span className="font-semibold text-foreground">{job.title}</span>{" "}
+              position at Visions Transport.
+            </Typography>
+            <div className="bg-background p-6 rounded-lg space-y-3">
+              <Typography variant="SemiBold_H5" className="text-foreground">
+                What&apos;s Next?
+              </Typography>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <Typography variant="Regular_H6" className="text-gray">
+                    Our HR team will review your application within 3-5 business
+                    days
+                  </Typography>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <Typography variant="Regular_H6" className="text-gray">
+                    If your profile matches our requirements, we&apos;ll contact you
+                    for the next steps
+                  </Typography>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <Typography variant="Regular_H6" className="text-gray">
+                    You can check your application status by contacting us at
+                    careers@visionstransport.com.my
+                  </Typography>
+                </li>
+              </ul>
+            </div>
+            <div className="pt-4 flex justify-end gap-4">
+              <Button variant="primary" onClick={closeModal}>
+                Close
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };

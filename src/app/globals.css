@@ -445,6 +445,16 @@
   margin-top: 1.5em;
 }
 
+/* Hide scrollbar while maintaining scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
 /* LinkedIn Swiper Custom Styles - Scoped to avoid affecting other swipers */
 .linkedin-swiper-container .linkedin-swiper {
   padding-bottom: 40px;

@@ -256,7 +256,7 @@ const Footer = () => {
         <div className="mt-12 border-t border-stroke pt-8 sm:mt-16 lg:mt-20">
           <div className="text-center">
             <Typography variant="Medium_H6" className="text-gray block">
-              © {currentYear} Vizfleet. All rights reserved.
+              © {currentYear} VizFleet. All rights reserved. A product of Peacock India.
             </Typography>
           </div>
         </div>
