@@ -5,7 +5,7 @@ import { ReactElement } from "react";
 import { Services } from "@/components/shared";
 import SectionHead from "@/components/shared/section-head";
 import Link from "next/link";
-import { ArrowRight } from "react-feather";
+import { ArrowRight } from "lucide-react";
 
 interface OurServicesProps {
   title: ReactElement | string;

@@ -7,8 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 // ** import third party packages
-import { Menu, X } from "react-feather";
-import { IoIosArrowDown } from "react-icons/io";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 // ** import components
 import { Typography } from "@/components/ui/Typography";
@@ -152,7 +151,7 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                         )}
                       >
                         {link.title}{" "}
-                        <IoIosArrowDown
+                        <ChevronDown
                           className="rotate-0 group-hover/main:rotate-180 duration-300"
                           size={20}
                         />

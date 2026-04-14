@@ -6,7 +6,7 @@ import ButtonSecondary from "./ButtonSecondary";
 import BlurImage from "./BlurImage";
 import { Typography } from "@/components/ui/Typography";
 import { useEffect, useState } from "react";
-import { RxCross2 } from "react-icons/rx";
+import { X } from "lucide-react";
 import Modal from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 
@@ -22,7 +22,7 @@ import LogoHeader from "@/assets/logo-header";
 
 const closeIcon = (
   <button className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-red-500 p-2 text-xl text-white">
-    <RxCross2 className="text-white md:text-lg" />
+    <X className="text-white md:text-lg" size={20} />
   </button>
 );
 

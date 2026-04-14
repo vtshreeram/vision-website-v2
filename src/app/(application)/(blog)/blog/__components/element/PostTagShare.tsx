@@ -8,7 +8,7 @@ import {
   Linkedin,
   ThumbsUp,
   Twitter,
-} from "react-feather";
+} from "lucide-react";
 
 import { Typography } from "@/components/ui/Typography";
 import { cn } from "../../_libs/utils";

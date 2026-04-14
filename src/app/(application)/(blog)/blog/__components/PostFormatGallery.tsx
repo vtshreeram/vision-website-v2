@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 
 import Slider from "react-slick";
 import mediumZoom from "medium-zoom";
-import { ArrowRight, ArrowLeft } from "react-feather";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 
 import Image from "./Image";
 

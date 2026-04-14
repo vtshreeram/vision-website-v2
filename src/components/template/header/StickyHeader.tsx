@@ -7,8 +7,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 // ** import third party packages
-import { Menu, X, ExternalLink } from "react-feather";
-import { IoIosArrowDown } from "react-icons/io";
+import { Menu, X, ExternalLink, ChevronDown } from "lucide-react";
 
 // ** import components
 import { Typography } from "@/components/ui/Typography";
@@ -130,7 +129,7 @@ const StickyHeader = () => {
                         >
                           {link.title}
                         </Typography>
-                        <IoIosArrowDown
+                        <ChevronDown
                           className={cn(
                             "transition-transform duration-200",
                             activeDropdown === link.title && "rotate-180"

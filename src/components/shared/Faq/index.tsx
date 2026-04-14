@@ -7,8 +7,7 @@ import { useState } from "react";
 import { Typography } from "@/components/ui/Typography";
 
 //  import icons
-import { FaRegWindowMinimize } from "react-icons/fa6";
-import { FaPlus } from "react-icons/fa6";
+import { ChevronUp, Plus } from "lucide-react";
 
 const Faq = () => {
   const [faq, setFaq] = useState([
@@ -89,9 +88,9 @@ const Faq = () => {
                   </span>
 
                   {!item.open ? (
-                    <FaPlus className="text-xl text-primary shrink-0 ml-4" />
+                    <Plus className="text-primary shrink-0 ml-4" size={20} />
                   ) : (
-                    <FaRegWindowMinimize className="text-xl text-primary shrink-0 ml-4" />
+                    <ChevronUp className="text-primary shrink-0 ml-4" size={20} />
                   )}
                 </button>
 
