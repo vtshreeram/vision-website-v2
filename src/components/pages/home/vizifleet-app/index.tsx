@@ -5,137 +5,88 @@ import React from "react";
 import Image from "next/image";
 
 // ** import components
-import SectionHead from "@/components/shared/section-head";
+import { SubLabel } from "@/components/shared/SubLabel";
 import { Typography } from "@/components/ui/Typography";
 
 // ** import assets
 import centerImg from "@/assets/images/common/vizifleet-app/center-img.webp";
-import {
-  IcoApp1,
-  IcoApp2,
-  IcoApp3,
-  IcoApp4,
-  IcoApp5,
-  IcoApp6,
-} from "@/assets/icons";
 
 export const VizifleetApp = () => {
-  const featuresLeft = [
+  const steps = [
     {
-      icon: <IcoApp1 />,
-      title: "Proactive Safety",
-      desc: "AI monitoring that prevents accidents before they happen.",
+      number: 1,
+      title: "Request a Quote",
+      desc: "Tell us about your shipment, timeline, and specific requirements.",
     },
     {
-      icon: <IcoApp2 />,
-      title: "Cargo Security",
-      desc: "Real-time alerts and strict compliance checks to protect your goods.",
-    },
-  ];
-
-  const featuresRight = [
-    {
-      icon: <IcoApp5 />,
-      title: "Live Tracking",
-      desc: "Know exactly where your shipment is on the map, instantly.",
+      number: 2,
+      title: "Fleet Assignment",
+      desc: "We match your cargo with the perfect vehicle and route.",
     },
     {
-      icon: <IcoApp6 />,
-      title: "Smart Analytics",
-      desc: "Data-driven insights to cut costs and improve delivery times.",
+      number: 3,
+      title: "Route Optimization",
+      desc: "Our AI plans the fastest, most efficient path across borders.",
+    },
+    {
+      number: 4,
+      title: "Real-Time Tracking",
+      desc: "Monitor your shipment live with 24/7 GPS visibility.",
     },
   ];
 
   return (
-    <section className="py-16 md:py-20 global-padding-container bg-background ">
+    <section className="py-16 md:py-24 global-padding-container bg-background">
       <div className="mx-auto max-w-7xl">
-        <SectionHead
-          title={
-            <>
-              Total Control{" "}
-              <span className="text-primary">Over Your Cargo</span>
-            </>
-          }
-          description={
-            <>
-              VizFleet gives you 24/7 visibility. Track shipments, monitor driver safety, and optimize routes automatically.
-            </>
-          }
-          descriptionClassName="lg:max-w-[636px]"
-        />
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 !items-center">
-          <div className=" space-y-12 md:space-y-20 ">
-            {featuresLeft.map((feature, index) => (
-              <div
-                key={index}
-                className="text-center max-w-[281px] mx-auto"
-              >
-                <div className="flex justify-center">{feature.icon}</div>
-                <div className="mt-6">
-                  <Typography variant="Medium_H5">{feature.title}</Typography>
-                  <Typography variant="Regular_H6" className="mt-4 text-gray">
-                    {feature.desc}
+        {/* SubLabel */}
+        <div className="mb-8">
+          <SubLabel>Our Process</SubLabel>
+        </div>
+
+        <Typography variant="SemiBold_H3" className="text-secondary mb-4">
+          How We Deliver Excellence
+        </Typography>
+        <Typography variant="Regular_H6" className="text-gray mb-16 max-w-2xl">
+          From quote to delivery, our streamlined process ensures your cargo arrives safely and on time.
+        </Typography>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left: Process Steps */}
+          <div className="space-y-8">
+            {steps.map((step, idx) => (
+              <div key={idx} className="flex items-start gap-6">
+                {/* Number Block */}
+                <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-sm flex items-center justify-center">
+                  <Typography variant="Bold_H4" className="!text-white">
+                    {step.number}
+                  </Typography>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 pt-1">
+                  <Typography variant="Bold_H5" className="text-secondary mb-2">
+                    {step.title}
+                  </Typography>
+                  <Typography variant="Regular_H6" className="text-gray">
+                    {step.desc}
                   </Typography>
                 </div>
               </div>
             ))}
           </div>
-          <div className=" h-full  md:col-span-2 space-y-8 md:space-y-0">
-            <div className="text-center max-w-[281px] mx-auto md:mb-20">
-              <div className="flex justify-center">
-                <IcoApp3 />
-              </div>
-              <div className="mt-6">
-                <Typography variant="Medium_H5">
-                  Full Fleet Visibility
-                </Typography>
-                <Typography variant="Regular_H6" className="mt-4 text-gray">
-                  See your entire operation at a glance.
-                </Typography>
-              </div>
-            </div>
 
-            <div>
+          {/* Right: Image */}
+          <div className="flex items-center justify-center">
+            <div className="w-full rounded-lg overflow-hidden shadow-lg">
               <Image
                 src={centerImg}
-                alt="center"
+                alt="Process flow visualization"
+                width={530}
                 height={530}
-                width={538}
-                className="object-contain w-full !object-right  hidden md:block"
+                className="object-contain w-full h-auto"
+                placeholder="blur"
+                quality={85}
               />
             </div>
-            <div className="text-center max-w-[400px] mx-auto md:mt-20">
-              <div className="flex justify-center">
-                <IcoApp4 />
-              </div>
-              <div className="mt-6">
-                <Typography variant="Medium_H5">
-                  Sustainability Tracking
-                </Typography>
-                <Typography
-                  variant="Regular_H6"
-                  className="mt-4 text-gray max-w-[300px] mx-auto"
-                >
-                  Measure your carbon footprint and optimize for green logistics.
-                </Typography>
-              </div>
-            </div>
-          </div>
-          <div className="space-y-12 md:space-y-20">
-            {featuresRight.map((feature, index) => (
-              <div
-                key={index}
-                className="text-center max-w-[281px] mx-auto"
-              >
-                <div className="flex justify-center">{feature.icon}</div>
-                <div className="mt-6">
-                  <Typography variant="Medium_H5">{feature.title}</Typography>
-                  <Typography variant="Regular_H6" className="mt-4 text-gray">
-                    {feature.desc}
-                  </Typography>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

@@ -79,43 +79,64 @@ export const Hero = () => {
         {/* Header at the top */}
         <Header />
 
-        {/* Hero content - centered in remaining space */}
-        <div className="flex-1 flex items-center">
-          <div className="max-w-7xl mx-auto w-full">
-            <div className="max-w-3xl">
-              <Typography
-                variant="Bold_H1"
-                className="!text-white mb-4 text-shadow"
-              >
-                Seamless Cross-Border
-                <br />
-                Logistics for Malaysia & Singapore
-              </Typography>
-              <Typography
-                variant="Regular_H5"
-                className="!text-white mb-6 lg:max-w-[85%]"
-              >
-                Stop guessing where your cargo is. We deliver reliable, AI-tracked freight solutions that keep your supply chain moving—on time, every time.
-              </Typography>
-              <div className="mt-8 md:mt-14 flex flex-wrap gap-4 md:gap-6">
-                <Link href={"/contact-us"}>
-                  <Button variant="primary">Get a Quote</Button>
-                </Link>
-                <Link href={"/services"}>
-                  <Button
-                    variant="secondary"
-                    className="border-white text-white hover:bg-white hover:text-primary"
-                  >
-                    View Services
-                  </Button>
-                </Link>
+        {/* Hero content - positioned to allow bottom bar */}
+        <div className="flex-1 flex flex-col justify-between">
+          {/* Main content */}
+          <div className="flex items-end">
+            <div className="max-w-7xl mx-auto w-full">
+              <div className="max-w-3xl">
+                <Typography
+                  variant="Bold_H1"
+                  className="!text-white mb-4 text-shadow"
+                >
+                  Seamless Cross-Border
+                  <br />
+                  Logistics for Malaysia & Singapore
+                </Typography>
+                <Typography
+                  variant="Regular_H5"
+                  className="!text-white mb-6 lg:max-w-[85%]"
+                >
+                  Stop guessing where your cargo is. We deliver reliable, AI-tracked freight solutions that keep your supply chain moving—on time, every time.
+                </Typography>
               </div>
+            </div>
+          </div>
+
+          {/* Bottom bar - Stoop inspired */}
+          <div className="border-t border-white/20 py-6 md:py-8 flex items-center justify-between gap-8">
+            {/* Left: Scroll Down (hidden on mobile) */}
+            <div className="hidden lg:block">
+              <Typography
+                variant="caption"
+                className="!text-white/70 font-medium"
+              >
+                [Scroll Down]
+              </Typography>
+            </div>
+
+            {/* Right: Benefit text + CTA button */}
+            <div className="ml-auto flex items-center gap-6 max-w-xs">
+              <Typography
+                variant="Regular_H6"
+                className="!text-white/80 text-sm hidden md:block"
+              >
+                Real-time tracking, expert support, seamless cross-border logistics.
+              </Typography>
+              <Link href={"/contact-us"}>
+                <Button
+                  variant="primary"
+                  className="rounded-sm text-sm px-4 py-2 shrink-0"
+                >
+                  Get Quote
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
 
         {/* Slider indicators */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2 z-20">
           {heroImages.map((_, index) => (
             <button
               key={index}

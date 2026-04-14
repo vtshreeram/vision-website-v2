@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Typography } from "@/components/ui/Typography";
 import { AnimatedCounter, parseStatValue } from "@/components/ui/AnimatedCounter";
 import Button from "@/components/ui/button";
+import { SubLabel } from "@/components/shared/SubLabel";
 
 // ** import assets
 import sectionBg from "@/assets/images/pages/about-us/certified-bg.png";
@@ -70,6 +71,11 @@ const StatsSection = ({
     return (
       <section className="py-12 md:py-16 global-padding-container bg-primary">
         <div className="mx-auto max-w-7xl">
+          {/* SubLabel */}
+          <div className="mb-8">
+            <SubLabel>Our Impact</SubLabel>
+          </div>
+
           {/* Stats Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             {displayStats.map((stat, idx) => {

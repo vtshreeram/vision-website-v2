@@ -33,13 +33,31 @@ const brands = [
   { src: brand11, alt: "SPX Express" },
 ];
 
-// Split brands into two rows: 6 in first row, 5 in second row
-const row1 = brands.slice(0, 6);
-const row2 = brands.slice(6, 11);
-
 const PopularBrand = () => {
   return (
     <section className="py-16 md:py-20 global-padding-container bg-white">
+      <style>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .marquee-container {
+          overflow: hidden;
+        }
+        .marquee-content {
+          display: flex;
+          animation: marquee 40s linear infinite;
+          gap: 2rem;
+        }
+        .marquee-content:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Title */}
         <div className="text-center">
@@ -48,73 +66,46 @@ const PopularBrand = () => {
           </Typography>
         </div>
 
-        {/* Desktop: Two rows, Mobile: Horizontal scroll */}
-        <div className="hidden md:block space-y-12">
-          {/* Row 1 - 6 logos */}
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8">
-            {row1.map((brand, idx) => (
+        {/* Infinite Marquee */}
+        <div className="marquee-container">
+          <div className="marquee-content">
+            {/* First set of brands */}
+            {brands.map((brand, idx) => (
               <div
                 key={idx}
-                className="flex items-center justify-center w-auto overflow-hidden h-[90px]"
+                className="flex items-center justify-center flex-shrink-0 w-auto overflow-hidden h-[90px]"
               >
                 <Image
                   src={brand.src}
                   alt={brand.alt}
-                  className="object-contain  transition-all duration-300"
-                  width={171}
-                  height={90}
+                  className="object-contain"
+                  width={140}
+                  height={60}
                   loading="lazy"
                   quality={80}
                   placeholder="blur"
                 />
               </div>
             ))}
-          </div>
 
-          {/* Row 2 - 5 logos */}
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8">
-            {row2.map((brand, idx) => (
+            {/* Duplicate set for seamless loop */}
+            {brands.map((brand, idx) => (
               <div
-                key={idx}
-                className="flex items-center justify-center w-auto overflow-hidden h-[90px]"
+                key={`duplicate-${idx}`}
+                className="flex items-center justify-center flex-shrink-0 w-auto overflow-hidden h-[90px]"
               >
                 <Image
                   src={brand.src}
                   alt={brand.alt}
-                  className="object-contain  transition-all duration-300"
-                  width={171}
-                  height={90}
+                  className="object-contain"
+                  width={140}
+                  height={60}
                   loading="lazy"
                   quality={80}
                   placeholder="blur"
                 />
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Mobile: Horizontal scrollable */}
-        <div className="md:hidden">
-          <div className="overflow-x-auto scrollbar-hide">
-            <div className="flex gap-8 pb-4" style={{ width: 'max-content' }}>
-              {brands.map((brand, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center justify-center flex-shrink-0 w-auto overflow-hidden h-[90px]"
-                >
-                  <Image
-                    src={brand.src}
-                    alt={brand.alt}
-                    className="object-contain transition-all duration-300"
-                    width={171}
-                    height={90}
-                    loading="lazy"
-                    quality={80}
-                    placeholder="blur"
-                  />
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>

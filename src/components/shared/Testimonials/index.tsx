@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Typography } from "@/components/ui/Typography";
-
+import { SubLabel } from "@/components/shared/SubLabel";
 import { Skeleton } from "@/components/ui/Skeleton";
 
 interface Testimonial {
@@ -72,18 +72,45 @@ const Testimonials = ({ isLoading = false }: TestimonialsProps) => {
     return (
         <section className="py-16 md:py-24 bg-white global-padding-container">
             <div className="max-w-7xl mx-auto">
-                {/* Header */}
-                <div className="text-center mb-12">
-                    <Typography variant="SemiBold_H2" className="text-foreground mb-4">
-                        Trusted by <span className="text-primary">Leaders</span>
-                    </Typography>
-                    <Typography variant="Regular_H5" className="text-gray max-w-2xl mx-auto">
-                        See why top brands rely on Visions for their critical supply chain needs.
-                    </Typography>
+                {/* SubLabel */}
+                <div className="mb-8">
+                    <SubLabel>Testimonials</SubLabel>
+                </div>
+
+                {/* Header with Navigation Arrows */}
+                <div className="flex items-center justify-between mb-12">
+                    <div className="flex-1">
+                        <Typography variant="SemiBold_H2" className="text-foreground mb-4">
+                            Trusted by <span className="text-primary">Leaders</span>
+                        </Typography>
+                        <Typography variant="Regular_H5" className="text-gray max-w-2xl">
+                            See why top brands rely on Visions for their critical supply chain needs.
+                        </Typography>
+                    </div>
+
+                    {/* Navigation Arrows - aligned right */}
+                    <div className="flex gap-3 ml-8 flex-shrink-0">
+                        <button
+                            onClick={prevTestimonial}
+                            className="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-sm hover:bg-primary/90 transition-colors duration-200"
+                            aria-label="Previous testimonial"
+                        >
+                            <ChevronLeft size={20} />
+                        </button>
+                        <button
+                            onClick={nextTestimonial}
+                            className="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-sm hover:bg-primary/90 transition-colors duration-200"
+                            aria-label="Next testimonial"
+                        >
+                            <ChevronRight size={20} />
+                        </button>
+                    </div>
                 </div>
 
                 {/* Testimonial Carousel */}
-                <div className="relative max-w-4xl mx-auto">
+                <div className="relative max-w-4xl">
+                    {/* Gradient fade overlay on right */}
+                    <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none rounded-2xl" />
                     {isLoading ? (
                         <div className="bg-background rounded-2xl p-8 md:p-12 relative h-[300px] flex flex-col justify-between">
                             <div className="absolute top-6 right-8 text-primary/20">
@@ -148,24 +175,6 @@ const Testimonials = ({ isLoading = false }: TestimonialsProps) => {
                             </motion.div>
                         </AnimatePresence>
                     )}
-
-                    {/* Navigation Arrows */}
-                    <div className="flex justify-center gap-4 mt-8">
-                        <button
-                            onClick={prevTestimonial}
-                            className="p-3 bg-white border border-stroke rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-200"
-                            aria-label="Previous testimonial"
-                        >
-                            <ChevronLeft size={20} />
-                        </button>
-                        <button
-                            onClick={nextTestimonial}
-                            className="p-3 bg-white border border-stroke rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-200"
-                            aria-label="Next testimonial"
-                        >
-                            <ChevronRight size={20} />
-                        </button>
-                    </div>
 
                     {/* Dots Indicator */}
                     <div className="flex justify-center gap-2 mt-6">

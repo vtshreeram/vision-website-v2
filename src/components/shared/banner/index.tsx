@@ -47,7 +47,7 @@ export const Banner: FC<BannerProps> = ({
   return (
     <section
       id="contactUs"
-      className="relative overflow-hidden global-padding-container py-16 md:py-24"
+      className="relative overflow-hidden min-h-[70vh] md:min-h-screen flex flex-col justify-between global-padding-container py-16 md:py-24"
     >
       {/* Background images with fade transitions */}
       <AnimatePresence mode="wait">
@@ -69,24 +69,35 @@ export const Banner: FC<BannerProps> = ({
             placeholder="blur"
             priority={currentImageIndex === 0}
           />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-primary/70" />
+          {/* Dark gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative mx-auto max-w-7xl z-10">
-        <div className="max-w-xl">
+      <div className="relative z-10 mx-auto max-w-7xl w-full h-full flex flex-col justify-between">
+        {/* Main heading - large italic style */}
+        <div className="mb-auto pt-8 md:pt-0">
           <Typography
-            variant="SemiBold_H3"
-            className={`block leading-tight text-white `}
+            variant="Bold_H1"
+            className="!text-white leading-tight mb-4"
           >
-            {title}
+            Ready to Move<br/>
+            Your Cargo<br/>
+            <em className="italic">Effortlessly</em>
           </Typography>
-          <Typography variant="Regular_H5" className="mt-4 block text-white">
-            {subTitle}
-          </Typography>
+        </div>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+        {/* Bottom CTA section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
+          {/* Left: Description */}
+          <div>
+            <Typography variant="Regular_H5" className="!text-white/80">
+              {subTitle}
+            </Typography>
+          </div>
+
+          {/* Right: Buttons */}
+          <div className="flex flex-wrap gap-4 md:justify-end">
             <Link href={primaryButtonLink}>
               <Button
                 variant="primary"

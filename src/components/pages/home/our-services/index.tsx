@@ -3,7 +3,8 @@ import { ReactElement } from "react";
 
 // ** import components
 import { Services } from "@/components/shared";
-import SectionHead from "@/components/shared/section-head";
+import { SubLabel } from "@/components/shared/SubLabel";
+import { Typography } from "@/components/ui/Typography";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -19,10 +20,24 @@ export const OurServices = ({
   isViewMore = false,
 }: OurServicesProps) => {
   return (
-    <section className="py-16 md:py-20 global-padding-container bg-background">
+    <section className="py-16 md:py-24 global-padding-container bg-secondary">
       <div className="mx-auto max-w-7xl">
-        <SectionHead title={title} description={description} descriptionClassName="lg:max-w-2xl" />
-        <div className="mt-14">
+        {/* SubLabel */}
+        <div className="mb-8">
+          <SubLabel>Our Services</SubLabel>
+        </div>
+
+        {/* Title and Description */}
+        <div className="mb-14">
+          <Typography variant="SemiBold_H3" className="!text-white mb-4">
+            {title}
+          </Typography>
+          <Typography variant="Regular_H6" className="!text-white/70 max-w-2xl">
+            {description}
+          </Typography>
+        </div>
+
+        <div>
           <Services isViewMore={isViewMore} />
         </div>
 
