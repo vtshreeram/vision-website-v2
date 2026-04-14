@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 
 // ** import css
 import "./globals.css";
@@ -11,10 +11,10 @@ import "swiper/css/pagination";
 import NextTopLoader from "nextjs-toploader";
 import { generateOrganizationSchema } from "@/lib/structured-data";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const url = "https://vision-website-2.vercel.app";
@@ -99,7 +99,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${poppins.className} antialiased bg-background`}>
+      <body className={`${dmSans.className} antialiased bg-background`}>
         <NextTopLoader
           color="#FF0000"
           initialPosition={0.08}

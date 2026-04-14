@@ -1,12 +1,12 @@
-import { Poppins } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 
-export const poppins = Poppins({
+export const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-poppins",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-dm-sans",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const blogFontConfig = {
-  title: poppins.className,
-  subtitle: poppins.className,
+  title: dmSans.className,
+  subtitle: dmSans.className,
 };

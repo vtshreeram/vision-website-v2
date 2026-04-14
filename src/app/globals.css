@@ -45,7 +45,7 @@
   --stroke: #D0D5DD;
   --gray: #444465;
   --secondary: var(--secondary-900);
-  --font-poppins: var(--font-poppins);
+  --font-dm-sans: var(--font-dm-sans);
 
   --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -97,7 +97,7 @@
   --color-white: var(--white);
   --color-stroke: var(--stroke);
   --color-gray: var(--gray);
-  --font-poppins: var(--font-poppins);
+  --font-dm-sans: var(--font-dm-sans);
 
   --shadow-card: var(--shadow-card);
   --shadow-card-hover: var(--shadow-card-hover);
@@ -252,7 +252,7 @@
 }
 
 .form-control {
-  font-family: Poppins !important;
+  font-family: "DM Sans" !important;
   border: 1px solid #E3E3E3 !important;
   color: var(--color-gray) !important;
   border-radius: 0px !important;
@@ -348,18 +348,18 @@
 .blog-layout-custom-style .axil-post-details h1,
 .blog-layout-custom-style .axil-post-details h2,
 .blog-layout-custom-style .axil-post-details h3 {
-  font-family: Poppins, Poppins Fallback !important;
+  font-family: "DM Sans", sans-serif !important;
   font-weight: 600 !important;
   line-height: 1.25 !important;
 }
 
 .axil-post-details h1 span {
-  font-family: Poppins, Poppins Fallback !important;
+  font-family: "DM Sans", sans-serif !important;
   font-weight: 600 !important;
 }
 
 .axil-post-details {
-  font-family: Poppins, Poppins Fallback !important;
+  font-family: "DM Sans", sans-serif !important;
 }
 
 .line-clamp-2 {
@@ -504,13 +504,13 @@
 
 .post-content h1,
 .post-content h1 span {
-  font-family: Poppins, Poppins Fallback !important;
+  font-family: "DM Sans", sans-serif !important;
   font-weight: 600 !important;
   line-height: 48px !important;
 }
 
 .blog-layout-custom-style {
-  font-family: Poppins, Poppins Fallback !important;
+  font-family: "DM Sans", sans-serif !important;
 }
 
 @media (max-width: 768px) {
