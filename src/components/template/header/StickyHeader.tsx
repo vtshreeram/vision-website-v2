@@ -266,7 +266,7 @@ const StickyHeader = () => {
                     )}
                   >
                     {link.title}{" "}
-                    <IoIosArrowDown
+                    <ChevronDown
                       className={cn(
                         "-rotate-90 transition-transform duration-200",
                         activeDropdown === link.title && "rotate-0"

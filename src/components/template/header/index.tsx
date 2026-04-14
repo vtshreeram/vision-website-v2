@@ -271,7 +271,7 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                     className="text-primary inline-flex gap-2 items-center"
                   >
                     {link.title}{" "}
-                    <IoIosArrowDown className="-rotate-90" size={20} />
+                    <ChevronDown className="-rotate-90" size={20} />
                   </p>
                 </div>
                 <ul
