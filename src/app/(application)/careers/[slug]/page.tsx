@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import JobDetailClient from "./job-detail-client";
 import { Banner } from "@/components/shared";
 import Head from "@/components/shared/head";
+import Breadcrumb from "@/components/shared/Breadcrumb";
 
 // **Import data
 import { jobsData } from "../data";
@@ -38,6 +39,20 @@ const JobPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
         link="/careers"
         linkText="Careers"
       />
+
+      {/* Breadcrumb Navigation */}
+      <div className="bg-white global-padding-container">
+        <div className="max-w-7xl mx-auto py-4">
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Careers", href: "/careers" },
+              { label: jobTitle },
+            ]}
+          />
+        </div>
+      </div>
+
       <JobDetailClient job={job} />
       <Banner />
     </main>

@@ -9,6 +9,7 @@ import { Typography } from "@/components/ui/Typography";
 import Head from "@/components/shared/head";
 import { cn } from "../../_libs/utils";
 import { notFound } from "next/navigation";
+import Breadcrumb from "@/components/shared/Breadcrumb";
 
 import { useEffect, useState } from "react";
 
@@ -132,6 +133,20 @@ const CategoryBlogs = ({ params }: { params: Promise<{ slug: string }> }) => {
         subHeading={categorySlug || "Category"}
         bgImg={headBg}
       />
+
+      {/* Breadcrumb Navigation */}
+      <div className="bg-white global-padding-container">
+        <div className="max-w-7xl mx-auto py-4 px-4 md:px-[52px]">
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Blog", href: "/blog" },
+              { label: categorySlug || "Category" },
+            ]}
+          />
+        </div>
+      </div>
+
       <div className="px-4 pt-20 md:px-[52px]">
         <div className="flex flex-col items-center justify-center gap-4">
           <Typography

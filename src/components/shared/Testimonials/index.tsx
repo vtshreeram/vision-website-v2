@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Typography } from "@/components/ui/Typography";
 
+import { Skeleton } from "@/components/ui/Skeleton";
+
 interface Testimonial {
     id: number;
     name: string;
@@ -50,7 +52,11 @@ const testimonials: Testimonial[] = [
     },
 ];
 
-const Testimonials = () => {
+interface TestimonialsProps {
+    isLoading?: boolean;
+}
+
+const Testimonials = ({ isLoading = false }: TestimonialsProps) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextTestimonial = () => {
@@ -78,49 +84,70 @@ const Testimonials = () => {
 
                 {/* Testimonial Carousel */}
                 <div className="relative max-w-4xl mx-auto">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={currentIndex}
-                            initial={{ opacity: 0, x: 50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -50 }}
-                            transition={{ duration: 0.3 }}
-                            className="bg-background rounded-2xl p-8 md:p-12 relative"
-                        >
-                            {/* Quote Icon */}
+                    {isLoading ? (
+                        <div className="bg-background rounded-2xl p-8 md:p-12 relative h-[300px] flex flex-col justify-between">
                             <div className="absolute top-6 right-8 text-primary/20">
                                 <Quote size={64} />
                             </div>
-
-                            {/* Content */}
                             <div className="relative z-10">
-                                <Typography
-                                    variant="Regular_H5"
-                                    className="text-gray leading-relaxed mb-8 italic"
-                                >
-                                    "{testimonials[currentIndex].content}"
-                                </Typography>
-
-                                {/* Author */}
+                                <Skeleton variant="text" className="w-full h-6 mb-2" />
+                                <Skeleton variant="text" className="w-11/12 h-6 mb-2" />
+                                <Skeleton variant="text" className="w-4/5 h-6 mb-8" />
+                                
                                 <div className="flex items-center gap-4">
-                                    <div className="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center">
-                                        <Typography variant="Bold_H4" className="text-primary">
-                                            {testimonials[currentIndex].name.charAt(0)}
-                                        </Typography>
-                                    </div>
+                                    <Skeleton variant="circular" className="w-14 h-14" />
                                     <div>
-                                        <Typography variant="SemiBold_H5" className="text-foreground">
-                                            {testimonials[currentIndex].name}
-                                        </Typography>
-                                        <Typography variant="Regular_H6" className="text-gray">
-                                            {testimonials[currentIndex].role},{" "}
-                                            {testimonials[currentIndex].company}
-                                        </Typography>
+                                        <Skeleton variant="text" className="w-32 h-5 mb-1" />
+                                        <Skeleton variant="text" className="w-48 h-4" />
                                     </div>
                                 </div>
                             </div>
-                        </motion.div>
-                    </AnimatePresence>
+                        </div>
+                    ) : (
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={currentIndex}
+                                initial={{ opacity: 0, x: 50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -50 }}
+                                transition={{ duration: 0.3 }}
+                                className="bg-background rounded-2xl p-8 md:p-12 relative"
+                            >
+                                {/* Quote Icon */}
+                                <div className="absolute top-6 right-8 text-primary/20">
+                                    <Quote size={64} />
+                                </div>
+
+                                {/* Content */}
+                                <div className="relative z-10">
+                                    <Typography
+                                        variant="Regular_H5"
+                                        className="text-gray leading-relaxed mb-8 italic"
+                                    >
+                                        "{testimonials[currentIndex].content}"
+                                    </Typography>
+
+                                    {/* Author */}
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center">
+                                            <Typography variant="Bold_H4" className="text-primary">
+                                                {testimonials[currentIndex].name.charAt(0)}
+                                            </Typography>
+                                        </div>
+                                        <div>
+                                            <Typography variant="SemiBold_H5" className="text-foreground">
+                                                {testimonials[currentIndex].name}
+                                            </Typography>
+                                            <Typography variant="Regular_H6" className="text-gray">
+                                                {testimonials[currentIndex].role},{" "}
+                                                {testimonials[currentIndex].company}
+                                            </Typography>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </AnimatePresence>
+                    )}
 
                     {/* Navigation Arrows */}
                     <div className="flex justify-center gap-4 mt-8">

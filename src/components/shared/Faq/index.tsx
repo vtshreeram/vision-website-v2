@@ -47,13 +47,10 @@ const Faq = () => {
   const toggleFaq = (index: number) => {
     setFaq(
       faq.map((item, i) => {
-        if (i === index) {
-          item.open = !item.open;
-        } else {
-          item.open = false;
-        }
-
-        return item;
+        return {
+          ...item,
+          open: i === index ? !item.open : false
+        };
       })
     );
   };
@@ -76,11 +73,14 @@ const Faq = () => {
                 className={`${item.open
                     ? "border border-primary"
                     : "border border-stroke"
-                  } cursor-pointer  bg-white  transition-all duration-200  `}
+                  } bg-white transition-all duration-200`}
               >
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between p-4 sm:pt-6 sm:px-6 sm:pb-4"
+                  id={`faq-button-${index}`}
+                  aria-expanded={item.open}
+                  aria-controls={`faq-panel-${index}`}
+                  className="flex w-full items-center justify-between p-4 sm:pt-6 sm:px-6 sm:pb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
                   onClick={() => toggleFaq(index)}
                 >
                   <span className={`flex text-start text-[1.25rem] md:text-[1.5625rem] font-medium ${item.open ? "text-primary" : ""
@@ -89,17 +89,26 @@ const Faq = () => {
                   </span>
 
                   {!item.open ? (
-                    <FaPlus className="text-xl text-primary" />
+                    <FaPlus className="text-xl text-primary shrink-0 ml-4" />
                   ) : (
-                    <FaRegWindowMinimize className="text-xl text-primary" />
+                    <FaRegWindowMinimize className="text-xl text-primary shrink-0 ml-4" />
                   )}
                 </button>
 
                 <div
-                  className={`${item.open ? "block " : "hidden"
-                    } px-4 pb-5 text-start sm:px-6 sm:pb-6 text-gray text-base leading-[1.625]`}
+                  id={`faq-panel-${index}`}
+                  role="region"
+                  aria-labelledby={`faq-button-${index}`}
+                  className="grid transition-all duration-300 ease-in-out"
+                  style={{
+                    gridTemplateRows: item.open ? '1fr' : '0fr'
+                  }}
                 >
-                  <p dangerouslySetInnerHTML={{ __html: item.answer }}></p>
+                  <div className="overflow-hidden">
+                    <div className="px-4 pb-5 text-start sm:px-6 sm:pb-6 text-gray text-base leading-[1.625]">
+                      <p dangerouslySetInnerHTML={{ __html: item.answer }}></p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

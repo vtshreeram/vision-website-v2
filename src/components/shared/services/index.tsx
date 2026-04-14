@@ -9,12 +9,36 @@ import { ArrowRight } from "lucide-react";
 
 // ** import components
 import { Typography } from "@/components/ui/Typography";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 // ** import data
 import { servicesData } from "@/data/services";
 
-export const Services = ({ isViewMore = false }: { isViewMore?: boolean }) => {
+export const Services = ({ isViewMore = false, isLoading = false }: { isViewMore?: boolean, isLoading?: boolean }) => {
   const displayedServices = isViewMore ? servicesData.slice(0, 3) : servicesData;
+
+  if (isLoading) {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-y-14 md:gap-x-8">
+        {Array.from({ length: isViewMore ? 3 : 6 }).map((_, idx) => (
+          <div key={idx} className="flex flex-col h-full bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm">
+            <Skeleton variant="rectangular" className="h-[240px] w-full" />
+            <div className="flex flex-col flex-1 p-6">
+              <Skeleton variant="text" className="h-6 w-3/4 mb-3" />
+              <div className="space-y-2 mb-4">
+                <Skeleton variant="text" className="h-4 w-full" />
+                <Skeleton variant="text" className="h-4 w-full" />
+                <Skeleton variant="text" className="h-4 w-2/3" />
+              </div>
+              <div className="mt-auto">
+                <Skeleton variant="text" className="h-5 w-24" />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-y-14 md:gap-x-8">

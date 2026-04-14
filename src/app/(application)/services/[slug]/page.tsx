@@ -12,6 +12,7 @@ import Button from "@/components/ui/button";
 import { Banner } from "@/components/shared";
 import { FadeIn } from "@/components/shared/FadeIn";
 import WhyChoose from "@/components/shared/why-choose";
+import Breadcrumb from "@/components/shared/Breadcrumb";
 
 // ** import data
 import { servicesData } from "@/data/services";
@@ -52,6 +53,19 @@ const ServiceDetailPage = () => {
     <main>
       {/* Page Header */}
       <Head heading={service.label} subHeading="Services" bgImg={service.img} />
+
+      {/* Breadcrumb Navigation */}
+      <div className="bg-white global-padding-container">
+        <div className="max-w-7xl mx-auto py-4">
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Services", href: "/services" },
+              { label: service.label },
+            ]}
+          />
+        </div>
+      </div>
 
       {/* Service Details */}
       <FadeIn>

@@ -8,6 +8,7 @@ import BlogModal from "../__components/blog-modal";
 import DynamicBlog from "./DynamicBlog";
 import { POSTS_QUERY, query } from "./queries";
 import Header from "@/components/template/header";
+import Breadcrumb from "@/components/shared/Breadcrumb";
 
 const WEBSITE_URL =
   process.env.NEXT_PUBLIC_WEBSITE_HOST_URL || "http://localhost:3000";
@@ -152,6 +153,22 @@ export default async function Page({ params }: any) {
     },
   };
 
+  const breadcrumbItems: Array<{ label: string; href?: string }> = [
+    { label: "Home", href: "/" },
+    { label: "Blog", href: "/blog" },
+  ];
+
+  // Add category if available
+  if (post.category?.slug) {
+    breadcrumbItems.push({
+      label: post.category.name || "Category",
+      href: `/blog/category/${post.category.slug}`,
+    });
+  }
+
+  // Add current post
+  breadcrumbItems.push({ label: post.title });
+
   return (
     <section>
       <script
@@ -160,6 +177,14 @@ export default async function Page({ params }: any) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <Header isBlog={true} />
+
+      {/* Breadcrumb Navigation */}
+      <div className="bg-white global-padding-container">
+        <div className="max-w-7xl mx-auto py-4">
+          <Breadcrumb items={breadcrumbItems} />
+        </div>
+      </div>
+
       <DynamicBlog postData={post} />
       {post && <BlogModal />}
     </section>

@@ -13,6 +13,8 @@ import Button from "@/components/ui/button";
 // ** import assets
 import sectionBg from "@/assets/images/pages/about-us/certified-bg.png";
 
+import { Skeleton } from "@/components/ui/Skeleton";
+
 interface Stat {
   value: string;
   label: string;
@@ -28,6 +30,7 @@ interface StatsSectionProps {
   ctaSubtitle?: string;
   ctaButtonText?: string;
   ctaButtonLink?: string;
+  isLoading?: boolean;
 }
 
 // Default stats for CSR page
@@ -56,6 +59,7 @@ const StatsSection = ({
   ctaSubtitle = "Let’s optimize your supply chain. Get a free consultation today.",
   ctaButtonText = "Get a Quote",
   ctaButtonLink = "/contact-us",
+  isLoading = false,
 }: StatsSectionProps) => {
   // Use provided stats, or default based on variant
   const displayStats = stats || (variant === "primary" ? homepageStats : defaultStats);
@@ -69,6 +73,14 @@ const StatsSection = ({
           {/* Stats Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             {displayStats.map((stat, idx) => {
+              if (isLoading) {
+                return (
+                  <div key={idx} className="bg-white text-center py-10 px-4 shadow-none flex flex-col items-center justify-center">
+                    <Skeleton variant="text" className="w-24 h-10 mb-2" />
+                    <Skeleton variant="text" className="w-32 h-6" />
+                  </div>
+                );
+              }
               const { value, suffix, prefix } = parseStatValue(stat.value);
               return (
                 <div
@@ -155,6 +167,19 @@ const StatsSection = ({
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center md:flex-row">
               {displayStats.map((stat, index) => {
+                if (isLoading) {
+                  return (
+                    <React.Fragment key={index}>
+                      {index !== 0 && (
+                        <div className="w-px h-16 md:h-20 bg-foreground flex-shrink-0 hidden lg:block"></div>
+                      )}
+                      <div className="flex-1 text-center py-4 md:py-6 px-4 md:px-6 flex flex-col items-center justify-center">
+                        <Skeleton variant="text" className="w-24 h-10 mb-2" />
+                        <Skeleton variant="text" className="w-32 h-6" />
+                      </div>
+                    </React.Fragment>
+                  );
+                }
                 const { value, suffix, prefix } = parseStatValue(stat.value);
                 return (
                   <React.Fragment key={index}>

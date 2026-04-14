@@ -32,6 +32,19 @@ export const Hero = () => {
 
   return (
     <section className="relative overflow-hidden h-screen min-h-[600px]">
+      {/* Hidden preload container */}
+      <div className="hidden" aria-hidden="true">
+        {heroImages.map((img, idx) => (
+          <Image
+            key={`preload-${idx}`}
+            src={img}
+            alt=""
+            priority={idx < 2}
+            placeholder="blur"
+          />
+        ))}
+      </div>
+
       {/* Background images with Fade transitions */}
       <AnimatePresence mode="wait">
         <motion.div

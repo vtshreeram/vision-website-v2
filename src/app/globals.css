@@ -3,14 +3,48 @@
 @import "tailwindcss";
 
 :root {
+  /* HSL Base values */
+  --primary-h: 359;
+  --primary-s: 85%;
+  --primary-l: 53%;
+
+  --secondary-h: 201;
+  --secondary-s: 54%;
+  --secondary-l: 16%;
+
+  /* Primary Scale */
+  --primary-50: hsl(var(--primary-h), var(--primary-s), 95%);
+  --primary-100: hsl(var(--primary-h), var(--primary-s), 90%);
+  --primary-200: hsl(var(--primary-h), var(--primary-s), 80%);
+  --primary-300: hsl(var(--primary-h), var(--primary-s), 70%);
+  --primary-400: hsl(var(--primary-h), var(--primary-s), 60%);
+  --primary-500: hsl(var(--primary-h), var(--primary-s), 53%); /* base #ED2224 */
+  --primary-600: hsl(var(--primary-h), var(--primary-s), 45%);
+  --primary-700: hsl(var(--primary-h), var(--primary-s), 38%);
+  --primary-800: hsl(var(--primary-h), var(--primary-s), 31%);
+  --primary-900: hsl(var(--primary-h), var(--primary-s), 24%);
+
+  /* Secondary Scale */
+  --secondary-50: hsl(var(--secondary-h), var(--secondary-s), 95%);
+  --secondary-100: hsl(var(--secondary-h), var(--secondary-s), 90%);
+  --secondary-200: hsl(var(--secondary-h), var(--secondary-s), 80%);
+  --secondary-300: hsl(var(--secondary-h), var(--secondary-s), 70%);
+  --secondary-400: hsl(var(--secondary-h), var(--secondary-s), 60%);
+  --secondary-500: hsl(var(--secondary-h), var(--secondary-s), 53%);
+  --secondary-600: hsl(var(--secondary-h), var(--secondary-s), 45%);
+  --secondary-700: hsl(var(--secondary-h), var(--secondary-s), 38%);
+  --secondary-800: hsl(var(--secondary-h), var(--secondary-s), 31%);
+  --secondary-900: hsl(var(--secondary-h), var(--secondary-s), 16%); /* base #133040 */
+
+  /* Legacy color tokens (mapped to scales or kept as is) */
   --background: #F8F3ED;
   --secondary-background: #FFEBEC;
   --foreground: #2E2E2E;
-  --primary: #ED2224;
+  --primary: var(--primary-500);
   --white: #FFFFFF;
   --stroke: #D0D5DD;
   --gray: #444465;
-  --secondary: #133040;
+  --secondary: var(--secondary-900);
   --font-poppins: var(--font-poppins);
 
   --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -34,7 +68,29 @@
 
 @theme inline {
   --color-primary: var(--primary);
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+
   --color-secondary: var(--secondary);
+  --color-secondary-50: var(--secondary-50);
+  --color-secondary-100: var(--secondary-100);
+  --color-secondary-200: var(--secondary-200);
+  --color-secondary-300: var(--secondary-300);
+  --color-secondary-400: var(--secondary-400);
+  --color-secondary-500: var(--secondary-500);
+  --color-secondary-600: var(--secondary-600);
+  --color-secondary-700: var(--secondary-700);
+  --color-secondary-800: var(--secondary-800);
+  --color-secondary-900: var(--secondary-900);
+
   --color-background: var(--background);
   --color-secondary-background: var(--secondary-background);
   --color-foreground: var(--foreground);
@@ -59,8 +115,7 @@
 
 /* Base Accessibility Reset */
 :focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
+  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
 }
 
 /* Navigation Link Hover Animation - Underline Grow */
@@ -136,6 +191,32 @@
 
 .input-field {
   @apply block w-full h-9 outline-none file:inline-flex file:h-7 file:border-0 px-3 py-1 text-gray bg-white border border-stroke focus:outline-none focus:ring-primary focus:border-primary text-base md:text-sm;
+}
+
+@keyframes shimmer {
+  0% { background-position: -468px 0; }
+  100% { background-position: 468px 0; }
+}
+
+.skeleton-shimmer {
+  animation: shimmer 1.5s ease-in-out infinite;
+  background: linear-gradient(to right, #f0f0f0 4%, #e0e0e0 25%, #f0f0f0 36%);
+  background-size: 800px 104px;
+}
+
+.floating-label-group {
+  @apply relative;
+}
+
+.floating-label {
+  @apply absolute left-3 top-1/2 -translate-y-1/2 transition-all duration-200 pointer-events-none text-gray;
+}
+
+.floating-label-group input:focus ~ .floating-label,
+.floating-label-group input:not(:placeholder-shown) ~ .floating-label,
+.floating-label-group textarea:focus ~ .floating-label,
+.floating-label-group textarea:not(:placeholder-shown) ~ .floating-label {
+  @apply text-xs top-0 bg-white px-1;
 }
 
 .global-padding-container {
