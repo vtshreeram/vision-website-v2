@@ -30,18 +30,34 @@ type NavLink = {
 const navLinks: NavLink[] = [
   { title: "Home", href: "/" },
   { title: "About us", href: "/about-us" },
-  { title: "Services", href: "/services" },
-  { title: "Sustainability", href: "/sustainability" },
-  { title: "CSR", href: "/csr" },
-  { title: "Clientele", href: "/clientele" },
-  { title: "Gallery", href: "/gallery" },
   {
-    title: "Tracking",
-    href: "https://track.visionstransport.com.my/",
-    target: "_blank",
+    title: "Company",
+    subLinks: [
+      { title: "Sustainability", href: "/sustainability" },
+      { title: "CSR", href: "/csr" },
+      { title: "Gallery", href: "/gallery" },
+      { title: "Clientele", href: "/clientele" },
+    ],
   },
-  { title: "Blog", href: "/blog" },
-  { title: "Careers", href: "/careers" },
+  { title: "Services", href: "/services" },
+  {
+    title: "Resources",
+    subLinks: [
+      { title: "Blog", href: "/blog" },
+      { title: "Careers", href: "/careers" },
+      { title: "Help & Support", href: "/help-support" },
+    ],
+  },
+  {
+    title: "Tools",
+    subLinks: [
+      {
+        title: "Tracking",
+        href: "https://track.visionstransport.com.my/",
+        target: "_blank",
+      },
+    ],
+  },
   { title: "Contact us", href: "/contact-us" },
 ];
 
