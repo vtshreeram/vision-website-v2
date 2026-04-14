@@ -30,28 +30,34 @@ type NavLink = {
 const navLinks: NavLink[] = [
   { title: "Home", href: "/" },
   { title: "About us", href: "/about-us" },
-  // {
-  //   title: "Services",
-  //   subLinks: [
-  //     {
-  //       title: "Services",
-  //       href: "/services",
-  //     },
-  //   ],
-  // },
-
-  { title: "Services", href: "/services" },
-  { title: "Sustainability", href: "/sustainability" },
-  { title: "CSR", href: "/csr" },
-  { title: "Clientele", href: "/clientele" },
-  { title: "Gallery", href: "/gallery" },
   {
-    title: "Tracking",
-    href: "https://track.visionstransport.com.my/",
-    target: "_blank",
+    title: "Company",
+    subLinks: [
+      { title: "Sustainability", href: "/sustainability" },
+      { title: "CSR", href: "/csr" },
+      { title: "Gallery", href: "/gallery" },
+      { title: "Clientele", href: "/clientele" },
+    ],
   },
-  { title: "Blog", href: "/blog" },
-  { title: "Careers", href: "/careers" },
+  { title: "Services", href: "/services" },
+  {
+    title: "Resources",
+    subLinks: [
+      { title: "Blog", href: "/blog" },
+      { title: "Careers", href: "/careers" },
+      { title: "Help & Support", href: "/help-support" },
+    ],
+  },
+  {
+    title: "Tools",
+    subLinks: [
+      {
+        title: "Tracking",
+        href: "https://track.visionstransport.com.my/",
+        target: "_blank",
+      },
+    ],
+  },
   { title: "Contact us", href: "/contact-us" },
 ];
 
@@ -157,7 +163,7 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                         />
                       </Typography>
                       <ul
-                        className={`absolute min-w-44 bg-white left-0 top-12 hidden py-4 group-hover/main:block`}
+                        className={`absolute min-w-44 bg-white left-0 top-12 hidden py-4 group-hover/main:block shadow-lg rounded-md z-10`}
                       >
                         {link.subLinks.map((subLink, idx) => {
                           return subLink.href ? (
@@ -167,7 +173,7 @@ const Header = ({ isBlog = false }: HeaderProps) => {
                               target={subLink.target}
                             >
                               <li
-                                className={`px-5 py-2 whitespace-nowrap !text-gray_ cursor-pointer hover:bg-primary/10 flex items-center gap-2`}
+                                className={`px-5 py-2 whitespace-nowrap text-foreground cursor-pointer hover:bg-primary/10 hover:text-primary flex items-center gap-2 transition-colors`}
                               >
                                 <Typography
                                   variant="Regular_H6"
