@@ -169,6 +169,15 @@
   opacity: 0.95;
 }
 
+/* Accessible Primary Text - Uses darker variant for WCAG AA compliance */
+.text-primary-accessible {
+  @apply text-primary-600 hover:text-primary-700;
+}
+
+.text-primary-accessible-link {
+  @apply text-primary-600 hover:text-primary-700 underline underline-offset-2;
+}
+
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
