@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import NextTopLoader from "nextjs-toploader";
+import { generateOrganizationSchema } from "@/lib/structured-data";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -86,8 +87,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = generateOrganizationSchema();
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+      </head>
       <body className={`${poppins.className} antialiased bg-background`}>
         <NextTopLoader
           color="#FF0000"
