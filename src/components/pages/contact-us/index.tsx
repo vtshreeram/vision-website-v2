@@ -87,7 +87,7 @@ const ContactUs = () => {
 
         // Show success message
         toast.success(
-          "Email client opened. Please send the email to complete your inquiry."
+          "Email client opened successfully! Please send the email to submit your inquiry."
         );
 
         // Reset form after a short delay to ensure email client opens first

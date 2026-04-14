@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import { z } from "zod";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import toast from "react-hot-toast";
 
 import { cn } from "@/lib/utils";
 
@@ -69,7 +70,13 @@ export const VisionForm = () => {
       // Mock API call
       await new Promise((resolve) => setTimeout(resolve, 1500));
       console.log(data, null, 2);
+
+      // Show success toast
+      toast.success("Quote request submitted successfully! We'll contact you soon.");
       reset();
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast.error("Failed to submit your request. Please try again.");
     } finally {
       setIsSubmitting(false);
     }

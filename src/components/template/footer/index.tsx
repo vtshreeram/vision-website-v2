@@ -115,9 +115,14 @@ const Footer = () => {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
-    console.log(data);
-    toast.success("From is successfully submit....");
-    reset();
+    try {
+      console.log(data);
+      toast.success("Newsletter subscription successful! Check your email to confirm.");
+      reset();
+    } catch (error) {
+      console.error("Subscription error:", error);
+      toast.error("Failed to subscribe. Please try again.");
+    }
   };
 
   return (
