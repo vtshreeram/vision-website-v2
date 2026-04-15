@@ -1,8 +1,10 @@
 import React from "react";
 import Head from "@/components/shared/head";
+import { Banner } from "@/components/shared";
 import headBg from "@/assets/images/pages/sustainability/head.webp";
 import { FadeIn } from "@/components/shared/FadeIn";
 import { AboutPage } from "@/components/shared/about-page";
+import SustainabilityGoals from "@/components/shared/sustainability-goals";
 
 const environmentalActions = [
   {
@@ -41,6 +43,16 @@ const SustainabilityPage = () => {
           description="At Visions Transport, we believe that efficient logistics shouldn't come at the cost of our planet. We are dedicated to reducing our environmental impact through technology, innovation, and responsible operational practices. Our goal is to lead the industry in sustainable transportation solutions."
           listItems={environmentalActions}
         />
+      </FadeIn>
+
+      {/* Sustainability Goals & Roadmap (NEW) */}
+      <FadeIn>
+        <SustainabilityGoals />
+      </FadeIn>
+
+      {/* Final CTA */}
+      <FadeIn>
+        <Banner />
       </FadeIn>
     </main>
   );

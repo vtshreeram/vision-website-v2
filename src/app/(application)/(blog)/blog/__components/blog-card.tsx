@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { SanityDocument } from "sanity";
-import { blogFontConfig, poppins } from "../__configs/font";
+import { blogFontConfig, dmSans } from "../__configs/font";
 
 interface BlogCardData extends SanityDocument {
   slug?: { current: string };
@@ -83,7 +83,7 @@ const BlogCard = ({ data }: { data: BlogCardData }) => {
               href={`/blog/category/${data.category.slug}`}
               className={cn(
                 "!mr-auto !inline-block cursor-pointer items-center  justify-center gap-2 rounded-full !bg-primary/10 px-3 py-1.5 sm:py-2 capitalize !text-primary",
-                poppins.className
+                dmSans.className
               )}
             >
               {data.category.name || "Category"}

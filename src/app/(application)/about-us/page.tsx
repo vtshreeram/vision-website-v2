@@ -8,6 +8,8 @@ import Head from "@/components/shared/head";
 import Certified from "@/components/pages/about-us/certified";
 import PopularBrand from "@/components/shared/popular-brand";
 import Testimonials from "@/components/shared/Testimonials";
+import LeadershipTeam from "@/components/shared/leadership-team";
+import OriginStory from "@/components/shared/origin-story";
 import { FadeIn } from "@/components/shared/FadeIn";
 
 // ** import images
@@ -91,12 +93,17 @@ const AboutUsPage = () => {
         />
       </FadeIn>
 
-      {/* 3. INSTANT TRUST - Show recognized brands early */}
+      {/* 3. COMPANY STORY - Origin story & journey (NEW) */}
+      <FadeIn>
+        <OriginStory />
+      </FadeIn>
+
+      {/* 4. INSTANT TRUST - Show recognized brands */}
       <FadeIn>
         <PopularBrand />
       </FadeIn>
 
-      {/* 4. INTEREST - Vision, Mission & Values */}
+      {/* 5. INTEREST - Vision, Mission & Values */}
       <FadeIn>
         <VisionMissionGoals
           cardsData={cardsData}
@@ -113,12 +120,17 @@ const AboutUsPage = () => {
         />
       </FadeIn>
 
-      {/* 5. CREDIBILITY - Certifications */}
+      {/* 6. CREDIBILITY - Certifications */}
       <FadeIn>
         <Certified />
       </FadeIn>
 
-      {/* 6. DESIRE - Team Excellence */}
+      {/* 7. PERSONAL TOUCH - Leadership Team (NEW) */}
+      <FadeIn>
+        <LeadershipTeam />
+      </FadeIn>
+
+      {/* 8. DESIRE - Team Excellence */}
       <FadeIn>
         <Benefits
           title={
@@ -136,7 +148,7 @@ const AboutUsPage = () => {
         />
       </FadeIn>
 
-      {/* 7. WHAT WE OFFER - Services overview */}
+      {/* 9. WHAT WE OFFER - Services overview */}
       <FadeIn>
         <OurServices
           title={
@@ -150,12 +162,12 @@ const AboutUsPage = () => {
         />
       </FadeIn>
 
-      {/* 8. SOCIAL PROOF - Testimonials */}
+      {/* 10. SOCIAL PROOF - Testimonials */}
       <FadeIn>
         <Testimonials />
       </FadeIn>
 
-      {/* 9. ACTION - Final CTA */}
+      {/* 11. ACTION - Final CTA */}
       <FadeIn>
         <Banner />
       </FadeIn>

@@ -4,6 +4,8 @@ import { Banner, Benefits } from "@/components/shared";
 import Head from "@/components/shared/head";
 import Faq from "@/components/shared/Faq";
 import WhyChoose from "@/components/shared/why-choose";
+import CaseStudies from "@/components/shared/case-studies";
+import { FadeIn } from "@/components/shared/FadeIn";
 
 // ** import images
 import headBg from "@/assets/images/pages/clientele/head/head-bg.webp";
@@ -48,20 +50,34 @@ const ClientelePage = () => {
   return (
     <main>
       <Head heading="Our Clientele" subHeading="Trusted Partners" bgImg={headBg} />
-      <CompanyLogo />
-      {/* <WhyChoose /> */}
-      <Benefits
-        title={
-          <>
-            Why Industry Leaders Choose <span className="text-primary">Visions Transport</span>
-          </>
-        }
-        description={"Built on global standards, trusted across borders for reliability and compliance."}
-        features={features}
-      />
+      <FadeIn>
+        <CompanyLogo />
+      </FadeIn>
 
-      <Faq />
-      <Banner />
+      {/* Case Studies showing our success with clients (NEW) */}
+      <FadeIn>
+        <CaseStudies />
+      </FadeIn>
+
+      <FadeIn>
+        <Benefits
+          title={
+            <>
+              Why Industry Leaders Choose <span className="text-primary">Visions Transport</span>
+            </>
+          }
+          description={"Built on global standards, trusted across borders for reliability and compliance."}
+          features={features}
+        />
+      </FadeIn>
+
+      <FadeIn>
+        <Faq />
+      </FadeIn>
+
+      <FadeIn>
+        <Banner />
+      </FadeIn>
     </main>
   );
 };

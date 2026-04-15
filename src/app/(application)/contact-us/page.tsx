@@ -6,6 +6,7 @@ import { Banner } from "@/components/shared";
 import Head from "@/components/shared/head";
 import Faq from "@/components/shared/Faq";
 import PopularBrand from "@/components/shared/popular-brand";
+import ContactChannels from "@/components/shared/contact-channels";
 import { FadeIn } from "@/components/shared/FadeIn";
 
 // ** import images
@@ -17,22 +18,27 @@ const ContactUsPage = () => {
       {/* 1. ATTENTION - Page header */}
       <Head heading="Contact us" subHeading="Contact us" bgImg={headBg} />
 
-      {/* 2. TRUST - Show trusted brands before asking for contact */}
+      {/* 2. INSTANT TRUST - Show trusted brands early */}
       <FadeIn>
         <PopularBrand />
       </FadeIn>
 
-      {/* 3. INTEREST - Contact form (main action) */}
+      {/* 3. MULTI-CHANNEL CONTACT - Multiple ways to reach us (NEW) */}
+      <FadeIn>
+        <ContactChannels />
+      </FadeIn>
+
+      {/* 4. PRIMARY ACTION - Contact form */}
       <FadeIn>
         <ContactUs />
       </FadeIn>
 
-      {/* 4. ADDRESS OBJECTIONS - FAQ section */}
+      {/* 5. ADDRESS OBJECTIONS - FAQ section */}
       <FadeIn>
         <Faq />
       </FadeIn>
 
-      {/* 5. ACTION - Final CTA */}
+      {/* 6. FINAL ACTION - CTA */}
       <FadeIn>
         <Banner />
       </FadeIn>

@@ -8,15 +8,15 @@ import "../../../../blog-styles/style.scss";
 import { cn } from "./_libs/utils";
 
 //  ** import font
-import { poppins } from "./__configs/font";
+import { dmSans } from "./__configs/font";
 
 const IskconBlogLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div
       className={cn(
         "blog-layout-custom-style",
-        poppins.variable,
-        poppins.className
+        dmSans.variable,
+        dmSans.className
       )}
     >
       {children}

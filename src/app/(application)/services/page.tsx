@@ -7,7 +7,10 @@ import { VizifleetApp } from "@/components/pages/home";
 import PopularBrand from "@/components/shared/popular-brand";
 import WhyChoose from "@/components/shared/why-choose";
 import Testimonials from "@/components/shared/Testimonials";
+import CaseStudies from "@/components/shared/case-studies";
+import ServiceDetails from "@/components/shared/service-details";
 import { FadeIn } from "@/components/shared/FadeIn";
+import { Typography } from "@/components/ui/Typography";
 
 // ** import images
 import headBg from "@/assets/images/pages/services/head-bg.webp";
@@ -50,17 +53,39 @@ const ServicesPage = () => {
         </section>
       </FadeIn>
 
+      {/* 2.5. DEEPER DIVE - Service details & features (NEW) */}
+      <FadeIn>
+        <section className="bg-white global-padding-container py-16 md:py-24">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <Typography variant="SemiBold_H3" className="text-secondary">
+                Explore Each Service in <span className="text-primary">Detail</span>
+              </Typography>
+              <Typography variant="Regular_H5" className="text-gray mt-4">
+                Click on any service to learn about features, benefits, and use cases
+              </Typography>
+            </div>
+            <ServiceDetails />
+          </div>
+        </section>
+      </FadeIn>
+
       {/* 3. TRUST - Client logos */}
       <FadeIn>
         <PopularBrand />
       </FadeIn>
 
-      {/* 4. DESIRE - Technology advantage */}
+      {/* 4. PROOF OF RESULTS - Case studies (NEW) */}
+      <FadeIn>
+        <CaseStudies />
+      </FadeIn>
+
+      {/* 5. DESIRE - Technology advantage */}
       <FadeIn>
         <VizifleetApp />
       </FadeIn>
 
-      {/* 5. WHY CHOOSE US - Differentiators */}
+      {/* 6. WHY CHOOSE US - Differentiators */}
       <FadeIn>
         <WhyChoose
           title="The Visions Advantage"
@@ -68,12 +93,12 @@ const ServicesPage = () => {
         />
       </FadeIn>
 
-      {/* 6. SOCIAL PROOF - Customer testimonials */}
+      {/* 7. SOCIAL PROOF - Customer testimonials */}
       <FadeIn>
         <Testimonials />
       </FadeIn>
 
-      {/* 7. ACTION - Final CTA */}
+      {/* 8. ACTION - Final CTA */}
       <FadeIn>
         <Banner />
       </FadeIn>

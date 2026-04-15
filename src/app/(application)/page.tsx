@@ -8,6 +8,9 @@ import {
 import { AboutPage, Banner, Benefits } from "@/components/shared";
 import StatsSection from "@/components/shared/StatsSection";
 import WhyChoose from "@/components/shared/why-choose";
+import IndustryCoverage from "@/components/shared/industry-coverage";
+import ProcessFlow from "@/components/shared/process-flow";
+import FAQSection from "@/components/shared/faq-section";
 
 // ** import icons
 import {
@@ -18,7 +21,6 @@ import {
   IcoCertified,
 } from "@/assets/icons";
 import PopularBrand from "@/components/shared/popular-brand";
-import LinkedinPost from "@/components/pages/home/linkedin-post";
 import Testimonials from "@/components/shared/Testimonials";
 
 import { FadeIn } from "@/components/shared/FadeIn";
@@ -109,7 +111,32 @@ const Page = () => {
         />
       </FadeIn>
 
-      {/* 5. WHY CHOOSE US - Differentiators after seeing services */}
+      {/* 5. INDUSTRY RELEVANCE - Industries we serve (NEW) */}
+      <FadeIn>
+        <IndustryCoverage />
+      </FadeIn>
+
+      {/* 6. EXPLAIN PROCESS - How we deliver solutions (NEW) */}
+      <FadeIn>
+        <ProcessFlow />
+      </FadeIn>
+
+      {/* 7. PROOF IN NUMBERS - Statistics reinforce claims (MOVED UP) */}
+      <FadeIn>
+        <StatsSection variant="primary" showCTA={true} />
+      </FadeIn>
+
+      {/* 8. DESIRE - How we deliver excellence (technology) */}
+      <FadeIn>
+        <VizifleetApp />
+      </FadeIn>
+
+      {/* 9. CUSTOMER PROOF - Real testimonials build trust */}
+      <FadeIn>
+        <Testimonials />
+      </FadeIn>
+
+      {/* 10. WHY CHOOSE US - Differentiators (MOVED DOWN for reinforcement) */}
       <FadeIn>
         <WhyChoose
           title="Why Industry Leaders Trust Visions"
@@ -117,22 +144,7 @@ const Page = () => {
         />
       </FadeIn>
 
-      {/* 6. PROOF IN NUMBERS - Statistics reinforce claims */}
-      <FadeIn>
-        <StatsSection variant="primary" showCTA={true} />
-      </FadeIn>
-
-      {/* 7. DESIRE - How we deliver excellence (technology) */}
-      <FadeIn>
-        <VizifleetApp />
-      </FadeIn>
-
-      {/* 8. CUSTOMER PROOF - Real testimonials build trust */}
-      <FadeIn>
-        <Testimonials />
-      </FadeIn>
-
-      {/* 9. CERTIFICATIONS - Quality assurance */}
+      {/* 11. CERTIFICATIONS - Quality assurance */}
       <FadeIn>
         <Benefits
           title={
@@ -148,12 +160,20 @@ const Page = () => {
         />
       </FadeIn>
 
-      {/* 10. SOCIAL ENGAGEMENT - For interested visitors */}
+      {/* 12. ADDRESS OBJECTIONS - Frequently asked questions (NEW) */}
       <FadeIn>
-        <LinkedinPost />
+        <FAQSection
+          subLabel="Still Curious?"
+          title={
+            <>
+              Common Questions About <span className="text-primary">Our Services</span>
+            </>
+          }
+          description="Get quick answers to help you understand how we can support your logistics needs."
+        />
       </FadeIn>
 
-      {/* 11. ACTION - Final CTA to convert */}
+      {/* 13. ACTION - Final CTA to convert */}
       <FadeIn>
         <Banner />
       </FadeIn>
